@@ -1,7 +1,7 @@
 {
   "agent:main:main": {
     "sessionId": "efe92ea5-64cc-485b-99d3-68d445f301fb",
-    "updatedAt": 1772348000354,
+    "updatedAt": 1772352199211,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -119,7 +119,7 @@
     "contextTokens": 200000,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772347161596,
+      "generatedAt": 1772348000455,
       "sessionId": "efe92ea5-64cc-485b-99d3-68d445f301fb",
       "sessionKey": "agent:main:main",
       "provider": "minimax-portal",
@@ -432,17 +432,17 @@
         ]
       }
     },
-    "inputTokens": 115730,
-    "outputTokens": 672,
-    "cacheRead": 76265,
-    "cacheWrite": 27969,
-    "totalTokens": 44469,
+    "inputTokens": 56854,
+    "outputTokens": 268,
+    "cacheRead": 30506,
+    "cacheWrite": 43222,
+    "totalTokens": 43801,
     "totalTokensFresh": true,
     "lastTo": "heartbeat"
   },
   "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080": {
     "sessionId": "1c4d4853-1454-4c47-9942-d872134fefb3",
-    "updatedAt": 1772347999600,
+    "updatedAt": 1772350720770,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -608,7 +608,7 @@
     "contextTokens": 200000,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772347699541,
+      "generatedAt": 1772350692155,
       "sessionId": "1c4d4853-1454-4c47-9942-d872134fefb3",
       "sessionKey": "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080",
       "provider": "minimax-portal",
@@ -621,8 +621,8 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 31218,
-        "projectContextChars": 14116,
+        "chars": 31548,
+        "projectContextChars": 14446,
         "nonProjectContextChars": 17102
       },
       "injectedWorkspaceFiles": [
@@ -680,6 +680,14 @@
           "missing": false,
           "rawChars": 1449,
           "injectedChars": 1449,
+          "truncated": false
+        },
+        {
+          "name": "MEMORY.md",
+          "path": "/Users/ling/.openclaw/workspace/MEMORY.md",
+          "missing": false,
+          "rawChars": 284,
+          "injectedChars": 284,
           "truncated": false
         }
       ],
@@ -937,11 +945,11 @@
         ]
       }
     },
-    "inputTokens": 365039,
-    "outputTokens": 3954,
-    "cacheRead": 182954,
-    "cacheWrite": 351,
-    "totalTokens": 137623,
+    "inputTokens": 36,
+    "outputTokens": 163,
+    "cacheRead": 15882,
+    "cacheWrite": 128886,
+    "totalTokens": 144804,
     "totalTokensFresh": true
   }
 }
