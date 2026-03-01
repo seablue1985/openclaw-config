@@ -1,19 +1,22 @@
 {
   "agent:main:main": {
     "sessionId": "efe92ea5-64cc-485b-99d3-68d445f301fb",
-    "updatedAt": 1772340107289,
+    "updatedAt": 1772346846785,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
     "deliveryContext": {
-      "channel": "webchat"
+      "channel": "webchat",
+      "to": "heartbeat"
     },
     "lastChannel": "webchat",
     "origin": {
-      "label": "openclaw-tui",
-      "provider": "webchat",
+      "label": "heartbeat",
+      "provider": "heartbeat",
       "surface": "webchat",
-      "chatType": "direct"
+      "chatType": "direct",
+      "from": "heartbeat",
+      "to": "heartbeat"
     },
     "sessionFile": "/Users/ling/.openclaw/agents/main/sessions/efe92ea5-64cc-485b-99d3-68d445f301fb.jsonl",
     "compactionCount": 0,
@@ -116,7 +119,7 @@
     "contextTokens": 200000,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772340069630,
+      "generatedAt": 1772343040418,
       "sessionId": "efe92ea5-64cc-485b-99d3-68d445f301fb",
       "sessionKey": "agent:main:main",
       "provider": "minimax-portal",
@@ -129,9 +132,9 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 29089,
+        "chars": 29075,
         "projectContextChars": 13589,
-        "nonProjectContextChars": 15500
+        "nonProjectContextChars": 15486
       },
       "injectedWorkspaceFiles": [
         {
@@ -226,7 +229,7 @@
       },
       "tools": {
         "listChars": 3135,
-        "schemaChars": 20292,
+        "schemaChars": 20304,
         "entries": [
           {
             "name": "read",
@@ -279,7 +282,7 @@
           {
             "name": "message",
             "summaryChars": 89,
-            "schemaChars": 4181,
+            "schemaChars": 4193,
             "propertiesCount": 85
           },
           {
@@ -429,16 +432,17 @@
         ]
       }
     },
-    "inputTokens": 40845,
-    "outputTokens": 267,
-    "cacheRead": 58115,
-    "cacheWrite": 1338,
-    "totalTokens": 41247,
-    "totalTokensFresh": true
+    "inputTokens": 36,
+    "outputTokens": 122,
+    "cacheRead": 41340,
+    "cacheWrite": 0,
+    "totalTokens": 41376,
+    "totalTokensFresh": true,
+    "lastTo": "heartbeat"
   },
   "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080": {
     "sessionId": "1c4d4853-1454-4c47-9942-d872134fefb3",
-    "updatedAt": 1772341203435,
+    "updatedAt": 1772346845827,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -451,7 +455,7 @@
     "lastTo": "user:ou_968a615509dc191f04220e18cda67080",
     "lastAccountId": "default",
     "origin": {
-      "label": "ou_968a615509dc191f04220e18cda67080",
+      "label": "张玲",
       "provider": "feishu",
       "surface": "feishu",
       "chatType": "direct",
@@ -604,7 +608,7 @@
     "contextTokens": 200000,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772341059166,
+      "generatedAt": 1772346545777,
       "sessionId": "1c4d4853-1454-4c47-9942-d872134fefb3",
       "sessionKey": "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080",
       "provider": "minimax-portal",
@@ -617,8 +621,8 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 30691,
-        "projectContextChars": 13589,
+        "chars": 31218,
+        "projectContextChars": 14116,
         "nonProjectContextChars": 17102
       },
       "injectedWorkspaceFiles": [
@@ -666,8 +670,8 @@
           "name": "HEARTBEAT.md",
           "path": "/Users/ling/.openclaw/workspace/HEARTBEAT.md",
           "missing": false,
-          "rawChars": 167,
-          "injectedChars": 167,
+          "rawChars": 694,
+          "injectedChars": 694,
           "truncated": false
         },
         {
@@ -933,11 +937,11 @@
         ]
       }
     },
-    "inputTokens": 156396,
-    "outputTokens": 298,
-    "cacheRead": 30922,
-    "cacheWrite": 93407,
-    "totalTokens": 93685,
+    "inputTokens": 3133415,
+    "outputTokens": 1844,
+    "cacheRead": 455648,
+    "cacheWrite": 106181,
+    "totalTokens": 130653,
     "totalTokensFresh": true
   }
 }

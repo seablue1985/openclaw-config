@@ -11,12 +11,8 @@
   },
   "auth": {
     "profiles": {
-      "minimax-portal:default": {
-        "provider": "minimax-portal",
-        "mode": "oauth"
       }
-    }
-  },
+    },
   "models": {
     "providers": {
       "minimax-portal": {

@@ -28,7 +28,8 @@
           "operator.admin"
         ],
         "createdAtMs": 1772336433777,
-        "rotatedAtMs": 1772336437076
+        "rotatedAtMs": 1772336437076,
+        "lastUsedAtMs": 1772343175141
       }
     },
     "createdAtMs": 1772336433777,
