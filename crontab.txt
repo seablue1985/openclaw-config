@@ -1,0 +1,3 @@
+0 9 * * 1-5 /usr/bin/python3 /Users/ling/.openclaw/workspace/scripts/morning_scan.py
+0 14 * * 1-5 /usr/bin/python3 /Users/ling/.openclaw/workspace/scripts/afternoon_check.py
+0 20 * * 5 /usr/bin/python3 /Users/ling/.openclaw/workspace/scripts/weekly_optimize.py
