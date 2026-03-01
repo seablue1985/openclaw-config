@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "profiles": {
+    "minimax-portal:default": {
+      "type": "oauth",
+      "provider": "minimax-portal",
+      "access": "sk-cp-TypyXejs2B15_iA2InVLaRhZBTL_wxRXO5ut0AXIl6elvqblH6fWp3j8VaUulYChdYV6fEHnXtMyNwRhaeHBmxI_dFoOwRlmtPdSZt6pwrMvqKU92zBfir8",
+      "refresh": "gHrN2zKrDKzFJ4UPFEb-J4w6R__C8PCgDrIPNME709I=",
+      "expires": 1803872331523
+    }
+  },
+  "usageStats": {
+    "minimax-portal:default": {
+      "lastUsed": 1772341076685,
+      "errorCount": 0
+    }
+  }
+}

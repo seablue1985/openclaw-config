@@ -1,0 +1,19 @@
+# 排除敏感文件
+credentials/
+*.log
+.DS_Store
+*.bak
+*.tmp
+
+# 排除临时文件
+*.pyc
+__pycache__/
+node_modules/
+
+# 排除大型数据文件
+qlib_data/
+*.pkl
+*.csv
+
+# 排除 workspace 子仓库
+workspace/
