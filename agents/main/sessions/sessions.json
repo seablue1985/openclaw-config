@@ -844,7 +844,7 @@
   },
   "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080": {
     "sessionId": "e18157d8-6d52-43d5-8cb5-e887090c76a8",
-    "updatedAt": 1772413888393,
+    "updatedAt": 1772413921009,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -1685,11 +1685,11 @@
         ]
       }
     },
-    "inputTokens": 320233,
-    "outputTokens": 1534,
-    "cacheRead": 348346,
-    "cacheWrite": 12788,
-    "totalTokens": 38452,
+    "inputTokens": 61938,
+    "outputTokens": 296,
+    "cacheRead": 73336,
+    "cacheWrite": 20091,
+    "totalTokens": 39130,
     "totalTokensFresh": true
   }
 }
