@@ -1,4 +1,10 @@
 {
+  "wizard": {
+    "lastRunAt": "2026-03-01T03:39:31.769Z",
+    "lastRunVersion": "2026.2.26",
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local"
+  },
   "auth": {
     "profiles": {
       "minimax-portal:default": {
@@ -85,6 +91,25 @@
   "session": {
     "dmScope": "per-channel-peer"
   },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "boot-md": {
+          "enabled": true
+        },
+        "bootstrap-extra-files": {
+          "enabled": true
+        },
+        "command-logger": {
+          "enabled": true
+        },
+        "session-memory": {
+          "enabled": true
+        }
+      }
+    }
+  },
   "gateway": {
     "port": 18789,
     "mode": "local",
@@ -117,6 +142,6 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.2.26",
-    "lastTouchedAt": "2026-03-01T03:39:15.742Z"
+    "lastTouchedAt": "2026-03-01T03:39:31.801Z"
   }
 }

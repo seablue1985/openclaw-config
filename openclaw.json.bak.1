@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.2.26",
-    "lastTouchedAt": "2026-03-01T03:42:26.811Z"
+    "lastTouchedAt": "2026-03-01T03:50:18.583Z"
   },
   "wizard": {
     "lastRunAt": "2026-03-01T03:39:31.769Z",
@@ -13,7 +13,8 @@
     "profiles": {
       "minimax-portal:default": {
         "provider": "minimax-portal",
-        "mode": "oauth"
+        "mode": "api",
+        "apiKey": "sk-cp-TypyXejs2B15_iA2InVLaRhZBTL_wxRXO5ut0AXIl6elvqblH6fWp3j8VaUulYChdYV6fEHnXtMyNwRhaeHBmxI_dFoOwRlmtPdSZt6pwrMvqKU92zBfir8"
       }
     }
   },
@@ -80,7 +81,8 @@
       "maxConcurrent": 4,
       "subagents": {
         "maxConcurrent": 8
-      }
+      },
+      "timeoutSeconds": 300
     }
   },
   "messages": {
@@ -112,6 +114,12 @@
           "enabled": true
         }
       }
+    }
+  },
+  "channels": {
+    "feishu": {
+      "appId": "cli_a928c429d9785cc6",
+      "appSecret": " 8DdEUA04tEjcp0CX7Z4L0gaxRbtutjon"
     }
   },
   "gateway": {
