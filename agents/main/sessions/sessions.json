@@ -1,7 +1,7 @@
 {
   "agent:main:main": {
     "sessionId": "3da58fbc-7ccc-491e-bcea-b8c95488a1a9",
-    "updatedAt": 1772439275617,
+    "updatedAt": 1772439314925,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -410,7 +410,7 @@
     "contextTokens": 200000,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772438701317,
+      "generatedAt": 1772439275699,
       "sessionId": "3da58fbc-7ccc-491e-bcea-b8c95488a1a9",
       "sessionKey": "agent:main:main",
       "provider": "minimax-portal",
@@ -835,16 +835,16 @@
         ]
       }
     },
-    "inputTokens": 23673,
-    "outputTokens": 536,
-    "cacheRead": 92325,
+    "inputTokens": 28003,
+    "outputTokens": 571,
+    "cacheRead": 110790,
     "cacheWrite": 22419,
-    "totalTokens": 23583,
+    "totalTokens": 23555,
     "totalTokensFresh": true
   },
   "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080": {
     "sessionId": "e18157d8-6d52-43d5-8cb5-e887090c76a8",
-    "updatedAt": 1772439275124,
+    "updatedAt": 1772441210049,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -858,8 +858,8 @@
     "lastAccountId": "default",
     "origin": {
       "label": "张玲",
-      "provider": "webchat",
-      "surface": "webchat",
+      "provider": "feishu",
+      "surface": "feishu",
       "chatType": "direct",
       "from": "feishu:ou_968a615509dc191f04220e18cda67080",
       "to": "user:ou_968a615509dc191f04220e18cda67080",
@@ -1260,7 +1260,7 @@
     "contextTokens": 200000,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772439114496,
+      "generatedAt": 1772440891147,
       "sessionId": "e18157d8-6d52-43d5-8cb5-e887090c76a8",
       "sessionKey": "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080",
       "provider": "minimax-portal",
@@ -1273,9 +1273,9 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 40675,
+        "chars": 40921,
         "projectContextChars": 14569,
-        "nonProjectContextChars": 26106
+        "nonProjectContextChars": 26352
       },
       "injectedWorkspaceFiles": [
         {
@@ -1685,11 +1685,11 @@
         ]
       }
     },
-    "inputTokens": 1285779,
-    "outputTokens": 2387,
-    "cacheRead": 184710,
-    "cacheWrite": 142496,
-    "totalTokens": 161844,
+    "inputTokens": 147487,
+    "outputTokens": 15856,
+    "cacheRead": 37104,
+    "cacheWrite": 146440,
+    "totalTokens": 166003,
     "totalTokensFresh": true
   },
   "agent:main:quant-advisor": {
