@@ -1,7 +1,7 @@
 {
   "agent:main:main": {
     "sessionId": "3da58fbc-7ccc-491e-bcea-b8c95488a1a9",
-    "updatedAt": 1772438701200,
+    "updatedAt": 1772439275617,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -410,7 +410,7 @@
     "contextTokens": 200000,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772435003428,
+      "generatedAt": 1772438701317,
       "sessionId": "3da58fbc-7ccc-491e-bcea-b8c95488a1a9",
       "sessionKey": "agent:main:main",
       "provider": "minimax-portal",
@@ -423,8 +423,8 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 40538,
-        "projectContextChars": 14446,
+        "chars": 40661,
+        "projectContextChars": 14569,
         "nonProjectContextChars": 26092
       },
       "injectedWorkspaceFiles": [
@@ -456,8 +456,8 @@
           "name": "IDENTITY.md",
           "path": "/Users/ling/.openclaw/workspace/IDENTITY.md",
           "missing": false,
-          "rawChars": 633,
-          "injectedChars": 633,
+          "rawChars": 756,
+          "injectedChars": 756,
           "truncated": false
         },
         {
@@ -835,16 +835,16 @@
         ]
       }
     },
-    "inputTokens": 23440,
-    "outputTokens": 601,
-    "cacheRead": 91235,
-    "cacheWrite": 22201,
-    "totalTokens": 23363,
+    "inputTokens": 23673,
+    "outputTokens": 536,
+    "cacheRead": 92325,
+    "cacheWrite": 22419,
+    "totalTokens": 23583,
     "totalTokensFresh": true
   },
   "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080": {
     "sessionId": "e18157d8-6d52-43d5-8cb5-e887090c76a8",
-    "updatedAt": 1772438700686,
+    "updatedAt": 1772439275124,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -1260,7 +1260,7 @@
     "contextTokens": 200000,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772438565095,
+      "generatedAt": 1772439114496,
       "sessionId": "e18157d8-6d52-43d5-8cb5-e887090c76a8",
       "sessionKey": "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080",
       "provider": "minimax-portal",
@@ -1685,11 +1685,11 @@
         ]
       }
     },
-    "inputTokens": 1271354,
-    "outputTokens": 731,
-    "cacheRead": 166239,
-    "cacheWrite": 159702,
-    "totalTokens": 159706,
+    "inputTokens": 1285779,
+    "outputTokens": 2387,
+    "cacheRead": 184710,
+    "cacheWrite": 142496,
+    "totalTokens": 161844,
     "totalTokensFresh": true
   },
   "agent:main:quant-advisor": {
