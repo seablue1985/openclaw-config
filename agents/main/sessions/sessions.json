@@ -1,7 +1,7 @@
 {
   "agent:main:main": {
     "sessionId": "3da58fbc-7ccc-491e-bcea-b8c95488a1a9",
-    "updatedAt": 1772415822149,
+    "updatedAt": 1772417622175,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -410,7 +410,7 @@
     "contextTokens": 200000,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772415611364,
+      "generatedAt": 1772415822269,
       "sessionId": "3da58fbc-7ccc-491e-bcea-b8c95488a1a9",
       "sessionKey": "agent:main:main",
       "provider": "minimax-portal",
@@ -835,16 +835,16 @@
         ]
       }
     },
-    "inputTokens": 17939,
-    "outputTokens": 559,
-    "cacheRead": 91235,
-    "cacheWrite": 21196,
-    "totalTokens": 22239,
+    "inputTokens": 8734,
+    "outputTokens": 143,
+    "cacheRead": 57730,
+    "cacheWrite": 965,
+    "totalTokens": 22668,
     "totalTokensFresh": true
   },
   "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080": {
     "sessionId": "e18157d8-6d52-43d5-8cb5-e887090c76a8",
-    "updatedAt": 1772415821362,
+    "updatedAt": 1772416770209,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -1260,7 +1260,7 @@
     "contextTokens": 200000,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772415759183,
+      "generatedAt": 1772416753315,
       "sessionId": "e18157d8-6d52-43d5-8cb5-e887090c76a8",
       "sessionKey": "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080",
       "provider": "minimax-portal",
@@ -1685,11 +1685,11 @@
         ]
       }
     },
-    "inputTokens": 320260,
-    "outputTokens": 1328,
-    "cacheRead": 180317,
-    "cacheWrite": 0,
-    "totalTokens": 73008,
+    "inputTokens": 65427,
+    "outputTokens": 283,
+    "cacheRead": 36668,
+    "cacheWrite": 65020,
+    "totalTokens": 83725,
     "totalTokensFresh": true
   }
 }
