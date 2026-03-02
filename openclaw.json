@@ -1,7 +1,10 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.2.26",
-    "lastTouchedAt": "2026-03-01T03:50:18.583Z"
+    "lastTouchedAt": "2026-03-02T07:17:04.993Z"
+  },
+  "env": {
+    "QVERIS_API_KEY": "sk-HhmzUnoUIlQlHVHPrFVd4PeD6MMoNjkJ4Aq3BYSFxiY"
   },
   "wizard": {
     "lastRunAt": "2026-03-01T03:39:31.769Z",
@@ -72,12 +75,24 @@
       "compaction": {
         "mode": "safeguard"
       },
+      "timeoutSeconds": 300,
       "maxConcurrent": 4,
       "subagents": {
         "maxConcurrent": 8
+      }
+    },
+    "list": [
+      {
+        "id": "main"
       },
-      "timeoutSeconds": 300
-    }
+      {
+        "id": "quant-advisor",
+        "name": "quant-advisor",
+        "workspace": "/Users/ling/.openclaw/workspace-quant",
+        "agentDir": "/Users/ling/.openclaw/agents/quant-advisor/agent",
+        "model": "minimax"
+      }
+    ]
   },
   "messages": {
     "ackReactionScope": "group-mentions"
@@ -148,8 +163,5 @@
         "enabled": true
       }
     }
-  },
-  "env": {
-    "QVERIS_API_KEY": "sk-HhmzUnoUIlQlHVHPrFVd4PeD6MMoNjkJ4Aq3BYSFxiY"
   }
 }
