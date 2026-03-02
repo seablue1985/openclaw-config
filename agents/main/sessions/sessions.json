@@ -1,7 +1,7 @@
 {
   "agent:main:main": {
     "sessionId": "3da58fbc-7ccc-491e-bcea-b8c95488a1a9",
-    "updatedAt": 1772459631425,
+    "updatedAt": 1772461431437,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -410,7 +410,7 @@
     "contextTokens": 200000,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772457831615,
+      "generatedAt": 1772459631559,
       "sessionId": "3da58fbc-7ccc-491e-bcea-b8c95488a1a9",
       "sessionKey": "agent:main:main",
       "provider": "minimax-portal",
@@ -835,16 +835,16 @@
         ]
       }
     },
-    "inputTokens": 14667,
-    "outputTokens": 372,
+    "inputTokens": 14322,
+    "outputTokens": 409,
     "cacheRead": 55395,
     "cacheWrite": 22726,
-    "totalTokens": 23602,
+    "totalTokens": 23483,
     "totalTokensFresh": true
   },
   "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080": {
     "sessionId": "e18157d8-6d52-43d5-8cb5-e887090c76a8",
-    "updatedAt": 1772458166854,
+    "updatedAt": 1772461390104,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -858,8 +858,8 @@
     "lastAccountId": "default",
     "origin": {
       "label": "张玲",
-      "provider": "webchat",
-      "surface": "webchat",
+      "provider": "feishu",
+      "surface": "feishu",
       "chatType": "direct",
       "from": "feishu:ou_968a615509dc191f04220e18cda67080",
       "to": "user:ou_968a615509dc191f04220e18cda67080",
@@ -1254,13 +1254,13 @@
     },
     "authProfileOverride": "minimax-portal:default",
     "authProfileOverrideSource": "auto",
-    "authProfileOverrideCompactionCount": 0,
+    "authProfileOverrideCompactionCount": 1,
     "modelProvider": "minimax-portal",
     "model": "MiniMax-M2.5",
     "contextTokens": 200000,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772457866774,
+      "generatedAt": 1772461227153,
       "sessionId": "e18157d8-6d52-43d5-8cb5-e887090c76a8",
       "sessionKey": "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080",
       "provider": "minimax-portal",
@@ -1273,9 +1273,9 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 40675,
+        "chars": 40921,
         "projectContextChars": 14569,
-        "nonProjectContextChars": 26106
+        "nonProjectContextChars": 26352
       },
       "injectedWorkspaceFiles": [
         {
@@ -1685,10 +1685,14 @@
         ]
       }
     },
-    "totalTokens": 44320,
+    "totalTokens": 50796,
     "totalTokensFresh": true,
     "memoryFlushAt": 1772457398166,
-    "memoryFlushCompactionCount": 0
+    "memoryFlushCompactionCount": 0,
+    "inputTokens": 121683,
+    "outputTokens": 5377,
+    "cacheRead": 74208,
+    "cacheWrite": 45197
   },
   "agent:main:quant-advisor": {
     "sessionId": "9cfec43e-a256-4ba8-9670-a0034bee5fde",
