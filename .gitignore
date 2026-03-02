@@ -18,3 +18,4 @@ qlib_data/
 # 排除 workspace 子仓库
 workspace/
 browser/
+workspace-quant/
