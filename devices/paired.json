@@ -3,8 +3,8 @@
     "deviceId": "cc918713add09d94445850193ff4881882e7ec9d64ba32e5376c06b4f4e64b1b",
     "publicKey": "A0mITK-xT0JuLiN1Tl54e1qrf1v4lPLoTjBbgtKxVDs",
     "platform": "darwin",
-    "clientId": "gateway-client",
-    "clientMode": "backend",
+    "clientId": "cli",
+    "clientMode": "cli",
     "role": "operator",
     "roles": [
       "operator"
@@ -33,7 +33,6 @@
       }
     },
     "createdAtMs": 1772336433777,
-    "approvedAtMs": 1772336437076,
-    "displayName": "agent"
+    "approvedAtMs": 1772336437076
   }
 }

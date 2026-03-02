@@ -3333,14 +3333,14 @@ _openclaw_clawbot() {
 
 _openclaw_pairing_list() {
   _arguments -C \
-    "--channel[Channel ()]" \
+    "--channel[Channel (feishu)]" \
     "--account[Account id (for multi-account channels)]" \
     "--json[Print JSON]"
 }
 
 _openclaw_pairing_approve() {
   _arguments -C \
-    "--channel[Channel ()]" \
+    "--channel[Channel (feishu)]" \
     "--account[Account id (for multi-account channels)]" \
     "--notify[Notify the requester on the same channel]"
 }
