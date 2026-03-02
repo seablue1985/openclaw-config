@@ -1,7 +1,7 @@
 {
   "agent:main:main": {
     "sessionId": "3da58fbc-7ccc-491e-bcea-b8c95488a1a9",
-    "updatedAt": 1772430125998,
+    "updatedAt": 1772431926004,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -410,7 +410,7 @@
     "contextTokens": 200000,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772428326095,
+      "generatedAt": 1772430126121,
       "sessionId": "3da58fbc-7ccc-491e-bcea-b8c95488a1a9",
       "sessionKey": "agent:main:main",
       "provider": "minimax-portal",
@@ -835,16 +835,16 @@
         ]
       }
     },
-    "inputTokens": 13261,
-    "outputTokens": 372,
+    "inputTokens": 13252,
+    "outputTokens": 369,
     "cacheRead": 54741,
     "cacheWrite": 22201,
-    "totalTokens": 22893,
+    "totalTokens": 22886,
     "totalTokensFresh": true
   },
   "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080": {
     "sessionId": "e18157d8-6d52-43d5-8cb5-e887090c76a8",
-    "updatedAt": 1772424331210,
+    "updatedAt": 1772430445352,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -857,12 +857,12 @@
     "lastTo": "user:ou_968a615509dc191f04220e18cda67080",
     "lastAccountId": "default",
     "origin": {
-      "label": "张玲",
+      "label": "feishu:ou_968a615509dc191f04220e18cda67080",
       "provider": "feishu",
       "surface": "feishu",
       "chatType": "direct",
       "from": "feishu:ou_968a615509dc191f04220e18cda67080",
-      "to": "user:ou_968a615509dc191f04220e18cda67080",
+      "to": "ou_968a615509dc191f04220e18cda67080",
       "accountId": "default"
     },
     "sessionFile": "/Users/ling/.openclaw/agents/main/sessions/e18157d8-6d52-43d5-8cb5-e887090c76a8.jsonl",
@@ -1260,7 +1260,7 @@
     "contextTokens": 200000,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772421415860,
+      "generatedAt": 1772430322796,
       "sessionId": "e18157d8-6d52-43d5-8cb5-e887090c76a8",
       "sessionKey": "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080",
       "provider": "minimax-portal",
@@ -1685,11 +1685,11 @@
         ]
       }
     },
-    "inputTokens": 1274702,
-    "outputTokens": 871,
-    "cacheRead": 201674,
-    "cacheWrite": 128963,
-    "totalTokens": 143585,
+    "inputTokens": 899783,
+    "outputTokens": 2426,
+    "cacheRead": 128338,
+    "cacheWrite": 144993,
+    "totalTokens": 147666,
     "totalTokensFresh": true
   }
 }
