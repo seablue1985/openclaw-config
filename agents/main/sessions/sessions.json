@@ -1,7 +1,7 @@
 {
   "agent:main:main": {
     "sessionId": "3da58fbc-7ccc-491e-bcea-b8c95488a1a9",
-    "updatedAt": 1772408108528,
+    "updatedAt": 1772413888580,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -844,7 +844,7 @@
   },
   "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080": {
     "sessionId": "e18157d8-6d52-43d5-8cb5-e887090c76a8",
-    "updatedAt": 1772413578651,
+    "updatedAt": 1772413888393,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -1260,7 +1260,7 @@
     "contextTokens": 200000,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772406476684,
+      "generatedAt": 1772413578844,
       "sessionId": "e18157d8-6d52-43d5-8cb5-e887090c76a8",
       "sessionKey": "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080",
       "provider": "minimax-portal",
@@ -1685,11 +1685,11 @@
         ]
       }
     },
-    "inputTokens": 102625,
-    "outputTokens": 2759,
-    "cacheRead": 330012,
-    "cacheWrite": 18738,
-    "totalTokens": 29208,
+    "inputTokens": 320233,
+    "outputTokens": 1534,
+    "cacheRead": 348346,
+    "cacheWrite": 12788,
+    "totalTokens": 38452,
     "totalTokensFresh": true
   }
 }
