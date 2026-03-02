@@ -1,7 +1,7 @@
 {
   "agent:main:main": {
     "sessionId": "3da58fbc-7ccc-491e-bcea-b8c95488a1a9",
-    "updatedAt": 1772474031549,
+    "updatedAt": 1772475831555,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -410,7 +410,7 @@
     "contextTokens": 200000,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772472231670,
+      "generatedAt": 1772474031679,
       "sessionId": "3da58fbc-7ccc-491e-bcea-b8c95488a1a9",
       "sessionKey": "agent:main:main",
       "provider": "minimax-portal",
@@ -835,11 +835,11 @@
         ]
       }
     },
-    "inputTokens": 14229,
-    "outputTokens": 411,
-    "cacheRead": 55395,
+    "inputTokens": 9237,
+    "outputTokens": 154,
+    "cacheRead": 36930,
     "cacheWrite": 22726,
-    "totalTokens": 23458,
+    "totalTokens": 23136,
     "totalTokensFresh": true
   },
   "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080": {
