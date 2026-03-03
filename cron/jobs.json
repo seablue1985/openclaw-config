@@ -1,4 +1,31 @@
 {
   "version": 1,
-  "jobs": []
+  "jobs": [
+    {
+      "id": "8fa1bf23-98ad-4bf3-b0a7-20c52675cc7c",
+      "name": "健身提醒",
+      "description": "工作日上午11:30健身提醒",
+      "enabled": true,
+      "createdAtMs": 1772510751813,
+      "updatedAtMs": 1772510751813,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 11 * * 1-5"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "请发送当天的健身计划给用户"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_968a615509dc191f04220e18cda67080"
+      },
+      "state": {
+        "nextRunAtMs": 1772595000000
+      }
+    }
+  ]
 }
