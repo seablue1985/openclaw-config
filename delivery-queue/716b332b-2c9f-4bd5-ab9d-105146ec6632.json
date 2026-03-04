@@ -1,0 +1,19 @@
+{
+  "id": "716b332b-2c9f-4bd5-ab9d-105146ec6632",
+  "enqueuedAt": 1772586148946,
+  "channel": "feishu",
+  "to": "ou_968a615509dc191f04220e18cda67080",
+  "accountId": "default",
+  "payloads": [
+    {
+      "text": "Connection error.",
+      "mediaUrls": []
+    }
+  ],
+  "threadId": null,
+  "replyToId": null,
+  "bestEffort": false,
+  "retryCount": 1,
+  "lastAttemptAt": 1772586148961,
+  "lastError": "Cannot destructure property 'tenant_access_token' of '(intermediate value)' as it is undefined."
+}
