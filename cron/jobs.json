@@ -16,7 +16,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "请发送当天的健身计划给用户"
+        "message": "发送当天健身计划:\n周一：胸\n周二：背+三头\n周三：肩+有氧\n周四：臀+有氧\n周五：二头+三头+有氧\n周末：休息"
       },
       "delivery": {
         "mode": "announce",
