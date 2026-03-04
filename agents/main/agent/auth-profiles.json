@@ -9,9 +9,12 @@
       "expires": 1803872331523
     }
   },
+  "lastGood": {
+    "minimax-portal": "minimax-portal:default"
+  },
   "usageStats": {
     "minimax-portal:default": {
-      "lastUsed": 1772607457651,
+      "lastUsed": 1772620437614,
       "errorCount": 0
     }
   }

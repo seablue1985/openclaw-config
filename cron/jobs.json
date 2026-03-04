@@ -41,7 +41,7 @@
       "description": "工作日上午9点量化策略信号推送",
       "enabled": true,
       "createdAtMs": 1772552205426,
-      "updatedAtMs": 1772586148966,
+      "updatedAtMs": 1772607537372,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * 1-5"
@@ -59,13 +59,14 @@
       },
       "state": {
         "nextRunAtMs": 1772672400000,
-        "lastRunAtMs": 1772586109272,
+        "lastRunAtMs": 1772607446741,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 39694,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1,
-        "runningAtMs": 1772607446741
+        "lastDurationMs": 90631,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 2,
+        "lastError": "⚠️ ✉️ Message failed",
+        "lastDelivered": true
       }
     }
   ]

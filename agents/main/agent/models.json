@@ -38,6 +38,38 @@
           "contextWindow": 200000,
           "maxTokens": 8192,
           "api": "anthropic-messages"
+        },
+        {
+          "id": "MiniMax-M2.5-highspeed",
+          "name": "MiniMax M2.5 Highspeed",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0.3,
+            "output": 1.2,
+            "cacheRead": 0.03,
+            "cacheWrite": 0.12
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "MiniMax-M2.5-Lightning",
+          "name": "MiniMax M2.5 Lightning",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0.3,
+            "output": 1.2,
+            "cacheRead": 0.03,
+            "cacheWrite": 0.12
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
         }
       ],
       "apiKey": "minimax-oauth"
@@ -47,38 +79,6 @@
       "api": "anthropic-messages",
       "authHeader": true,
       "models": [
-        {
-          "id": "MiniMax-M2.1",
-          "name": "MiniMax M2.1",
-          "reasoning": false,
-          "input": [
-            "text"
-          ],
-          "cost": {
-            "input": 0.3,
-            "output": 1.2,
-            "cacheRead": 0.03,
-            "cacheWrite": 0.12
-          },
-          "contextWindow": 200000,
-          "maxTokens": 8192
-        },
-        {
-          "id": "MiniMax-M2.1-lightning",
-          "name": "MiniMax M2.1 Lightning",
-          "reasoning": false,
-          "input": [
-            "text"
-          ],
-          "cost": {
-            "input": 0.3,
-            "output": 1.2,
-            "cacheRead": 0.03,
-            "cacheWrite": 0.12
-          },
-          "contextWindow": 200000,
-          "maxTokens": 8192
-        },
         {
           "id": "MiniMax-VL-01",
           "name": "MiniMax VL 01",
@@ -99,6 +99,22 @@
         {
           "id": "MiniMax-M2.5",
           "name": "MiniMax M2.5",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0.3,
+            "output": 1.2,
+            "cacheRead": 0.03,
+            "cacheWrite": 0.12
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "MiniMax-M2.5-highspeed",
+          "name": "MiniMax M2.5 Highspeed",
           "reasoning": true,
           "input": [
             "text"

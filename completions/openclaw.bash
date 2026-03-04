@@ -30,7 +30,7 @@ _openclaw_completion() {
         return 0
         ;;
       config)
-        opts="get set unset --section"
+        opts="get set unset file validate --section"
         COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
         return 0
         ;;
