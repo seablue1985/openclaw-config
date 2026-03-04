@@ -4,7 +4,8 @@
     "lastTouchedAt": "2026-03-02T07:17:04.993Z"
   },
   "env": {
-    "QVERIS_API_KEY": "sk-HhmzUnoUIlQlHVHPrFVd4PeD6MMoNjkJ4Aq3BYSFxiY"
+    "QVERIS_API_KEY": "sk-HhmzUnoUIlQlHVHPrFVd4PeD6MMoNjkJ4Aq3BYSFxiY",
+    "MINIMAX_API_KEY": "sk-cp-TypyXejs2B15_iA2InVLaRhZBTL_wxRXO5ut0AXIl6elvqblH6fWp3j8VaUulYChdYV6fEHnXtMyNwRhae"
   },
   "wizard": {
     "lastRunAt": "2026-03-01T03:39:31.769Z",
@@ -19,7 +20,7 @@
     "providers": {
       "minimax-portal": {
         "baseUrl": "https://api.minimaxi.com/anthropic",
-        "apiKey": "minimax-oauth",
+        "apiKey": "MINIMAX_API_KEY",
         "api": "anthropic-messages",
         "models": [
           {

@@ -1,7 +1,7 @@
 {
   "agent:main:main": {
     "sessionId": "8fa93a40-0f5c-4535-9af7-bc81498a9c1f",
-    "updatedAt": 1772588651052,
+    "updatedAt": 1772589161687,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -398,7 +398,7 @@
     "contextTokens": 200000,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772588410958,
+      "generatedAt": 1772589152078,
       "sessionId": "8fa93a40-0f5c-4535-9af7-bc81498a9c1f",
       "sessionKey": "agent:main:main",
       "provider": "minimax-portal",
@@ -819,16 +819,16 @@
         ]
       }
     },
-    "inputTokens": 32050,
-    "outputTokens": 477,
-    "cacheRead": 91650,
-    "cacheWrite": 24142,
-    "totalTokens": 25053,
+    "inputTokens": 8224,
+    "outputTokens": 253,
+    "cacheRead": 36660,
+    "cacheWrite": 7856,
+    "totalTokens": 26518,
     "totalTokensFresh": true
   },
   "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080": {
     "sessionId": "961aad07-32fc-4531-8b4f-31cd6e7fe5a4",
-    "updatedAt": 1772588617483,
+    "updatedAt": 1772589555385,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -842,8 +842,8 @@
     "lastAccountId": "default",
     "origin": {
       "label": "张玲",
-      "provider": "webchat",
-      "surface": "webchat",
+      "provider": "feishu",
+      "surface": "feishu",
       "chatType": "direct",
       "from": "feishu:ou_968a615509dc191f04220e18cda67080",
       "to": "user:ou_968a615509dc191f04220e18cda67080",
@@ -1232,7 +1232,7 @@
     "contextTokens": 200000,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772588579987,
+      "generatedAt": 1772589478929,
       "sessionId": "961aad07-32fc-4531-8b4f-31cd6e7fe5a4",
       "sessionKey": "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080",
       "provider": "minimax-portal",
@@ -1245,9 +1245,9 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 40359,
+        "chars": 40605,
         "projectContextChars": 14594,
-        "nonProjectContextChars": 25765
+        "nonProjectContextChars": 26011
       },
       "injectedWorkspaceFiles": [
         {
@@ -1653,11 +1653,11 @@
         ]
       }
     },
-    "inputTokens": 218695,
-    "outputTokens": 553,
-    "cacheRead": 162855,
-    "cacheWrite": 982,
-    "totalTokens": 127862,
+    "inputTokens": 118459,
+    "outputTokens": 154,
+    "cacheRead": 154008,
+    "cacheWrite": 1036,
+    "totalTokens": 136840,
     "totalTokensFresh": true,
     "channel": "feishu"
   },
