@@ -7,7 +7,7 @@
       "description": "工作日上午11:30健身提醒",
       "enabled": true,
       "createdAtMs": 1772510751813,
-      "updatedAtMs": 1772510751813,
+      "updatedAtMs": 1772595262391,
       "schedule": {
         "kind": "cron",
         "expr": "30 11 * * 1-5"
@@ -24,8 +24,15 @@
         "to": "ou_968a615509dc191f04220e18cda67080"
       },
       "state": {
-        "nextRunAtMs": 1772595000000,
-        "runningAtMs": 1772595000007
+        "nextRunAtMs": 1772681400000,
+        "lastRunAtMs": 1772595000009,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 262382,
+        "lastError": "⚠️ ✉️ Message failed",
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 1
       }
     },
     {

@@ -1,7 +1,7 @@
 {
   "agent:main:main": {
     "sessionId": "8fa93a40-0f5c-4535-9af7-bc81498a9c1f",
-    "updatedAt": 1772594991556,
+    "updatedAt": 1772596782912,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -398,7 +398,7 @@
     "contextTokens": 200000,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772593237216,
+      "generatedAt": 1772596691435,
       "sessionId": "8fa93a40-0f5c-4535-9af7-bc81498a9c1f",
       "sessionKey": "agent:main:main",
       "provider": "minimax-portal",
@@ -819,16 +819,16 @@
         ]
       }
     },
-    "inputTokens": 36,
-    "outputTokens": 382,
-    "cacheRead": 0,
-    "cacheWrite": 20203,
-    "totalTokens": 20239,
+    "inputTokens": 2982,
+    "outputTokens": 231,
+    "cacheRead": 18330,
+    "cacheWrite": 20902,
+    "totalTokens": 21276,
     "totalTokensFresh": true
   },
   "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080": {
     "sessionId": "961aad07-32fc-4531-8b4f-31cd6e7fe5a4",
-    "updatedAt": 1772594919830,
+    "updatedAt": 1772596782111,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -842,8 +842,8 @@
     "lastAccountId": "default",
     "origin": {
       "label": "张玲",
-      "provider": "webchat",
-      "surface": "webchat",
+      "provider": "feishu",
+      "surface": "feishu",
       "chatType": "direct",
       "from": "feishu:ou_968a615509dc191f04220e18cda67080",
       "to": "user:ou_968a615509dc191f04220e18cda67080",
@@ -1232,7 +1232,7 @@
     "contextTokens": 200000,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772594619782,
+      "generatedAt": 1772596719111,
       "sessionId": "961aad07-32fc-4531-8b4f-31cd6e7fe5a4",
       "sessionKey": "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080",
       "provider": "minimax-portal",
@@ -1245,9 +1245,9 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 40359,
+        "chars": 40605,
         "projectContextChars": 14594,
-        "nonProjectContextChars": 25765
+        "nonProjectContextChars": 26011
       },
       "injectedWorkspaceFiles": [
         {
@@ -1653,11 +1653,11 @@
         ]
       }
     },
-    "inputTokens": 417052,
-    "outputTokens": 1880,
-    "cacheRead": 55008,
-    "cacheWrite": 155457,
-    "totalTokens": 157429,
+    "inputTokens": 283428,
+    "outputTokens": 141,
+    "cacheRead": 36834,
+    "cacheWrite": 159755,
+    "totalTokens": 160330,
     "totalTokensFresh": true,
     "channel": "feishu"
   },
@@ -3638,11 +3638,20 @@
     },
     "authProfileOverride": "minimax-portal:default",
     "authProfileOverrideSource": "auto",
-    "authProfileOverrideCompactionCount": 0
+    "authProfileOverrideCompactionCount": 0,
+    "modelProvider": "minimax-portal",
+    "model": "MiniMax-M2.5",
+    "contextTokens": 200000,
+    "inputTokens": 20019,
+    "outputTokens": 1684,
+    "totalTokens": 21548,
+    "totalTokensFresh": true,
+    "cacheRead": 147062,
+    "cacheWrite": 9402
   },
   "agent:main:cron:8fa1bf23-98ad-4bf3-b0a7-20c52675cc7c:run:c3562816-3af6-45e2-b805-52cc1dd3a159": {
     "sessionId": "c3562816-3af6-45e2-b805-52cc1dd3a159",
-    "updatedAt": 1772595000082,
+    "updatedAt": 1772595000087,
     "systemSent": true,
     "label": "Cron: 健身提醒",
     "skillsSnapshot": {
@@ -4017,6 +4026,18 @@
         }
       ],
       "version": 0
-    }
+    },
+    "authProfileOverride": "minimax-portal:default",
+    "authProfileOverrideSource": "auto",
+    "authProfileOverrideCompactionCount": 0,
+    "modelProvider": "minimax-portal",
+    "model": "MiniMax-M2.5",
+    "contextTokens": 200000,
+    "inputTokens": 20019,
+    "outputTokens": 1684,
+    "totalTokens": 21548,
+    "totalTokensFresh": true,
+    "cacheRead": 147062,
+    "cacheWrite": 9402
   }
 }
