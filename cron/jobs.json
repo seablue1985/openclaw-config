@@ -24,7 +24,8 @@
         "to": "ou_968a615509dc191f04220e18cda67080"
       },
       "state": {
-        "nextRunAtMs": 1772595000000
+        "nextRunAtMs": 1772595000000,
+        "runningAtMs": 1772595000007
       }
     },
     {
