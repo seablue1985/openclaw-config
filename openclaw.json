@@ -5,7 +5,8 @@
   },
   "env": {
     "QVERIS_API_KEY": "sk-HhmzUnoUIlQlHVHPrFVd4PeD6MMoNjkJ4Aq3BYSFxiY",
-    "MINIMAX_API_KEY": "sk-cp-TypyXejs2B15_iA2InVLaRhZBTL_wxRXO5ut0AXIl6elvqblH6fWp3j8VaUulYChdYV6fEHnXtMyNwRhae"
+    "MINIMAX_API_KEY": "sk-cp-TypyXejs2B15_iA2InVLaRhZBTL_wxRXO5ut0AXIl6elvqblH6fWp3j8VaUulYChdYV6fEHnXtMyNwRhae",
+    "AIHUBMIX_API_KEY": "sk-B2eHf2gNLcrUeyZZA7D0F25c20354aCaB57fC4A9A6684c14"
   },
   "wizard": {
     "lastRunAt": "2026-03-01T03:39:31.769Z",
