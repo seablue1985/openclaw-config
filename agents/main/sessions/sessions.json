@@ -1,7 +1,7 @@
 {
   "agent:main:main": {
     "sessionId": "3599cfb6-3ccf-4b4d-972c-e8c930e46776",
-    "updatedAt": 1772622224051,
+    "updatedAt": 1772633369416,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -401,7 +401,7 @@
     "contextTokens": 200000,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772620424137,
+      "generatedAt": 1772632733929,
       "sessionId": "3599cfb6-3ccf-4b4d-972c-e8c930e46776",
       "sessionKey": "agent:main:main",
       "provider": "minimax-portal",
@@ -414,9 +414,9 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 40678,
+        "chars": 41045,
         "projectContextChars": 14594,
-        "nonProjectContextChars": 26084
+        "nonProjectContextChars": 26451
       },
       "injectedWorkspaceFiles": [
         {
@@ -828,17 +828,17 @@
         ]
       }
     },
-    "inputTokens": 559519,
-    "outputTokens": 373,
-    "cacheRead": 19810,
+    "inputTokens": 290230,
+    "outputTokens": 915,
+    "cacheRead": 19816,
     "cacheWrite": 0,
-    "totalTokens": 132455,
+    "totalTokens": 116626,
     "totalTokensFresh": true,
     "lastTo": "heartbeat"
   },
   "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080": {
     "sessionId": "961aad07-32fc-4531-8b4f-31cd6e7fe5a4",
-    "updatedAt": 1772622173170,
+    "updatedAt": 1772632384545,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -1236,13 +1236,13 @@
     },
     "authProfileOverride": "minimax-portal:default",
     "authProfileOverrideSource": "auto",
-    "authProfileOverrideCompactionCount": 0,
+    "authProfileOverrideCompactionCount": 1,
     "modelProvider": "minimax-portal",
     "model": "MiniMax-M2.5",
     "contextTokens": 200000,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772621907931,
+      "generatedAt": 1772631166376,
       "sessionId": "961aad07-32fc-4531-8b4f-31cd6e7fe5a4",
       "sessionKey": "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080",
       "provider": "minimax-portal",
@@ -1255,9 +1255,9 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 40965,
+        "chars": 40967,
         "projectContextChars": 14594,
-        "nonProjectContextChars": 26371
+        "nonProjectContextChars": 26373
       },
       "injectedWorkspaceFiles": [
         {
@@ -1669,14 +1669,15 @@
         ]
       }
     },
-    "inputTokens": 804015,
-    "outputTokens": 592,
-    "cacheRead": 0,
+    "inputTokens": 699601,
+    "outputTokens": 2303,
+    "cacheRead": 19954,
     "cacheWrite": 0,
-    "totalTokensFresh": false,
+    "totalTokensFresh": true,
     "channel": "feishu",
-    "memoryFlushAt": 1772607683843,
-    "memoryFlushCompactionCount": 0
+    "memoryFlushAt": 1772622559060,
+    "memoryFlushCompactionCount": 1,
+    "totalTokens": 137786
   },
   "agent:main:quant-advisor": {
     "sessionId": "9cfec43e-a256-4ba8-9670-a0034bee5fde",
