@@ -1,7 +1,7 @@
 {
   "agent:main:main": {
     "sessionId": "3599cfb6-3ccf-4b4d-972c-e8c930e46776",
-    "updatedAt": 1772633369416,
+    "updatedAt": 1772638769463,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -401,7 +401,7 @@
     "contextTokens": 200000,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772632733929,
+      "generatedAt": 1772636969558,
       "sessionId": "3599cfb6-3ccf-4b4d-972c-e8c930e46776",
       "sessionKey": "agent:main:main",
       "provider": "minimax-portal",
@@ -414,9 +414,9 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 41045,
+        "chars": 40678,
         "projectContextChars": 14594,
-        "nonProjectContextChars": 26451
+        "nonProjectContextChars": 26084
       },
       "injectedWorkspaceFiles": [
         {
@@ -828,11 +828,11 @@
         ]
       }
     },
-    "inputTokens": 290230,
-    "outputTokens": 915,
-    "cacheRead": 19816,
+    "inputTokens": 2855,
+    "outputTokens": 312,
+    "cacheRead": 19810,
     "cacheWrite": 0,
-    "totalTokens": 116626,
+    "totalTokens": 21340,
     "totalTokensFresh": true,
     "lastTo": "heartbeat"
   },
