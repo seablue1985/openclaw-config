@@ -191,6 +191,9 @@
         },
         "minimax-portal/MiniMax-M2.5-Lightning": {
           "alias": "minimax-m2.5-lightning"
+        },
+        "gmn/gpt-5.3-codex": {
+          "alias": "GPT 5.3 Codex"
         }
       },
       "workspace": "/Users/ling/.openclaw/workspace",
@@ -198,7 +201,7 @@
         "mode": "safeguard"
       },
       "thinkingDefault": "xhigh",
-      "timeoutSeconds": 300,
+      "timeoutSeconds": 900,
       "maxConcurrent": 4,
       "subagents": {
         "maxConcurrent": 8

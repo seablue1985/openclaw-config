@@ -4,7 +4,7 @@
     "publicKey": "A0mITK-xT0JuLiN1Tl54e1qrf1v4lPLoTjBbgtKxVDs",
     "platform": "darwin",
     "clientId": "cli",
-    "clientMode": "probe",
+    "clientMode": "cli",
     "role": "operator",
     "roles": [
       "operator"
@@ -101,7 +101,7 @@
           "operator.pairing"
         ],
         "createdAtMs": 1772437180457,
-        "lastUsedAtMs": 1772716428834
+        "lastUsedAtMs": 1772752179640
       }
     },
     "createdAtMs": 1772437180457,
