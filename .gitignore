@@ -1,21 +1,14 @@
-# 排除敏感文件
-credentials/
-*.log
+# Credentials - DO NOT COMMIT
+credentials.env
+*.env
+
+# OS files
 .DS_Store
-*.bak
+Thumbs.db
+
+# Logs
+*.log
+
+# Temp
 *.tmp
-
-# 排除临时文件
-*.pyc
-__pycache__/
-node_modules/
-
-# 排除大型数据文件
-qlib_data/
-*.pkl
-*.csv
-
-# 排除 workspace 子仓库
-workspace/
-browser/
-workspace-quant/
+*.bak

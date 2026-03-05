@@ -1,7 +1,12 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.2.26",
-    "lastTouchedAt": "2026-03-01T03:50:18.583Z"
+    "lastTouchedAt": "2026-03-02T07:17:04.993Z"
+  },
+  "env": {
+    "QVERIS_API_KEY": "sk-HhmzUnoUIlQlHVHPrFVd4PeD6MMoNjkJ4Aq3BYSFxiY",
+    "MINIMAX_API_KEY": "sk-cp-TypyXejs2B15_iA2InVLaRhZBTL_wxRXO5ut0AXIl6elvqblH6fWp3j8VaUulYChdYV6fEHnXtMyNwRhae",
+    "AIHUBMIX_API_KEY": "sk-B2eHf2gNLcrUeyZZA7D0F25c20354aCaB57fC4A9A6684c14"
   },
   "wizard": {
     "lastRunAt": "2026-03-01T03:39:31.769Z",
@@ -10,19 +15,13 @@
     "lastRunMode": "local"
   },
   "auth": {
-    "profiles": {
-      "minimax-portal:default": {
-        "provider": "minimax-portal",
-        "mode": "api",
-        "apiKey": "sk-xxxREDACTED-TypyXejs2B15_iA2InVLaRhZBTL_wxRXO5ut0AXIl6elvqblH6fWp3j8VaUulYChdYV6fEHnXtMyNwRhaeHBmxI_dFoOwRlmtPdSZt6pwrMvqKU92zBfir8"
-      }
-    }
+    "profiles": {}
   },
   "models": {
     "providers": {
       "minimax-portal": {
         "baseUrl": "https://api.minimaxi.com/anthropic",
-        "apiKey": "minimax-oauth",
+        "apiKey": "MINIMAX_API_KEY",
         "api": "anthropic-messages",
         "models": [
           {
@@ -78,12 +77,24 @@
       "compaction": {
         "mode": "safeguard"
       },
+      "timeoutSeconds": 300,
       "maxConcurrent": 4,
       "subagents": {
         "maxConcurrent": 8
+      }
+    },
+    "list": [
+      {
+        "id": "main"
       },
-      "timeoutSeconds": 300
-    }
+      {
+        "id": "quant-advisor",
+        "name": "quant-advisor",
+        "workspace": "/Users/ling/.openclaw/workspace-quant",
+        "agentDir": "/Users/ling/.openclaw/agents/quant-advisor/agent",
+        "model": "minimax"
+      }
+    ]
   },
   "messages": {
     "ackReactionScope": "group-mentions"
@@ -119,7 +130,7 @@
   "channels": {
     "feishu": {
       "appId": "cli_a928c429d9785cc6",
-      "appSecret": " xxxREDACTED"
+      "appSecret": " 8DdEUA04tEjcp0CX7Z4L0gaxRbtutjon"
     }
   },
   "gateway": {

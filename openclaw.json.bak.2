@@ -1,8 +1,9 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.2.26",
-    "lastTouchedAt": "2026-03-01T03:42:26.811Z"
+    "lastTouchedAt": "2026-03-02T07:17:04.993Z"
   },
+  "env": {},
   "wizard": {
     "lastRunAt": "2026-03-01T03:39:31.769Z",
     "lastRunVersion": "2026.2.26",
@@ -10,18 +11,13 @@
     "lastRunMode": "local"
   },
   "auth": {
-    "profiles": {
-      "minimax-portal:default": {
-        "provider": "minimax-portal",
-        "mode": "oauth"
-      }
-    }
+    "profiles": {}
   },
   "models": {
     "providers": {
       "minimax-portal": {
         "baseUrl": "https://api.minimaxi.com/anthropic",
-        "apiKey": "minimax-oauth",
+        "apiKey": "MINIMAX_API_KEY",
         "api": "anthropic-messages",
         "models": [
           {
@@ -57,14 +53,86 @@
             "maxTokens": 8192
           }
         ]
+      },
+      "codex": {
+        "baseUrl": "https://gmncode.cn",
+        "apiKey": "CODEX_API_KEY",
+        "api": "openai-responses",
+        "models": [
+          {
+            "id": "gpt-5.3-codex",
+            "name": "GPT-5.3 Codex",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 64000
+          }
+        ]
+      },
+      "gmn": {
+        "baseUrl": "https://gmncode.cn/v1",
+        "apiKey": "sk-e529fe673ca03ba271c0bff5cae0dbcd06b57943f4bdb12ada983aa22eaba8b6",
+        "api": "openai-responses",
+        "headers": {
+          "User-Agent": "codex-rs/1.0.7"
+        },
+        "authHeader": true,
+        "models": [
+          {
+            "id": "gpt-5.3-codex",
+            "name": "gpt-5.3-codex",
+            "api": "openai-responses",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "gpt-5.2-codex",
+            "name": "gpt-5.2-codex",
+            "api": "openai-responses",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          }
+        ]
       }
-    }
+    },
+    "mode": "merge"
   },
   "agents": {
     "defaults": {
+      "workspace": "/Users/ling/.openclaw/workspace",
       "model": {
-        "primary": "minimax-portal/MiniMax-M2.5"
+        "primary": "gmn/gpt-5.3-codex"
       },
+      "thinkingDefault": "xhigh",
       "models": {
         "minimax-portal/MiniMax-M2.1": {
           "alias": "minimax-m2.1"
@@ -73,15 +141,27 @@
           "alias": "minimax-m2.5"
         }
       },
-      "workspace": "/Users/ling/.openclaw/workspace",
       "compaction": {
         "mode": "safeguard"
       },
+      "timeoutSeconds": 300,
       "maxConcurrent": 4,
       "subagents": {
         "maxConcurrent": 8
       }
-    }
+    },
+    "list": [
+      {
+        "id": "main"
+      },
+      {
+        "id": "quant-advisor",
+        "name": "quant-advisor",
+        "workspace": "/Users/ling/.openclaw/workspace-quant",
+        "agentDir": "/Users/ling/.openclaw/agents/quant-advisor/agent",
+        "model": "minimax"
+      }
+    ]
   },
   "messages": {
     "ackReactionScope": "group-mentions"
@@ -114,13 +194,19 @@
       }
     }
   },
+  "channels": {
+    "feishu": {
+      "appId": "cli_a928c429d9785cc6",
+      "appSecret": "env:FEISHU_APP_SECRET"
+    }
+  },
   "gateway": {
     "port": 18789,
     "mode": "local",
     "bind": "loopback",
     "auth": {
       "mode": "token",
-      "token": "acd7a292fba07cd590248d58ece4a5e24bb9c878563c7675"
+      "token": "env:GATEWAY_TOKEN"
     },
     "tailscale": {
       "mode": "off",
@@ -144,6 +230,17 @@
       },
       "feishu": {
         "enabled": true
+      }
+    }
+  },
+  "skills": {
+    "entries": {
+      "memos": {
+        "enabled": true,
+        "env": {
+          "MEMOS_URL": "http://localhost:5230",
+          "MEMOS_TOKEN": "env:MEMOS_TOKEN"
+        }
       }
     }
   }

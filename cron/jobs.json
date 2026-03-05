@@ -7,7 +7,7 @@
       "description": "工作日上午11:30健身提醒",
       "enabled": true,
       "createdAtMs": 1772510751813,
-      "updatedAtMs": 1772595262391,
+      "updatedAtMs": 1772681492608,
       "schedule": {
         "kind": "cron",
         "expr": "30 11 * * 1-5"
@@ -24,15 +24,15 @@
         "to": "ou_968a615509dc191f04220e18cda67080"
       },
       "state": {
-        "nextRunAtMs": 1772681400000,
-        "lastRunAtMs": 1772595000009,
+        "nextRunAtMs": 1772767800000,
+        "lastRunAtMs": 1772681400013,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 262382,
-        "lastError": "⚠️ ✉️ Message failed",
+        "lastDurationMs": 92595,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 1
+        "consecutiveErrors": 2,
+        "lastError": "⚠️ ✉️ Message failed"
       }
     },
     {
@@ -67,6 +67,31 @@
         "consecutiveErrors": 3,
         "lastDelivered": true,
         "lastError": "⚠️ ✉️ Message failed"
+      }
+    },
+    {
+      "id": "3c85911f-26c5-4a2e-9734-fb85f51cf9b8",
+      "name": "记忆同步Memos",
+      "enabled": true,
+      "createdAtMs": 1772683570660,
+      "updatedAtMs": 1772685113367,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 * * *"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行以下任务：\\n1. 读取 ~/.openclaw/workspace/MEMORY.md\\n2. 读取 ~/.openclaw/workspace/memory/ 目录下的今日记忆\\n3. 使用memos skill创建新memo保存重要内容（使用命令：MEMOS_URL=http://localhost:5230 MEMOS_TOKEN=memos_pat_q7kEoyR3sn0Toh8tfUBZjBtSOkQinTNc python3 ~/.openclaw/workspace/skills/memos/memos.py create）\\n4. 如果没有新内容则静默结束"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_968a615509dc191f04220e18cda67080"
+      },
+      "state": {
+        "nextRunAtMs": 1772762400000
       }
     }
   ]

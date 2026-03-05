@@ -1,4 +1,13 @@
 {
+  "meta": {
+    "lastTouchedVersion": "2026.2.26",
+    "lastTouchedAt": "2026-03-02T07:17:04.993Z"
+  },
+  "env": {
+    "QVERIS_API_KEY": "sk-xxxREDACTED",
+    "MINIMAX_API_KEY": "sk-xxxREDACTED-TypyXejs2B15_iA2InVLaRhZBTL_wxRXO5ut0AXIl6elvqblH6fWp3j8VaUulYChdYV6fEHnXtMyNwRhae",
+    "AIHUBMIX_API_KEY": "sk-xxxREDACTED"
+  },
   "wizard": {
     "lastRunAt": "2026-03-01T03:39:31.769Z",
     "lastRunVersion": "2026.2.26",
@@ -6,18 +15,13 @@
     "lastRunMode": "local"
   },
   "auth": {
-    "profiles": {
-      "minimax-portal:default": {
-        "provider": "minimax-portal",
-        "mode": "oauth"
-      }
-    }
+    "profiles": {}
   },
   "models": {
     "providers": {
       "minimax-portal": {
         "baseUrl": "https://api.minimaxi.com/anthropic",
-        "apiKey": "minimax-oauth",
+        "apiKey": "MINIMAX_API_KEY",
         "api": "anthropic-messages",
         "models": [
           {
@@ -73,11 +77,24 @@
       "compaction": {
         "mode": "safeguard"
       },
+      "timeoutSeconds": 300,
       "maxConcurrent": 4,
       "subagents": {
         "maxConcurrent": 8
       }
-    }
+    },
+    "list": [
+      {
+        "id": "main"
+      },
+      {
+        "id": "quant-advisor",
+        "name": "quant-advisor",
+        "workspace": "/Users/ling/.openclaw/workspace-quant",
+        "agentDir": "/Users/ling/.openclaw/agents/quant-advisor/agent",
+        "model": "minimax"
+      }
+    ]
   },
   "messages": {
     "ackReactionScope": "group-mentions"
@@ -110,6 +127,12 @@
       }
     }
   },
+  "channels": {
+    "feishu": {
+      "appId": "cli_a928c429d9785cc6",
+      "appSecret": " xxxREDACTED"
+    }
+  },
   "gateway": {
     "port": 18789,
     "mode": "local",
@@ -137,11 +160,21 @@
     "entries": {
       "minimax-portal-auth": {
         "enabled": true
+      },
+      "feishu": {
+        "enabled": true
       }
     }
   },
-  "meta": {
-    "lastTouchedVersion": "2026.2.26",
-    "lastTouchedAt": "2026-03-01T03:39:31.801Z"
-  }
+    "skills": {
+        "entries": {
+            "memos": {
+                "enabled": true,
+                "env": {
+                    "MEMOS_URL": "http://localhost:5230",
+                    "MEMOS_TOKEN": "memos_pat_q7kEoyR3sn0Toh8tfUBZjBtSOkQinTNc"
+                }
+            }
+        }
+    }
 }
