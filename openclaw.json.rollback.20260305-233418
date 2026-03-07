@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.2",
-    "lastTouchedAt": "2026-03-05T12:35:51.864Z"
+    "lastTouchedAt": "2026-03-05T12:50:21.137Z"
   },
   "env": {},
   "wizard": {
@@ -25,7 +25,12 @@
     }
   },
   "auth": {
-    "profiles": {}
+    "profiles": {
+      "minimax-portal:default": {
+        "provider": "minimax-portal",
+        "mode": "oauth"
+      }
+    }
   },
   "models": {
     "mode": "merge",
@@ -41,8 +46,8 @@
         "authHeader": true,
         "models": [
           {
-            "id": "MiniMax-M2.1",
-            "name": "MiniMax M2.1",
+            "id": "MiniMax-M2.5",
+            "name": "MiniMax M2.5",
             "reasoning": false,
             "input": [
               "text"
@@ -57,8 +62,24 @@
             "maxTokens": 8192
           },
           {
-            "id": "MiniMax-M2.5",
-            "name": "MiniMax M2.5",
+            "id": "MiniMax-M2.5-highspeed",
+            "name": "MiniMax M2.5 Highspeed",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "MiniMax-M2.5-Lightning",
+            "name": "MiniMax M2.5 Lightning",
             "reasoning": true,
             "input": [
               "text"
@@ -164,6 +185,12 @@
         },
         "minimax-portal/MiniMax-M2.5": {
           "alias": "minimax-m2.5"
+        },
+        "minimax-portal/MiniMax-M2.5-highspeed": {
+          "alias": "minimax-m2.5-highspeed"
+        },
+        "minimax-portal/MiniMax-M2.5-Lightning": {
+          "alias": "minimax-m2.5-lightning"
         }
       },
       "workspace": "/Users/ling/.openclaw/workspace",
@@ -171,7 +198,7 @@
         "mode": "safeguard"
       },
       "thinkingDefault": "xhigh",
-      "timeoutSeconds": 300,
+      "timeoutSeconds": 900,
       "maxConcurrent": 4,
       "subagents": {
         "maxConcurrent": 8

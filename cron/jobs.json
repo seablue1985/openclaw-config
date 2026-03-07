@@ -7,7 +7,7 @@
       "description": "工作日上午11:30健身提醒",
       "enabled": true,
       "createdAtMs": 1772510751813,
-      "updatedAtMs": 1772681492608,
+      "updatedAtMs": 1772783770320,
       "schedule": {
         "kind": "cron",
         "expr": "30 11 * * 1-5"
@@ -16,7 +16,10 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "发送当天健身计划:\n周一：胸\n周二：背+三头\n周三：肩+有氧\n周四：臀+有氧\n周五：二头+三头+有氧\n周末：休息"
+        "message": "发送当天健身计划:\n周一：胸\n周二：背+三头\n周三：肩+有氧\n周四：臀+有氧\n周五：二头+三头+有氧\n周末：休息",
+        "thinking": "low",
+        "timeoutSeconds": 120,
+        "lightContext": true
       },
       "delivery": {
         "mode": "announce",
@@ -24,49 +27,14 @@
         "to": "ou_968a615509dc191f04220e18cda67080"
       },
       "state": {
-        "nextRunAtMs": 1772767800000,
-        "lastRunAtMs": 1772681400013,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 92595,
+        "nextRunAtMs": 1773027000000,
+        "lastRunAtMs": 1772767800003,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 23078,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 2,
-        "lastError": "⚠️ ✉️ Message failed"
-      }
-    },
-    {
-      "id": "a4bb139f-7825-4df2-b25f-8c66cbf482f9",
-      "name": "量化日报",
-      "description": "工作日上午9点量化策略信号推送",
-      "enabled": true,
-      "createdAtMs": 1772552205426,
-      "updatedAtMs": 1772672603190,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 9 * * 1-5"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "运行每日量化信号脚本并推送到飞书"
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "ou_968a615509dc191f04220e18cda67080"
-      },
-      "state": {
-        "nextRunAtMs": 1772758800000,
-        "lastRunAtMs": 1772672400003,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 203187,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 3,
-        "lastDelivered": true,
-        "lastError": "⚠️ ✉️ Message failed"
+        "consecutiveErrors": 0
       }
     },
     {
@@ -74,7 +42,7 @@
       "name": "记忆同步Memos",
       "enabled": true,
       "createdAtMs": 1772683570660,
-      "updatedAtMs": 1772685113367,
+      "updatedAtMs": 1772848851502,
       "schedule": {
         "kind": "cron",
         "expr": "0 10 * * *"
@@ -83,7 +51,10 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行以下任务：\\n1. 读取 ~/.openclaw/workspace/MEMORY.md\\n2. 读取 ~/.openclaw/workspace/memory/ 目录下的今日记忆\\n3. 使用memos skill创建新memo保存重要内容（使用命令：MEMOS_URL=http://localhost:5230 MEMOS_TOKEN=memos_pat_q7kEoyR3sn0Toh8tfUBZjBtSOkQinTNc python3 ~/.openclaw/workspace/skills/memos/memos.py create）\\n4. 如果没有新内容则静默结束"
+        "message": "执行以下任务：\\n1. 读取 ~/.openclaw/workspace/MEMORY.md\\n2. 读取 ~/.openclaw/workspace/memory/ 目录下的今日记忆\\n3. 使用memos skill创建新memo保存重要内容（使用命令：MEMOS_URL=http://localhost:5230 MEMOS_TOKEN=memos_pat_q7kEoyR3sn0Toh8tfUBZjBtSOkQinTNc python3 ~/.openclaw/workspace/skills/memos/memos.py create）\\n4. 如果没有新内容则静默结束",
+        "thinking": "low",
+        "timeoutSeconds": 240,
+        "lightContext": true
       },
       "delivery": {
         "mode": "announce",
@@ -91,7 +62,14 @@
         "to": "ou_968a615509dc191f04220e18cda67080"
       },
       "state": {
-        "nextRunAtMs": 1772762400000
+        "nextRunAtMs": 1772935200000,
+        "lastRunAtMs": 1772848800010,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 51492,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
       }
     }
   ]
