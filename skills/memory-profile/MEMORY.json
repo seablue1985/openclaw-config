@@ -1,0 +1,91 @@
+{
+  "version": "2.1",
+  "meta": {
+    "created": "2026-03-06T09:02:32.064Z",
+    "updated": "2026-03-06T14:21:16.098Z",
+    "format": "json"
+  },
+  "layers": {
+    "L0": {
+      "events": [
+        {
+          "id": "cc509510-e646-4290-9ef2-7883ec9ad6ef",
+          "type": "log",
+          "content": "今天学到了新东西",
+          "metadata": {},
+          "timestamp": "2026-03-06T14:19:45.335Z"
+        },
+        {
+          "id": "9f7f15ce-115c-4d0e-8101-87f7bbac0644",
+          "type": "log",
+          "content": "今天学到了新东西",
+          "metadata": {},
+          "timestamp": "2026-03-06T14:21:16.097Z"
+        }
+      ],
+      "maxSize": 100
+    },
+    "L1": {
+      "events": [
+        {
+          "id": "cc509510-e646-4290-9ef2-7883ec9ad6ef",
+          "type": "log",
+          "content": "今天学到了新东西",
+          "metadata": {},
+          "timestamp": "2026-03-06T14:19:45.335Z"
+        },
+        {
+          "id": "9f7f15ce-115c-4d0e-8101-87f7bbac0644",
+          "type": "log",
+          "content": "今天学到了新东西",
+          "metadata": {},
+          "timestamp": "2026-03-06T14:21:16.097Z"
+        }
+      ],
+      "maxSize": 500
+    },
+    "L2": {
+      "events": [
+        {
+          "id": "cc509510-e646-4290-9ef2-7883ec9ad6ef",
+          "type": "log",
+          "content": "今天学到了新东西",
+          "metadata": {},
+          "timestamp": "2026-03-06T14:19:45.335Z"
+        },
+        {
+          "id": "9f7f15ce-115c-4d0e-8101-87f7bbac0644",
+          "type": "log",
+          "content": "今天学到了新东西",
+          "metadata": {},
+          "timestamp": "2026-03-06T14:21:16.097Z"
+        }
+      ],
+      "entities": [],
+      "patterns": [],
+      "preferences": {}
+    }
+  },
+  "learning": {
+    "preferences": {
+      "log": {
+        "keywords": {
+          "今天学到了新东西": 2
+        },
+        "count": 2
+      }
+    },
+    "patterns": [
+      {
+        "type": "time_of_day",
+        "data": {
+          "22": 2
+        }
+      }
+    ],
+    "stats": {
+      "totalEvents": 2,
+      "lastUpdate": "2026-03-06T14:21:16.097Z"
+    }
+  }
+}
