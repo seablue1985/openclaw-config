@@ -1,7 +1,7 @@
 {
   "agent:main:main": {
     "sessionId": "7eac8a30-c966-4092-a7ea-626e8eb4ed50",
-    "updatedAt": 1772977942003,
+    "updatedAt": 1772978061291,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -280,7 +280,7 @@
     "model": "gpt-5.3-codex",
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772977698459,
+      "generatedAt": 1772977942063,
       "sessionId": "7eac8a30-c966-4092-a7ea-626e8eb4ed50",
       "sessionKey": "agent:main:main",
       "provider": "gmn",
@@ -667,18 +667,18 @@
         ]
       }
     },
-    "cacheRead": 94720,
+    "cacheRead": 94336,
     "cacheWrite": 0,
     "totalTokensFresh": true,
     "lastTo": "heartbeat",
     "contextTokens": 200000,
-    "inputTokens": 82688,
-    "outputTokens": 1878,
-    "totalTokens": 94927
+    "inputTokens": 82603,
+    "outputTokens": 1653,
+    "totalTokens": 94540
   },
   "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080": {
     "sessionId": "615ac179-bcac-4317-bffe-7670445e503a",
-    "updatedAt": 1772977937067,
+    "updatedAt": 1772978190111,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -694,9 +694,9 @@
       "provider": "feishu",
       "surface": "feishu",
       "chatType": "direct",
-      "to": "user:ou_968a615509dc191f04220e18cda67080",
+      "to": "ou_968a615509dc191f04220e18cda67080",
       "accountId": "default",
-      "label": "张玲",
+      "label": "feishu:ou_968a615509dc191f04220e18cda67080",
       "from": "feishu:ou_968a615509dc191f04220e18cda67080"
     },
     "sessionFile": "/Users/ling/.openclaw/agents/main/sessions/615ac179-bcac-4317-bffe-7670445e503a.jsonl",
@@ -1018,7 +1018,7 @@
     },
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772977393154,
+      "generatedAt": 1772977937154,
       "sessionId": "615ac179-bcac-4317-bffe-7670445e503a",
       "sessionKey": "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080",
       "provider": "gmn",
@@ -1031,9 +1031,9 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 41562,
+        "chars": 41559,
         "projectContextChars": 17075,
-        "nonProjectContextChars": 24487
+        "nonProjectContextChars": 24484
       },
       "injectedWorkspaceFiles": [
         {
@@ -1428,12 +1428,12 @@
     "totalTokensFresh": true,
     "modelProvider": "gmn",
     "model": "gpt-5.3-codex",
-    "cacheRead": 82176,
+    "cacheRead": 95360,
     "cacheWrite": 0,
     "contextTokens": 200000,
-    "inputTokens": 72047,
-    "outputTokens": 793,
-    "totalTokens": 82515,
+    "inputTokens": 165396,
+    "outputTokens": 4372,
+    "totalTokens": 95563,
     "memoryFlushAt": 1772967519448,
     "memoryFlushCompactionCount": 0
   },
