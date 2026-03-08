@@ -1,7 +1,7 @@
 {
   "agent:main:main": {
     "sessionId": "7eac8a30-c966-4092-a7ea-626e8eb4ed50",
-    "updatedAt": 1772963046262,
+    "updatedAt": 1772963711222,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -280,7 +280,7 @@
     "model": "gpt-5.3-codex",
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772962561910,
+      "generatedAt": 1772963046495,
       "sessionId": "7eac8a30-c966-4092-a7ea-626e8eb4ed50",
       "sessionKey": "agent:main:main",
       "provider": "gmn",
@@ -293,9 +293,9 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 39196,
+        "chars": 39563,
         "projectContextChars": 17075,
-        "nonProjectContextChars": 22121
+        "nonProjectContextChars": 22488
       },
       "injectedWorkspaceFiles": [
         {
@@ -667,18 +667,18 @@
         ]
       }
     },
-    "cacheRead": 87936,
+    "cacheRead": 87552,
     "cacheWrite": 0,
     "totalTokensFresh": true,
     "lastTo": "heartbeat",
     "contextTokens": 200000,
-    "inputTokens": 7026,
-    "outputTokens": 1580,
-    "totalTokens": 88277
+    "inputTokens": 78215,
+    "outputTokens": 1924,
+    "totalTokens": 88552
   },
   "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080": {
     "sessionId": "e8be5ce6-7543-4da7-a2cb-131c39309767",
-    "updatedAt": 1772963045578,
+    "updatedAt": 1772963878147,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -1353,14 +1353,14 @@
     "totalTokensFresh": true,
     "modelProvider": "gmn",
     "model": "gpt-5.3-codex",
-    "cacheRead": 132608,
+    "cacheRead": 178304,
     "cacheWrite": 0,
     "contextTokens": 200000,
-    "inputTokens": 451177,
-    "outputTokens": 6778,
+    "inputTokens": 246659,
+    "outputTokens": 4862,
     "memoryFlushAt": 1772938382276,
     "memoryFlushCompactionCount": 0,
-    "totalTokens": 160249
+    "totalTokens": 178566
   },
   "agent:main:quant-advisor": {
     "sessionId": "9cfec43e-a256-4ba8-9670-a0034bee5fde",
