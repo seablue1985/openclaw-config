@@ -1,7 +1,7 @@
 {
   "agent:main:main": {
     "sessionId": "7eac8a30-c966-4092-a7ea-626e8eb4ed50",
-    "updatedAt": 1772963711222,
+    "updatedAt": 1772964716610,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -280,7 +280,7 @@
     "model": "gpt-5.3-codex",
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772963046495,
+      "generatedAt": 1772963711425,
       "sessionId": "7eac8a30-c966-4092-a7ea-626e8eb4ed50",
       "sessionKey": "agent:main:main",
       "provider": "gmn",
@@ -667,18 +667,18 @@
         ]
       }
     },
-    "cacheRead": 87552,
+    "cacheRead": 88192,
     "cacheWrite": 0,
     "totalTokensFresh": true,
     "lastTo": "heartbeat",
     "contextTokens": 200000,
-    "inputTokens": 78215,
-    "outputTokens": 1924,
-    "totalTokens": 88552
+    "inputTokens": 8399,
+    "outputTokens": 1679,
+    "totalTokens": 88513
   },
   "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080": {
     "sessionId": "e8be5ce6-7543-4da7-a2cb-131c39309767",
-    "updatedAt": 1772963878147,
+    "updatedAt": 1772964731976,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -693,7 +693,7 @@
     "origin": {
       "label": "张玲",
       "provider": "feishu",
-      "surface": "feishu",
+      "surface": "webchat",
       "chatType": "direct",
       "from": "feishu:ou_968a615509dc191f04220e18cda67080",
       "to": "user:ou_968a615509dc191f04220e18cda67080",
@@ -963,7 +963,7 @@
     },
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772961089967,
+      "generatedAt": 1772963878255,
       "sessionId": "e8be5ce6-7543-4da7-a2cb-131c39309767",
       "sessionKey": "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080",
       "provider": "gmn",
@@ -976,9 +976,9 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 39852,
+        "chars": 40098,
         "projectContextChars": 17075,
-        "nonProjectContextChars": 22777
+        "nonProjectContextChars": 23023
       },
       "injectedWorkspaceFiles": [
         {
@@ -1353,14 +1353,14 @@
     "totalTokensFresh": true,
     "modelProvider": "gmn",
     "model": "gpt-5.3-codex",
-    "cacheRead": 178304,
+    "cacheRead": 175872,
     "cacheWrite": 0,
     "contextTokens": 200000,
-    "inputTokens": 246659,
-    "outputTokens": 4862,
+    "inputTokens": 569481,
+    "outputTokens": 7298,
     "memoryFlushAt": 1772938382276,
     "memoryFlushCompactionCount": 0,
-    "totalTokens": 178566
+    "totalTokens": 176065
   },
   "agent:main:quant-advisor": {
     "sessionId": "9cfec43e-a256-4ba8-9670-a0034bee5fde",
