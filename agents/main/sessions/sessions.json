@@ -1,7 +1,7 @@
 {
   "agent:main:main": {
     "sessionId": "7eac8a30-c966-4092-a7ea-626e8eb4ed50",
-    "updatedAt": 1772974799227,
+    "updatedAt": 1772976756018,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -280,7 +280,7 @@
     "model": "gpt-5.3-codex",
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772974511667,
+      "generatedAt": 1772974956073,
       "sessionId": "7eac8a30-c966-4092-a7ea-626e8eb4ed50",
       "sessionKey": "agent:main:main",
       "provider": "gmn",
@@ -667,18 +667,18 @@
         ]
       }
     },
-    "cacheRead": 93440,
+    "cacheRead": 10752,
     "cacheWrite": 0,
     "totalTokensFresh": true,
     "lastTo": "heartbeat",
     "contextTokens": 200000,
-    "inputTokens": 174282,
-    "outputTokens": 2518,
-    "totalTokens": 93655
+    "inputTokens": 80962,
+    "outputTokens": 427,
+    "totalTokens": 91714
   },
   "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080": {
     "sessionId": "615ac179-bcac-4317-bffe-7670445e503a",
-    "updatedAt": 1772972759843,
+    "updatedAt": 1772975788409,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -1018,7 +1018,7 @@
     },
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772972725084,
+      "generatedAt": 1772975743620,
       "sessionId": "615ac179-bcac-4317-bffe-7670445e503a",
       "sessionKey": "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080",
       "provider": "gmn",
@@ -1031,9 +1031,9 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 42052,
+        "chars": 41195,
         "projectContextChars": 17075,
-        "nonProjectContextChars": 24977
+        "nonProjectContextChars": 24120
       },
       "injectedWorkspaceFiles": [
         {
@@ -1428,12 +1428,12 @@
     "totalTokensFresh": true,
     "modelProvider": "gmn",
     "model": "gpt-5.3-codex",
-    "cacheRead": 67456,
+    "cacheRead": 67712,
     "cacheWrite": 0,
     "contextTokens": 200000,
-    "inputTokens": 67064,
-    "outputTokens": 876,
-    "totalTokens": 67592,
+    "inputTokens": 74028,
+    "outputTokens": 1652,
+    "totalTokens": 74360,
     "memoryFlushAt": 1772967519448,
     "memoryFlushCompactionCount": 0
   },
