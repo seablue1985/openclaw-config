@@ -1,7 +1,7 @@
 {
   "agent:main:main": {
     "sessionId": "7eac8a30-c966-4092-a7ea-626e8eb4ed50",
-    "updatedAt": 1772981078595,
+    "updatedAt": 1772981165309,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -280,7 +280,7 @@
     "model": "gpt-5.3-codex",
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772980979854,
+      "generatedAt": 1772981078671,
       "sessionId": "7eac8a30-c966-4092-a7ea-626e8eb4ed50",
       "sessionKey": "agent:main:main",
       "provider": "gmn",
@@ -293,9 +293,9 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 39751,
+        "chars": 39563,
         "projectContextChars": 17075,
-        "nonProjectContextChars": 22676
+        "nonProjectContextChars": 22488
       },
       "injectedWorkspaceFiles": [
         {
@@ -672,9 +672,9 @@
     "totalTokensFresh": true,
     "lastTo": "heartbeat",
     "contextTokens": 200000,
-    "inputTokens": 85118,
-    "outputTokens": 1446,
-    "totalTokens": 95647
+    "inputTokens": 95927,
+    "outputTokens": 1444,
+    "totalTokens": 95642
   },
   "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080": {
     "sessionId": "615ac179-bcac-4317-bffe-7670445e503a",
