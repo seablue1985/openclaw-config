@@ -1,7 +1,7 @@
 {
   "agent:main:main": {
     "sessionId": "7eac8a30-c966-4092-a7ea-626e8eb4ed50",
-    "updatedAt": 1772946153286,
+    "updatedAt": 1772946531596,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -280,7 +280,7 @@
     "model": "gpt-5.3-codex",
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772945705293,
+      "generatedAt": 1772946153420,
       "sessionId": "7eac8a30-c966-4092-a7ea-626e8eb4ed50",
       "sessionKey": "agent:main:main",
       "provider": "gmn",
@@ -667,18 +667,18 @@
         ]
       }
     },
-    "cacheRead": 66432,
+    "cacheRead": 67584,
     "cacheWrite": 0,
     "totalTokensFresh": true,
     "lastTo": "heartbeat",
     "contextTokens": 200000,
-    "inputTokens": 55096,
-    "outputTokens": 1650,
-    "totalTokens": 66706
+    "inputTokens": 68257,
+    "outputTokens": 1563,
+    "totalTokens": 67923
   },
   "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080": {
     "sessionId": "e8be5ce6-7543-4da7-a2cb-131c39309767",
-    "updatedAt": 1772946509589,
+    "updatedAt": 1772946786988,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -963,7 +963,7 @@
     },
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772946222520,
+      "generatedAt": 1772946739461,
       "sessionId": "e8be5ce6-7543-4da7-a2cb-131c39309767",
       "sessionKey": "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080",
       "provider": "gmn",
@@ -1353,14 +1353,14 @@
     "totalTokensFresh": true,
     "modelProvider": "gmn",
     "model": "gpt-5.3-codex",
-    "cacheRead": 155904,
+    "cacheRead": 93696,
     "cacheWrite": 0,
     "contextTokens": 200000,
-    "inputTokens": 3331,
-    "outputTokens": 2964,
+    "inputTokens": 130611,
+    "outputTokens": 1644,
     "memoryFlushAt": 1772938382276,
     "memoryFlushCompactionCount": 0,
-    "totalTokens": 156200
+    "totalTokens": 156767
   },
   "agent:main:quant-advisor": {
     "sessionId": "9cfec43e-a256-4ba8-9670-a0034bee5fde",
