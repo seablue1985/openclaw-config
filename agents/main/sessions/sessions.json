@@ -1,7 +1,7 @@
 {
   "agent:main:main": {
     "sessionId": "7eac8a30-c966-4092-a7ea-626e8eb4ed50",
-    "updatedAt": 1772956133905,
+    "updatedAt": 1772957232248,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -280,7 +280,7 @@
     "model": "gpt-5.3-codex",
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772954730637,
+      "generatedAt": 1772956133992,
       "sessionId": "7eac8a30-c966-4092-a7ea-626e8eb4ed50",
       "sessionKey": "agent:main:main",
       "provider": "gmn",
@@ -667,18 +667,18 @@
         ]
       }
     },
-    "cacheRead": 79360,
+    "cacheRead": 80768,
     "cacheWrite": 0,
     "totalTokensFresh": true,
     "lastTo": "heartbeat",
     "contextTokens": 200000,
-    "inputTokens": 68212,
+    "inputTokens": 9352,
     "outputTokens": 1634,
-    "totalTokens": 79686
+    "totalTokens": 80982
   },
   "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080": {
     "sessionId": "e8be5ce6-7543-4da7-a2cb-131c39309767",
-    "updatedAt": 1772956869133,
+    "updatedAt": 1772957231307,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -963,7 +963,7 @@
     },
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772956518449,
+      "generatedAt": 1772956798251,
       "sessionId": "e8be5ce6-7543-4da7-a2cb-131c39309767",
       "sessionKey": "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080",
       "provider": "gmn",
@@ -976,9 +976,9 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 39671,
+        "chars": 39483,
         "projectContextChars": 17075,
-        "nonProjectContextChars": 22596
+        "nonProjectContextChars": 22408
       },
       "injectedWorkspaceFiles": [
         {
@@ -1353,14 +1353,14 @@
     "totalTokensFresh": true,
     "modelProvider": "gmn",
     "model": "gpt-5.3-codex",
-    "cacheRead": 159360,
+    "cacheRead": 164608,
     "cacheWrite": 0,
     "contextTokens": 200000,
-    "inputTokens": 264599,
-    "outputTokens": 2581,
+    "inputTokens": 6052,
+    "outputTokens": 1426,
     "memoryFlushAt": 1772938382276,
     "memoryFlushCompactionCount": 0,
-    "totalTokens": 159533
+    "totalTokens": 164797
   },
   "agent:main:quant-advisor": {
     "sessionId": "9cfec43e-a256-4ba8-9670-a0034bee5fde",
