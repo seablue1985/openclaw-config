@@ -1,7 +1,7 @@
 {
   "agent:main:main": {
     "sessionId": "7eac8a30-c966-4092-a7ea-626e8eb4ed50",
-    "updatedAt": 1772927812970,
+    "updatedAt": 1772928849512,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -280,7 +280,7 @@
     "model": "gpt-5.3-codex",
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772927715972,
+      "generatedAt": 1772928048524,
       "sessionId": "7eac8a30-c966-4092-a7ea-626e8eb4ed50",
       "sessionKey": "agent:main:main",
       "provider": "gmn",
@@ -667,18 +667,17 @@
         ]
       }
     },
-    "cacheRead": 49792,
+    "cacheRead": 0,
     "cacheWrite": 0,
-    "totalTokensFresh": true,
+    "totalTokensFresh": false,
     "lastTo": "heartbeat",
     "contextTokens": 200000,
-    "inputTokens": 41017,
-    "outputTokens": 1220,
-    "totalTokens": 50445
+    "inputTokens": 38584,
+    "outputTokens": 1028
   },
   "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080": {
     "sessionId": "e8be5ce6-7543-4da7-a2cb-131c39309767",
-    "updatedAt": 1772927826978,
+    "updatedAt": 1772928849216,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -963,7 +962,7 @@
     },
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1772927616185,
+      "generatedAt": 1772928556372,
       "sessionId": "e8be5ce6-7543-4da7-a2cb-131c39309767",
       "sessionKey": "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080",
       "provider": "gmn",
@@ -1353,12 +1352,12 @@
     "totalTokensFresh": true,
     "modelProvider": "gmn",
     "model": "gpt-5.3-codex",
-    "cacheRead": 39808,
+    "cacheRead": 117376,
     "cacheWrite": 0,
     "contextTokens": 200000,
-    "inputTokens": 23058,
-    "outputTokens": 2474,
-    "totalTokens": 39944
+    "inputTokens": 155227,
+    "outputTokens": 9732,
+    "totalTokens": 117625
   },
   "agent:main:quant-advisor": {
     "sessionId": "9cfec43e-a256-4ba8-9670-a0034bee5fde",
