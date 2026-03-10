@@ -42,7 +42,7 @@
       "name": "记忆同步Memos",
       "enabled": true,
       "createdAtMs": 1772683570660,
-      "updatedAtMs": 1773117000000,
+      "updatedAtMs": 1773108038252,
       "schedule": {
         "kind": "cron",
         "expr": "0 10 * * *"
@@ -62,13 +62,43 @@
         "to": "ou_968a615509dc191f04220e18cda67080"
       },
       "state": {
-        "nextRunAtMs": 1773108000000,
-        "lastRunAtMs": 1773021600008,
+        "nextRunAtMs": 1773194400000,
+        "lastRunAtMs": 1773108000006,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 24856,
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
+        "lastDurationMs": 38246,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "xhs-obsidian-sync-0900",
+      "name": "9点同步小红书收藏到Obsidian",
+      "description": "每天早上9点同步小红书点赞/收藏到当前打开的 Obsidian vault",
+      "enabled": true,
+      "createdAtMs": 1773113389264,
+      "updatedAtMs": 1773113389264,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行以下任务：\\n1. 进入 ~/.openclaw/workspace/skills/xiaohongshu-skills\\n2. 运行 uv run python scripts/sync_favorites_to_obsidian.py\\n3. 不手动指定 --vault，自动识别当前打开的 Obsidian vault\\n4. 如果同步成功且有新增，简短汇报新增数量与目标 vault\\n5. 如果无新增内容，可静默结束\\n6. 如果失败，返回错误摘要与需要的用户动作（例如登录小红书）",
+        "thinking": "low",
+        "timeoutSeconds": 600,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_968a615509dc191f04220e18cda67080"
+      },
+      "state": {
+        "nextRunAtMs": 1773190800000,
         "consecutiveErrors": 0
       }
     }
