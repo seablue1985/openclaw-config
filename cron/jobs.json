@@ -7,7 +7,7 @@
       "description": "工作日上午11:30健身提醒",
       "enabled": true,
       "createdAtMs": 1772510751813,
-      "updatedAtMs": 1772783770320,
+      "updatedAtMs": 1773027010204,
       "schedule": {
         "kind": "cron",
         "expr": "30 11 * * 1-5"
@@ -27,11 +27,11 @@
         "to": "ou_968a615509dc191f04220e18cda67080"
       },
       "state": {
-        "nextRunAtMs": 1773027000000,
-        "lastRunAtMs": 1772767800003,
+        "nextRunAtMs": 1773113400000,
+        "lastRunAtMs": 1773027000007,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 23078,
+        "lastDurationMs": 10197,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -42,7 +42,7 @@
       "name": "记忆同步Memos",
       "enabled": true,
       "createdAtMs": 1772683570660,
-      "updatedAtMs": 1772935224346,
+      "updatedAtMs": 1773117000000,
       "schedule": {
         "kind": "cron",
         "expr": "0 10 * * *"
@@ -51,7 +51,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行以下任务：\\n1. 读取 ~/.openclaw/workspace/MEMORY.md\\n2. 读取 ~/.openclaw/workspace/memory/ 目录下的今日记忆\\n3. 使用memos skill创建新memo保存重要内容（使用命令：MEMOS_URL=http://localhost:5230 MEMOS_TOKEN=memos_pat_q7kEoyR3sn0Toh8tfUBZjBtSOkQinTNc python3 ~/.openclaw/workspace/skills/memos/memos.py create）\\n4. 如果没有新内容则静默结束",
+        "message": "执行以下任务：\n1. 读取 ~/.openclaw/workspace/MEMORY.md\n2. 读取 ~/.openclaw/workspace/memory/ 目录下的今日记忆\n3. 使用正确脚本路径创建 memo：python3 ~/.openclaw/workspace/openclaw_projects/skills/memos/memos.py create\n4. MEMOS_URL 使用 http://localhost:5230，MEMOS_TOKEN 从 ~/.openclaw/workspace/TOOLS.md 中读取，不要在回复里泄露 token\n5. 若有新内容则创建 memo 并简短汇报“记忆已同步到 Memos”；若没有新内容则静默结束；若失败则返回错误摘要",
         "thinking": "low",
         "timeoutSeconds": 240,
         "lightContext": true
@@ -62,11 +62,11 @@
         "to": "ou_968a615509dc191f04220e18cda67080"
       },
       "state": {
-        "nextRunAtMs": 1773021600000,
-        "lastRunAtMs": 1772935200017,
+        "nextRunAtMs": 1773108000000,
+        "lastRunAtMs": 1773021600008,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 24329,
+        "lastDurationMs": 24856,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
