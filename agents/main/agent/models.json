@@ -128,13 +128,30 @@
           "contextWindow": 200000,
           "maxTokens": 8192,
           "api": "anthropic-messages"
+        },
+        {
+          "id": "MiniMax-VL-01",
+          "name": "MiniMax VL 01",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0.3,
+            "output": 1.2,
+            "cacheRead": 0.03,
+            "cacheWrite": 0.12
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
         }
       ],
-      "apiKey": "MINIMAX_API_KEY"
+      "apiKey": "secretref-managed"
     },
     "gmn": {
       "baseUrl": "https://gmncode.cn/v1",
-      "apiKey": "sk-e529fe673ca03ba271c0bff5cae0dbcd06b57943f4bdb12ada983aa22eaba8b6",
+      "apiKey": "secretref-managed",
       "api": "openai-responses",
       "headers": {
         "User-Agent": "codex-rs/1.0.7"
@@ -174,12 +191,29 @@
           },
           "contextWindow": 200000,
           "maxTokens": 8192
+        },
+        {
+          "id": "gpt-5.4",
+          "name": "gpt-5.4",
+          "api": "openai-responses",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
         }
       ]
     },
     "codex": {
-      "baseUrl": "https://gmncode.cn",
-      "apiKey": "CODEX_API_KEY",
+      "baseUrl": "https://gmncodex.com",
+      "apiKey": "secretref-managed",
       "api": "openai-responses",
       "models": [
         {
@@ -199,6 +233,120 @@
           "contextWindow": 200000,
           "maxTokens": 64000,
           "api": "openai-responses"
+        },
+        {
+          "id": "gpt-5.2-codex",
+          "name": "GPT-5.2 Codex",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 200000,
+          "maxTokens": 64000,
+          "api": "openai-responses"
+        }
+      ]
+    },
+    "ollama": {
+      "baseUrl": "http://127.0.0.1:11434",
+      "api": "ollama",
+      "models": [
+        {
+          "id": "my-qwen:latest",
+          "name": "my-qwen:latest",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 262144,
+          "maxTokens": 8192
+        },
+        {
+          "id": "gemma3:4b",
+          "name": "gemma3:4b",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 131072,
+          "maxTokens": 8192
+        },
+        {
+          "id": "bge-m3:latest",
+          "name": "bge-m3:latest",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 8192,
+          "maxTokens": 8192
+        }
+      ],
+      "apiKey": "ollama-local"
+    },
+    "ollama-local": {
+      "baseUrl": "http://127.0.0.1:11434",
+      "apiKey": "ollama-local",
+      "api": "ollama",
+      "models": [
+        {
+          "id": "my-qwen",
+          "name": "本地Qwen3.5-9B",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 4096,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "api": "ollama"
+        },
+        {
+          "id": "gemma3:4b",
+          "name": "本地Gemma3-4B",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "contextWindow": 4096,
+          "maxTokens": 2048,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "api": "ollama"
         }
       ]
     }

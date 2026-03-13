@@ -1,13 +1,13 @@
 {
   "meta": {
-    "lastTouchedVersion": "2026.3.2",
-    "lastTouchedAt": "2026-03-07T16:37:05.550Z"
+    "lastTouchedVersion": "2026.3.11",
+    "lastTouchedAt": "2026-03-13T02:20:05.091Z"
   },
   "env": {},
   "wizard": {
-    "lastRunAt": "2026-03-01T03:39:31.769Z",
-    "lastRunVersion": "2026.2.26",
-    "lastRunCommand": "onboard",
+    "lastRunAt": "2026-03-13T02:20:05.051Z",
+    "lastRunVersion": "2026.3.11",
+    "lastRunCommand": "doctor",
     "lastRunMode": "local"
   },
   "secrets": {
@@ -29,12 +29,48 @@
       "minimax-portal:default": {
         "provider": "minimax-portal",
         "mode": "oauth"
+      },
+      "ollama-local:default": {
+        "provider": "ollama-local",
+        "mode": "api_key"
       }
+    },
+    "order": {
+      "ollama-local": [
+        "ollama-local:default"
+      ]
     }
   },
   "models": {
     "mode": "merge",
     "providers": {
+      "ollama-local": {
+        "baseUrl": "http://127.0.0.1:11434",
+        "apiKey": "ollama-local",
+        "api": "ollama",
+        "models": [
+          {
+            "id": "my-qwen",
+            "name": "本地Qwen3.5-9B",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "contextWindow": 262144,
+            "maxTokens": 4096
+          },
+          {
+            "id": "gemma3:4b",
+            "name": "本地Gemma3-4B",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "contextWindow": 4096,
+            "maxTokens": 2048
+          }
+        ]
+      },
       "minimax-portal": {
         "baseUrl": "https://api.minimaxi.com/anthropic",
         "apiKey": {
@@ -96,7 +132,7 @@
         ]
       },
       "codex": {
-        "baseUrl": "https://gmncode.cn",
+        "baseUrl": "https://gmncodex.com",
         "apiKey": {
           "source": "file",
           "provider": "model_api_keys_file",
@@ -107,6 +143,23 @@
           {
             "id": "gpt-5.3-codex",
             "name": "GPT-5.3 Codex",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 64000
+          },
+          {
+            "id": "gpt-5.2-codex",
+            "name": "GPT-5.2 Codex",
             "reasoning": false,
             "input": [
               "text",
@@ -169,6 +222,23 @@
             },
             "contextWindow": 200000,
             "maxTokens": 8192
+          },
+          {
+            "id": "gpt-5.4",
+            "name": "gpt-5.4",
+            "api": "openai-responses",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
           }
         ]
       }
@@ -177,7 +247,10 @@
   "agents": {
     "defaults": {
       "model": {
-        "primary": "gmn/gpt-5.3-codex"
+        "primary": "minimax-portal/MiniMax-M2.5",
+        "fallbacks": [
+          "codex/gpt-5.3-codex"
+        ]
       },
       "models": {
         "minimax-portal/MiniMax-M2.1": {
@@ -194,7 +267,24 @@
         },
         "gmn/gpt-5.3-codex": {
           "alias": "GPT 5.3 Codex"
-        }
+        },
+        "gmn/gpt-5.2-codex": {
+          "alias": "GPT 5.2"
+        },
+        "codex/gpt-5.2-codex": {
+          "alias": "GPT 5.2 Codex"
+        },
+        "gmn/gpt-5.4": {
+          "alias": "gpt-5.4"
+        },
+        "ollama-local/my-qwen": {
+          "alias": "qwen-local"
+        },
+        "ollama-local/gemma3:4b": {
+          "alias": "gemma3-local"
+        },
+        "codex/gpt-5.3-codex": {},
+        "anthropic/gpt-5.4": {}
       },
       "workspace": "/Users/ling/.openclaw/workspace",
       "compaction": {
@@ -209,17 +299,141 @@
     },
     "list": [
       {
-        "id": "main"
+        "id": "main",
+        "name": "主脑 (MiniMax)",
+        "model": {
+          "primary": "minimax-m2.5",
+          "fallbacks": [
+            "gmn/gpt-5.3-codex"
+          ]
+        }
       },
       {
-        "id": "quant-advisor",
-        "name": "quant-advisor",
+        "id": "backup",
+        "name": "本地Qwen（仅手动纯文本）",
+        "model": "ollama-local/my-qwen"
+      },
+      {
+        "id": "downloader",
+        "name": "下载助手 (MiniMax)",
+        "model": "minimax-portal/MiniMax-M2.5"
+      },
+      {
+        "id": "simple",
+        "name": "本地Gemma3（仅手动纯文本）",
+        "model": "ollama-local/gemma3:4b"
+      },
+      {
+        "id": "tester",
+        "name": "质检员 (QA-MiniMax)",
+        "model": {
+          "primary": "minimax-m2.5",
+          "fallbacks": [
+            "gmn/gpt-5.3-codex"
+          ]
+        }
+      },
+      {
+        "id": "xiaoguanjia",
+        "name": "小管家",
         "workspace": "/Users/ling/.openclaw/workspace-quant",
         "agentDir": "/Users/ling/.openclaw/agents/quant-advisor/agent",
-        "model": "minimax-portal/MiniMax-M2.5"
+        "model": "gmn/gpt-5.3-codex"
       }
     ]
   },
+  "bindings": [
+    {
+      "agentId": "main",
+      "match": {
+        "channel": "feishu",
+        "accountId": "main"
+      }
+    },
+    {
+      "agentId": "backup",
+      "match": {
+        "channel": "feishu",
+        "accountId": "main"
+      }
+    },
+    {
+      "agentId": "downloader",
+      "match": {
+        "channel": "feishu",
+        "accountId": "main"
+      }
+    },
+    {
+      "agentId": "simple",
+      "match": {
+        "channel": "feishu",
+        "accountId": "main"
+      }
+    },
+    {
+      "agentId": "tester",
+      "match": {
+        "channel": "feishu",
+        "accountId": "main"
+      }
+    },
+    {
+      "agentId": "xiaoguanjia",
+      "match": {
+        "channel": "feishu",
+        "accountId": "main"
+      }
+    },
+    {
+      "agentId": "main",
+      "match": {
+        "channel": "feishu",
+        "accountId": "feishu-assistant"
+      }
+    },
+    {
+      "agentId": "backup",
+      "match": {
+        "channel": "feishu",
+        "accountId": "feishu-assistant"
+      }
+    },
+    {
+      "agentId": "downloader",
+      "match": {
+        "channel": "feishu",
+        "accountId": "feishu-assistant"
+      }
+    },
+    {
+      "agentId": "simple",
+      "match": {
+        "channel": "feishu",
+        "accountId": "feishu-assistant"
+      }
+    },
+    {
+      "agentId": "tester",
+      "match": {
+        "channel": "feishu",
+        "accountId": "feishu-assistant"
+      }
+    },
+    {
+      "agentId": "xiaoguanjia",
+      "match": {
+        "channel": "feishu",
+        "accountId": "feishu-assistant"
+      }
+    },
+    {
+      "agentId": "main",
+      "match": {
+        "channel": "webchat"
+      }
+    }
+  ],
   "messages": {
     "ackReactionScope": "group-mentions"
   },
@@ -249,19 +463,32 @@
           "enabled": true
         }
       }
-    }
+    }cd /Users/ling/.openclaw/workspace/other_projects/openclaw-control-center
+nohup env UI_MODE=true APP_COMMAND= node --import tsx src/index.ts --invalid > runtime/control-center.log 2>&1 &
+echo "PID: $!
   },
   "channels": {
     "feishu": {
+      "defaultAccount": "main",
       "appId": "cli_a928c429d9785cc6",
-      "appSecret": {
-        "source": "file",
-        "provider": "feishu_app_secret_file",
-        "id": "value"
-      },
+      "appSecret": "8DdEUA04tEjcp0CX7Z4L0gaxRbtutjon",
       "tools": {
         "doc": true,
         "perm": false
+      },
+      "accounts": {
+        "main": {
+          "streaming": false
+        },
+        "feishu-assistant": {
+          "appId": "cli_a9256a7ae9b91cb6",
+          "appSecret": "q0rgZTON2C2xR3tR5bqNwdeURqm50MQV",
+          "name": "周到",
+          "dmPolicy": "open",
+          "allowFrom": [
+            "*"
+          ]
+        }
       }
     }
   },
@@ -293,19 +520,101 @@
       "memos": {
         "enabled": true,
         "env": {
-          "MEMOS_URL": "http://localhost:5230",
+          "MEMOS_URL": "http://127.0.0.1:5230",
           "MEMOS_TOKEN": "env:MEMOS_TOKEN"
         }
       }
     }
   },
   "plugins": {
+    "allow": [
+      "memory-lancedb-pro",
+      "feishu",
+      "minimax-portal-auth"
+    ],
+    "load": {
+      "paths": [
+        "/Users/ling/node_modules/memory-lancedb-pro"
+      ]
+    },
+    "slots": {
+      "memory": "memory-lancedb-pro"
+    },
     "entries": {
       "minimax-portal-auth": {
         "enabled": true
       },
       "feishu": {
         "enabled": true
+      },
+      "minimem-memory": {
+        "enabled": false
+      },
+      "memory-lancedb-pro": {
+        "enabled": true,
+        "config": {
+          "embedding": {
+            "apiKey": "sk-b54c3b39c22f4ac3ad03c050db4ce55d",
+            "baseURL": "http://127.0.0.1:11434/v1",
+            "model": "bge-m3",
+            "dimensions": 1024
+          },
+          "dbPath": "~/.openclaw/memory/lancedb-pro-bge-m3",
+          "sessionStrategy": "systemSessionMemory",
+          "autoCapture": true,
+          "captureAssistant": false,
+          "autoRecall": true,
+          "autoRecallTopK": 8,
+          "autoRecallMinLength": 2,
+          "autoRecallMinRepeated": 1,
+          "autoRecallMaxAgeDays": 365,
+          "scopes": {
+            "default": "global",
+            "definitions": {
+              "global": {
+                "description": "Shared memory across configured agents"
+              }
+            },
+            "agentAccess": {
+              "main": [
+                "global",
+                "agent:main",
+                "agent:xiaoguanjia"
+              ],
+              "xiaoguanjia": [
+                "global",
+                "agent:xiaoguanjia",
+                "agent:main"
+              ]
+            }
+          },
+          "retrieval": {
+            "minScore": 0.2,
+            "hardMinScore": 0.2
+          }
+        }
+      },
+      "memory-core": {
+        "enabled": false
+      },
+      "memory-lancedb": {
+        "enabled": false
+      }
+    },
+    "installs": {
+      "minimem-memory": {
+        "source": "path",
+        "sourcePath": "/tmp/openclaw-minimem-fixed-CoPcKF/package",
+        "installPath": "/Users/ling/.openclaw/extensions/minimem-memory",
+        "version": "0.1.3",
+        "installedAt": "2026-03-11T05:32:01.087Z"
+      },
+      "memory-lancedb-pro": {
+        "source": "path",
+        "sourcePath": "/Users/ling/node_modules/memory-lancedb-pro",
+        "installPath": "/Users/ling/node_modules/memory-lancedb-pro",
+        "version": "1.1.0-beta.6",
+        "installedAt": "2026-03-11T06:14:11.907Z"
       }
     }
   }

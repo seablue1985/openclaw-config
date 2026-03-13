@@ -7,12 +7,24 @@
       "access": "sk-cp-TypyXejs2B15_iA2InVLaRhZBTL_wxRXO5ut0AXIl6elvqblH6fWp3j8VaUulYChdYV6fEHnXtMyNwRhaeHBmxI_dFoOwRlmtPdSZt6pwrMvqKU92zBfir8",
       "refresh": "gHrN2zKrDKzFJ4UPFEb-J4w6R__C8PCgDrIPNME709I=",
       "expires": 1804251021050
+    },
+    "ollama-local:default": {
+      "type": "api_key",
+      "provider": "ollama-local",
+      "key": "ollama-local"
     }
+  },
+  "lastGood": {
+    "minimax-portal": "minimax-portal:default"
   },
   "usageStats": {
     "minimax-portal:default": {
       "errorCount": 0,
-      "lastUsed": 1772761204299
+      "lastUsed": 1773443730747
+    },
+    "ollama-local:default": {
+      "errorCount": 0,
+      "lastUsed": 1773392466105
     }
   }
 }

@@ -7,7 +7,7 @@
       "description": "工作日上午11:30健身提醒",
       "enabled": true,
       "createdAtMs": 1772510751813,
-      "updatedAtMs": 1773027010204,
+      "updatedAtMs": 1773372609541,
       "schedule": {
         "kind": "cron",
         "expr": "30 11 * * 1-5"
@@ -17,6 +17,7 @@
       "payload": {
         "kind": "agentTurn",
         "message": "发送当天健身计划:\n周一：胸\n周二：背+三头\n周三：肩+有氧\n周四：臀+有氧\n周五：二头+三头+有氧\n周末：休息",
+        "model": "minimax-portal/MiniMax-M2.5",
         "thinking": "low",
         "timeoutSeconds": 120,
         "lightContext": true
@@ -27,34 +28,36 @@
         "to": "ou_968a615509dc191f04220e18cda67080"
       },
       "state": {
-        "nextRunAtMs": 1773113400000,
-        "lastRunAtMs": 1773027000007,
+        "nextRunAtMs": 1773631800000,
+        "lastRunAtMs": 1773372600012,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 10197,
-        "lastDelivered": true,
+        "lastDurationMs": 9529,
         "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       }
     },
     {
       "id": "3c85911f-26c5-4a2e-9734-fb85f51cf9b8",
-      "name": "记忆同步Memos",
+      "name": "23:00 Codex记忆夜跑",
       "enabled": true,
       "createdAtMs": 1772683570660,
-      "updatedAtMs": 1773108038252,
+      "updatedAtMs": 1773414032973,
       "schedule": {
         "kind": "cron",
-        "expr": "0 10 * * *"
+        "expr": "0 23 * * *",
+        "tz": "Asia/Shanghai"
       },
       "sessionTarget": "isolated",
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行以下任务：\n1. 读取 ~/.openclaw/workspace/MEMORY.md\n2. 读取 ~/.openclaw/workspace/memory/ 目录下的今日记忆\n3. 使用正确脚本路径创建 memo：python3 ~/.openclaw/workspace/openclaw_projects/skills/memos/memos.py create\n4. MEMOS_URL 使用 http://localhost:5230，MEMOS_TOKEN 从 ~/.openclaw/workspace/TOOLS.md 中读取，不要在回复里泄露 token\n5. 若有新内容则创建 memo 并简短汇报“记忆已同步到 Memos”；若没有新内容则静默结束；若失败则返回错误摘要",
+        "message": "执行以下任务：\n1. 运行 bash /Users/ling/.openclaw/workspace/scripts/run_codex_memory_nightly.sh\n2. 读取 /Users/ling/.openclaw/workspace/memory/codex_bridge_latest.json\n3. 用中文简短汇报：桥接导入数、Codex聊天备份数、Memos镜像创建数、LanceDB重建后计数\n4. 若失败，返回错误摘要；不要泄露任何 token 或配置密钥",
         "thinking": "low",
-        "timeoutSeconds": 240,
-        "lightContext": true
+        "timeoutSeconds": 900,
+        "lightContext": true,
+        "model": "codex/gpt-5.3-codex"
       },
       "delivery": {
         "mode": "announce",
@@ -62,14 +65,15 @@
         "to": "ou_968a615509dc191f04220e18cda67080"
       },
       "state": {
-        "nextRunAtMs": 1773194400000,
-        "lastRunAtMs": 1773108000006,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 38246,
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0
+        "lastRunAtMs": 1773414000010,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 32963,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "nextRunAtMs": 1773500400000,
+        "lastError": "Error: All models failed (2): codex/gpt-5.3-codex: ⚠️ API rate limit reached. Please try again later. (rate_limit) | gmn/gpt-5.3-codex: 401 status code (no body) (auth)",
+        "lastErrorReason": "rate_limit"
       }
     },
     {
@@ -78,7 +82,7 @@
       "description": "每天早上9点同步小红书点赞/收藏到当前打开的 Obsidian vault",
       "enabled": true,
       "createdAtMs": 1773113389264,
-      "updatedAtMs": 1773113389264,
+      "updatedAtMs": 1773363634667,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * *"
@@ -88,6 +92,7 @@
       "payload": {
         "kind": "agentTurn",
         "message": "执行以下任务：\\n1. 进入 ~/.openclaw/workspace/skills/xiaohongshu-skills\\n2. 运行 uv run python scripts/sync_favorites_to_obsidian.py\\n3. 不手动指定 --vault，自动识别当前打开的 Obsidian vault\\n4. 如果同步成功且有新增，简短汇报新增数量与目标 vault\\n5. 如果无新增内容，可静默结束\\n6. 如果失败，返回错误摘要与需要的用户动作（例如登录小红书）",
+        "model": "codex/gpt-5.3-codex",
         "thinking": "low",
         "timeoutSeconds": 600,
         "lightContext": true
@@ -98,8 +103,147 @@
         "to": "ou_968a615509dc191f04220e18cda67080"
       },
       "state": {
-        "nextRunAtMs": 1773190800000,
+        "nextRunAtMs": 1773450000000,
+        "consecutiveErrors": 0,
+        "lastRunAtMs": 1773363600012,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 34655,
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "1d3c0b2a-355f-4335-bca1-3c6b78dfae51",
+      "name": "每日09:30盘前强检",
+      "enabled": true,
+      "createdAtMs": 1773145175561,
+      "updatedAtMs": 1773365413079,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 9 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行盘前强检: cd /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system && python3 scripts/auto_run_premarket_precheck.py --available-cash 180000 --account-nav 930000",
+        "timeoutSeconds": 180,
+        "model": "codex/gpt-5.3-codex"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_968a615509dc191f04220e18cda67080",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1773451800000,
+        "lastRunAtMs": 1773365400009,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 13070,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "9c120016-bb26-4799-9b40-4580caefaa29",
+      "name": "每日15:30盘后审计",
+      "enabled": true,
+      "createdAtMs": 1773145190834,
+      "updatedAtMs": 1773387012879,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 15 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行盘后审计: cd /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system && python3 scripts/run_daily_strategy_audit.py",
+        "timeoutSeconds": 240,
+        "model": "codex/gpt-5.3-codex"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_968a615509dc191f04220e18cda67080",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1773473400000,
+        "lastRunAtMs": 1773387000011,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 12868,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "fe8deda2-476c-4aa2-bc6f-21ff95ed5b47",
+      "sessionKey": "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080",
+      "name": "09:00量化回测队列检查提醒",
+      "description": "每天09:00提醒检查量化回测任务队列",
+      "enabled": true,
+      "createdAtMs": 1773215340583,
+      "updatedAtMs": 1773363643789,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "09:00提醒：请检查量化回测任务队列。"
+      },
+      "state": {
+        "nextRunAtMs": 1773450000000,
+        "lastRunAtMs": 1773363634667,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 9122,
+        "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "71b19e21-52a4-446a-bc53-72399efd63f1",
+      "name": "08:50全球股市早间要闻",
+      "description": "每天08:50生成全球股市早间要闻，含大盘体温/板块映射/看涨看跌",
+      "enabled": true,
+      "createdAtMs": 1773373210801,
+      "updatedAtMs": 1773373210801,
+      "schedule": {
+        "kind": "cron",
+        "expr": "50 8 * * *",
+        "tz": "Asia/Shanghai",
+        "staggerMs": 0
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "每天早上 08:50 生成《全球股市早间要闻》。\n\n要求：\n1. 使用 web_search / web_fetch 收集过去 24 小时内与全球股市、宏观风险偏好、主要指数、利率、汇率、大宗商品相关的重要新闻。\n2. 用中文输出，简洁但有判断，不要空话。\n3. 必须包含以下模块：\n   - 一句话总览：今天全球风险偏好偏多 / 中性 / 偏空\n   - 隔夜市场速览：美股、欧股、亚太（如有）、美元指数、美债收益率、原油、黄金、USD/CNH\n   - 今日早间要闻：筛选 5-8 条最影响股市的新闻，每条写“事件 + 对股市影响”\n   - 大盘体温：给出 0-100 分，并标注 冰冷 / 偏冷 / 中性 / 偏热 / 过热，说明依据\n   - 板块映射：把新闻映射到可能受益/承压的板块，至少各列 3 个\n   - 看涨 / 看跌：分别列出 3-5 个方向或资产，写清逻辑\n   - A股开盘前结论：给出偏进攻 / 均衡 / 防守 的操作基调\n4. 若为非交易日或盘前无法确认的内容，不给“可执行买价”；只给方向、优先级和触发条件。\n5. 尽量附上来源名；若能拿到链接，保留 3-5 个关键链接。\n6. 若无重大新闻，也要给出简版晨报，不能空回复。\n7. 输出格式适合飞书阅读：用分点和短段落，不要 markdown 表格。",
+        "model": "minimax-m2.5",
+        "thinking": "low",
+        "timeoutSeconds": 240,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_83b02a0239e70fc8a4bf0b79aa8f9db7"
+      },
+      "state": {
+        "nextRunAtMs": 1773449400000
       }
     }
   ]
