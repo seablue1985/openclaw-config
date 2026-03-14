@@ -43,7 +43,7 @@
       "name": "23:00 Codex记忆夜跑",
       "enabled": true,
       "createdAtMs": 1772683570660,
-      "updatedAtMs": 1773487592124,
+      "updatedAtMs": 1773500497700,
       "schedule": {
         "kind": "cron",
         "expr": "0 23 * * *",
@@ -65,15 +65,14 @@
         "to": "ou_968a615509dc191f04220e18cda67080"
       },
       "state": {
-        "lastRunAtMs": 1773414000010,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 32963,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1,
-        "nextRunAtMs": 1773500400000,
-        "lastError": "Error: All models failed (2): codex/gpt-5.3-codex: ⚠️ API rate limit reached. Please try again later. (rate_limit) | gmn/gpt-5.3-codex: 401 status code (no body) (auth)",
-        "lastErrorReason": "rate_limit"
+        "lastRunAtMs": 1773500400004,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 97696,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1773586800000,
+        "lastDelivered": true
       }
     },
     {
@@ -278,7 +277,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type morning\n3. 优先读取 control tower broadcast markdown，其次读取 chief broadcast markdown / chief card json / chief dashboard / trade card / group digest / publish bundle summary\n4. 若当前运行环境支持卡片/富消息渲染，则优先发送 control tower broadcast markdown；若不可用，则退回同内容的文本摘要\n5. 用中文简短汇报 盘前会 的：当前主视图、审计状态、风险收缩、观察池、持仓预览、成交预览、数据源健康状态、临时会商状态、control tower broadcast 路径、control tower 路径、chief broadcast 路径、publish bundle summary 路径\n6. 若用户尚未提供群 chat_id，则继续发当前飞书 DM；若已绑定群，则可用于群聊版推送\n7. 非交易时段不要给可执行买价，只给方向、预算、优先级和触发条件",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type morning\n3. 优先读取 control tower card JSON（investment_research_control_tower_card_*.json），其次读取 control tower broadcast markdown / chief card JSON / chief broadcast markdown / chief dashboard / trade card / group digest / publish bundle summary\n4. 若当前运行环境支持飞书卡片投递，则优先发送 control tower card JSON 作为 interactive card；若卡片渲染失败，则退回 control tower broadcast markdown；若 broadcast 也不可用，则退回纯文本摘要\n5. 用中文简短汇报 盘前会 的：当前主视图、审计状态、风险收缩、观察池、持仓预览、成交预览、数据源健康状态、临时会商状态、control tower card JSON 路径、control tower 路径、publish bundle summary 路径\n6. 若用户尚未提供群 chat_id，则继续发当前飞书 DM；若已绑定群，则可用于群聊版推送\n7. 非交易时段不要给可执行买价，只给方向、预算、优先级和触发条件",
         "model": "minimax-m2.5",
         "thinking": "low",
         "timeoutSeconds": 180,
@@ -311,7 +310,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type midday\n3. 优先读取 control tower broadcast markdown，其次读取 chief broadcast markdown / chief card json / chief dashboard / trade card / group digest / publish bundle summary\n4. 若当前运行环境支持卡片/富消息渲染，则优先发送 control tower broadcast markdown；若不可用，则退回同内容的文本摘要\n5. 用中文简短汇报 午盘巡检 的：当前主视图、审计状态、风险收缩、观察池、持仓预览、成交预览、数据源健康状态、临时会商状态、control tower broadcast 路径、control tower 路径、chief broadcast 路径、publish bundle summary 路径\n6. 若用户尚未提供群 chat_id，则继续发当前飞书 DM；若已绑定群，则可用于群聊版推送\n7. 非交易时段不要给可执行买价，只给方向、预算、优先级和触发条件",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type midday\n3. 优先读取 control tower card JSON（investment_research_control_tower_card_*.json），其次读取 control tower broadcast markdown / chief card JSON / chief broadcast markdown / chief dashboard / trade card / group digest / publish bundle summary\n4. 若当前运行环境支持飞书卡片投递，则优先发送 control tower card JSON 作为 interactive card；若卡片渲染失败，则退回 control tower broadcast markdown；若 broadcast 也不可用，则退回纯文本摘要\n5. 用中文简短汇报 午盘巡检 的：当前主视图、审计状态、风险收缩、观察池、持仓预览、成交预览、数据源健康状态、临时会商状态、control tower card JSON 路径、control tower 路径、publish bundle summary 路径\n6. 若用户尚未提供群 chat_id，则继续发当前飞书 DM；若已绑定群，则可用于群聊版推送\n7. 非交易时段不要给可执行买价，只给方向、预算、优先级和触发条件",
         "model": "minimax-m2.5",
         "thinking": "low",
         "timeoutSeconds": 180,
@@ -344,7 +343,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type close\n3. 优先读取 control tower broadcast markdown，其次读取 chief broadcast markdown / chief card json / chief dashboard / trade card / group digest / publish bundle summary\n4. 若当前运行环境支持卡片/富消息渲染，则优先发送 control tower broadcast markdown；若不可用，则退回同内容的文本摘要\n5. 用中文简短汇报 收盘复盘 的：当前主视图、审计状态、风险收缩、观察池、持仓预览、成交预览、数据源健康状态、临时会商状态、control tower broadcast 路径、control tower 路径、chief broadcast 路径、publish bundle summary 路径\n6. 若用户尚未提供群 chat_id，则继续发当前飞书 DM；若已绑定群，则可用于群聊版推送\n7. 非交易时段不要给可执行买价，只给方向、预算、优先级和触发条件",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type close\n3. 优先读取 control tower card JSON（investment_research_control_tower_card_*.json），其次读取 control tower broadcast markdown / chief card JSON / chief broadcast markdown / chief dashboard / trade card / group digest / publish bundle summary\n4. 若当前运行环境支持飞书卡片投递，则优先发送 control tower card JSON 作为 interactive card；若卡片渲染失败，则退回 control tower broadcast markdown；若 broadcast 也不可用，则退回纯文本摘要\n5. 用中文简短汇报 收盘复盘 的：当前主视图、审计状态、风险收缩、观察池、持仓预览、成交预览、数据源健康状态、临时会商状态、control tower card JSON 路径、control tower 路径、publish bundle summary 路径\n6. 若用户尚未提供群 chat_id，则继续发当前飞书 DM；若已绑定群，则可用于群聊版推送\n7. 非交易时段不要给可执行买价，只给方向、预算、优先级和触发条件",
         "model": "minimax-m2.5",
         "thinking": "low",
         "timeoutSeconds": 180,
@@ -377,7 +376,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type night\n3. 优先读取 control tower broadcast markdown，其次读取 chief broadcast markdown / chief card json / chief dashboard / trade card / group digest / publish bundle summary\n4. 若当前运行环境支持卡片/富消息渲染，则优先发送 control tower broadcast markdown；若不可用，则退回同内容的文本摘要\n5. 用中文简短汇报 夜间研究会 的：当前主视图、审计状态、风险收缩、观察池、持仓预览、成交预览、数据源健康状态、临时会商状态、control tower broadcast 路径、control tower 路径、chief broadcast 路径、publish bundle summary 路径\n6. 若用户尚未提供群 chat_id，则继续发当前飞书 DM；若已绑定群，则可用于群聊版推送\n7. 非交易时段不要给可执行买价，只给方向、预算、优先级和触发条件",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type night\n3. 优先读取 control tower card JSON（investment_research_control_tower_card_*.json），其次读取 control tower broadcast markdown / chief card JSON / chief broadcast markdown / chief dashboard / trade card / group digest / publish bundle summary\n4. 若当前运行环境支持飞书卡片投递，则优先发送 control tower card JSON 作为 interactive card；若卡片渲染失败，则退回 control tower broadcast markdown；若 broadcast 也不可用，则退回纯文本摘要\n5. 用中文简短汇报 夜间研究会 的：当前主视图、审计状态、风险收缩、观察池、持仓预览、成交预览、数据源健康状态、临时会商状态、control tower card JSON 路径、control tower 路径、publish bundle summary 路径\n6. 若用户尚未提供群 chat_id，则继续发当前飞书 DM；若已绑定群，则可用于群聊版推送\n7. 非交易时段不要给可执行买价，只给方向、预算、优先级和触发条件",
         "model": "minimax-m2.5",
         "thinking": "low",
         "timeoutSeconds": 180,
