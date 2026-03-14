@@ -367,7 +367,7 @@
       "description": "生成真实输入版夜间研究会与交易建议卡，并推送到当前飞书DM",
       "enabled": true,
       "createdAtMs": 1773487592124,
-      "updatedAtMs": 1773490966671,
+      "updatedAtMs": 1773491546393,
       "schedule": {
         "kind": "cron",
         "expr": "30 20 * * *",
@@ -391,7 +391,13 @@
       },
       "state": {
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1773491400000
+        "nextRunAtMs": 1773577800000,
+        "lastRunAtMs": 1773491400010,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 146383,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered"
       }
     },
     {
@@ -423,7 +429,8 @@
         "bestEffort": true
       },
       "state": {
-        "consecutiveErrors": 0
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1773621600000
       }
     },
     {
@@ -455,7 +462,8 @@
         "bestEffort": true
       },
       "state": {
-        "consecutiveErrors": 0
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1773628200000
       }
     },
     {
@@ -487,7 +495,8 @@
         "bestEffort": true
       },
       "state": {
-        "consecutiveErrors": 0
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1773649800000
       }
     },
     {
@@ -510,6 +519,39 @@
         "model": "minimax-m2.5",
         "thinking": "low",
         "timeoutSeconds": 180,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_968a615509dc191f04220e18cda67080",
+        "bestEffort": true
+      },
+      "state": {
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1773493200000
+      }
+    },
+    {
+      "id": "investment-research-event-watch-0945",
+      "name": "09:45来福投研会-临时会商监控",
+      "description": "交易日轮询关键变化，必要时建议触发临时会商",
+      "enabled": true,
+      "createdAtMs": 1773491585713,
+      "updatedAtMs": 1773491585713,
+      "schedule": {
+        "kind": "cron",
+        "expr": "45 9-11,13-14 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_event_watch.py\n3. 读取输出的 event watch md/json\n4. 如果 status=no_trigger，则回复 NO_REPLY\n5. 如果 status=triggered，则用中文简短汇报：触发项、是否建议临时会商、event watch 文件路径\n6. 不要输出可执行买价",
+        "model": "minimax-m2.5",
+        "thinking": "low",
+        "timeoutSeconds": 120,
         "lightContext": true
       },
       "delivery": {
