@@ -1,7 +1,7 @@
 {
   "agent:main:main": {
     "sessionId": "model-switch-check-20260314b",
-    "updatedAt": 1773468061569,
+    "updatedAt": 1773468186327,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -453,7 +453,7 @@
     "contextTokens": 200000,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1773466446165,
+      "generatedAt": 1773468063181,
       "sessionId": "model-switch-check-20260314b",
       "sessionKey": "agent:main:main",
       "provider": "minimax-portal",
@@ -473,9 +473,9 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 48439,
+        "chars": 47842,
         "projectContextChars": 19069,
-        "nonProjectContextChars": 29370
+        "nonProjectContextChars": 28773
       },
       "injectedWorkspaceFiles": [
         {
@@ -703,8 +703,8 @@
         ]
       },
       "tools": {
-        "listChars": 4130,
-        "schemaChars": 28935,
+        "listChars": 3670,
+        "schemaChars": 25960,
         "entries": [
           {
             "name": "read",
@@ -749,21 +749,9 @@
             "propertiesCount": 18
           },
           {
-            "name": "nodes",
-            "summaryChars": 122,
-            "schemaChars": 1800,
-            "propertiesCount": 37
-          },
-          {
-            "name": "cron",
-            "summaryChars": 2689,
-            "schemaChars": 690,
-            "propertiesCount": 13
-          },
-          {
             "name": "message",
             "summaryChars": 89,
-            "schemaChars": 4860,
+            "schemaChars": 4872,
             "propertiesCount": 91
           },
           {
@@ -771,12 +759,6 @@
             "summaryChars": 152,
             "schemaChars": 223,
             "propertiesCount": 2
-          },
-          {
-            "name": "gateway",
-            "summaryChars": 464,
-            "schemaChars": 497,
-            "propertiesCount": 12
           },
           {
             "name": "agents_list",
@@ -949,12 +931,15 @@
         ]
       }
     },
-    "inputTokens": 44,
-    "outputTokens": 306,
-    "cacheRead": 31099,
-    "cacheWrite": 1168,
+    "inputTokens": 79917,
+    "outputTokens": 936,
+    "cacheRead": 23090,
+    "cacheWrite": 0,
     "totalTokensFresh": true,
-    "totalTokens": 32311
+    "totalTokens": 32938,
+    "fallbackNoticeSelectedModel": "gmn/gpt-5.4",
+    "fallbackNoticeActiveModel": "minimax-portal/MiniMax-M2.5",
+    "fallbackNoticeReason": "auth"
   },
   "agent:main:quant-advisor": {
     "sessionId": "9cfec43e-a256-4ba8-9670-a0034bee5fde",
