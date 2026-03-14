@@ -554,7 +554,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_event_watch.py\n3. 读取输出的 event watch md/json\n4. 如果 status=no_trigger，则回复 NO_REPLY\n5. 如果 status=triggered，则用中文简短汇报：触发项、是否建议临时会商、event watch 文件路径\n6. 不要输出可执行买价",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_event_watch.py\n3. 若 event watch 为 triggered，则继续运行 python3 scripts/generate_investment_research_temporary_meeting_broadcast.py\n4. 读取 event watch md/json；若已生成 temporary meeting broadcast，则优先读取该广播\n5. 如果 status=no_trigger，则回复 NO_REPLY\n6. 如果 status=triggered，则用中文简短汇报：触发项、是否建议临时会商、建议参与角色、temporary meeting broadcast 路径、event watch 路径\n7. 不要输出可执行买价",
         "model": "minimax-m2.5",
         "thinking": "low",
         "timeoutSeconds": 120,
