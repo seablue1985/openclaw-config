@@ -393,6 +393,134 @@
         "consecutiveErrors": 0,
         "nextRunAtMs": 1773491400000
       }
+    },
+    {
+      "id": "investment-research-background-preopen-0840",
+      "name": "08:40来福投研会-盘前值班",
+      "description": "盘前由宏观/量化/风控/交易员/首席研究员完成非会议值班",
+      "enabled": true,
+      "createdAtMs": 1773491345498,
+      "updatedAtMs": 1773491345498,
+      "schedule": {
+        "kind": "cron",
+        "expr": "40 8 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_background_cycle.py --cycle pre_open\n3. 读取 cycle md/json 输出\n4. 用中文简短汇报：当前风险状态、优先候选、值班角色、周期总览文件路径\n5. 非交易时段不要给可执行买价，只给方向、优先级和触发条件",
+        "model": "minimax-m2.5",
+        "thinking": "low",
+        "timeoutSeconds": 180,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_968a615509dc191f04220e18cda67080",
+        "bestEffort": true
+      },
+      "state": {
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "investment-research-background-intraday-1030",
+      "name": "10:30来福投研会-盘中值班",
+      "description": "盘中由风控/交易员/行业/首席研究员做风险与异动巡检",
+      "enabled": true,
+      "createdAtMs": 1773491345498,
+      "updatedAtMs": 1773491345498,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 10 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_background_cycle.py --cycle intraday\n3. 读取 cycle md/json 输出\n4. 用中文简短汇报：风险灯号、观察池、是否需要临时会商、周期总览文件路径\n5. 若有阻断点，明确写出",
+        "model": "minimax-m2.5",
+        "thinking": "low",
+        "timeoutSeconds": 180,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_968a615509dc191f04220e18cda67080",
+        "bestEffort": true
+      },
+      "state": {
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "investment-research-background-postclose-1630",
+      "name": "16:30来福投研会-盘后值班",
+      "description": "盘后由交易员/量化/行业/首席研究员更新观察池与次日准备",
+      "enabled": true,
+      "createdAtMs": 1773491345498,
+      "updatedAtMs": 1773491345498,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 16 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_background_cycle.py --cycle post_close\n3. 读取 cycle md/json 输出\n4. 用中文简短汇报：盘后整理结论、次日观察重点、值班角色、周期总览文件路径",
+        "model": "minimax-m2.5",
+        "thinking": "low",
+        "timeoutSeconds": 180,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_968a615509dc191f04220e18cda67080",
+        "bestEffort": true
+      },
+      "state": {
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "investment-research-background-overnight-2100",
+      "name": "21:00来福投研会-夜间值班",
+      "description": "夜间由宏观/行业/量化/大师分身/首席研究员做深度研究与次日准备",
+      "enabled": true,
+      "createdAtMs": 1773491345498,
+      "updatedAtMs": 1773491345498,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 21 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_background_cycle.py --cycle overnight\n3. 读取 cycle md/json 输出\n4. 用中文简短汇报：夜间研究重点、分身角色观点、待决策事项、周期总览文件路径\n5. 非交易时段不要给可执行买价",
+        "model": "minimax-m2.5",
+        "thinking": "low",
+        "timeoutSeconds": 180,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_968a615509dc191f04220e18cda67080",
+        "bestEffort": true
+      },
+      "state": {
+        "consecutiveErrors": 0
+      }
     }
   ]
 }
