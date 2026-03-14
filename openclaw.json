@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastTouchedVersion": "2026.3.11",
-    "lastTouchedAt": "2026-03-13T02:20:05.091Z"
+    "lastTouchedVersion": "2026.3.12",
+    "lastTouchedAt": "2026-03-14T02:01:53.075Z"
   },
   "env": {},
   "wizard": {
@@ -247,9 +247,9 @@
   "agents": {
     "defaults": {
       "model": {
-        "primary": "minimax-portal/MiniMax-M2.5",
+        "primary": "gmn/gpt-5.4",
         "fallbacks": [
-          "codex/gpt-5.3-codex"
+          "minimax-portal/MiniMax-M2.5"
         ]
       },
       "models": {
@@ -300,11 +300,11 @@
     "list": [
       {
         "id": "main",
-        "name": "主脑 (MiniMax)",
+        "name": "主脑 (GPT-5.4)",
         "model": {
-          "primary": "minimax-m2.5",
+          "primary": "gmn/gpt-5.4",
           "fallbacks": [
-            "gmn/gpt-5.3-codex"
+            "minimax-portal/MiniMax-M2.5"
           ]
         }
       },
@@ -463,9 +463,7 @@
           "enabled": true
         }
       }
-    }cd /Users/ling/.openclaw/workspace/other_projects/openclaw-control-center
-nohup env UI_MODE=true APP_COMMAND= node --import tsx src/index.ts --invalid > runtime/control-center.log 2>&1 &
-echo "PID: $!
+    }
   },
   "channels": {
     "feishu": {
@@ -534,7 +532,8 @@ echo "PID: $!
     ],
     "load": {
       "paths": [
-        "/Users/ling/node_modules/memory-lancedb-pro"
+        "/Users/ling/node_modules/memory-lancedb-pro",
+        "/Users/ling/.local/share/fnm/node-versions/v22.22.0/installation/lib/node_modules/openclaw/extensions/acpx"
       ]
     },
     "slots": {
@@ -599,6 +598,9 @@ echo "PID: $!
       },
       "memory-lancedb": {
         "enabled": false
+      },
+      "acpx": {
+        "enabled": true
       }
     },
     "installs": {
@@ -615,6 +617,13 @@ echo "PID: $!
         "installPath": "/Users/ling/node_modules/memory-lancedb-pro",
         "version": "1.1.0-beta.6",
         "installedAt": "2026-03-11T06:14:11.907Z"
+      },
+      "acpx": {
+        "source": "path",
+        "spec": "@openclaw/acpx",
+        "sourcePath": "/Users/ling/.local/share/fnm/node-versions/v22.22.0/installation/lib/node_modules/openclaw/extensions/acpx",
+        "installPath": "/Users/ling/.local/share/fnm/node-versions/v22.22.0/installation/lib/node_modules/openclaw/extensions/acpx",
+        "installedAt": "2026-03-14T01:21:07.629Z"
       }
     }
   }

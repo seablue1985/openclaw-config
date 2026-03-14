@@ -82,7 +82,7 @@
       "description": "每天早上9点同步小红书点赞/收藏到当前打开的 Obsidian vault",
       "enabled": true,
       "createdAtMs": 1773113389264,
-      "updatedAtMs": 1773363634667,
+      "updatedAtMs": 1773450011000,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * *"
@@ -103,12 +103,12 @@
         "to": "ou_968a615509dc191f04220e18cda67080"
       },
       "state": {
-        "nextRunAtMs": 1773450000000,
+        "nextRunAtMs": 1773536400000,
         "consecutiveErrors": 0,
-        "lastRunAtMs": 1773363600012,
+        "lastRunAtMs": 1773450000008,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 34655,
+        "lastDurationMs": 10992,
         "lastDeliveryStatus": "delivered",
         "lastDelivered": true
       }
@@ -118,7 +118,7 @@
       "name": "每日09:30盘前强检",
       "enabled": true,
       "createdAtMs": 1773145175561,
-      "updatedAtMs": 1773365413079,
+      "updatedAtMs": 1773451812941,
       "schedule": {
         "kind": "cron",
         "expr": "30 9 * * *",
@@ -139,11 +139,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773451800000,
-        "lastRunAtMs": 1773365400009,
+        "nextRunAtMs": 1773538200000,
+        "lastRunAtMs": 1773451800010,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 13070,
+        "lastDurationMs": 12931,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -192,7 +192,7 @@
       "description": "每天09:00提醒检查量化回测任务队列",
       "enabled": true,
       "createdAtMs": 1773215340583,
-      "updatedAtMs": 1773363643789,
+      "updatedAtMs": 1773450033222,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * *",
@@ -205,11 +205,11 @@
         "text": "09:00提醒：请检查量化回测任务队列。"
       },
       "state": {
-        "nextRunAtMs": 1773450000000,
-        "lastRunAtMs": 1773363634667,
+        "nextRunAtMs": 1773536400000,
+        "lastRunAtMs": 1773450011000,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 9122,
+        "lastDurationMs": 22222,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
       }
@@ -220,7 +220,7 @@
       "description": "每天08:50生成全球股市早间要闻，含大盘体温/板块映射/看涨看跌",
       "enabled": true,
       "createdAtMs": 1773373210801,
-      "updatedAtMs": 1773373210801,
+      "updatedAtMs": 1773449520014,
       "schedule": {
         "kind": "cron",
         "expr": "50 8 * * *",
@@ -243,7 +243,14 @@
         "to": "ou_83b02a0239e70fc8a4bf0b79aa8f9db7"
       },
       "state": {
-        "nextRunAtMs": 1773449400000
+        "nextRunAtMs": 1773535800000,
+        "lastRunAtMs": 1773449400011,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 120003,
+        "lastError": "AxiosError: Request failed with status code 400",
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1
       }
     }
   ]

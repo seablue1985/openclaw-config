@@ -14,14 +14,17 @@
       "key": "ollama-local"
     }
   },
+  "lastGood": {
+    "minimax-portal": "minimax-portal:default"
+  },
   "usageStats": {
     "minimax-portal:default": {
       "errorCount": 0,
-      "lastUsed": 1773445409803
+      "lastUsed": 1773466457405
     },
     "ollama-local:default": {
       "errorCount": 0,
-      "lastUsed": 1773392466105
+      "lastUsed": 1773466261798
     }
   }
 }

@@ -92,8 +92,7 @@
             "cacheWrite": 0
           },
           "contextWindow": 200000,
-          "maxTokens": 8192,
-          "api": "anthropic-messages"
+          "maxTokens": 8192
         },
         {
           "id": "MiniMax-M2.5-highspeed",
@@ -109,8 +108,7 @@
             "cacheWrite": 0
           },
           "contextWindow": 200000,
-          "maxTokens": 8192,
-          "api": "anthropic-messages"
+          "maxTokens": 8192
         },
         {
           "id": "MiniMax-M2.5-Lightning",
@@ -126,8 +124,7 @@
             "cacheWrite": 0
           },
           "contextWindow": 200000,
-          "maxTokens": 8192,
-          "api": "anthropic-messages"
+          "maxTokens": 8192
         },
         {
           "id": "MiniMax-VL-01",
@@ -231,8 +228,7 @@
             "cacheWrite": 0
           },
           "contextWindow": 200000,
-          "maxTokens": 64000,
-          "api": "openai-responses"
+          "maxTokens": 64000
         },
         {
           "id": "gpt-5.2-codex",
@@ -249,8 +245,7 @@
             "cacheWrite": 0
           },
           "contextWindow": 200000,
-          "maxTokens": 64000,
-          "api": "openai-responses"
+          "maxTokens": 64000
         }
       ]
     },
@@ -322,14 +317,7 @@
             "text"
           ],
           "contextWindow": 262144,
-          "maxTokens": 4096,
-          "cost": {
-            "input": 0,
-            "output": 0,
-            "cacheRead": 0,
-            "cacheWrite": 0
-          },
-          "api": "ollama"
+          "maxTokens": 4096
         },
         {
           "id": "gemma3:4b",
@@ -339,14 +327,7 @@
             "text"
           ],
           "contextWindow": 4096,
-          "maxTokens": 2048,
-          "cost": {
-            "input": 0,
-            "output": 0,
-            "cacheRead": 0,
-            "cacheWrite": 0
-          },
-          "api": "ollama"
+          "maxTokens": 2048
         }
       ]
     }
