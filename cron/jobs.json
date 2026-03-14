@@ -43,7 +43,7 @@
       "name": "23:00 Codex记忆夜跑",
       "enabled": true,
       "createdAtMs": 1772683570660,
-      "updatedAtMs": 1773414032973,
+      "updatedAtMs": 1773487592124,
       "schedule": {
         "kind": "cron",
         "expr": "0 23 * * *",
@@ -57,7 +57,7 @@
         "thinking": "low",
         "timeoutSeconds": 900,
         "lightContext": true,
-        "model": "codex/gpt-5.3-codex"
+        "model": "minimax-m2.5"
       },
       "delivery": {
         "mode": "announce",
@@ -118,7 +118,7 @@
       "name": "每日09:30盘前强检",
       "enabled": true,
       "createdAtMs": 1773145175561,
-      "updatedAtMs": 1773451812941,
+      "updatedAtMs": 1773487592124,
       "schedule": {
         "kind": "cron",
         "expr": "30 9 * * *",
@@ -128,9 +128,9 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行盘前强检: cd /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system && python3 scripts/auto_run_premarket_precheck.py --available-cash 180000 --account-nav 930000",
+        "message": "执行盘前强检: cd /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system && python3 scripts/auto_run_premarket_precheck.py --available-cash 1000000 --account-nav 930000",
         "timeoutSeconds": 180,
-        "model": "codex/gpt-5.3-codex"
+        "model": "minimax-m2.5"
       },
       "delivery": {
         "mode": "announce",
@@ -154,7 +154,7 @@
       "name": "每日15:30盘后审计",
       "enabled": true,
       "createdAtMs": 1773145190834,
-      "updatedAtMs": 1773387012879,
+      "updatedAtMs": 1773473413271,
       "schedule": {
         "kind": "cron",
         "expr": "30 15 * * *",
@@ -175,11 +175,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1773473400000,
-        "lastRunAtMs": 1773387000011,
+        "nextRunAtMs": 1773559800000,
+        "lastRunAtMs": 1773473400013,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 12868,
+        "lastDurationMs": 13258,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -187,22 +187,31 @@
     },
     {
       "id": "fe8deda2-476c-4aa2-bc6f-21ff95ed5b47",
-      "sessionKey": "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080",
       "name": "09:00量化回测队列检查提醒",
-      "description": "每天09:00提醒检查量化回测任务队列",
+      "description": "每天09:00发送实时量化回测状态摘要",
       "enabled": true,
       "createdAtMs": 1773215340583,
-      "updatedAtMs": 1773450033222,
+      "updatedAtMs": 1773474261294,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * *",
         "tz": "Asia/Shanghai"
       },
-      "sessionTarget": "main",
+      "sessionTarget": "isolated",
       "wakeMode": "now",
       "payload": {
-        "kind": "systemEvent",
-        "text": "09:00提醒：请检查量化回测任务队列。"
+        "kind": "agentTurn",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system\n2. 运行 python3 scripts/report_backtest_queue_status.py\n3. 直接输出脚本结果，不要引用旧会话缓存，不要补充过期回测结论\n4. 如果脚本失败，只返回错误摘要与失败命令",
+        "model": "codex/gpt-5.3-codex",
+        "thinking": "low",
+        "timeoutSeconds": 120,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_968a615509dc191f04220e18cda67080",
+        "bestEffort": true
       },
       "state": {
         "nextRunAtMs": 1773536400000,
@@ -220,7 +229,7 @@
       "description": "每天08:50生成全球股市早间要闻，含大盘体温/板块映射/看涨看跌",
       "enabled": true,
       "createdAtMs": 1773373210801,
-      "updatedAtMs": 1773449520014,
+      "updatedAtMs": 1773487592124,
       "schedule": {
         "kind": "cron",
         "expr": "50 8 * * *",
@@ -240,7 +249,7 @@
       "delivery": {
         "mode": "announce",
         "channel": "feishu",
-        "to": "ou_83b02a0239e70fc8a4bf0b79aa8f9db7"
+        "to": "ou_968a615509dc191f04220e18cda67080"
       },
       "state": {
         "nextRunAtMs": 1773535800000,
@@ -251,6 +260,138 @@
         "lastError": "AxiosError: Request failed with status code 400",
         "lastDeliveryStatus": "unknown",
         "consecutiveErrors": 1
+      }
+    },
+    {
+      "id": "investment-research-org-morning-0855",
+      "name": "08:55来福投研会-盘前会",
+      "description": "生成真实输入版盘前会与交易建议卡，并推送到当前飞书DM",
+      "enabled": true,
+      "createdAtMs": 1773487592124,
+      "updatedAtMs": 1773487592124,
+      "schedule": {
+        "kind": "cron",
+        "expr": "55 8 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_orchestrator.py --meeting-type morning\n3. 读取生成的 report md/json 与 trade card md/json\n4. 用中文简短汇报：审计状态、风险收缩、优先候选、交易建议卡状态、4个输出文件路径\n5. 非交易时段不要给可执行买价，只给方向、预算、优先级和开盘触发条件",
+        "model": "minimax-m2.5",
+        "thinking": "low",
+        "timeoutSeconds": 180,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_968a615509dc191f04220e18cda67080",
+        "bestEffort": true
+      },
+      "state": {
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1773622500000
+      }
+    },
+    {
+      "id": "investment-research-org-midday-1135",
+      "name": "11:35来福投研会-午盘巡检",
+      "description": "生成真实输入版午盘巡检会与交易建议卡，并推送到当前飞书DM",
+      "enabled": true,
+      "createdAtMs": 1773487592124,
+      "updatedAtMs": 1773487592124,
+      "schedule": {
+        "kind": "cron",
+        "expr": "35 11 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_orchestrator.py --meeting-type midday\n3. 读取生成的 report md/json 与 trade card md/json\n4. 用中文简短汇报：午盘风险灯号、持仓/成交行数、观察池、交易建议卡状态、4个输出文件路径\n5. 若数据缺失，明确指出阻断点",
+        "model": "minimax-m2.5",
+        "thinking": "low",
+        "timeoutSeconds": 180,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_968a615509dc191f04220e18cda67080",
+        "bestEffort": true
+      },
+      "state": {
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1773632100000
+      }
+    },
+    {
+      "id": "investment-research-org-close-1515",
+      "name": "15:15来福投研会-收盘复盘",
+      "description": "生成真实输入版收盘复盘会与交易建议卡，并推送到当前飞书DM",
+      "enabled": true,
+      "createdAtMs": 1773487592124,
+      "updatedAtMs": 1773487592124,
+      "schedule": {
+        "kind": "cron",
+        "expr": "15 15 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_orchestrator.py --meeting-type close\n3. 读取生成的 report md/json 与 trade card md/json\n4. 用中文简短汇报：收盘结论、风险状态、观察池、减仓复核名单、4个输出文件路径",
+        "model": "minimax-m2.5",
+        "thinking": "low",
+        "timeoutSeconds": 180,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_968a615509dc191f04220e18cda67080",
+        "bestEffort": true
+      },
+      "state": {
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1773645300000
+      }
+    },
+    {
+      "id": "investment-research-org-night-2030",
+      "name": "20:30来福投研会-夜间研究会",
+      "description": "生成真实输入版夜间研究会与交易建议卡，并推送到当前飞书DM",
+      "enabled": true,
+      "createdAtMs": 1773487592124,
+      "updatedAtMs": 1773487592124,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 20 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_orchestrator.py --meeting-type night\n3. 读取生成的 report md/json 与 trade card md/json\n4. 用中文简短汇报：夜间研究结论、次日观察重点、交易建议卡状态、4个输出文件路径\n5. 非交易时段不要给可执行买价",
+        "model": "minimax-m2.5",
+        "thinking": "low",
+        "timeoutSeconds": 180,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_968a615509dc191f04220e18cda67080",
+        "bestEffort": true
+      },
+      "state": {
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1773491400000
       }
     }
   ]
