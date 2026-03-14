@@ -229,7 +229,7 @@
       "description": "每天08:50生成全球股市早间要闻，含大盘体温/板块映射/看涨看跌",
       "enabled": true,
       "createdAtMs": 1773373210801,
-      "updatedAtMs": 1773487592124,
+      "updatedAtMs": 1773488577682,
       "schedule": {
         "kind": "cron",
         "expr": "50 8 * * *",
@@ -240,7 +240,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "每天早上 08:50 生成《全球股市早间要闻》。\n\n要求：\n1. 使用 web_search / web_fetch 收集过去 24 小时内与全球股市、宏观风险偏好、主要指数、利率、汇率、大宗商品相关的重要新闻。\n2. 用中文输出，简洁但有判断，不要空话。\n3. 必须包含以下模块：\n   - 一句话总览：今天全球风险偏好偏多 / 中性 / 偏空\n   - 隔夜市场速览：美股、欧股、亚太（如有）、美元指数、美债收益率、原油、黄金、USD/CNH\n   - 今日早间要闻：筛选 5-8 条最影响股市的新闻，每条写“事件 + 对股市影响”\n   - 大盘体温：给出 0-100 分，并标注 冰冷 / 偏冷 / 中性 / 偏热 / 过热，说明依据\n   - 板块映射：把新闻映射到可能受益/承压的板块，至少各列 3 个\n   - 看涨 / 看跌：分别列出 3-5 个方向或资产，写清逻辑\n   - A股开盘前结论：给出偏进攻 / 均衡 / 防守 的操作基调\n4. 若为非交易日或盘前无法确认的内容，不给“可执行买价”；只给方向、优先级和触发条件。\n5. 尽量附上来源名；若能拿到链接，保留 3-5 个关键链接。\n6. 若无重大新闻，也要给出简版晨报，不能空回复。\n7. 输出格式适合飞书阅读：用分点和短段落，不要 markdown 表格。",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace/skills/news-market\n2. 运行 python3 scripts/generate_morning_news_free.py --output /Users/ling/.openclaw/workspace/research/reports/global_market_morning_free_latest.md --json-output /Users/ling/.openclaw/workspace/research/reports/global_market_morning_free_latest.json\n3. 读取上述 md/json 输出\n4. 用中文简短汇报：一句话总览、隔夜市场要点、大盘体温、A股开盘前结论、2-3条关键新闻与输出文件路径\n5. 本任务使用免费链路：Yahoo Search 主搜 + DuckDuckGo 兜底 + yfinance/akshare 数据\n6. 非交易时段不要给可执行买价，只给方向、优先级和触发条件",
         "model": "minimax-m2.5",
         "thinking": "low",
         "timeoutSeconds": 240,
