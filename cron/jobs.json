@@ -570,6 +570,39 @@
         "consecutiveErrors": 0,
         "nextRunAtMs": 1773625500000
       }
+    },
+    {
+      "id": "investment-research-data-source-health-0935",
+      "name": "09:35来福投研会-数据源健康巡检",
+      "description": "交易时段巡检双源行情与账户同步健康度，异常时主动告警",
+      "enabled": true,
+      "createdAtMs": 1773496760753,
+      "updatedAtMs": 1773496760753,
+      "schedule": {
+        "kind": "cron",
+        "expr": "35 9,10,13,14 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_data_source_health_probe.py --scope intraday\n3. 运行 python3 scripts/generate_investment_research_data_source_health_broadcast.py --scope intraday\n4. 读取 health probe json 和 health broadcast md\n5. 如果状态是 healthy 或 offhours_guarded，则回复 NO_REPLY\n6. 如果状态是 watch_guarded 或 degraded，则用中文简短汇报：状态、采样标的、最大价差分歧、触发项、broadcast 路径、probe 路径\n7. 若状态为 degraded，明确写出建议立即临时会商",
+        "model": "minimax-m2.5",
+        "thinking": "low",
+        "timeoutSeconds": 180,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_968a615509dc191f04220e18cda67080",
+        "bestEffort": true
+      },
+      "state": {
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1773624900000
+      }
     }
   ]
 }
