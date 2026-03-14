@@ -278,7 +278,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type morning\n3. 优先读取 chief card json，其次读取 chief dashboard / trade card / group digest / publish bundle summary\n4. 若当前运行环境可直接使用富消息/卡片投递，则优先把 chief card 作为 Feishu 投递内容发送到当前目标；若卡片投递不可用，则退回 chief dashboard 文本摘要\n5. 无论卡片还是文本，都用中文简短汇报 盘前会 的：审计状态、风险收缩、观察池、持仓预览、成交预览、交易建议卡状态、chief card 路径、chief dashboard 路径、group digest 路径、publish bundle summary 路径\n6. 若用户尚未提供群 chat_id，则继续发当前飞书 DM；若已绑定群，则可用于群聊版推送\n7. 非交易时段不要给可执行买价，只给方向、预算、优先级和触发条件",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type morning\n3. 优先读取 chief broadcast markdown，其次读取 chief card json / chief dashboard / trade card / group digest / publish bundle summary\n4. 若当前运行环境支持卡片/富消息渲染，则优先发送 chief broadcast markdown（其结构为表格+摘要，适合 Feishu 自动卡片化）；若不可用，则退回同内容的文本摘要\n5. 用中文简短汇报 盘前会 的：审计状态、风险收缩、观察池、持仓预览、成交预览、交易建议卡状态、chief broadcast 路径、chief card 路径、chief dashboard 路径、group digest 路径、publish bundle summary 路径\n6. 若用户尚未提供群 chat_id，则继续发当前飞书 DM；若已绑定群，则可用于群聊版推送\n7. 非交易时段不要给可执行买价，只给方向、预算、优先级和触发条件",
         "model": "minimax-m2.5",
         "thinking": "low",
         "timeoutSeconds": 180,
@@ -311,7 +311,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type midday\n3. 优先读取 chief card json，其次读取 chief dashboard / trade card / group digest / publish bundle summary\n4. 若当前运行环境可直接使用富消息/卡片投递，则优先把 chief card 作为 Feishu 投递内容发送到当前目标；若卡片投递不可用，则退回 chief dashboard 文本摘要\n5. 无论卡片还是文本，都用中文简短汇报 午盘巡检 的：审计状态、风险收缩、观察池、持仓预览、成交预览、交易建议卡状态、chief card 路径、chief dashboard 路径、group digest 路径、publish bundle summary 路径\n6. 若用户尚未提供群 chat_id，则继续发当前飞书 DM；若已绑定群，则可用于群聊版推送\n7. 非交易时段不要给可执行买价，只给方向、预算、优先级和触发条件",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type midday\n3. 优先读取 chief broadcast markdown，其次读取 chief card json / chief dashboard / trade card / group digest / publish bundle summary\n4. 若当前运行环境支持卡片/富消息渲染，则优先发送 chief broadcast markdown（其结构为表格+摘要，适合 Feishu 自动卡片化）；若不可用，则退回同内容的文本摘要\n5. 用中文简短汇报 午盘巡检 的：审计状态、风险收缩、观察池、持仓预览、成交预览、交易建议卡状态、chief broadcast 路径、chief card 路径、chief dashboard 路径、group digest 路径、publish bundle summary 路径\n6. 若用户尚未提供群 chat_id，则继续发当前飞书 DM；若已绑定群，则可用于群聊版推送\n7. 非交易时段不要给可执行买价，只给方向、预算、优先级和触发条件",
         "model": "minimax-m2.5",
         "thinking": "low",
         "timeoutSeconds": 180,
@@ -344,7 +344,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type close\n3. 优先读取 chief card json，其次读取 chief dashboard / trade card / group digest / publish bundle summary\n4. 若当前运行环境可直接使用富消息/卡片投递，则优先把 chief card 作为 Feishu 投递内容发送到当前目标；若卡片投递不可用，则退回 chief dashboard 文本摘要\n5. 无论卡片还是文本，都用中文简短汇报 收盘复盘 的：审计状态、风险收缩、观察池、持仓预览、成交预览、交易建议卡状态、chief card 路径、chief dashboard 路径、group digest 路径、publish bundle summary 路径\n6. 若用户尚未提供群 chat_id，则继续发当前飞书 DM；若已绑定群，则可用于群聊版推送\n7. 非交易时段不要给可执行买价，只给方向、预算、优先级和触发条件",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type close\n3. 优先读取 chief broadcast markdown，其次读取 chief card json / chief dashboard / trade card / group digest / publish bundle summary\n4. 若当前运行环境支持卡片/富消息渲染，则优先发送 chief broadcast markdown（其结构为表格+摘要，适合 Feishu 自动卡片化）；若不可用，则退回同内容的文本摘要\n5. 用中文简短汇报 收盘复盘 的：审计状态、风险收缩、观察池、持仓预览、成交预览、交易建议卡状态、chief broadcast 路径、chief card 路径、chief dashboard 路径、group digest 路径、publish bundle summary 路径\n6. 若用户尚未提供群 chat_id，则继续发当前飞书 DM；若已绑定群，则可用于群聊版推送\n7. 非交易时段不要给可执行买价，只给方向、预算、优先级和触发条件",
         "model": "minimax-m2.5",
         "thinking": "low",
         "timeoutSeconds": 180,
@@ -377,7 +377,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type night\n3. 优先读取 chief card json，其次读取 chief dashboard / trade card / group digest / publish bundle summary\n4. 若当前运行环境可直接使用富消息/卡片投递，则优先把 chief card 作为 Feishu 投递内容发送到当前目标；若卡片投递不可用，则退回 chief dashboard 文本摘要\n5. 无论卡片还是文本，都用中文简短汇报 夜间研究会 的：审计状态、风险收缩、观察池、持仓预览、成交预览、交易建议卡状态、chief card 路径、chief dashboard 路径、group digest 路径、publish bundle summary 路径\n6. 若用户尚未提供群 chat_id，则继续发当前飞书 DM；若已绑定群，则可用于群聊版推送\n7. 非交易时段不要给可执行买价，只给方向、预算、优先级和触发条件",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type night\n3. 优先读取 chief broadcast markdown，其次读取 chief card json / chief dashboard / trade card / group digest / publish bundle summary\n4. 若当前运行环境支持卡片/富消息渲染，则优先发送 chief broadcast markdown（其结构为表格+摘要，适合 Feishu 自动卡片化）；若不可用，则退回同内容的文本摘要\n5. 用中文简短汇报 夜间研究会 的：审计状态、风险收缩、观察池、持仓预览、成交预览、交易建议卡状态、chief broadcast 路径、chief card 路径、chief dashboard 路径、group digest 路径、publish bundle summary 路径\n6. 若用户尚未提供群 chat_id，则继续发当前飞书 DM；若已绑定群，则可用于群聊版推送\n7. 非交易时段不要给可执行买价，只给方向、预算、优先级和触发条件",
         "model": "minimax-m2.5",
         "thinking": "low",
         "timeoutSeconds": 180,
