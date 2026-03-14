@@ -268,7 +268,7 @@
       "description": "生成真实输入版盘前会与交易建议卡，并推送到当前飞书DM",
       "enabled": true,
       "createdAtMs": 1773487592124,
-      "updatedAtMs": 1773487592124,
+      "updatedAtMs": 1773490966671,
       "schedule": {
         "kind": "cron",
         "expr": "55 8 * * 1-5",
@@ -278,7 +278,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_orchestrator.py --meeting-type morning\n3. 读取生成的 report md/json 与 trade card md/json\n4. 用中文简短汇报：审计状态、风险收缩、优先候选、交易建议卡状态、4个输出文件路径\n5. 非交易时段不要给可执行买价，只给方向、预算、优先级和开盘触发条件",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type morning\n3. 读取输出的 orchestrated report / trade card / role briefs index / group digest / publish bundle summary\n4. 用中文简短汇报 盘前会 的：审计状态、风险收缩、观察池、交易建议卡状态、group digest 路径、publish bundle summary 路径\n5. 若用户尚未提供群 chat_id，则继续发当前飞书 DM；若已绑定群，则可用于群聊版推送\n6. 非交易时段不要给可执行买价，只给方向、预算、优先级和触发条件",
         "model": "minimax-m2.5",
         "thinking": "low",
         "timeoutSeconds": 180,
@@ -301,7 +301,7 @@
       "description": "生成真实输入版午盘巡检会与交易建议卡，并推送到当前飞书DM",
       "enabled": true,
       "createdAtMs": 1773487592124,
-      "updatedAtMs": 1773487592124,
+      "updatedAtMs": 1773490966671,
       "schedule": {
         "kind": "cron",
         "expr": "35 11 * * 1-5",
@@ -311,7 +311,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_orchestrator.py --meeting-type midday\n3. 读取生成的 report md/json 与 trade card md/json\n4. 用中文简短汇报：午盘风险灯号、持仓/成交行数、观察池、交易建议卡状态、4个输出文件路径\n5. 若数据缺失，明确指出阻断点",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type midday\n3. 读取输出的 orchestrated report / trade card / role briefs index / group digest / publish bundle summary\n4. 用中文简短汇报 午盘巡检 的：审计状态、风险收缩、观察池、交易建议卡状态、group digest 路径、publish bundle summary 路径\n5. 若用户尚未提供群 chat_id，则继续发当前飞书 DM；若已绑定群，则可用于群聊版推送\n6. 非交易时段不要给可执行买价，只给方向、预算、优先级和触发条件",
         "model": "minimax-m2.5",
         "thinking": "low",
         "timeoutSeconds": 180,
@@ -334,7 +334,7 @@
       "description": "生成真实输入版收盘复盘会与交易建议卡，并推送到当前飞书DM",
       "enabled": true,
       "createdAtMs": 1773487592124,
-      "updatedAtMs": 1773487592124,
+      "updatedAtMs": 1773490966671,
       "schedule": {
         "kind": "cron",
         "expr": "15 15 * * 1-5",
@@ -344,7 +344,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_orchestrator.py --meeting-type close\n3. 读取生成的 report md/json 与 trade card md/json\n4. 用中文简短汇报：收盘结论、风险状态、观察池、减仓复核名单、4个输出文件路径",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type close\n3. 读取输出的 orchestrated report / trade card / role briefs index / group digest / publish bundle summary\n4. 用中文简短汇报 收盘复盘 的：审计状态、风险收缩、观察池、交易建议卡状态、group digest 路径、publish bundle summary 路径\n5. 若用户尚未提供群 chat_id，则继续发当前飞书 DM；若已绑定群，则可用于群聊版推送\n6. 非交易时段不要给可执行买价，只给方向、预算、优先级和触发条件",
         "model": "minimax-m2.5",
         "thinking": "low",
         "timeoutSeconds": 180,
@@ -367,7 +367,7 @@
       "description": "生成真实输入版夜间研究会与交易建议卡，并推送到当前飞书DM",
       "enabled": true,
       "createdAtMs": 1773487592124,
-      "updatedAtMs": 1773487592124,
+      "updatedAtMs": 1773490966671,
       "schedule": {
         "kind": "cron",
         "expr": "30 20 * * *",
@@ -377,7 +377,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_orchestrator.py --meeting-type night\n3. 读取生成的 report md/json 与 trade card md/json\n4. 用中文简短汇报：夜间研究结论、次日观察重点、交易建议卡状态、4个输出文件路径\n5. 非交易时段不要给可执行买价",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type night\n3. 读取输出的 orchestrated report / trade card / role briefs index / group digest / publish bundle summary\n4. 用中文简短汇报 夜间研究会 的：审计状态、风险收缩、观察池、交易建议卡状态、group digest 路径、publish bundle summary 路径\n5. 若用户尚未提供群 chat_id，则继续发当前飞书 DM；若已绑定群，则可用于群聊版推送\n6. 非交易时段不要给可执行买价，只给方向、预算、优先级和触发条件",
         "model": "minimax-m2.5",
         "thinking": "low",
         "timeoutSeconds": 180,
