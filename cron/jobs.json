@@ -278,7 +278,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type morning\n3. 读取输出的 orchestrated report / trade card / role briefs index / group digest / publish bundle summary\n4. 用中文简短汇报 盘前会 的：审计状态、风险收缩、观察池、交易建议卡状态、group digest 路径、publish bundle summary 路径\n5. 若用户尚未提供群 chat_id，则继续发当前飞书 DM；若已绑定群，则可用于群聊版推送\n6. 非交易时段不要给可执行买价，只给方向、预算、优先级和触发条件",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type morning\n3. 优先读取 chief dashboard，其次再读取 trade card / group digest / publish bundle summary\n4. 用中文简短汇报 盘前会 的：审计状态、风险收缩、观察池、持仓预览、成交预览、交易建议卡状态、chief dashboard 路径、group digest 路径、publish bundle summary 路径\n5. 若用户尚未提供群 chat_id，则继续发当前飞书 DM；若已绑定群，则可用于群聊版推送\n6. 非交易时段不要给可执行买价，只给方向、预算、优先级和触发条件",
         "model": "minimax-m2.5",
         "thinking": "low",
         "timeoutSeconds": 180,
@@ -311,7 +311,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type midday\n3. 读取输出的 orchestrated report / trade card / role briefs index / group digest / publish bundle summary\n4. 用中文简短汇报 午盘巡检 的：审计状态、风险收缩、观察池、交易建议卡状态、group digest 路径、publish bundle summary 路径\n5. 若用户尚未提供群 chat_id，则继续发当前飞书 DM；若已绑定群，则可用于群聊版推送\n6. 非交易时段不要给可执行买价，只给方向、预算、优先级和触发条件",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type midday\n3. 优先读取 chief dashboard，其次再读取 trade card / group digest / publish bundle summary\n4. 用中文简短汇报 午盘巡检 的：审计状态、风险收缩、观察池、持仓预览、成交预览、交易建议卡状态、chief dashboard 路径、group digest 路径、publish bundle summary 路径\n5. 若用户尚未提供群 chat_id，则继续发当前飞书 DM；若已绑定群，则可用于群聊版推送\n6. 非交易时段不要给可执行买价，只给方向、预算、优先级和触发条件",
         "model": "minimax-m2.5",
         "thinking": "low",
         "timeoutSeconds": 180,
@@ -344,7 +344,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type close\n3. 读取输出的 orchestrated report / trade card / role briefs index / group digest / publish bundle summary\n4. 用中文简短汇报 收盘复盘 的：审计状态、风险收缩、观察池、交易建议卡状态、group digest 路径、publish bundle summary 路径\n5. 若用户尚未提供群 chat_id，则继续发当前飞书 DM；若已绑定群，则可用于群聊版推送\n6. 非交易时段不要给可执行买价，只给方向、预算、优先级和触发条件",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type close\n3. 优先读取 chief dashboard，其次再读取 trade card / group digest / publish bundle summary\n4. 用中文简短汇报 收盘复盘 的：审计状态、风险收缩、观察池、持仓预览、成交预览、交易建议卡状态、chief dashboard 路径、group digest 路径、publish bundle summary 路径\n5. 若用户尚未提供群 chat_id，则继续发当前飞书 DM；若已绑定群，则可用于群聊版推送\n6. 非交易时段不要给可执行买价，只给方向、预算、优先级和触发条件",
         "model": "minimax-m2.5",
         "thinking": "low",
         "timeoutSeconds": 180,
@@ -377,7 +377,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type night\n3. 读取输出的 orchestrated report / trade card / role briefs index / group digest / publish bundle summary\n4. 用中文简短汇报 夜间研究会 的：审计状态、风险收缩、观察池、交易建议卡状态、group digest 路径、publish bundle summary 路径\n5. 若用户尚未提供群 chat_id，则继续发当前飞书 DM；若已绑定群，则可用于群聊版推送\n6. 非交易时段不要给可执行买价，只给方向、预算、优先级和触发条件",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type night\n3. 优先读取 chief dashboard，其次再读取 trade card / group digest / publish bundle summary\n4. 用中文简短汇报 夜间研究会 的：审计状态、风险收缩、观察池、持仓预览、成交预览、交易建议卡状态、chief dashboard 路径、group digest 路径、publish bundle summary 路径\n5. 若用户尚未提供群 chat_id，则继续发当前飞书 DM；若已绑定群，则可用于群聊版推送\n6. 非交易时段不要给可执行买价，只给方向、预算、优先级和触发条件",
         "model": "minimax-m2.5",
         "thinking": "low",
         "timeoutSeconds": 180,
@@ -529,7 +529,8 @@
       },
       "state": {
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1773493200000
+        "nextRunAtMs": 1773493200000,
+        "runningAtMs": 1773493200010
       }
     },
     {
@@ -561,7 +562,8 @@
         "bestEffort": true
       },
       "state": {
-        "consecutiveErrors": 0
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1773625500000
       }
     }
   ]
