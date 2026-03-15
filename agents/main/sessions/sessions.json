@@ -1,7 +1,7 @@
 {
   "agent:main:main": {
     "sessionId": "1560c0af-d091-4f8f-9dbc-d643f89c76fe",
-    "updatedAt": 1773544883227,
+    "updatedAt": 1773546886069,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -486,7 +486,7 @@
     "model": "MiniMax-M2.5",
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1773543076623,
+      "generatedAt": 1773545086585,
       "sessionId": "1560c0af-d091-4f8f-9dbc-d643f89c76fe",
       "sessionKey": "agent:main:main",
       "provider": "minimax-portal",
@@ -976,16 +976,16 @@
         ]
       }
     },
-    "cacheRead": 0,
-    "cacheWrite": 22227,
+    "cacheRead": 22318,
+    "cacheWrite": 57,
     "totalTokensFresh": true,
     "fallbackNoticeSelectedModel": "gmn/gpt-5.4",
     "fallbackNoticeActiveModel": "minimax-portal/MiniMax-M2.5",
     "fallbackNoticeReason": "auth",
     "contextTokens": 200000,
     "inputTokens": 44,
-    "outputTokens": 311,
-    "totalTokens": 22271
+    "outputTokens": 336,
+    "totalTokens": 22419
   },
   "agent:main:quant-advisor": {
     "sessionId": "9cfec43e-a256-4ba8-9670-a0034bee5fde",
@@ -9928,7 +9928,7 @@
   },
   "agent:main:feishu:direct:ou_83b02a0239e70fc8a4bf0b79aa8f9db7": {
     "sessionId": "7a11fcc9-4773-4e0b-a4fa-acdc6293908e",
-    "updatedAt": 1773544959467,
+    "updatedAt": 1773545596740,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -9941,12 +9941,12 @@
     "lastTo": "user:ou_83b02a0239e70fc8a4bf0b79aa8f9db7",
     "lastAccountId": "feishu-assistant",
     "origin": {
-      "label": "ou_83b02a0239e70fc8a4bf0b79aa8f9db7",
+      "label": "feishu:ou_83b02a0239e70fc8a4bf0b79aa8f9db7",
       "provider": "feishu",
       "surface": "feishu",
       "chatType": "direct",
       "from": "feishu:ou_83b02a0239e70fc8a4bf0b79aa8f9db7",
-      "to": "user:ou_83b02a0239e70fc8a4bf0b79aa8f9db7",
+      "to": "ou_83b02a0239e70fc8a4bf0b79aa8f9db7",
       "accountId": "feishu-assistant"
     },
     "sessionFile": "/Users/ling/.openclaw/agents/main/sessions/7a11fcc9-4773-4e0b-a4fa-acdc6293908e.jsonl",
@@ -10416,15 +10416,15 @@
       ],
       "version": 0
     },
-    "modelProvider": "minimax-portal",
-    "model": "MiniMax-M2.5",
+    "modelProvider": "gmn",
+    "model": "gpt-5.4",
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1773544907989,
+      "generatedAt": 1773545446756,
       "sessionId": "7a11fcc9-4773-4e0b-a4fa-acdc6293908e",
       "sessionKey": "agent:main:feishu:direct:ou_83b02a0239e70fc8a4bf0b79aa8f9db7",
-      "provider": "minimax-portal",
-      "model": "MiniMax-M2.5",
+      "provider": "gmn",
+      "model": "gpt-5.4",
       "workspaceDir": "/Users/ling/.openclaw/workspace",
       "bootstrapMaxChars": 20000,
       "bootstrapTotalMaxChars": 150000,
@@ -10440,9 +10440,9 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 43050,
+        "chars": 42553,
         "projectContextChars": 12330,
-        "nonProjectContextChars": 30720
+        "nonProjectContextChars": 30223
       },
       "injectedWorkspaceFiles": [
         {
@@ -10912,12 +10912,13 @@
     },
     "totalTokensFresh": true,
     "contextTokens": 200000,
-    "totalTokens": 57562,
+    "totalTokens": 91085,
     "memoryFlushAt": 1773544959467,
     "memoryFlushCompactionCount": 1,
-    "fallbackNoticeSelectedModel": "gmn/gpt-5.4",
-    "fallbackNoticeActiveModel": "minimax-portal/MiniMax-M2.5",
-    "fallbackNoticeReason": "auth"
+    "inputTokens": 18338,
+    "outputTokens": 4425,
+    "cacheRead": 90752,
+    "cacheWrite": 0
   },
   "agent:main:cron:06d807e3-e8a9-4220-a339-a0d891de4408": {
     "sessionId": "c81eae87-c0c7-4444-9732-180b9e79083d",

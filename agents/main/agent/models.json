@@ -147,11 +147,11 @@
           "maxTokens": 8192
         }
       ],
-      "apiKey": "sk-cp-TypyXejs2B15_iA2InVLaRhZBTL_wxRXO5ut0AXIl6elvqblH6fWp3j8VaUulYChdYV6fEHnXtMyNwRhae"
+      "apiKey": "secretref-managed"
     },
     "gmn": {
       "baseUrl": "https://gmncode.cn/v1",
-      "apiKey": "sk-e529fe673ca03ba271c0bff5cae0dbcd06b57943f4bdb12ada983aa22eaba8b6",
+      "apiKey": "secretref-managed",
       "api": "openai-responses",
       "headers": {
         "User-Agent": "codex-rs/1.0.7"
@@ -213,7 +213,7 @@
     },
     "codex": {
       "baseUrl": "https://gmncodex.com",
-      "apiKey": "sk-e529fe673ca03ba271c0bff5cae0dbcd06b57943f4bdb12ada983aa22eaba8b6",
+      "apiKey": "secretref-managed",
       "api": "openai-responses",
       "models": [
         {
