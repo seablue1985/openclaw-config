@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-20T01:16:09Z",
+  "source": "codex-bridge",
+  "count": 1,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "78748a18-45e2-54f4-b331-d8cfe3a6890f",
+      "text": "今天openclaw的回复速度很慢，你检查一下",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.68,
+      "timestamp": 1773968850296,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019cf47f-7a53-71f2-b4dc-1f2c1dd724cd\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/16/rollout-2026-03-16T10-35-21-019cf47f-7a53-71f2-b4dc-1f2c1dd724cd.jsonl\",\"line_no\":18279,\"bridge_version\":1}"
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "sync_offsets": {
+    "sessions/2026/03/05/rollout-2026-03-05T17-40-28-019cbd5e-be7c-7060-9c2d-cd744b5189d2.jsonl": {
+      "line": 2756,
+      "session_id": "019cbd5e-be7c-7060-9c2d-cd744b5189d2",
+      "updated_at": "2026-03-20T09:50:26Z"
+    },
+    "sessions/2026/03/06/rollout-2026-03-06T22-10-10-019cc37c-02ce-75b1-a77b-b33050fba4b4.jsonl": {
+      "line": 1093,
+      "session_id": "019cc37c-02ce-75b1-a77b-b33050fba4b4",
+      "updated_at": "2026-03-20T09:50:26Z"
+    },
+    "sessions/2026/03/10/rollout-2026-03-10T16-51-52-019cd6f2-0a2b-7591-87d4-62324209e4e6.jsonl": {
+      "line": 6014,
+      "session_id": "019cd6f2-0a2b-7591-87d4-62324209e4e6",
+      "updated_at": "2026-03-20T09:50:26Z"
+    },
+    "sessions/2026/03/11/rollout-2026-03-11T16-37-39-019cdc0b-6245-70b1-8f80-d914d2461484.jsonl": {
+      "line": 14213,
+      "session_id": "019cdc0b-6245-70b1-8f80-d914d2461484",
+      "updated_at": "2026-03-20T09:50:26Z"
+    },
+    "sessions/2026/03/11/rollout-2026-03-11T16-54-00-019cdc1a-5bea-7c93-ac9f-0f0e2705d1a5.jsonl": {
+      "line": 1447,
+      "session_id": "019cdc1a-5bea-7c93-ac9f-0f0e2705d1a5",
+      "updated_at": "2026-03-20T09:50:26Z"
+    },
+    "sessions/2026/03/13/rollout-2026-03-13T19-59-20-019ce710-c049-7552-ac88-2aa739cf35d2.jsonl": {
+      "line": 9,
+      "session_id": "019ce710-c049-7552-ac88-2aa739cf35d2",
+      "updated_at": "2026-03-20T09:50:26Z"
+    },
+    "sessions/2026/03/14/rollout-2026-03-14T09-49-30-019cea08-c841-77f1-bb29-d60792767760.jsonl": {
+      "line": 2339,
+      "session_id": "019cea08-c841-77f1-bb29-d60792767760",
+      "updated_at": "2026-03-20T09:50:26Z"
+    },
+    "sessions/2026/03/14/rollout-2026-03-14T21-47-55-019cec9a-847a-7051-b1c3-06df6e25317a.jsonl": {
+      "line": 8,
+      "session_id": "019cec9a-847a-7051-b1c3-06df6e25317a",
+      "updated_at": "2026-03-20T09:50:26Z"
+    },
+    "sessions/2026/03/14/rollout-2026-03-14T21-48-18-019cec9a-dde7-7b90-af7c-37c9bb7dcc9b.jsonl": {
+      "line": 67,
+      "session_id": "019cec9a-dde7-7b90-af7c-37c9bb7dcc9b",
+      "updated_at": "2026-03-20T09:50:26Z"
+    },
+    "sessions/2026/03/16/rollout-2026-03-16T10-35-21-019cf47f-7a53-71f2-b4dc-1f2c1dd724cd.jsonl": {
+      "line": 21200,
+      "session_id": "019cf47f-7a53-71f2-b4dc-1f2c1dd724cd",
+      "updated_at": "2026-03-20T09:50:26Z"
+    },
+    "sessions/2026/03/17/rollout-2026-03-17T09-40-10-019cf973-50d8-7bf1-be67-94fd80aa338c.jsonl": {
+      "line": 72,
+      "session_id": "019cf973-50d8-7bf1-be67-94fd80aa338c",
+      "updated_at": "2026-03-20T09:50:26Z"
+    },
+    "sessions/2026/03/19/rollout-2026-03-19T17-05-27-019d0557-b7a8-7380-987a-38329fac17e8.jsonl": {
+      "line": 394,
+      "session_id": "019d0557-b7a8-7380-987a-38329fac17e8",
+      "updated_at": "2026-03-20T09:50:26Z"
+    },
+    "sessions/2026/03/20/rollout-2026-03-20T09-16-52-019d08d1-12f7-7712-bad0-58ee68574cb7.jsonl": {
+      "line": 116,
+      "session_id": "019d08d1-12f7-7712-bad0-58ee68574cb7",
+      "updated_at": "2026-03-20T09:50:26Z"
+    }
+  },
+  "backup_offsets": {
+    "sessions/2026/03/05/rollout-2026-03-05T17-40-28-019cbd5e-be7c-7060-9c2d-cd744b5189d2.jsonl": {
+      "line": 2756,
+      "session_id": "019cbd5e-be7c-7060-9c2d-cd744b5189d2",
+      "updated_at": "2026-03-20T09:50:30Z"
+    },
+    "sessions/2026/03/06/rollout-2026-03-06T22-10-10-019cc37c-02ce-75b1-a77b-b33050fba4b4.jsonl": {
+      "line": 1093,
+      "session_id": "019cc37c-02ce-75b1-a77b-b33050fba4b4",
+      "updated_at": "2026-03-20T09:50:30Z"
+    },
+    "sessions/2026/03/10/rollout-2026-03-10T16-51-52-019cd6f2-0a2b-7591-87d4-62324209e4e6.jsonl": {
+      "line": 6014,
+      "session_id": "019cd6f2-0a2b-7591-87d4-62324209e4e6",
+      "updated_at": "2026-03-20T09:50:30Z"
+    },
+    "sessions/2026/03/11/rollout-2026-03-11T16-37-39-019cdc0b-6245-70b1-8f80-d914d2461484.jsonl": {
+      "line": 14213,
+      "session_id": "019cdc0b-6245-70b1-8f80-d914d2461484",
+      "updated_at": "2026-03-20T09:50:31Z"
+    },
+    "sessions/2026/03/11/rollout-2026-03-11T16-54-00-019cdc1a-5bea-7c93-ac9f-0f0e2705d1a5.jsonl": {
+      "line": 1447,
+      "session_id": "019cdc1a-5bea-7c93-ac9f-0f0e2705d1a5",
+      "updated_at": "2026-03-20T09:50:31Z"
+    },
+    "sessions/2026/03/13/rollout-2026-03-13T19-59-20-019ce710-c049-7552-ac88-2aa739cf35d2.jsonl": {
+      "line": 9,
+      "session_id": "019ce710-c049-7552-ac88-2aa739cf35d2",
+      "updated_at": "2026-03-20T09:50:31Z"
+    },
+    "sessions/2026/03/14/rollout-2026-03-14T09-49-30-019cea08-c841-77f1-bb29-d60792767760.jsonl": {
+      "line": 2339,
+      "session_id": "019cea08-c841-77f1-bb29-d60792767760",
+      "updated_at": "2026-03-20T09:50:31Z"
+    },
+    "sessions/2026/03/14/rollout-2026-03-14T21-47-55-019cec9a-847a-7051-b1c3-06df6e25317a.jsonl": {
+      "line": 8,
+      "session_id": "019cec9a-847a-7051-b1c3-06df6e25317a",
+      "updated_at": "2026-03-20T09:50:31Z"
+    },
+    "sessions/2026/03/14/rollout-2026-03-14T21-48-18-019cec9a-dde7-7b90-af7c-37c9bb7dcc9b.jsonl": {
+      "line": 67,
+      "session_id": "019cec9a-dde7-7b90-af7c-37c9bb7dcc9b",
+      "updated_at": "2026-03-20T09:50:31Z"
+    },
+    "sessions/2026/03/16/rollout-2026-03-16T10-35-21-019cf47f-7a53-71f2-b4dc-1f2c1dd724cd.jsonl": {
+      "line": 21200,
+      "session_id": "019cf47f-7a53-71f2-b4dc-1f2c1dd724cd",
+      "updated_at": "2026-03-20T09:50:31Z"
+    },
+    "sessions/2026/03/17/rollout-2026-03-17T09-40-10-019cf973-50d8-7bf1-be67-94fd80aa338c.jsonl": {
+      "line": 72,
+      "session_id": "019cf973-50d8-7bf1-be67-94fd80aa338c",
+      "updated_at": "2026-03-20T09:50:31Z"
+    },
+    "sessions/2026/03/19/rollout-2026-03-19T17-05-27-019d0557-b7a8-7380-987a-38329fac17e8.jsonl": {
+      "line": 394,
+      "session_id": "019d0557-b7a8-7380-987a-38329fac17e8",
+      "updated_at": "2026-03-20T09:50:31Z"
+    },
+    "sessions/2026/03/20/rollout-2026-03-20T09-16-52-019d08d1-12f7-7712-bad0-58ee68574cb7.jsonl": {
+      "line": 116,
+      "session_id": "019d08d1-12f7-7712-bad0-58ee68574cb7",
+      "updated_at": "2026-03-20T09:50:31Z"
+    }
+  },
+  "archive_manifest": {
+    "sessions/2026/03/05/rollout-2026-03-05T17-40-28-019cbd5e-be7c-7060-9c2d-cd744b5189d2.jsonl": {
+      "size": 4430137,
+      "mtime_ns": 1772788038900992468
+    },
+    "sessions/2026/03/06/rollout-2026-03-06T22-10-10-019cc37c-02ce-75b1-a77b-b33050fba4b4.jsonl": {
+      "size": 1910625,
+      "mtime_ns": 1772843837398100251
+    },
+    "sessions/2026/03/10/rollout-2026-03-10T16-51-52-019cd6f2-0a2b-7591-87d4-62324209e4e6.jsonl": {
+      "size": 9164335,
+      "mtime_ns": 1773217105083679097
+    },
+    "sessions/2026/03/11/rollout-2026-03-11T16-37-39-019cdc0b-6245-70b1-8f80-d914d2461484.jsonl": {
+      "size": 28866361,
+      "mtime_ns": 1773393617759118067
+    },
+    "sessions/2026/03/11/rollout-2026-03-11T16-54-00-019cdc1a-5bea-7c93-ac9f-0f0e2705d1a5.jsonl": {
+      "size": 2538726,
+      "mtime_ns": 1773276116693053558
+    },
+    "sessions/2026/03/13/rollout-2026-03-13T19-59-20-019ce710-c049-7552-ac88-2aa739cf35d2.jsonl": {
+      "size": 48692,
+      "mtime_ns": 1773403166480906486
+    },
+    "sessions/2026/03/14/rollout-2026-03-14T09-49-30-019cea08-c841-77f1-bb29-d60792767760.jsonl": {
+      "size": 4293688,
+      "mtime_ns": 1773569579208963165
+    },
+    "sessions/2026/03/14/rollout-2026-03-14T21-47-55-019cec9a-847a-7051-b1c3-06df6e25317a.jsonl": {
+      "size": 33884,
+      "mtime_ns": 1773496079810767735
+    },
+    "sessions/2026/03/14/rollout-2026-03-14T21-48-18-019cec9a-dde7-7b90-af7c-37c9bb7dcc9b.jsonl": {
+      "size": 109617,
+      "mtime_ns": 1773496297820582284
+    },
+    "sessions/2026/03/16/rollout-2026-03-16T10-35-21-019cf47f-7a53-71f2-b4dc-1f2c1dd724cd.jsonl": {
+      "size": 49199371,
+      "mtime_ns": 1774000224931060445
+    },
+    "sessions/2026/03/17/rollout-2026-03-17T09-40-10-019cf973-50d8-7bf1-be67-94fd80aa338c.jsonl": {
+      "size": 187259,
+      "mtime_ns": 1773714723165002363
+    },
+    "sessions/2026/03/19/rollout-2026-03-19T17-05-27-019d0557-b7a8-7380-987a-38329fac17e8.jsonl": {
+      "size": 815643,
+      "mtime_ns": 1773912426696713647
+    },
+    "sessions/2026/03/20/rollout-2026-03-20T09-16-52-019d08d1-12f7-7712-bad0-58ee68574cb7.jsonl": {
+      "size": 352186,
+      "mtime_ns": 1773970093445782744
+    }
+  }
+}

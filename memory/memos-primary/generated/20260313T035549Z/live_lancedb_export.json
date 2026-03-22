@@ -1,0 +1,53 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-13T03:55:53.391Z",
+  "count": 5,
+  "filters": {},
+  "memories": [
+    {
+      "id": "1e520e4b-323b-4dea-a29a-0c41ea9fd16d",
+      "text": "用户要求新增固定任务：每天早上08:50生成《全球股市早间要闻》，内容需包含全球股市相关新闻、大盘体温、板块映射、看涨/看跌判断，并推送到当前飞书DM。",
+      "category": "decision",
+      "scope": "agent:main",
+      "importance": 0.84,
+      "timestamp": 1773373210103,
+      "metadata": "{}"
+    },
+    {
+      "id": "bad53afb-7351-45a0-8dcd-7699d52df1f9",
+      "text": "Conversation info (untrusted metadata):\n```json\n{\n  \"message_id\": \"om_x100b543bee23c8b0c34804b70f5c9a0\",\n  \"sender_id\": \"ou_968a615509dc191f04220e18cda67080\",\n  \"sender\": \"张玲\",\n  \"timestamp\": \"Wed 2026-03-11 13:13 GMT+8\"\n}\n```\n\nSender (untrusted metadata):\n```json\n{\n  \"label\": \"张玲 (ou_968a615509dc191f04220e18cda67080)\",\n  \"id\": \"ou_968a615509dc191f04220e18cda67080\",\n  \"name\": \"张玲\"\n}\n```\n\n[message_id: om_x100b543bee23c8b0c34804b70f5c9a0]\n张玲: 为什么你老是光说不做",
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.7,
+      "timestamp": 1773214103874,
+      "metadata": "{}"
+    },
+    {
+      "id": "f804fb5f-8011-421b-9b08-8a403a743307",
+      "text": "Conversation info (untrusted metadata):\n```json\n{\n  \"message_id\": \"om_x100b543a02b03c80c4f1ad24b569dba\",\n  \"sender_id\": \"ou_968a615509dc191f04220e18cda67080\",\n  \"sender\": \"张玲\",\n  \"timestamp\": \"Wed 2026-03-11 11:43 GMT+8\"\n}\n```\n\nSender (untrusted metadata):\n```json\n{\n  \"label\": \"张玲 (ou_968a615509dc191f04220e18cda67080)\",\n  \"id\": \"ou_968a615509dc191f04220e18cda67080\",\n  \"name\": \"张玲\"\n}\n```\n\n[message_id: om_x100b543a02b03c80c4f1ad24b569dba]\n张玲: 同意。但是我一直怀疑修正后年化160.25%的准确性，你能不能重新进行ml因子训练？",
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.7,
+      "timestamp": 1773214103737,
+      "metadata": "{}"
+    },
+    {
+      "id": "82faf0ad-416f-43e8-abd1-bf2f66902133",
+      "text": "固定任务：每天晚上23:00将聊天记录同步到Memos。",
+      "category": "decision",
+      "scope": "global",
+      "importance": 0.9,
+      "timestamp": 1773213674948,
+      "metadata": "{\"source\":\"manual-cleanup\",\"owner\":\"ling\"}"
+    },
+    {
+      "id": "0eb2b670-74b5-40a2-9977-bce52593a44c",
+      "text": "固定任务：每天上午09:00检查量化回测任务队列。",
+      "category": "decision",
+      "scope": "global",
+      "importance": 0.9,
+      "timestamp": 1773213674835,
+      "metadata": "{\"source\":\"manual-cleanup\",\"owner\":\"ling\"}"
+    }
+  ]
+}

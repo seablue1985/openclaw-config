@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-14T02:03:11Z",
+  "source": "codex-bridge",
+  "count": 1,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "19314d83-1c0d-54a7-af53-5adfb29e46a0",
+      "text": "我有一个疑问，每天gpt的额度有限制，当达到限制时，我就需要将模型切换到minimax，除了这样在终端里面改openclaw.json，还有没有其他更好的办法可以快速切换模型？",
+      "vector": [],
+      "category": "decision",
+      "scope": "agent:main",
+      "importance": 0.88,
+      "timestamp": 1773453438420,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019cea08-c841-77f1-bb29-d60792767760\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/14/rollout-2026-03-14T09-49-30-019cea08-c841-77f1-bb29-d60792767760.jsonl\",\"line_no\":169,\"bridge_version\":1}"
+    }
+  ]
+}

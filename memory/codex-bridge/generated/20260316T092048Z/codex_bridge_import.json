@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-16T09:20:53Z",
+  "source": "codex-bridge",
+  "count": 1,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "b307afde-3603-5461-b8d1-f4ccbe541d6b",
+      "text": "把飞书机器人周到跟我的agent：“小管家“绑定在一起",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.68,
+      "timestamp": 1773652417643,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019cf47f-7a53-71f2-b4dc-1f2c1dd724cd\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/16/rollout-2026-03-16T10-35-21-019cf47f-7a53-71f2-b4dc-1f2c1dd724cd.jsonl\",\"line_no\":3413,\"bridge_version\":1}"
+    }
+  ]
+}

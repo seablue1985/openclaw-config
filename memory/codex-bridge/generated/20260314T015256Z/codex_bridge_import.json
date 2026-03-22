@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-14T01:52:59Z",
+  "source": "codex-bridge",
+  "count": 1,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "9aaa7e3c-27fc-5316-90e1-9c72247dbe7a",
+      "text": "openclaw的主模型切换到gpt5.4",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.68,
+      "timestamp": 1773453052144,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019cea08-c841-77f1-bb29-d60792767760\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/14/rollout-2026-03-14T09-49-30-019cea08-c841-77f1-bb29-d60792767760.jsonl\",\"line_no\":37,\"bridge_version\":1}"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-14T05:36:01Z",
+  "source": "codex-bridge",
+  "count": 1,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "5bab42bc-6193-58af-8710-28debbd591de",
+      "text": "Ollama API error 400: {\"error\":\"registry.ollama.ai/library/my-qwen:latest does not support tools\"} 通过飞书发消息，结果反馈以上文字，帮我修复一下。",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.72,
+      "timestamp": 1773466128770,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019cea08-c841-77f1-bb29-d60792767760\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/14/rollout-2026-03-14T09-49-30-019cea08-c841-77f1-bb29-d60792767760.jsonl\",\"line_no\":1194,\"bridge_version\":1}"
+    }
+  ]
+}

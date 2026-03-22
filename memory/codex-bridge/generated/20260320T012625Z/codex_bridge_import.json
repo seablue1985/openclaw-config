@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-20T01:26:30Z",
+  "source": "codex-bridge",
+  "count": 1,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "e413d004-88eb-524e-ae13-f8c4eba8fd50",
+      "text": "将openclaw的模型切换到minimax-m2.7",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.68,
+      "timestamp": 1773969429382,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019d08d1-12f7-7712-bad0-58ee68574cb7\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/20/rollout-2026-03-20T09-16-52-019d08d1-12f7-7712-bad0-58ee68574cb7.jsonl\",\"line_no\":6,\"bridge_version\":1}"
+    }
+  ]
+}

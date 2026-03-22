@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-16T07:39:27Z",
+  "source": "codex-bridge",
+  "count": 1,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "ab7146c7-f07d-5ecc-8619-8167a154156d",
+      "text": "我的open ai api key 是什么？我需要在手机上使用",
+      "vector": [],
+      "category": "preference",
+      "scope": "agent:main",
+      "importance": 0.8,
+      "timestamp": 1773646583675,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019cf47f-7a53-71f2-b4dc-1f2c1dd724cd\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/16/rollout-2026-03-16T10-35-21-019cf47f-7a53-71f2-b4dc-1f2c1dd724cd.jsonl\",\"line_no\":3330,\"bridge_version\":1}"
+    }
+  ]
+}

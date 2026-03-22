@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-14T07:47:36Z",
+  "source": "codex-bridge",
+  "count": 1,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "58c78809-949d-5397-ab9c-574ddb7e17b7",
+      "text": "我的飞书机器人来不来才发了消息。回复如下：📊 量化回测任务队列检查\n\n当前项目中有以下回测脚本可用：\n脚本\n说明\nrun_backtest.py\n基础回测\nrun_smallcap_chip_backtest.py\n小市值筹码策略\nrun_ml_enhanced_backtest.py\nML增强策略\nrun_cross_sectional_backtest.py\n截面策略\noptimize_params.py\n参数优化\n最近的回测结果：\nv4_2_aggressive_v4 - 激进策略 (3月10日)\nstock_alpha_v1_20260307 - 股票Alpha (3月7日)\n当前没有正在运行的任务。需要我执行哪个回测策略？",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.75,
+      "timestamp": 1773474014836,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019cea08-c841-77f1-bb29-d60792767760\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/14/rollout-2026-03-14T09-49-30-019cea08-c841-77f1-bb29-d60792767760.jsonl\",\"line_no\":2046,\"bridge_version\":1}"
+    }
+  ]
+}

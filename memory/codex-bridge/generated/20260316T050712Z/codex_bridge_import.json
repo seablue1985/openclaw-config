@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-16T05:07:15Z",
+  "source": "codex-bridge",
+  "count": 1,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "5c04bdd9-e29e-55d1-b825-a5efe7aa85c5",
+      "text": "我和来福来财在网页端的最新聊天记录没有同步到飞书软件上去，是为什么？修复一下",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.68,
+      "timestamp": 1773637054363,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019cf47f-7a53-71f2-b4dc-1f2c1dd724cd\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/16/rollout-2026-03-16T10-35-21-019cf47f-7a53-71f2-b4dc-1f2c1dd724cd.jsonl\",\"line_no\":2310,\"bridge_version\":1}"
+    }
+  ]
+}

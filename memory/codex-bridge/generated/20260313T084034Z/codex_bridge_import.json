@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-13T08:40:38Z",
+  "source": "codex-bridge",
+  "count": 2,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "fa81cb76-62f0-51f9-8a9a-7a4c445e43d0",
+      "text": "是以后都会自动同步的意思吗？那是不是我在openclaw网页或者飞书上也可以唤醒这里的聊天记录？",
+      "vector": [],
+      "category": "preference",
+      "scope": "agent:main",
+      "importance": 0.8,
+      "timestamp": 1773390876325,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019cdc0b-6245-70b1-8f80-d914d2461484\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/11/rollout-2026-03-11T16-37-39-019cdc0b-6245-70b1-8f80-d914d2461484.jsonl\",\"line_no\":13235,\"bridge_version\":1}"
+    },
+    {
+      "id": "28a91eac-a5fb-5e9a-8887-d0590b2ab7fb",
+      "text": "我电脑里安装了qwen3.5的本地大模型，也写入了openclaw.json里面，你下次可以让qwen来干这些事",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.68,
+      "timestamp": 1773391141050,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019cdc0b-6245-70b1-8f80-d914d2461484\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/11/rollout-2026-03-11T16-37-39-019cdc0b-6245-70b1-8f80-d914d2461484.jsonl\",\"line_no\":13308,\"bridge_version\":1}"
+    }
+  ]
+}

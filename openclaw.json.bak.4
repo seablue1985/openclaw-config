@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastTouchedVersion": "2026.3.11",
-    "lastTouchedAt": "2026-03-13T02:20:05.091Z"
+    "lastTouchedVersion": "2026.3.13",
+    "lastTouchedAt": "2026-03-19T11:25:34.823Z"
   },
   "env": {},
   "wizard": {
@@ -33,9 +33,19 @@
       "ollama-local:default": {
         "provider": "ollama-local",
         "mode": "api_key"
+      },
+      "gmn:default": {
+        "provider": "gmn",
+        "mode": "api_key"
       }
     },
     "order": {
+      "gmn": [
+        "gmn:default"
+      ],
+      "minimax-portal": [
+        "minimax-portal:default"
+      ],
       "ollama-local": [
         "ollama-local:default"
       ]
@@ -68,6 +78,53 @@
             ],
             "contextWindow": 4096,
             "maxTokens": 2048
+          },
+          {
+            "id": "deepseek-r1:7b",
+            "name": "本地DeepSeek-R1-7B",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "contextWindow": 32768,
+            "maxTokens": 4096
+          },
+          {
+            "id": "carstenuhlig/omnicoder-9b:latest",
+            "name": "本地OmniCoder-9B",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "contextWindow": 32768,
+            "maxTokens": 4096
+          }
+        ]
+      },
+      "omlx": {
+        "baseUrl": "http://127.0.0.1:8000/v1",
+        "apiKey": "0923",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "Qwen2.5-0.5B-Instruct-4bit",
+            "name": "oMLX Qwen2.5-0.5B-4bit",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "contextWindow": 131072,
+            "maxTokens": 8192
+          },
+          {
+            "id": "Qwen2.5-1.5B-Instruct-4bit",
+            "name": "oMLX Qwen2.5-1.5B-4bit",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "contextWindow": 131072,
+            "maxTokens": 8192
           }
         ]
       },
@@ -81,6 +138,22 @@
         "api": "anthropic-messages",
         "authHeader": true,
         "models": [
+          {
+            "id": "MiniMax-M2.7",
+            "name": "MiniMax M2.7",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          },
           {
             "id": "MiniMax-M2.5",
             "name": "MiniMax M2.5",
@@ -138,7 +211,7 @@
           "provider": "model_api_keys_file",
           "id": "/providers/codex/apiKey"
         },
-        "api": "openai-responses",
+        "api": "openai-completions",
         "models": [
           {
             "id": "gpt-5.3-codex",
@@ -177,7 +250,7 @@
         ]
       },
       "gmn": {
-        "baseUrl": "https://gmncode.cn/v1",
+        "baseUrl": "https://gmncodex.com/v1",
         "apiKey": {
           "source": "file",
           "provider": "model_api_keys_file",
@@ -209,7 +282,7 @@
           {
             "id": "gpt-5.2-codex",
             "name": "gpt-5.2-codex",
-            "api": "openai-responses",
+            "api": "openai-completions",
             "reasoning": false,
             "input": [
               "text"
@@ -226,7 +299,7 @@
           {
             "id": "gpt-5.4",
             "name": "gpt-5.4",
-            "api": "openai-responses",
+            "api": "openai-completions",
             "reasoning": true,
             "input": [
               "text"
@@ -247,14 +320,18 @@
   "agents": {
     "defaults": {
       "model": {
-        "primary": "gmn/gpt5.4",
+        "primary": "gmn/gpt-5.4",
         "fallbacks": [
-          "codex/gpt-5.3-codex"
+          "minimax-portal/MiniMax-M2.7",
+          "minimax-portal/MiniMax-M2.5"
         ]
       },
       "models": {
         "minimax-portal/MiniMax-M2.1": {
           "alias": "minimax-m2.1"
+        },
+        "minimax-portal/MiniMax-M2.7": {
+          "alias": "minimax-m2.7"
         },
         "minimax-portal/MiniMax-M2.5": {
           "alias": "minimax-m2.5"
@@ -284,14 +361,65 @@
           "alias": "gemma3-local"
         },
         "codex/gpt-5.3-codex": {},
-        "anthropic/gpt-5.4": {}
+        "anthropic/gpt-5.4": {},
+        "ollama-local/deepseek-r1:7b": {
+          "alias": "deepseek-local"
+        },
+        "ollama-local/carstenuhlig/omnicoder-9b:latest": {
+          "alias": "omnicoder-local"
+        },
+        "omlx/Qwen2.5-0.5B-Instruct-4bit": {
+          "alias": "omlx-qwen-small"
+        },
+        "omlx/Qwen2.5-1.5B-Instruct-4bit": {
+          "alias": "omlx-qwen-1.5b"
+        }
       },
       "workspace": "/Users/ling/.openclaw/workspace",
+      "memorySearch": {
+        "enabled": true,
+        "sources": [
+          "memory"
+        ],
+        "experimental": {
+          "sessionMemory": false
+        },
+        "provider": "ollama",
+        "remote": {
+          "baseUrl": "http://127.0.0.1:11434/v1",
+          "apiKey": "ollama-local"
+        },
+        "fallback": "none",
+        "model": "bge-m3:latest",
+        "query": {
+          "maxResults": 8,
+          "minScore": 0.3,
+          "hybrid": {
+            "enabled": true,
+            "candidateMultiplier": 5,
+            "mmr": {
+              "enabled": true,
+              "lambda": 0.75
+            },
+            "temporalDecay": {
+              "enabled": true,
+              "halfLifeDays": 21
+            }
+          }
+        },
+        "cache": {
+          "enabled": true,
+          "maxEntries": 2000
+        }
+      },
       "compaction": {
         "mode": "safeguard"
       },
       "thinkingDefault": "xhigh",
       "timeoutSeconds": 900,
+      "heartbeat": {
+        "target": "none"
+      },
       "maxConcurrent": 4,
       "subagents": {
         "maxConcurrent": 8
@@ -300,11 +428,12 @@
     "list": [
       {
         "id": "main",
-        "name": "主脑 (MiniMax)",
+        "name": "主脑 (GPT-5.4)",
         "model": {
-          "primary": "minimax-m2.5",
+          "primary": "minimax-portal/MiniMax-M2.7",
           "fallbacks": [
-            "gmn/gpt-5.3-codex"
+            "gmn/gpt-5.4",
+            "minimax-portal/MiniMax-M2.5"
           ]
         }
       },
@@ -314,9 +443,19 @@
         "model": "ollama-local/my-qwen"
       },
       {
+        "id": "omlx-lab",
+        "name": "oMLX试验机 (1.5B)",
+        "model": "omlx/Qwen2.5-1.5B-Instruct-4bit"
+      },
+      {
+        "id": "omlx-mini",
+        "name": "oMLX小模型 (0.5B)",
+        "model": "omlx/Qwen2.5-0.5B-Instruct-4bit"
+      },
+      {
         "id": "downloader",
         "name": "下载助手 (MiniMax)",
-        "model": "minimax-portal/MiniMax-M2.5"
+        "model": "minimax-portal/MiniMax-M2.7"
       },
       {
         "id": "simple",
@@ -339,6 +478,14 @@
         "workspace": "/Users/ling/.openclaw/workspace-quant",
         "agentDir": "/Users/ling/.openclaw/agents/quant-advisor/agent",
         "model": "gmn/gpt-5.3-codex"
+      },
+      {
+        "id": "coder-lite",
+        "name": "Coder Lite (OmniCoder 9B)",
+        "model": "ollama-local/carstenuhlig/omnicoder-9b:latest",
+        "sandbox": {
+          "mode": "all"
+        }
       }
     ]
   },
@@ -393,41 +540,6 @@
       }
     },
     {
-      "agentId": "backup",
-      "match": {
-        "channel": "feishu",
-        "accountId": "feishu-assistant"
-      }
-    },
-    {
-      "agentId": "downloader",
-      "match": {
-        "channel": "feishu",
-        "accountId": "feishu-assistant"
-      }
-    },
-    {
-      "agentId": "simple",
-      "match": {
-        "channel": "feishu",
-        "accountId": "feishu-assistant"
-      }
-    },
-    {
-      "agentId": "tester",
-      "match": {
-        "channel": "feishu",
-        "accountId": "feishu-assistant"
-      }
-    },
-    {
-      "agentId": "xiaoguanjia",
-      "match": {
-        "channel": "feishu",
-        "accountId": "feishu-assistant"
-      }
-    },
-    {
       "agentId": "main",
       "match": {
         "channel": "webchat"
@@ -444,7 +556,13 @@
     "ownerDisplay": "raw"
   },
   "session": {
-    "dmScope": "per-channel-peer"
+    "dmScope": "per-channel-peer",
+    "maintenance": {
+      "mode": "enforce",
+      "pruneAfter": "7d",
+      "maxEntries": 120,
+      "resetArchiveRetention": "7d"
+    }
   },
   "hooks": {
     "internal": {
@@ -464,7 +582,8 @@
         }
       }
     }
-}, "channels": {
+  },
+  "channels": {
     "feishu": {
       "defaultAccount": "main",
       "appId": "cli_a928c429d9785cc6",
@@ -486,7 +605,8 @@
             "*"
           ]
         }
-      }
+      },
+      "streaming": true
     }
   },
   "gateway": {
@@ -525,77 +645,66 @@
   },
   "plugins": {
     "allow": [
-      "memory-lancedb-pro",
+      "active-task-guard",
+      "memory-core",
       "feishu",
-      "minimax-portal-auth"
+      "minimax-portal-auth",
+      "simple-task-router"
     ],
     "load": {
       "paths": [
-        "/Users/ling/node_modules/memory-lancedb-pro"
+        "/Users/ling/.local/share/fnm/node-versions/v22.22.0/installation/lib/node_modules/openclaw/extensions/acpx",
+        "/Users/ling/.openclaw/extensions/active-task-guard",
+        "/Users/ling/.openclaw/extensions/simple-task-router"
       ]
     },
     "slots": {
-      "memory": "memory-lancedb-pro"
+      "memory": "memory-core"
     },
     "entries": {
+      "active-task-guard": {
+        "enabled": true,
+        "config": {
+          "enabledAgents": [
+            "main",
+            "xiaoguanjia"
+          ]
+        }
+      },
+      "memory-core": {
+        "enabled": true
+      },
       "minimax-portal-auth": {
         "enabled": true
       },
       "feishu": {
         "enabled": true
       },
-      "minimem-memory": {
-        "enabled": false
-      },
-      "memory-lancedb-pro": {
+      "simple-task-router": {
         "enabled": true,
         "config": {
-          "embedding": {
-            "apiKey": "sk-b54c3b39c22f4ac3ad03c050db4ce55d",
-            "baseURL": "http://127.0.0.1:11434/v1",
-            "model": "bge-m3",
-            "dimensions": 1024
-          },
-          "dbPath": "~/.openclaw/memory/lancedb-pro-bge-m3",
-          "sessionStrategy": "systemSessionMemory",
-          "autoCapture": true,
-          "captureAssistant": false,
-          "autoRecall": true,
-          "autoRecallTopK": 8,
-          "autoRecallMinLength": 2,
-          "autoRecallMinRepeated": 1,
-          "autoRecallMaxAgeDays": 365,
-          "scopes": {
-            "default": "global",
-            "definitions": {
-              "global": {
-                "description": "Shared memory across configured agents"
-              }
-            },
-            "agentAccess": {
-              "main": [
-                "global",
-                "agent:main",
-                "agent:xiaoguanjia"
-              ],
-              "xiaoguanjia": [
-                "global",
-                "agent:xiaoguanjia",
-                "agent:main"
-              ]
-            }
-          },
-          "retrieval": {
-            "minScore": 0.2,
-            "hardMinScore": 0.2
-          }
+          "enabledAgents": [
+            "main"
+          ],
+          "allowedTriggers": [
+            "user"
+          ],
+          "simpleProvider": "minimax-portal",
+          "simpleModel": "MiniMax-M2.7",
+          "maxPromptChars": 220,
+          "maxLineCount": 6,
+          "minSimpleScore": 3,
+          "debug": false
         }
       },
-      "memory-core": {
+      "minimem-memory": {
         "enabled": false
       },
       "memory-lancedb": {
         "enabled": false
+      },
+      "acpx": {
+        "enabled": true
       }
     },
     "installs": {
@@ -612,6 +721,13 @@
         "installPath": "/Users/ling/node_modules/memory-lancedb-pro",
         "version": "1.1.0-beta.6",
         "installedAt": "2026-03-11T06:14:11.907Z"
+      },
+      "acpx": {
+        "source": "path",
+        "spec": "@openclaw/acpx",
+        "sourcePath": "/Users/ling/.local/share/fnm/node-versions/v22.22.0/installation/lib/node_modules/openclaw/extensions/acpx",
+        "installPath": "/Users/ling/.local/share/fnm/node-versions/v22.22.0/installation/lib/node_modules/openclaw/extensions/acpx",
+        "installedAt": "2026-03-14T01:21:07.629Z"
       }
     }
   }

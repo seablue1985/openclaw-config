@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-15T18:06:07Z",
+  "source": "live-lancedb-backup",
+  "count": 2,
+  "scope": "global",
+  "memories": [
+    {
+      "id": "82faf0ad-416f-43e8-abd1-bf2f66902133",
+      "text": "固定任务：每天晚上23:00将聊天记录同步到Memos。",
+      "category": "decision",
+      "scope": "global",
+      "importance": 0.9,
+      "timestamp": 1773213674948,
+      "metadata": "{\"source\":\"memos-primary\",\"memo_name\":\"memos/YArQbJVTLya5wuCAoiBXcY\",\"memo_uid\":\"YArQbJVTLya5wuCAoiBXcY\",\"memo_update_time\":\"2026-03-13T04:10:37Z\"}"
+    },
+    {
+      "id": "0eb2b670-74b5-40a2-9977-bce52593a44c",
+      "text": "固定任务：每天上午09:00检查量化回测任务队列。",
+      "category": "decision",
+      "scope": "global",
+      "importance": 0.9,
+      "timestamp": 1773213674835,
+      "metadata": "{\"source\":\"memos-primary\",\"memo_name\":\"memos/RUumVpGedEPVQJBukrKCPZ\",\"memo_uid\":\"RUumVpGedEPVQJBukrKCPZ\",\"memo_update_time\":\"2026-03-13T04:10:37Z\"}"
+    }
+  ]
+}

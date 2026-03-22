@@ -79,6 +79,22 @@
       "authHeader": true,
       "models": [
         {
+          "id": "MiniMax-M2.7",
+          "name": "MiniMax M2.7",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        },
+        {
           "id": "MiniMax-M2.5",
           "name": "MiniMax M2.5",
           "reasoning": false,
@@ -92,8 +108,7 @@
             "cacheWrite": 0
           },
           "contextWindow": 200000,
-          "maxTokens": 8192,
-          "api": "anthropic-messages"
+          "maxTokens": 8192
         },
         {
           "id": "MiniMax-M2.5-highspeed",
@@ -109,8 +124,7 @@
             "cacheWrite": 0
           },
           "contextWindow": 200000,
-          "maxTokens": 8192,
-          "api": "anthropic-messages"
+          "maxTokens": 8192
         },
         {
           "id": "MiniMax-M2.5-Lightning",
@@ -126,8 +140,7 @@
             "cacheWrite": 0
           },
           "contextWindow": 200000,
-          "maxTokens": 8192,
-          "api": "anthropic-messages"
+          "maxTokens": 8192
         },
         {
           "id": "MiniMax-VL-01",
@@ -150,7 +163,7 @@
       "apiKey": "secretref-managed"
     },
     "gmn": {
-      "baseUrl": "https://gmncode.cn/v1",
+      "baseUrl": "https://gmncodex.com/v1",
       "apiKey": "secretref-managed",
       "api": "openai-responses",
       "headers": {
@@ -178,7 +191,7 @@
         {
           "id": "gpt-5.2-codex",
           "name": "gpt-5.2-codex",
-          "api": "openai-responses",
+          "api": "openai-completions",
           "reasoning": false,
           "input": [
             "text"
@@ -195,7 +208,7 @@
         {
           "id": "gpt-5.4",
           "name": "gpt-5.4",
-          "api": "openai-responses",
+          "api": "openai-completions",
           "reasoning": true,
           "input": [
             "text"
@@ -214,7 +227,7 @@
     "codex": {
       "baseUrl": "https://gmncodex.com",
       "apiKey": "secretref-managed",
-      "api": "openai-responses",
+      "api": "openai-completions",
       "models": [
         {
           "id": "gpt-5.3-codex",
@@ -231,8 +244,7 @@
             "cacheWrite": 0
           },
           "contextWindow": 200000,
-          "maxTokens": 64000,
-          "api": "openai-responses"
+          "maxTokens": 64000
         },
         {
           "id": "gpt-5.2-codex",
@@ -249,8 +261,7 @@
             "cacheWrite": 0
           },
           "contextWindow": 200000,
-          "maxTokens": 64000,
-          "api": "openai-responses"
+          "maxTokens": 64000
         }
       ]
     },
@@ -322,14 +333,7 @@
             "text"
           ],
           "contextWindow": 262144,
-          "maxTokens": 4096,
-          "cost": {
-            "input": 0,
-            "output": 0,
-            "cacheRead": 0,
-            "cacheWrite": 0
-          },
-          "api": "ollama"
+          "maxTokens": 4096
         },
         {
           "id": "gemma3:4b",
@@ -339,14 +343,54 @@
             "text"
           ],
           "contextWindow": 4096,
-          "maxTokens": 2048,
-          "cost": {
-            "input": 0,
-            "output": 0,
-            "cacheRead": 0,
-            "cacheWrite": 0
-          },
-          "api": "ollama"
+          "maxTokens": 2048
+        },
+        {
+          "id": "deepseek-r1:7b",
+          "name": "本地DeepSeek-R1-7B",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "contextWindow": 32768,
+          "maxTokens": 4096
+        },
+        {
+          "id": "carstenuhlig/omnicoder-9b:latest",
+          "name": "本地OmniCoder-9B",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "contextWindow": 32768,
+          "maxTokens": 4096
+        }
+      ]
+    },
+    "omlx": {
+      "baseUrl": "http://127.0.0.1:8000/v1",
+      "apiKey": "0923",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "Qwen2.5-0.5B-Instruct-4bit",
+          "name": "oMLX Qwen2.5-0.5B-4bit",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "contextWindow": 131072,
+          "maxTokens": 8192
+        },
+        {
+          "id": "Qwen2.5-1.5B-Instruct-4bit",
+          "name": "oMLX Qwen2.5-1.5B-4bit",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "contextWindow": 131072,
+          "maxTokens": 8192
         }
       ]
     }

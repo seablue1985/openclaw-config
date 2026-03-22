@@ -1,0 +1,126 @@
+{
+  "exportedAt": "2026-03-13T04:12:51Z",
+  "memos": [
+    {
+      "name": "memos/RUumVpGedEPVQJBukrKCPZ",
+      "state": "NORMAL",
+      "creator": "users/1",
+      "createTime": "2026-03-13T04:10:37Z",
+      "updateTime": "2026-03-13T04:10:37Z",
+      "displayTime": "2026-03-13T04:10:37Z",
+      "content": "OPENCLAW_MEMORY_META: {\"id\":\"0eb2b670-74b5-40a2-9977-bce52593a44c\",\"category\":\"decision\",\"scope\":\"global\",\"importance\":0.9,\"timestamp\":1773213674835,\"source\":\"lancedb-pro\"}\n固定任务：每天上午09:00检查量化回测任务队列。\n\n#openclaw #openclaw-memory",
+      "visibility": "PRIVATE",
+      "tags": [
+        "openclaw",
+        "openclaw-memory"
+      ],
+      "pinned": false,
+      "attachments": [],
+      "relations": [],
+      "reactions": [],
+      "property": {
+        "hasLink": false,
+        "hasTaskList": false,
+        "hasCode": false,
+        "hasIncompleteTasks": false
+      },
+      "snippet": "OPENCLAW_MEMORY_META: ..."
+    },
+    {
+      "name": "memos/YArQbJVTLya5wuCAoiBXcY",
+      "state": "NORMAL",
+      "creator": "users/1",
+      "createTime": "2026-03-13T04:10:37Z",
+      "updateTime": "2026-03-13T04:10:37Z",
+      "displayTime": "2026-03-13T04:10:37Z",
+      "content": "OPENCLAW_MEMORY_META: {\"id\":\"82faf0ad-416f-43e8-abd1-bf2f66902133\",\"category\":\"decision\",\"scope\":\"global\",\"importance\":0.9,\"timestamp\":1773213674948,\"source\":\"lancedb-pro\"}\n固定任务：每天晚上23:00将聊天记录同步到Memos。\n\n#openclaw #openclaw-memory",
+      "visibility": "PRIVATE",
+      "tags": [
+        "openclaw",
+        "openclaw-memory"
+      ],
+      "pinned": false,
+      "attachments": [],
+      "relations": [],
+      "reactions": [],
+      "property": {
+        "hasLink": false,
+        "hasTaskList": false,
+        "hasCode": false,
+        "hasIncompleteTasks": false
+      },
+      "snippet": "OPENCLAW_MEMORY_META: ..."
+    },
+    {
+      "name": "memos/Z4j2ZoTZyZRwpMFenH24wU",
+      "state": "NORMAL",
+      "creator": "users/1",
+      "createTime": "2026-03-13T04:10:37Z",
+      "updateTime": "2026-03-13T04:10:37Z",
+      "displayTime": "2026-03-13T04:10:37Z",
+      "content": "OPENCLAW_MEMORY_META: {\"id\":\"1e520e4b-323b-4dea-a29a-0c41ea9fd16d\",\"category\":\"decision\",\"scope\":\"agent:main\",\"importance\":0.84,\"timestamp\":1773373210103,\"source\":\"lancedb-pro\"}\n用户要求新增固定任务：每天早上08:50生成《全球股市早间要闻》，内容需包含全球股市相关新闻、大盘体温、板块映射、看涨/看跌判断，并推送到当前飞书DM。\n\n#openclaw #openclaw-memory",
+      "visibility": "PRIVATE",
+      "tags": [
+        "openclaw",
+        "openclaw-memory"
+      ],
+      "pinned": false,
+      "attachments": [],
+      "relations": [],
+      "reactions": [],
+      "property": {
+        "hasLink": false,
+        "hasTaskList": false,
+        "hasCode": false,
+        "hasIncompleteTasks": false
+      },
+      "snippet": "OPENCLAW_MEMORY_META: ..."
+    },
+    {
+      "name": "memos/ecSdQx5hRvk2WCeVGWVHyr",
+      "state": "NORMAL",
+      "creator": "users/1",
+      "createTime": "2026-03-07T02:21:48Z",
+      "updateTime": "2026-03-07T02:21:48Z",
+      "displayTime": "2026-03-07T02:21:48Z",
+      "content": "【2026-03-07 记忆同步】\n- 已将交易执行链路加上 strict precheck 门：不通过直接阻断（exit=2），并输出 precheck 报告。\n- 已修复 DeepSeek 指出的执行问题：镜像/过期信号拦截、股票模式过滤、无持仓卖出拦截、同标的净额合并。\n- 新增盘前自动执行脚本：auto_run_premarket_precheck.py；规则已写入 HEARTBEAT/AGENTS/USER。\n- 达标策略重跑复现：年化54.48%、回撤24.89%、夏普2.756（hardcap relaxed）。\n- 仪表盘 quant_system_dashboard_latest.html 已更新为最新回测指标与达标参数数量。\n- 已本地部署 SideLinker-Home，地址 http://127.0.0.1:8787。",
+      "visibility": "PRIVATE",
+      "tags": [],
+      "pinned": false,
+      "attachments": [],
+      "relations": [],
+      "reactions": [],
+      "property": {
+        "hasLink": false,
+        "hasTaskList": false,
+        "hasCode": false,
+        "hasIncompleteTasks": false
+      },
+      "snippet": "【2026-03-07 记忆同步】已将交易执行链路加上 strict precheck ..."
+    },
+    {
+      "name": "memos/KBZWQ7c9iF9XwXsZ3D4RTW",
+      "state": "NORMAL",
+      "creator": "users/1",
+      "createTime": "2026-03-06T02:00:53Z",
+      "updateTime": "2026-03-06T02:00:53Z",
+      "displayTime": "2026-03-06T02:00:53Z",
+      "content": "【2026-03-06 记忆同步】\n- 用户确认并行推进：695个聚宽策略解析/回测筛选（Codex）+ 2015-2019 A股历史数据补齐（Minimax-M2.5）\n- 已明确历史状态：此前两条任务未真正完成，且已有CSV覆盖仅为 20200102-20260304\n- 已完成 .openclaw 备份推送：400482d、db72b1a，origin/main 同步成功\n- 已重启两个子任务会话并进入执行阶段（策略来源定位、历史数据日期边界校验与补齐）\n#openclaw",
+      "visibility": "PUBLIC",
+      "tags": [
+        "openclaw"
+      ],
+      "pinned": false,
+      "attachments": [],
+      "relations": [],
+      "reactions": [],
+      "property": {
+        "hasLink": false,
+        "hasTaskList": false,
+        "hasCode": false,
+        "hasIncompleteTasks": false
+      },
+      "snippet": "【2026-03-06 记忆同步】用户确认并行推进：695个聚宽策略解析/回测筛选（Codex）+ 2015-2019 ..."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "backup_dir": "/Users/ling/.openclaw/memory/memos-primary/backups/20260317T150508Z",
+  "sqlite_raw_files": [
+    "/Users/ling/.openclaw/memory/memos-primary/backups/20260317T150508Z/memos_prod.db",
+    "/Users/ling/.openclaw/memory/memos-primary/backups/20260317T150508Z/memos_prod.db-wal",
+    "/Users/ling/.openclaw/memory/memos-primary/backups/20260317T150508Z/memos_prod.db-shm"
+  ],
+  "api_snapshot": "/Users/ling/.openclaw/memory/memos-primary/backups/20260317T150508Z/memos_api_snapshot.json",
+  "memo_count": 115
+}

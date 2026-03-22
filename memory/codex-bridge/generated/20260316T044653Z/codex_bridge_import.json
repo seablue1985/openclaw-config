@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-16T04:46:57Z",
+  "source": "codex-bridge",
+  "count": 1,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "c7eacad8-959e-52f7-a7a8-a98d6a4c76c7",
+      "text": "我在openclaw网页端的名字是：ou_83b02a0239e70fc8a4bf0b79aa8f9db7，这种显示具体api的方式，我觉得不安全，你能不能根据飞书机器人的名字，给我改一下，例如这个ou_83b02a0239e70fc8a4bf0b79aa8f9db7对应的飞书机器人是周到",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.72,
+      "timestamp": 1773636297961,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019cf47f-7a53-71f2-b4dc-1f2c1dd724cd\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/16/rollout-2026-03-16T10-35-21-019cf47f-7a53-71f2-b4dc-1f2c1dd724cd.jsonl\",\"line_no\":2224,\"bridge_version\":1}"
+    }
+  ]
+}

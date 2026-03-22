@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-13T03:56:54Z",
+  "source": "memos-primary",
+  "count": 1,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "1e520e4b-323b-4dea-a29a-0c41ea9fd16d",
+      "text": "用户要求新增固定任务：每天早上08:50生成《全球股市早间要闻》，内容需包含全球股市相关新闻、大盘体温、板块映射、看涨/看跌判断，并推送到当前飞书DM。",
+      "category": "decision",
+      "scope": "agent:main",
+      "importance": 0.84,
+      "timestamp": 1773373210103,
+      "metadata": "{\"source\":\"memos-primary\",\"memo_name\":\"memos/5y7xCboEqUyaJLf4owcTvB\",\"memo_uid\":\"5y7xCboEqUyaJLf4owcTvB\",\"memo_update_time\":\"2026-03-13T03:55:53Z\"}"
+    }
+  ]
+}

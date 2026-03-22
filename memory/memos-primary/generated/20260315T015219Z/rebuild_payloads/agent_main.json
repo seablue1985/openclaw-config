@@ -1,0 +1,153 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-15T01:52:22Z",
+  "source": "memos-primary",
+  "count": 16,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "03aa4b93-3aa0-5fbc-9ef7-30a758190ba1",
+      "text": "好的，我需要每个面板都有成交明细和持仓明细的导出功能",
+      "category": "preference",
+      "scope": "agent:main",
+      "importance": 0.8,
+      "timestamp": 1773364371737,
+      "metadata": "{\"source\":\"memos-primary\",\"memo_name\":\"memos/VTjMySu7F3fmhx7XKQHgba\",\"memo_uid\":\"VTjMySu7F3fmhx7XKQHgba\",\"memo_update_time\":\"2026-03-13T08:20:29Z\"}"
+    },
+    {
+      "id": "09cc5b05-75e7-5f75-b2fc-41e144a60c5f",
+      "text": "同意，优先做第一条，然后再按顺序开展剩下的优化工作",
+      "category": "preference",
+      "scope": "agent:main",
+      "importance": 0.8,
+      "timestamp": 1773329679507,
+      "metadata": "{\"source\":\"memos-primary\",\"memo_name\":\"memos/Yk6q9Vac5efhRpx4FeMr4o\",\"memo_uid\":\"Yk6q9Vac5efhRpx4FeMr4o\",\"memo_update_time\":\"2026-03-13T08:20:29Z\"}"
+    },
+    {
+      "id": "14c756df-d35c-4338-a63e-dd7f54dd2f99",
+      "text": "用户偏好助手分工：周到负责健身/生活类定时提醒与消息；来福来财主要负责量化投资相关事项。",
+      "category": "preference",
+      "scope": "agent:main",
+      "importance": 0.88,
+      "timestamp": 1773383142157,
+      "metadata": "{\"source\":\"memos-primary\",\"memo_name\":\"memos/KYh79yqY6jtXEpdERcnQUq\",\"memo_uid\":\"KYh79yqY6jtXEpdERcnQUq\",\"memo_update_time\":\"2026-03-13T08:20:29Z\"}"
+    },
+    {
+      "id": "19314d83-1c0d-54a7-af53-5adfb29e46a0",
+      "text": "我有一个疑问，每天gpt的额度有限制，当达到限制时，我就需要将模型切换到minimax，除了这样在终端里面改openclaw.json，还有没有其他更好的办法可以快速切换模型？",
+      "category": "decision",
+      "scope": "agent:main",
+      "importance": 0.88,
+      "timestamp": 1773453438420,
+      "metadata": "{\"source\":\"memos-primary\",\"memo_name\":\"memos/cWq4Pf8ogvBuMp5q86us8x\",\"memo_uid\":\"cWq4Pf8ogvBuMp5q86us8x\",\"memo_update_time\":\"2026-03-14T14:02:24Z\"}"
+    },
+    {
+      "id": "1e520e4b-323b-4dea-a29a-0c41ea9fd16d",
+      "text": "用户要求新增固定任务：每天早上08:50生成《全球股市早间要闻》，内容需包含全球股市相关新闻、大盘体温、板块映射、看涨/看跌判断，并推送到当前飞书DM。",
+      "category": "decision",
+      "scope": "agent:main",
+      "importance": 0.84,
+      "timestamp": 1773373210103,
+      "metadata": "{\"source\":\"memos-primary\",\"memo_name\":\"memos/Z4j2ZoTZyZRwpMFenH24wU\",\"memo_uid\":\"Z4j2ZoTZyZRwpMFenH24wU\",\"memo_update_time\":\"2026-03-13T04:10:37Z\"}"
+    },
+    {
+      "id": "28a91eac-a5fb-5e9a-8887-d0590b2ab7fb",
+      "text": "我电脑里安装了qwen3.5的本地大模型，也写入了openclaw.json里面，你下次可以让qwen来干这些事",
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.68,
+      "timestamp": 1773391141050,
+      "metadata": "{\"source\":\"memos-primary\",\"memo_name\":\"memos/PEGwy5oEVTHnM6xGCCm8oe\",\"memo_uid\":\"PEGwy5oEVTHnM6xGCCm8oe\",\"memo_update_time\":\"2026-03-13T08:40:45Z\"}"
+    },
+    {
+      "id": "2dd24aea-633e-5155-b3b2-c3085b3eedf2",
+      "text": "我同步到memos的设置好想出了问题，我现在还有lancedb，你觉得到底哪个更适合我备份数据和记忆库",
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.68,
+      "timestamp": 1773373162585,
+      "metadata": "{\"source\":\"memos-primary\",\"memo_name\":\"memos/PCXBcwVQBYEEZtiCAnMvgi\",\"memo_uid\":\"PCXBcwVQBYEEZtiCAnMvgi\",\"memo_update_time\":\"2026-03-13T08:20:29Z\"}"
+    },
+    {
+      "id": "58c78809-949d-5397-ab9c-574ddb7e17b7",
+      "text": "我的飞书机器人来不来才发了消息。回复如下：📊 量化回测任务队列检查\n\n当前项目中有以下回测脚本可用：\n脚本\n说明\nrun_backtest.py\n基础回测\nrun_smallcap_chip_backtest.py\n小市值筹码策略\nrun_ml_enhanced_backtest.py\nML增强策略\nrun_cross_sectional_backtest.py\n截面策略\noptimize_params.py\n参数优化\n最近的回测结果：\nv4_2_aggressive_v4 - 激进策略 (3月10日)\nstock_alpha_v1_20260307 - 股票Alpha (3月7日)\n当前没有正在运行的任务。需要我执行哪个回测策略？",
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.75,
+      "timestamp": 1773474014836,
+      "metadata": "{\"source\":\"memos-primary\",\"memo_name\":\"memos/CgiZNnhgKqrBxJsaxvxFy7\",\"memo_uid\":\"CgiZNnhgKqrBxJsaxvxFy7\",\"memo_update_time\":\"2026-03-14T14:02:24Z\"}"
+    },
+    {
+      "id": "5bab42bc-6193-58af-8710-28debbd591de",
+      "text": "Ollama API error 400: {\"error\":\"registry.ollama.ai/library/my-qwen:latest does not support tools\"} 通过飞书发消息，结果反馈以上文字，帮我修复一下。",
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.72,
+      "timestamp": 1773466128770,
+      "metadata": "{\"source\":\"memos-primary\",\"memo_name\":\"memos/CvayuwPEdocBF5x78Ch2GG\",\"memo_uid\":\"CvayuwPEdocBF5x78Ch2GG\",\"memo_update_time\":\"2026-03-14T14:02:24Z\"}"
+    },
+    {
+      "id": "745f48f8-5ada-5b2b-95ba-f8828dff5fc3",
+      "text": "那我采纳你的建议，  - 主记忆库：Memos\n  - 检索索引：LanceDB\n  - 备份策略：备份 Memos 的 SQLite/Postgres/MySQL 数据；LanceDB 由 Memos 内容重新生成\n你帮我做好相关调整和设置",
+      "category": "preference",
+      "scope": "agent:main",
+      "importance": 0.84,
+      "timestamp": 1773373332421,
+      "metadata": "{\"source\":\"memos-primary\",\"memo_name\":\"memos/RqMNRwtwtw7UNGNvRE9bpJ\",\"memo_uid\":\"RqMNRwtwtw7UNGNvRE9bpJ\",\"memo_update_time\":\"2026-03-13T08:20:29Z\"}"
+    },
+    {
+      "id": "966cc0c4-e58f-5eec-b161-92cb30d5521e",
+      "text": "我想要更激进、收益更高的",
+      "category": "preference",
+      "scope": "agent:main",
+      "importance": 0.8,
+      "timestamp": 1773276224900,
+      "metadata": "{\"source\":\"memos-primary\",\"memo_name\":\"memos/gH5fjseLfqWmCJttJyAe2f\",\"memo_uid\":\"gH5fjseLfqWmCJttJyAe2f\",\"memo_update_time\":\"2026-03-13T08:20:29Z\"}"
+    },
+    {
+      "id": "99e0c31a-8092-54ad-a29a-fe7a4df3e3b0",
+      "text": "一次性给我吧，能把这些任务做成定时任务吗？",
+      "category": "decision",
+      "scope": "agent:main",
+      "importance": 0.84,
+      "timestamp": 1773225827353,
+      "metadata": "{\"source\":\"memos-primary\",\"memo_name\":\"memos/iXzizWQJSGxzvN6okKticJ\",\"memo_uid\":\"iXzizWQJSGxzvN6okKticJ\",\"memo_update_time\":\"2026-03-13T08:20:29Z\"}"
+    },
+    {
+      "id": "9aaa7e3c-27fc-5316-90e1-9c72247dbe7a",
+      "text": "openclaw的主模型切换到gpt5.4",
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.68,
+      "timestamp": 1773453052144,
+      "metadata": "{\"source\":\"memos-primary\",\"memo_name\":\"memos/SNmmWJnzWyecCVqG24N8vX\",\"memo_uid\":\"SNmmWJnzWyecCVqG24N8vX\",\"memo_update_time\":\"2026-03-14T14:02:24Z\"}"
+    },
+    {
+      "id": "a557729e-a3b4-5804-90f8-d2a7cb5cda26",
+      "text": "我在这个界面跟你的聊天记录会不会保存在openclaw的记忆系统里面？",
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.68,
+      "timestamp": 1773387926784,
+      "metadata": "{\"source\":\"memos-primary\",\"memo_name\":\"memos/8yquN7oSAPrK5VBa5sUYfq\",\"memo_uid\":\"8yquN7oSAPrK5VBa5sUYfq\",\"memo_update_time\":\"2026-03-13T08:20:29Z\"}"
+    },
+    {
+      "id": "bad1b0de-fd27-5e43-bb26-18d7e1bcb9c2",
+      "text": "你现在能正常生成每天的复盘报告跟盘点检查吗？",
+      "category": "decision",
+      "scope": "agent:main",
+      "importance": 0.84,
+      "timestamp": 1773225645203,
+      "metadata": "{\"source\":\"memos-primary\",\"memo_name\":\"memos/dQ73SEmzfhx6LYFw5yi5GY\",\"memo_uid\":\"dQ73SEmzfhx6LYFw5yi5GY\",\"memo_update_time\":\"2026-03-13T08:20:29Z\"}"
+    },
+    {
+      "id": "fa81cb76-62f0-51f9-8a9a-7a4c445e43d0",
+      "text": "是以后都会自动同步的意思吗？那是不是我在openclaw网页或者飞书上也可以唤醒这里的聊天记录？",
+      "category": "preference",
+      "scope": "agent:main",
+      "importance": 0.8,
+      "timestamp": 1773390876325,
+      "metadata": "{\"source\":\"memos-primary\",\"memo_name\":\"memos/ZNCTwx77QgocEWfQChHjJB\",\"memo_uid\":\"ZNCTwx77QgocEWfQChHjJB\",\"memo_update_time\":\"2026-03-13T08:40:45Z\"}"
+    }
+  ]
+}

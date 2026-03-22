@@ -1,0 +1,29 @@
+{
+  "exportedAt": "2026-03-13T03:56:54Z",
+  "memos": [
+    {
+      "name": "memos/KBZWQ7c9iF9XwXsZ3D4RTW",
+      "state": "NORMAL",
+      "creator": "users/1",
+      "createTime": "2026-03-06T02:00:53Z",
+      "updateTime": "2026-03-06T02:00:53Z",
+      "displayTime": "2026-03-06T02:00:53Z",
+      "content": "【2026-03-06 记忆同步】\n- 用户确认并行推进：695个聚宽策略解析/回测筛选（Codex）+ 2015-2019 A股历史数据补齐（Minimax-M2.5）\n- 已明确历史状态：此前两条任务未真正完成，且已有CSV覆盖仅为 20200102-20260304\n- 已完成 .openclaw 备份推送：400482d、db72b1a，origin/main 同步成功\n- 已重启两个子任务会话并进入执行阶段（策略来源定位、历史数据日期边界校验与补齐）\n#openclaw",
+      "visibility": "PUBLIC",
+      "tags": [
+        "openclaw"
+      ],
+      "pinned": false,
+      "attachments": [],
+      "relations": [],
+      "reactions": [],
+      "property": {
+        "hasLink": false,
+        "hasTaskList": false,
+        "hasCode": false,
+        "hasIncompleteTasks": false
+      },
+      "snippet": "【2026-03-06 记忆同步】用户确认并行推进：695个聚宽策略解析/回测筛选（Codex）+ 2015-2019 ..."
+    }
+  ]
+}

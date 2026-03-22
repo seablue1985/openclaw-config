@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-17T01:42:04Z",
+  "source": "codex-bridge",
+  "count": 2,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "21a31f11-0ad5-5e83-9fe6-73feb0721e33",
+      "text": "检查一下我本地的大模型哪些是跟openclaw连通了的",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.68,
+      "timestamp": 1773711352458,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019cf47f-7a53-71f2-b4dc-1f2c1dd724cd\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/16/rollout-2026-03-16T10-35-21-019cf47f-7a53-71f2-b4dc-1f2c1dd724cd.jsonl\",\"line_no\":3649,\"bridge_version\":1}"
+    },
+    {
+      "id": "31886419-ced6-5b72-9270-3994ae2ec8be",
+      "text": "检查一下我们的ollama在本地部署了哪些大模型？以及openclaw可以调用哪些？",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.68,
+      "timestamp": 1773711631760,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019cf973-50d8-7bf1-be67-94fd80aa338c\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/17/rollout-2026-03-17T09-40-10-019cf973-50d8-7bf1-be67-94fd80aa338c.jsonl\",\"line_no\":6,\"bridge_version\":1}"
+    }
+  ]
+}

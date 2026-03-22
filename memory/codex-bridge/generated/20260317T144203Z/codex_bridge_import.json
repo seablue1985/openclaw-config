@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-17T14:42:06Z",
+  "source": "codex-bridge",
+  "count": 1,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "a64b36f9-8d47-526e-a07c-f62c456705a4",
+      "text": "› 你最好做一个详细、全面的自检，检查下我们的量化系统到底还有哪些问题？投研组织到底什么时候能真正发挥投研的作用，而不是\n  每天给我发一堆毫无价值的盘前巡检、临时会商之类的信息。我不是让你在每个问题上都同意我的看法，你应该提出你的看法，作为\n  一个智商超过了人类的ai，我并不寻求你的情绪价值，我需要的是你提供的专业服务，which is让我真正盈利。  这件事不要忘了，要永远记得，你的价值不在于提供情绪价值，在于运用你的智慧，让你的老板——我实现年化40%的目标。",
+      "vector": [],
+      "category": "preference",
+      "scope": "agent:main",
+      "importance": 0.87,
+      "timestamp": 1773758003121,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019cf47f-7a53-71f2-b4dc-1f2c1dd724cd\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/16/rollout-2026-03-16T10-35-21-019cf47f-7a53-71f2-b4dc-1f2c1dd724cd.jsonl\",\"line_no\":6294,\"bridge_version\":1}"
+    }
+  ]
+}

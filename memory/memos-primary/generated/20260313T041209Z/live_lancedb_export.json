@@ -1,0 +1,35 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-13T04:12:12.733Z",
+  "count": 3,
+  "filters": {},
+  "memories": [
+    {
+      "id": "1e520e4b-323b-4dea-a29a-0c41ea9fd16d",
+      "text": "用户要求新增固定任务：每天早上08:50生成《全球股市早间要闻》，内容需包含全球股市相关新闻、大盘体温、板块映射、看涨/看跌判断，并推送到当前飞书DM。",
+      "category": "decision",
+      "scope": "agent:main",
+      "importance": 0.84,
+      "timestamp": 1773373210103,
+      "metadata": "{\"source\":\"memos-primary\",\"memo_name\":\"memos/H9YeTJV2StoPbDV5FG2P6k\",\"memo_uid\":\"H9YeTJV2StoPbDV5FG2P6k\",\"memo_update_time\":\"2026-03-13T04:02:50Z\"}"
+    },
+    {
+      "id": "82faf0ad-416f-43e8-abd1-bf2f66902133",
+      "text": "固定任务：每天晚上23:00将聊天记录同步到Memos。",
+      "category": "decision",
+      "scope": "global",
+      "importance": 0.9,
+      "timestamp": 1773213674948,
+      "metadata": "{\"source\":\"memos-primary\",\"memo_name\":\"memos/ZfiHdLrm3HGWghdxGYUtkH\",\"memo_uid\":\"ZfiHdLrm3HGWghdxGYUtkH\",\"memo_update_time\":\"2026-03-13T04:02:50Z\"}"
+    },
+    {
+      "id": "0eb2b670-74b5-40a2-9977-bce52593a44c",
+      "text": "固定任务：每天上午09:00检查量化回测任务队列。",
+      "category": "decision",
+      "scope": "global",
+      "importance": 0.9,
+      "timestamp": 1773213674835,
+      "metadata": "{\"source\":\"memos-primary\",\"memo_name\":\"memos/2uWGGCB5NcAievM4MqMQdn\",\"memo_uid\":\"2uWGGCB5NcAievM4MqMQdn\",\"memo_update_time\":\"2026-03-13T04:02:50Z\"}"
+    }
+  ]
+}

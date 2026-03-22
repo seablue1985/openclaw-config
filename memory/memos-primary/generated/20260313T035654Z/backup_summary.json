@@ -1,0 +1,7 @@
+{
+  "backup_dir": "/Users/ling/.openclaw/memory/memos-primary/backups/20260313T035654Z",
+  "sqlite_backup": "/Users/ling/.openclaw/memory/memos-primary/backups/20260313T035654Z/memos_prod.db",
+  "sqlite_size_bytes": 77824,
+  "api_snapshot": "/Users/ling/.openclaw/memory/memos-primary/backups/20260313T035654Z/memos_api_snapshot.json",
+  "memo_count": 1
+}

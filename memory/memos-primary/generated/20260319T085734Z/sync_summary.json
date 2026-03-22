@@ -1,0 +1,144 @@
+{
+  "live_memory_count": 34,
+  "high_signal_count": 34,
+  "created_count": 0,
+  "created": [],
+  "skipped": [
+    {
+      "id": "49812c5e-4f6d-59cf-a963-656195227696",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "e6eebd4f-4f98-5c84-b81d-a801027475ea",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "a64b36f9-8d47-526e-a07c-f62c456705a4",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "387d024a-7cdf-5f5a-b4a6-ddb01f32619b",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "31886419-ced6-5b72-9270-3994ae2ec8be",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "21a31f11-0ad5-5e83-9fe6-73feb0721e33",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "b307afde-3603-5461-b8d1-f4ccbe541d6b",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "ab7146c7-f07d-5ecc-8619-8167a154156d",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "ea2d48b8-be88-41fb-8616-63b945afd824",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "5c04bdd9-e29e-55d1-b825-a5efe7aa85c5",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "c7eacad8-959e-52f7-a7a8-a98d6a4c76c7",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "49f4c246-93c5-440c-8da1-8c1d32646d47",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "10a9e2a7-c4a9-5664-8c50-4d4fabebea5f",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "5c2c218f-9dfd-51e8-8145-27714006ac73",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "71e56a9c-ef4f-5ec8-ab61-7c4c587f873c",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "f831f03f-8af9-411e-a2a9-7b4eb3bdf41c",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "58c78809-949d-5397-ab9c-574ddb7e17b7",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "5bab42bc-6193-58af-8710-28debbd591de",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "19314d83-1c0d-54a7-af53-5adfb29e46a0",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "9aaa7e3c-27fc-5316-90e1-9c72247dbe7a",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "28a91eac-a5fb-5e9a-8887-d0590b2ab7fb",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "fa81cb76-62f0-51f9-8a9a-7a4c445e43d0",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "a557729e-a3b4-5804-90f8-d2a7cb5cda26",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "14c756df-d35c-4338-a63e-dd7f54dd2f99",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "745f48f8-5ada-5b2b-95ba-f8828dff5fc3",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "1e520e4b-323b-4dea-a29a-0c41ea9fd16d",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "2dd24aea-633e-5155-b3b2-c3085b3eedf2",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "03aa4b93-3aa0-5fbc-9ef7-30a758190ba1",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "09cc5b05-75e7-5f75-b2fc-41e144a60c5f",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "966cc0c4-e58f-5eec-b161-92cb30d5521e",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "99e0c31a-8092-54ad-a29a-fe7a4df3e3b0",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "bad1b0de-fd27-5e43-bb26-18d7e1bcb9c2",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "82faf0ad-416f-43e8-abd1-bf2f66902133",
+      "reason": "already_mirrored"
+    },
+    {
+      "id": "0eb2b670-74b5-40a2-9977-bce52593a44c",
+      "reason": "already_mirrored"
+    }
+  ]
+}

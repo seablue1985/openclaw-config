@@ -1,0 +1,79 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-19T15:26:40Z",
+  "source": "codex-bridge",
+  "count": 7,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "6cfee500-f076-5a7c-b048-a64c34ae98a8",
+      "text": "现在openclaw的记忆系统有没有运用向量模型来帮助存储和管理记忆",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.68,
+      "timestamp": 1773910679416,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019cf47f-7a53-71f2-b4dc-1f2c1dd724cd\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/16/rollout-2026-03-16T10-35-21-019cf47f-7a53-71f2-b4dc-1f2c1dd724cd.jsonl\",\"line_no\":16053,\"bridge_version\":1}"
+    },
+    {
+      "id": "0b95286e-ab1b-5bbf-950e-071e8065cdb1",
+      "text": "我的openclaw在执行复杂的、需要多步操作的任务时，老是执行完一个就忘记继续执行下一个，需要我人工推进，这个问题怎么解决？",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.68,
+      "timestamp": 1773911205720,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019d0557-b7a8-7380-987a-38329fac17e8\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/19/rollout-2026-03-19T17-05-27-019d0557-b7a8-7380-987a-38329fac17e8.jsonl\",\"line_no\":6,\"bridge_version\":1}"
+    },
+    {
+      "id": "f8224463-4476-59fb-9a41-4402a400dd09",
+      "text": "你确定 memory-core比 memory-lancedb-pro更好用吗？",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.68,
+      "timestamp": 1773911606475,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019cf47f-7a53-71f2-b4dc-1f2c1dd724cd\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/16/rollout-2026-03-16T10-35-21-019cf47f-7a53-71f2-b4dc-1f2c1dd724cd.jsonl\",\"line_no\":16400,\"bridge_version\":1}"
+    },
+    {
+      "id": "461f2ed9-b800-5e0b-85ae-a13b6e35e309",
+      "text": "按照这个更务实的方案，我什么时候激活memory-lancedb-pro呢？",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.68,
+      "timestamp": 1773911754513,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019cf47f-7a53-71f2-b4dc-1f2c1dd724cd\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/16/rollout-2026-03-16T10-35-21-019cf47f-7a53-71f2-b4dc-1f2c1dd724cd.jsonl\",\"line_no\":16443,\"bridge_version\":1}"
+    },
+    {
+      "id": "7e6c6342-5eb0-5876-a401-56fd1a70eaae",
+      "text": "刚刚gpt5.4已将我的记忆系统从memory-lancedb-pro切换到了memory-core，因为我本地安装了ollama和 bge-m3",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.68,
+      "timestamp": 1773911933887,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019d0557-b7a8-7380-987a-38329fac17e8\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/19/rollout-2026-03-19T17-05-27-019d0557-b7a8-7380-987a-38329fac17e8.jsonl\",\"line_no\":197,\"bridge_version\":1}"
+    },
+    {
+      "id": "26ae4c3a-b653-504e-ab36-26c74c04418c",
+      "text": "我现在就有个困扰，我安排给openclaw的需要多步操作的任务， openclaw老是只执行一个，然后就停止了，我给codex说了，codex执行了以下操作：我已经把这件事改成更硬的机制了：在 AGENTS.md 和 AGENTS.md 顶部新增了“多步任务连续执行”规则，并新增了 ACTIVE_TASK.md 和 ACTIVE_TASK.md 作为当前多步任务的唯一事实源。现在规则变成了：复杂任务先写 ACTIVE_TASK.md，每完成一步就立刻回写并切到下一个 Next，会话中断或上下文压缩后先读这个文件再恢复，不再允许做完一步就停下来等你手推。\n\n另外我也检查了你的 simple-task-router，它本身已经会把 继续、分析、代码、量化、文件路径、链接这类请求排除在简易路由之外，所以它不是这次的主要根因。这里我只做了低风险修正，还没启用更激进的插件级 reminder 注入。验证范围是配置和规则文件已落地，没做一次完整的 OpenClaw 实战回归。ACTIVE_TASK 这边，我把它从“占位文件”升级成了可执行工作流。主工作区和量化工作区都新增了模板文件 ACTIVE_TASK_TEMPLATE.md 和 ACTIVE_TASK_TEMPLATE.md，并把 AGENTS.md 与 AGENTS.md 改成了强制规则：复杂任务先从模板生成 ACTIVE_TASK.md / ACTIVE_TASK.md，Current 永远只能有一个执行项，做完必须立刻移到 Completed 并提升下一个；如果存在最高优先级队列文件，也会把第一个未完成事项同步进 Current。\n\nmemory-core 这边，我把 openclaw.json 的 agents.defaults.memorySearch 显式补全了，保留你现在的本地 ollama + bge-m3:latest，并加了对你这种“日记型 memory 文件”更有用的检索参数：只索引 memory 源、关闭 transcript sessionMemory、maxResults 提到 8、minScore 调到 0.3、开启 hybrid MMR、开启 21 天半衰期的时间衰减、缓存上限设为 2000。这样会比原来纯默认值更稳，尤其能减少重复召回和过旧日志顶上来的情况。\n\n验证也做了：openclaw doctor --non-interactive 通过，没有内存嵌入告警；~/.openclaw/memory/main.sqlite 已存在且已索引 44 个 memory 文件；本地 Ollama bge-m3 嵌入接口实测可用，返回 1024 维向量。doctor 里剩下的提示主要是 23 个孤儿 transcript 文件和机器上有多个 gateway-like 服务，这和这次 memory-core 切换无关。",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.75,
+      "timestamp": 1773912477321,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019cf47f-7a53-71f2-b4dc-1f2c1dd724cd\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/16/rollout-2026-03-16T10-35-21-019cf47f-7a53-71f2-b4dc-1f2c1dd724cd.jsonl\",\"line_no\":16453,\"bridge_version\":1}"
+    },
+    {
+      "id": "d5ec415f-fd84-5cfc-8fbc-7e74e3196772",
+      "text": "codex还说：主要做了两件事。\n\n第一，把“多步任务做完一步就停”从靠模型自觉，改成靠外部状态驱动。我在两个工作区都加了 ACTIVE_TASK 机制：\nAGENTS.md\nAGENTS.md\nACTIVE_TASK.md\nACTIVE_TASK.md\nACTIVE_TASK_TEMPLATE.md\nACTIVE_TASK_TEMPLATE.md\n\n核心变化是：\n\n复杂任务必须先写 ACTIVE_TASK.md\n里面强制有 Current、Next、Completed、Evidence\nCurrent 只能有一个正在执行的步骤\n每完成一步，必须立刻把下一步提升成新的 Current\n会话被打断、上下文压缩后，恢复时先读这个文件继续\n第二，确认并优化了你现在的记忆系统配置。你已经切到 memory-core，我没有再动回 memory-lancedb-pro，而是直接调了 openclaw.json 里的 memorySearch：\n\n保持 ollama + bge-m3:latest\n显式启用本地 memory 检索\n只索引 memory 源，不混入 session transcript\n提高召回数量\n开启 MMR 去重和时间衰减\n提高 embedding cache 上限\n最后我还做了验证：\n\nmemory-core 当前确实已启用\n本地 SQLite memory 索引存在且有内容\nOllama 的 bge-m3 嵌入接口可用\nopenclaw doctor 没报 memory 链路异常\n一句话概括：我把你的问题从“模型容易忘”改成了“磁盘上有明确恢复点”，并把当前 memory-core 调到了更适合你本地用法的状态。",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.75,
+      "timestamp": 1773912544293,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019cf47f-7a53-71f2-b4dc-1f2c1dd724cd\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/16/rollout-2026-03-16T10-35-21-019cf47f-7a53-71f2-b4dc-1f2c1dd724cd.jsonl\",\"line_no\":16491,\"bridge_version\":1}"
+    }
+  ]
+}

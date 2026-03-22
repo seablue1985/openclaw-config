@@ -7,12 +7,36 @@
       "access": "sk-cp-TypyXejs2B15_iA2InVLaRhZBTL_wxRXO5ut0AXIl6elvqblH6fWp3j8VaUulYChdYV6fEHnXtMyNwRhaeHBmxI_dFoOwRlmtPdSZt6pwrMvqKU92zBfir8",
       "refresh": "gHrN2zKrDKzFJ4UPFEb-J4w6R__C8PCgDrIPNME709I=",
       "expires": 1804251021050
+    },
+    "ollama-local:default": {
+      "type": "api_key",
+      "provider": "ollama-local",
+      "key": "ollama-local"
+    },
+    "gmn:default": {
+      "type": "api_key",
+      "provider": "gmn",
+      "key": "sk-e529fe673ca03ba271c0bff5cae0dbcd06b57943f4bdb12ada983aa22eaba8b6"
     }
+  },
+  "lastGood": {
+    "minimax-portal": "minimax-portal:default",
+    "gmn": "gmn:default",
+    "ollama-local": "ollama-local:default"
   },
   "usageStats": {
     "minimax-portal:default": {
       "errorCount": 0,
-      "lastUsed": 1773137853125
+      "lastUsed": 1774107099213
+    },
+    "ollama-local:default": {
+      "errorCount": 0,
+      "lastUsed": 1773820362871
+    },
+    "gmn:default": {
+      "errorCount": 0,
+      "lastUsed": 1773883331235,
+      "lastFailureAt": 1773763017659
     }
   }
 }

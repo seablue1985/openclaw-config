@@ -12,19 +12,34 @@
       "type": "api_key",
       "provider": "ollama-local",
       "key": "ollama-local"
+    },
+    "gmn:default": {
+      "type": "api_key",
+      "provider": "gmn",
+      "key": "sk-e529fe673ca03ba271c0bff5cae0dbcd06b57943f4bdb12ada983aa22eaba8b6"
     }
   },
   "lastGood": {
-    "minimax-portal": "minimax-portal:default"
+    "minimax-portal": "minimax-portal:default",
+    "gmn": "gmn:default"
   },
   "usageStats": {
     "minimax-portal:default": {
       "errorCount": 0,
-      "lastUsed": 1773545101362
+      "lastUsed": 1774140643685
     },
     "ollama-local:default": {
       "errorCount": 0,
       "lastUsed": 1773466261798
+    },
+    "gmn:default": {
+      "errorCount": 1,
+      "lastUsed": 1773969345194,
+      "lastFailureAt": 1774106106660,
+      "failureCounts": {
+        "auth": 1
+      },
+      "cooldownUntil": 1774106166660
     }
   }
 }
