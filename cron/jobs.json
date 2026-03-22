@@ -693,7 +693,7 @@
       "name": "每日自动更新检查",
       "enabled": true,
       "createdAtMs": 1773926602174,
-      "updatedAtMs": 1774119720031,
+      "updatedAtMs": 1774206120041,
       "schedule": {
         "kind": "cron",
         "expr": "0 3 * * *",
@@ -712,13 +712,13 @@
         "to": "user:ou_83b02a0239e70fc8a4bf0b79aa8f9db7"
       },
       "state": {
-        "nextRunAtMs": 1774206000000,
-        "lastRunAtMs": 1774119600013,
+        "nextRunAtMs": 1774292400000,
+        "lastRunAtMs": 1774206000020,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 120018,
+        "lastDurationMs": 120021,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 3,
+        "consecutiveErrors": 4,
         "lastErrorReason": "timeout",
         "lastError": "cron: job execution timed out"
       }
@@ -728,7 +728,7 @@
       "name": "主动任务续跑检查",
       "enabled": true,
       "createdAtMs": 1773933405352,
-      "updatedAtMs": 1774197005824,
+      "updatedAtMs": 1774216860036,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 * * * *",
@@ -751,14 +751,15 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774198800000,
-        "lastRunAtMs": 1774197000017,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 5807,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
+        "nextRunAtMs": 1774218600000,
+        "lastRunAtMs": 1774216800015,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 60021,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 2,
+        "lastErrorReason": "timeout",
+        "lastError": "cron: job execution timed out"
       }
     }
   ]
