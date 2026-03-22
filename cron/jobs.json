@@ -81,7 +81,7 @@
       "description": "每天早上9点同步小红书点赞/收藏到当前打开的 Obsidian vault",
       "enabled": true,
       "createdAtMs": 1773113389264,
-      "updatedAtMs": 1774068223543,
+      "updatedAtMs": 1774141204040,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * *"
@@ -102,15 +102,14 @@
         "to": "ou_968a615509dc191f04220e18cda67080"
       },
       "state": {
-        "nextRunAtMs": 1774141200000,
-        "consecutiveErrors": 1,
-        "lastRunAtMs": 1774068165401,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 58142,
-        "lastDeliveryStatus": "unknown",
-        "lastError": "Error: All models failed (3): codex/gpt-5.3-codex: LLM request timed out. (timeout) | gmn/gpt-5.4: LLM request timed out. (timeout) | minimax-portal/MiniMax-M2.5: LLM request timed out. (timeout)",
-        "lastErrorReason": "timeout"
+        "nextRunAtMs": 1774227600000,
+        "consecutiveErrors": 0,
+        "lastRunAtMs": 1774141200012,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 4028,
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
       }
     },
     {
@@ -118,7 +117,7 @@
       "name": "每日09:30盘前强检",
       "enabled": true,
       "createdAtMs": 1773145175561,
-      "updatedAtMs": 1774068281729,
+      "updatedAtMs": 1774143066422,
       "schedule": {
         "kind": "cron",
         "expr": "30 9 * * *",
@@ -139,15 +138,14 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774143000000,
-        "lastRunAtMs": 1774068223543,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 58186,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1,
-        "lastError": "Error: All models failed (3): minimax-portal/MiniMax-M2.7: LLM request timed out. (timeout) | gmn/gpt-5.4: LLM request timed out. (timeout) | minimax-portal/MiniMax-M2.5: LLM request timed out. (timeout)",
-        "lastErrorReason": "timeout"
+        "nextRunAtMs": 1774229400000,
+        "lastRunAtMs": 1774143000013,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 66409,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       }
     },
     {
@@ -155,7 +153,7 @@
       "name": "每日15:30盘后审计",
       "enabled": true,
       "createdAtMs": 1773145190834,
-      "updatedAtMs": 1774078202244,
+      "updatedAtMs": 1774164601939,
       "schedule": {
         "kind": "cron",
         "expr": "30 15 * * *",
@@ -176,11 +174,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774164600000,
-        "lastRunAtMs": 1774078200019,
+        "nextRunAtMs": 1774251000000,
+        "lastRunAtMs": 1774164600005,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 2225,
+        "lastDurationMs": 1934,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -192,7 +190,7 @@
       "description": "每天09:00发送实时量化回测状态摘要",
       "enabled": true,
       "createdAtMs": 1773215340583,
-      "updatedAtMs": 1774068340364,
+      "updatedAtMs": 1774141204655,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * *",
@@ -215,15 +213,14 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774141200000,
-        "lastRunAtMs": 1774068281729,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 58635,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1,
-        "lastError": "Error: All models failed (3): codex/gpt-5.3-codex: LLM request timed out. (timeout) | gmn/gpt-5.4: LLM request timed out. (timeout) | minimax-portal/MiniMax-M2.5: LLM request timed out. (timeout)",
-        "lastErrorReason": "timeout"
+        "nextRunAtMs": 1774227600000,
+        "lastRunAtMs": 1774141204040,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 615,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
       }
     },
     {
@@ -731,7 +728,7 @@
       "name": "主动任务续跑检查",
       "enabled": true,
       "createdAtMs": 1773933405352,
-      "updatedAtMs": 1774139455826,
+      "updatedAtMs": 1774170055950,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 * * * *",
@@ -754,11 +751,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774141200000,
-        "lastRunAtMs": 1774139400018,
+        "nextRunAtMs": 1774171800000,
+        "lastRunAtMs": 1774170000016,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 55808,
+        "lastDurationMs": 55934,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false

@@ -1,0 +1,207 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "8fa1bf23-98ad-4bf3-b0a7-20c52675cc7c",
+      "name": "健身提醒",
+      "description": "工作日上午11:30健身提醒",
+      "enabled": true,
+      "createdAtMs": 1772510751813,
+      "updatedAtMs": 1773199833898,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 11 * * 1-5"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "发送当天健身计划:\n周一：胸\n周二：背+三头\n周三：肩+有氧\n周四：臀+有氧\n周五：二头+三头+有氧\n周末：休息",
+        "thinking": "low",
+        "timeoutSeconds": 120,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_968a615509dc191f04220e18cda67080"
+      },
+      "state": {
+        "nextRunAtMs": 1773286200000,
+        "lastRunAtMs": 1773199800011,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 33887,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 1,
+        "lastError": "⚠️ ✉️ Message failed"
+      }
+    },
+    {
+      "id": "3c85911f-26c5-4a2e-9734-fb85f51cf9b8",
+      "name": "23:00记忆同步Memos",
+      "enabled": true,
+      "createdAtMs": 1772683570660,
+      "updatedAtMs": 1773214176579,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 23 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行以下任务：\n1. 读取 ~/.openclaw/workspace/MEMORY.md\n2. 读取 ~/.openclaw/workspace/memory/ 目录下的今日记忆\n3. 使用正确脚本路径创建 memo：python3 ~/.openclaw/workspace/openclaw_projects/skills/memos/memos.py create\n4. MEMOS_URL 使用 http://localhost:5230，MEMOS_TOKEN 从 ~/.openclaw/workspace/TOOLS.md 中读取，不要在回复里泄露 token\n5. 若有新内容则创建 memo 并简短汇报“记忆已同步到 Memos”；若没有新内容则静默结束；若失败则返回错误摘要",
+        "thinking": "low",
+        "timeoutSeconds": 240,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_968a615509dc191f04220e18cda67080"
+      },
+      "state": {
+        "nextRunAtMs": 1773241200000,
+        "lastRunAtMs": 1773194400011,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 135701,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "xhs-obsidian-sync-0900",
+      "name": "9点同步小红书收藏到Obsidian",
+      "description": "每天早上9点同步小红书点赞/收藏到当前打开的 Obsidian vault",
+      "enabled": true,
+      "createdAtMs": 1773113389264,
+      "updatedAtMs": 1773191163702,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行以下任务：\\n1. 进入 ~/.openclaw/workspace/skills/xiaohongshu-skills\\n2. 运行 uv run python scripts/sync_favorites_to_obsidian.py\\n3. 不手动指定 --vault，自动识别当前打开的 Obsidian vault\\n4. 如果同步成功且有新增，简短汇报新增数量与目标 vault\\n5. 如果无新增内容，可静默结束\\n6. 如果失败，返回错误摘要与需要的用户动作（例如登录小红书）",
+        "thinking": "low",
+        "timeoutSeconds": 600,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_968a615509dc191f04220e18cda67080"
+      },
+      "state": {
+        "nextRunAtMs": 1773277200000,
+        "consecutiveErrors": 0,
+        "lastRunAtMs": 1773190800013,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 363689,
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "1d3c0b2a-355f-4335-bca1-3c6b78dfae51",
+      "name": "每日09:30盘前强检",
+      "enabled": true,
+      "createdAtMs": 1773145175561,
+      "updatedAtMs": 1773191200815,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行盘前强检: cd /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system && python3 scripts/auto_run_premarket_precheck.py --available-cash 180000 --account-nav 930000",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1773277200000,
+        "lastRunAtMs": 1773191163702,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 37113,
+        "lastError": "AxiosError: Request failed with status code 400",
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1
+      }
+    },
+    {
+      "id": "9c120016-bb26-4799-9b40-4580caefaa29",
+      "name": "每日15:30盘后审计",
+      "enabled": true,
+      "createdAtMs": 1773145190834,
+      "updatedAtMs": 1773212481082,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 15 * * *"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行盘后审计: cd /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system && python3 scripts/run_daily_strategy_audit.py",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1773298800000,
+        "lastRunAtMs": 1773212400022,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 81060,
+        "lastError": "AxiosError: Request failed with status code 400",
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1
+      }
+    },
+    {
+      "id": "fe8deda2-476c-4aa2-bc6f-21ff95ed5b47",
+      "sessionKey": "agent:main:feishu:direct:ou_968a615509dc191f04220e18cda67080",
+      "name": "09:00量化回测队列检查提醒",
+      "description": "每天09:00提醒检查量化回测任务队列",
+      "enabled": true,
+      "createdAtMs": 1773215340583,
+      "updatedAtMs": 1773215444715,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "09:00提醒：请检查量化回测任务队列。"
+      },
+      "state": {
+        "nextRunAtMs": 1773277200000,
+        "lastRunAtMs": 1773215419857,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 24858,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0
+      }
+    }
+  ]
+}
