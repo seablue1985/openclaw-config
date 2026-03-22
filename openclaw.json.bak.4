@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.13",
-    "lastTouchedAt": "2026-03-19T11:25:34.823Z"
+    "lastTouchedAt": "2026-03-21T10:01:01.912Z"
   },
   "env": {},
   "wizard": {
@@ -320,9 +320,9 @@
   "agents": {
     "defaults": {
       "model": {
-        "primary": "gmn/gpt-5.4",
+        "primary": "minimax-portal/MiniMax-M2.7",
         "fallbacks": [
-          "minimax-portal/MiniMax-M2.7",
+          "gmn/gpt-5.4",
           "minimax-portal/MiniMax-M2.5"
         ]
       },
@@ -415,7 +415,7 @@
       "compaction": {
         "mode": "safeguard"
       },
-      "thinkingDefault": "xhigh",
+      "thinkingDefault": "high",
       "timeoutSeconds": 900,
       "heartbeat": {
         "target": "none"
@@ -428,7 +428,7 @@
     "list": [
       {
         "id": "main",
-        "name": "主脑 (GPT-5.4)",
+        "name": "主脑 (MiniMax M2.7)",
         "model": {
           "primary": "minimax-portal/MiniMax-M2.7",
           "fallbacks": [
@@ -443,16 +443,6 @@
         "model": "ollama-local/my-qwen"
       },
       {
-        "id": "omlx-lab",
-        "name": "oMLX试验机 (1.5B)",
-        "model": "omlx/Qwen2.5-1.5B-Instruct-4bit"
-      },
-      {
-        "id": "omlx-mini",
-        "name": "oMLX小模型 (0.5B)",
-        "model": "omlx/Qwen2.5-0.5B-Instruct-4bit"
-      },
-      {
         "id": "downloader",
         "name": "下载助手 (MiniMax)",
         "model": "minimax-portal/MiniMax-M2.7"
@@ -460,13 +450,16 @@
       {
         "id": "simple",
         "name": "本地Gemma3（仅手动纯文本）",
-        "model": "ollama-local/gemma3:4b"
+        "model": "ollama-local/gemma3:4b",
+        "sandbox": {
+          "mode": "all"
+        }
       },
       {
         "id": "tester",
         "name": "质检员 (QA-MiniMax)",
         "model": {
-          "primary": "minimax-m2.5",
+          "primary": "minimax-m2.7",
           "fallbacks": [
             "gmn/gpt-5.3-codex"
           ]
@@ -485,6 +478,17 @@
         "model": "ollama-local/carstenuhlig/omnicoder-9b:latest",
         "sandbox": {
           "mode": "all"
+        }
+      },
+      {
+        "id": "coding-agent",
+        "name": "Coding Agent (GPT-5.4)",
+        "model": {
+          "primary": "gmn/gpt-5.4",
+          "fallbacks": [
+            "gmn/gpt-5.3-codex",
+            "minimax-portal/MiniMax-M2.7"
+          ]
         }
       }
     ]
@@ -540,6 +544,13 @@
       }
     },
     {
+      "agentId": "coding-agent",
+      "match": {
+        "channel": "feishu",
+        "accountId": "coding-agent"
+      }
+    },
+    {
       "agentId": "main",
       "match": {
         "channel": "webchat"
@@ -589,7 +600,7 @@
       "appId": "cli_a928c429d9785cc6",
       "appSecret": "8DdEUA04tEjcp0CX7Z4L0gaxRbtutjon",
       "tools": {
-        "doc": true,
+        "doc": false,
         "perm": false
       },
       "accounts": {
@@ -604,9 +615,19 @@
           "allowFrom": [
             "*"
           ]
+        },
+        "coding-agent": {
+          "appId": "cli_a934da0dde385cba",
+          "appSecret": "3ohW4ALIPfswBDwcnIo9RcvNSlKgQf1e",
+          "name": "coding agent",
+          "dmPolicy": "open",
+          "allowFrom": [
+            "*"
+          ]
         }
       },
-      "streaming": true
+      "streaming": true,
+      "threadSession": true
     }
   },
   "gateway": {
@@ -647,9 +668,9 @@
     "allow": [
       "active-task-guard",
       "memory-core",
-      "feishu",
       "minimax-portal-auth",
-      "simple-task-router"
+      "simple-task-router",
+      "openclaw-lark"
     ],
     "load": {
       "paths": [
@@ -678,7 +699,7 @@
         "enabled": true
       },
       "feishu": {
-        "enabled": true
+        "enabled": false
       },
       "simple-task-router": {
         "enabled": true,
@@ -705,6 +726,9 @@
       },
       "acpx": {
         "enabled": true
+      },
+      "openclaw-lark": {
+        "enabled": true
       }
     },
     "installs": {
@@ -728,7 +752,26 @@
         "sourcePath": "/Users/ling/.local/share/fnm/node-versions/v22.22.0/installation/lib/node_modules/openclaw/extensions/acpx",
         "installPath": "/Users/ling/.local/share/fnm/node-versions/v22.22.0/installation/lib/node_modules/openclaw/extensions/acpx",
         "installedAt": "2026-03-14T01:21:07.629Z"
+      },
+      "openclaw-lark": {
+        "source": "npm",
+        "spec": "@larksuite/openclaw-lark@2026.3.17",
+        "installPath": "/Users/ling/.openclaw/extensions/openclaw-lark",
+        "version": "2026.3.17",
+        "resolvedName": "@larksuite/openclaw-lark",
+        "resolvedVersion": "2026.3.17",
+        "resolvedSpec": "@larksuite/openclaw-lark@2026.3.17",
+        "integrity": "sha512-7GxqBu7jIe0jmApQXt/9hpvorV04Vpqkcr9LvAOMZJzbhmI0+XZKVJgvzw0Ypxz+UfWJ9tlcSw7WpkBcyqvo8g==",
+        "shasum": "407d4616186cf776c21cf49aa533b80c2ef23530",
+        "resolvedAt": "2026-03-21T10:00:28.162Z",
+        "installedAt": "2026-03-21T10:00:39.551Z"
       }
     }
+  },
+  "tools": {
+    "deny": [
+      "group:web",
+      "browser"
+    ]
   }
 }

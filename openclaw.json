@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.13",
-    "lastTouchedAt": "2026-03-21T10:01:01.912Z"
+    "lastTouchedAt": "2026-03-22T16:05:01.649Z"
   },
   "env": {},
   "wizard": {
@@ -314,13 +314,30 @@
             "maxTokens": 8192
           }
         ]
+      },
+      "camel": {
+        "baseUrl": "https://api.kr777.top/v1",
+        "apiKey": "sk-IafdWoPCxgBKFGhMo8ZUi6yJnNqGX0xzGTxDNqR6WtSK92D5",
+        "api": "anthropic-messages",
+        "models": [
+          {
+            "id": "claude-opus-4-6-thinking",
+            "name": "claude-opus-4-6-thinking",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          }
+        ]
       }
     }
   },
   "agents": {
     "defaults": {
       "model": {
-        "primary": "minimax-portal/MiniMax-M2.7",
+        "primary": "camel/claude-opus-4-6-thinking",
         "fallbacks": [
           "gmn/gpt-5.4",
           "minimax-portal/MiniMax-M2.5"
@@ -418,7 +435,10 @@
       "thinkingDefault": "high",
       "timeoutSeconds": 900,
       "heartbeat": {
-        "target": "none"
+        "session": "heartbeat",
+        "target": "none",
+        "directPolicy": "block",
+        "suppressToolErrorWarnings": true
       },
       "maxConcurrent": 4,
       "subagents": {
@@ -484,7 +504,7 @@
         "id": "coding-agent",
         "name": "Coding Agent (GPT-5.4)",
         "model": {
-          "primary": "gmn/gpt-5.4",
+          "primary": "camel/claude-opus-4-6-thinking",
           "fallbacks": [
             "gmn/gpt-5.3-codex",
             "minimax-portal/MiniMax-M2.7"
@@ -492,6 +512,15 @@
         }
       }
     ]
+  },
+  "tools": {
+    "deny": [
+      "group:web",
+      "browser"
+    ],
+    "exec": {
+      "notifyOnExit": false
+    }
   },
   "bindings": [
     {
@@ -567,7 +596,7 @@
     "ownerDisplay": "raw"
   },
   "session": {
-    "dmScope": "per-channel-peer",
+    "dmScope": "main",
     "maintenance": {
       "mode": "enforce",
       "pruneAfter": "7d",
@@ -767,11 +796,5 @@
         "installedAt": "2026-03-21T10:00:39.551Z"
       }
     }
-  },
-  "tools": {
-    "deny": [
-      "group:web",
-      "browser"
-    ]
   }
 }

@@ -43,7 +43,7 @@
       "name": "23:00 Codex记忆夜跑",
       "enabled": true,
       "createdAtMs": 1772683570660,
-      "updatedAtMs": 1774105327207,
+      "updatedAtMs": 1774191625135,
       "schedule": {
         "kind": "cron",
         "expr": "0 23 * * *",
@@ -65,13 +65,13 @@
         "to": "ou_968a615509dc191f04220e18cda67080"
       },
       "state": {
-        "lastRunAtMs": 1774105200015,
+        "lastRunAtMs": 1774191600014,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 127192,
+        "lastDurationMs": 25121,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1774191600000,
+        "nextRunAtMs": 1774278000000,
         "lastDelivered": true
       }
     },
@@ -386,7 +386,7 @@
       "description": "生成真实输入版夜间研究会与交易建议卡，并推送到当前飞书DM",
       "enabled": true,
       "createdAtMs": 1773487592124,
-      "updatedAtMs": 1774096380048,
+      "updatedAtMs": 1774182780053,
       "schedule": {
         "kind": "cron",
         "expr": "30 20 * * *",
@@ -409,12 +409,12 @@
         "bestEffort": true
       },
       "state": {
-        "consecutiveErrors": 4,
-        "nextRunAtMs": 1774182600000,
-        "lastRunAtMs": 1774096200010,
+        "consecutiveErrors": 5,
+        "nextRunAtMs": 1774269000000,
+        "lastRunAtMs": 1774182600018,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 180038,
+        "lastDurationMs": 180035,
         "lastDeliveryStatus": "unknown",
         "lastErrorReason": "timeout",
         "lastError": "cron: job execution timed out"
@@ -543,7 +543,7 @@
       "description": "夜间由宏观/行业/量化/大师分身/首席研究员做深度研究与次日准备",
       "enabled": true,
       "createdAtMs": 1773491345498,
-      "updatedAtMs": 1774098093502,
+      "updatedAtMs": 1774184517494,
       "schedule": {
         "kind": "cron",
         "expr": "0 21 * * *",
@@ -567,11 +567,11 @@
       },
       "state": {
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1774184400000,
-        "lastRunAtMs": 1774098000004,
+        "nextRunAtMs": 1774270800000,
+        "lastRunAtMs": 1774184400017,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 93498,
+        "lastDurationMs": 117477,
         "lastDeliveryStatus": "delivered",
         "lastDelivered": true
       }
@@ -661,7 +661,7 @@
       "name": "23点记忆夜跑：读当天日志→提炼→写规则候选→清理低价值内容",
       "enabled": true,
       "createdAtMs": 1773761965380,
-      "updatedAtMs": 1774105347359,
+      "updatedAtMs": 1774191727918,
       "schedule": {
         "kind": "cron",
         "expr": "0 23 * * *",
@@ -678,11 +678,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1774191600000,
-        "lastRunAtMs": 1774105327207,
+        "nextRunAtMs": 1774278000000,
+        "lastRunAtMs": 1774191625135,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 20152,
+        "lastDurationMs": 102783,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -728,7 +728,7 @@
       "name": "主动任务续跑检查",
       "enabled": true,
       "createdAtMs": 1773933405352,
-      "updatedAtMs": 1774170055950,
+      "updatedAtMs": 1774197005824,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 * * * *",
@@ -751,14 +751,14 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774171800000,
-        "lastRunAtMs": 1774170000016,
+        "nextRunAtMs": 1774198800000,
+        "lastRunAtMs": 1774197000017,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 55934,
-        "lastDeliveryStatus": "not-delivered",
+        "lastDurationMs": 5807,
+        "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": false
+        "lastDelivered": true
       }
     }
   ]
