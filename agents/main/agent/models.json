@@ -195,7 +195,7 @@
         {
           "id": "gpt-5.2-codex",
           "name": "gpt-5.2-codex",
-          "api": "openai-completions",
+          "api": "openai-responses",
           "reasoning": false,
           "input": [
             "text"
@@ -212,7 +212,7 @@
         {
           "id": "gpt-5.4",
           "name": "gpt-5.4",
-          "api": "openai-completions",
+          "api": "openai-responses",
           "reasoning": true,
           "input": [
             "text"
