@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.13",
-    "lastTouchedAt": "2026-03-22T15:47:41.000Z"
+    "lastTouchedAt": "2026-03-22T16:05:01.649Z"
   },
   "env": {},
   "wizard": {
@@ -104,7 +104,7 @@
       "omlx": {
         "baseUrl": "http://127.0.0.1:8000/v1",
         "apiKey": "0923",
-        "api": "openai-completions",
+        "api": "openai-responses",
         "models": [
           {
             "id": "Qwen2.5-0.5B-Instruct-4bit",
@@ -282,7 +282,7 @@
           {
             "id": "gpt-5.2-codex",
             "name": "gpt-5.2-codex",
-            "api": "openai-completions",
+            "api": "openai-responses",
             "reasoning": false,
             "input": [
               "text"
@@ -299,7 +299,7 @@
           {
             "id": "gpt-5.4",
             "name": "gpt-5.4",
-            "api": "openai-completions",
+            "api": "openai-responses",
             "reasoning": true,
             "input": [
               "text"
@@ -314,33 +314,15 @@
             "maxTokens": 8192
           }
         ]
-      },
-      "camel": {
-        "baseUrl": "https://api.kr777.top/v1",
-        "apiKey": "sk-IafdWoPCxgBKFGhMo8ZUi6yJnNqGX0xzGTxDNqR6WtSK92D5",
-        "api": "anthropic-messages",
-        "models": [
-          {
-            "id": "claude-opus-4-6-thinking",
-            "name": "claude-opus-4-6-thinking",
-            "reasoning": true,
-            "input": [
-              "text"
-            ],
-            "contextWindow": 200000,
-            "maxTokens": 8192
-          }
-        ]
       }
     }
   },
   "agents": {
     "defaults": {
       "model": {
-        "primary": "camel/claude-opus-4-6-thinking",
+        "primary": "gmn/gpt-5.4",
         "fallbacks": [
-          "gmn/gpt-5.4",
-          "minimax-portal/MiniMax-M2.5"
+          "minimax-portal/MiniMax-M2.7"
         ]
       },
       "models": {
@@ -435,7 +417,8 @@
       "thinkingDefault": "high",
       "timeoutSeconds": 900,
       "heartbeat": {
-        "session": "main",
+        "session": "heartbeat",
+        "model": "minimax-portal/MiniMax-M2.7",
         "target": "none",
         "directPolicy": "block",
         "suppressToolErrorWarnings": true
@@ -448,12 +431,11 @@
     "list": [
       {
         "id": "main",
-        "name": "主脑 (MiniMax M2.7)",
+        "name": "主脑 (GPT-5.4)",
         "model": {
-          "primary": "minimax-portal/MiniMax-M2.7",
+          "primary": "gmn/gpt-5.4",
           "fallbacks": [
-            "gmn/gpt-5.4",
-            "minimax-portal/MiniMax-M2.5"
+            "minimax-portal/MiniMax-M2.7"
           ]
         }
       },
@@ -464,8 +446,13 @@
       },
       {
         "id": "downloader",
-        "name": "下载助手 (MiniMax)",
-        "model": "minimax-portal/MiniMax-M2.7"
+        "name": "下载助手 (GPT-5.4)",
+        "model": {
+          "primary": "gmn/gpt-5.4",
+          "fallbacks": [
+            "minimax-portal/MiniMax-M2.7"
+          ]
+        }
       },
       {
         "id": "simple",
@@ -477,10 +464,11 @@
       },
       {
         "id": "tester",
-        "name": "质检员 (QA-MiniMax)",
+        "name": "质检员 (GPT-5.4)",
         "model": {
-          "primary": "minimax-m2.7",
+          "primary": "gmn/gpt-5.4",
           "fallbacks": [
+            "minimax-portal/MiniMax-M2.7",
             "gmn/gpt-5.3-codex"
           ]
         }
@@ -490,7 +478,13 @@
         "name": "小管家",
         "workspace": "/Users/ling/.openclaw/workspace-quant",
         "agentDir": "/Users/ling/.openclaw/agents/quant-advisor/agent",
-        "model": "gmn/gpt-5.3-codex"
+        "model": {
+          "primary": "gmn/gpt-5.4",
+          "fallbacks": [
+            "gmn/gpt-5.3-codex",
+            "minimax-portal/MiniMax-M2.7"
+          ]
+        }
       },
       {
         "id": "coder-lite",
@@ -504,7 +498,7 @@
         "id": "coding-agent",
         "name": "Coding Agent (GPT-5.4)",
         "model": {
-          "primary": "camel/claude-opus-4-6-thinking",
+          "primary": "gmn/gpt-5.4",
           "fallbacks": [
             "gmn/gpt-5.3-codex",
             "minimax-portal/MiniMax-M2.7"
@@ -596,7 +590,7 @@
     "ownerDisplay": "raw"
   },
   "session": {
-    "dmScope": "per-channel-peer",
+    "dmScope": "main",
     "maintenance": {
       "mode": "enforce",
       "pruneAfter": "7d",
@@ -662,7 +656,7 @@
   "gateway": {
     "port": 18789,
     "mode": "local",
-    "bind": "loopback",
+    "bind": "lan",
     "controlUi": {
       "allowedOrigins": [
         "http://127.0.0.1:18789",
@@ -731,21 +725,7 @@
         "enabled": false
       },
       "simple-task-router": {
-        "enabled": true,
-        "config": {
-          "enabledAgents": [
-            "main"
-          ],
-          "allowedTriggers": [
-            "user"
-          ],
-          "simpleProvider": "minimax-portal",
-          "simpleModel": "MiniMax-M2.7",
-          "maxPromptChars": 220,
-          "maxLineCount": 6,
-          "minSimpleScore": 3,
-          "debug": false
-        }
+        "enabled": false
       },
       "minimem-memory": {
         "enabled": false
