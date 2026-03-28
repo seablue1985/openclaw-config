@@ -51,6 +51,8 @@ def fetch_weibo(uid, cookie, limit=10):
     resp = requests.get(url, params=params, headers=headers, timeout=10)
     resp.raise_for_status()
     data = resp.json()
+    if data.get("ok") == -100:
+        raise RuntimeError(f"微博 Cookie 已失效，需要重新登录: uid={uid}")
     
     posts = data.get("data", {}).get("list", [])
     user_info = data.get("data", {}).get("userInfo", {})
@@ -132,15 +134,27 @@ def main():
     username = user_info.get("name", user_info.get("screen_name", "未知用户"))
     print(f"博主: {username}, 获取到 {len(posts)} 条微博")
     
-    # 检查是否有新微博
+    # 检查是否有新微博（跳过置顶帖，避免置顶命中状态导致漏检）
     last_id = load_last_post_id()
+    effective_posts = [post for post in posts if not post.get("isTop")]
+    last_id_is_top = any(str(post.get("idstr", "")) == last_id and post.get("isTop") for post in posts)
     new_posts = []
-    
-    for post in posts:
-        post_id = str(post.get("idstr", ""))
-        if post_id == last_id:
-            break
-        new_posts.append(post)
+
+    if last_id_is_top:
+        print("检测到旧状态命中了置顶帖，切换为非置顶微博基线")
+        today_token = datetime.now().strftime("%a %b %d")
+        for post in effective_posts:
+            created_at = str(post.get("created_at", ""))
+            if created_at.startswith(today_token):
+                new_posts.append(post)
+            else:
+                break
+    else:
+        for post in effective_posts:
+            post_id = str(post.get("idstr", ""))
+            if post_id == last_id:
+                break
+            new_posts.append(post)
     
     # 反转顺序（按时间正序）
     new_posts = new_posts[::-1]

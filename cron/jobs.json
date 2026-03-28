@@ -7,7 +7,7 @@
       "description": "工作日上午11:30健身提醒",
       "enabled": true,
       "createdAtMs": 1772510751813,
-      "updatedAtMs": 1774323120039,
+      "updatedAtMs": 1774656064913,
       "schedule": {
         "kind": "cron",
         "expr": "30 11 * * 1-5"
@@ -19,25 +19,28 @@
         "message": "发送当天健身计划:\n周一：胸\n周二：背+三头\n周三：肩+有氧\n周四：臀+有氧\n周五：二头+三头+有氧\n周末：休息",
         "model": "minimax-portal/MiniMax-M2.7",
         "thinking": "low",
-        "timeoutSeconds": 120,
+        "timeoutSeconds": 300,
         "lightContext": true
       },
       "delivery": {
         "mode": "announce",
         "channel": "feishu",
         "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774409400000,
-        "lastRunAtMs": 1774323000016,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 120023,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 2,
-        "lastError": "cron: job execution timed out",
-        "lastErrorReason": "timeout"
+        "nextRunAtMs": 1774841400000,
+        "lastRunAtMs": 1774656022893,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 42020,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
       }
     },
     {
@@ -45,7 +48,7 @@
       "name": "23:00 Codex记忆夜跑",
       "enabled": true,
       "createdAtMs": 1772683570660,
-      "updatedAtMs": 1774365013988,
+      "updatedAtMs": 1774655598094,
       "schedule": {
         "kind": "cron",
         "expr": "10 23 * * *",
@@ -65,17 +68,21 @@
         "mode": "none",
         "channel": "feishu",
         "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
         "bestEffort": true
       },
       "state": {
-        "lastRunAtMs": 1774365000014,
+        "lastRunAtMs": 1774624200007,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 13974,
+        "lastDurationMs": 16395,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1774451400000,
+        "nextRunAtMs": 1774710600000,
         "lastDelivered": false
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
       }
     },
     {
@@ -84,7 +91,7 @@
       "description": "每天早上9点同步小红书点赞/收藏到当前打开的 Obsidian vault",
       "enabled": true,
       "createdAtMs": 1773113389264,
-      "updatedAtMs": 1774400408306,
+      "updatedAtMs": 1774659719910,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * *"
@@ -103,17 +110,21 @@
         "mode": "announce",
         "channel": "feishu",
         "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774486800000,
+        "nextRunAtMs": 1774746000000,
         "consecutiveErrors": 0,
-        "lastRunAtMs": 1774400400013,
+        "lastRunAtMs": 1774659600010,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 8293,
-        "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
+        "lastDurationMs": 119900,
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
       }
     },
     {
@@ -121,7 +132,7 @@
       "name": "每日09:30盘前强检",
       "enabled": true,
       "createdAtMs": 1773145175561,
-      "updatedAtMs": 1774402330040,
+      "updatedAtMs": 1774661652839,
       "schedule": {
         "kind": "cron",
         "expr": "30 9 * * *",
@@ -139,17 +150,21 @@
         "mode": "announce",
         "channel": "feishu",
         "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774488600000,
-        "lastRunAtMs": 1774402200016,
+        "nextRunAtMs": 1774747800000,
+        "lastRunAtMs": 1774661400007,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 130024,
-        "lastDeliveryStatus": "not-delivered",
+        "lastDurationMs": 252832,
+        "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": false
+        "lastDelivered": true
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
       }
     },
     {
@@ -157,7 +172,7 @@
       "name": "每日15:30盘后审计",
       "enabled": true,
       "createdAtMs": 1773145190834,
-      "updatedAtMs": 1774337588808,
+      "updatedAtMs": 1774655599284,
       "schedule": {
         "kind": "cron",
         "expr": "30 15 * * *",
@@ -175,17 +190,21 @@
         "mode": "announce",
         "channel": "feishu",
         "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774423800000,
-        "lastRunAtMs": 1774337400014,
+        "nextRunAtMs": 1774683000000,
+        "lastRunAtMs": 1774596600008,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 188794,
+        "lastDurationMs": 11747,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
       }
     },
     {
@@ -194,7 +213,7 @@
       "description": "每天09:00发送实时量化回测状态摘要",
       "enabled": true,
       "createdAtMs": 1773215340583,
-      "updatedAtMs": 1774400429166,
+      "updatedAtMs": 1774659741391,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * *",
@@ -214,17 +233,21 @@
         "mode": "announce",
         "channel": "feishu",
         "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774486800000,
-        "lastRunAtMs": 1774400408306,
+        "nextRunAtMs": 1774746000000,
+        "lastRunAtMs": 1774659719910,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 20860,
-        "lastDeliveryStatus": "not-delivered",
+        "lastDurationMs": 21481,
+        "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": false
+        "lastDelivered": true
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
       }
     },
     {
@@ -233,7 +256,7 @@
       "description": "每天08:50生成全球股市早间要闻，含大盘体温/板块映射/看涨看跌",
       "enabled": true,
       "createdAtMs": 1773373210801,
-      "updatedAtMs": 1774399946277,
+      "updatedAtMs": 1774659741091,
       "schedule": {
         "kind": "cron",
         "expr": "50 8 * * *",
@@ -253,18 +276,22 @@
       "delivery": {
         "mode": "announce",
         "channel": "feishu",
-        "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "to": "chat:oc_8a819be3a90d35b8d0a2d5c1f4642b22",
+        "accountId": "coding-agent",
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774486200000,
-        "lastRunAtMs": 1774399800016,
+        "nextRunAtMs": 1774745400000,
+        "lastRunAtMs": 1774659000008,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 146261,
-        "lastDeliveryStatus": "not-delivered",
+        "lastDurationMs": 154554,
+        "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": false
+        "lastDelivered": true
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
       }
     },
     {
@@ -273,7 +300,7 @@
       "description": "生成真实输入版盘前会与交易建议卡，并推送到当前飞书DM",
       "enabled": true,
       "createdAtMs": 1773487592124,
-      "updatedAtMs": 1774400126099,
+      "updatedAtMs": 1774655600479,
       "schedule": {
         "kind": "cron",
         "expr": "55 8 * * 1-5",
@@ -293,17 +320,21 @@
         "mode": "none",
         "channel": "feishu",
         "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
         "bestEffort": true
       },
       "state": {
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1774486500000,
-        "lastRunAtMs": 1774400100015,
+        "nextRunAtMs": 1774832100000,
+        "lastRunAtMs": 1774572900007,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 26084,
+        "lastDurationMs": 68540,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered"
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
       }
     },
     {
@@ -312,7 +343,7 @@
       "description": "生成真实输入版午盘巡检会与交易建议卡，并推送到当前飞书DM",
       "enabled": true,
       "createdAtMs": 1773487592124,
-      "updatedAtMs": 1774337134748,
+      "updatedAtMs": 1774655600885,
       "schedule": {
         "kind": "cron",
         "expr": "35 11 * * 1-5",
@@ -332,19 +363,21 @@
         "mode": "none",
         "channel": "feishu",
         "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
         "bestEffort": true
       },
       "state": {
-        "consecutiveErrors": 6,
-        "nextRunAtMs": 1774409700000,
-        "lastRunAtMs": 1774323300009,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 113879,
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1774841700000,
+        "lastRunAtMs": 1774582500005,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 59416,
         "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false,
-        "lastDeliveryError": "⚠️ ✉️ Message failed",
-        "lastError": "⚠️ ✉️ Message failed"
+        "lastDelivered": false
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
       }
     },
     {
@@ -353,7 +386,7 @@
       "description": "生成真实输入版收盘复盘会与交易建议卡，并推送到当前飞书DM",
       "enabled": true,
       "createdAtMs": 1773487592124,
-      "updatedAtMs": 1774337134750,
+      "updatedAtMs": 1774655601285,
       "schedule": {
         "kind": "cron",
         "expr": "15 15 * * 1-5",
@@ -373,19 +406,21 @@
         "mode": "none",
         "channel": "feishu",
         "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
         "bestEffort": true
       },
       "state": {
-        "consecutiveErrors": 2,
-        "nextRunAtMs": 1774422900000,
-        "lastRunAtMs": 1774336500017,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 67184,
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1774854900000,
+        "lastRunAtMs": 1774595700012,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 31260,
         "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false,
-        "lastDeliveryError": "⚠️ ✉️ Message failed",
-        "lastError": "⚠️ ✉️ Message failed"
+        "lastDelivered": false
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
       }
     },
     {
@@ -394,7 +429,7 @@
       "description": "生成真实输入版夜间研究会与交易建议卡，并推送到当前飞书DM",
       "enabled": true,
       "createdAtMs": 1773487592124,
-      "updatedAtMs": 1774355563716,
+      "updatedAtMs": 1774655601687,
       "schedule": {
         "kind": "cron",
         "expr": "30 20 * * *",
@@ -414,17 +449,21 @@
         "mode": "none",
         "channel": "feishu",
         "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
         "bestEffort": true
       },
       "state": {
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1774441800000,
-        "lastRunAtMs": 1774355400011,
+        "nextRunAtMs": 1774701000000,
+        "lastRunAtMs": 1774614600009,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 163705,
+        "lastDurationMs": 209824,
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
       }
     },
     {
@@ -433,7 +472,7 @@
       "description": "盘前由宏观/量化/风控/交易员/首席研究员完成非会议值班",
       "enabled": true,
       "createdAtMs": 1773491345498,
-      "updatedAtMs": 1774399226679,
+      "updatedAtMs": 1774655602084,
       "schedule": {
         "kind": "cron",
         "expr": "40 8 * * 1-5",
@@ -453,17 +492,21 @@
         "mode": "announce",
         "channel": "feishu",
         "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
         "bestEffort": true
       },
       "state": {
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1774485600000,
-        "lastRunAtMs": 1774399200014,
+        "nextRunAtMs": 1774831200000,
+        "lastRunAtMs": 1774572000007,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 26665,
+        "lastDurationMs": 52835,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered"
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
       }
     },
     {
@@ -472,7 +515,7 @@
       "description": "盘中由风控/交易员/行业/首席研究员做风险与异动巡检",
       "enabled": true,
       "createdAtMs": 1773491345498,
-      "updatedAtMs": 1774320713521,
+      "updatedAtMs": 1774655602482,
       "schedule": {
         "kind": "cron",
         "expr": "30 10 * * 1-5",
@@ -492,18 +535,21 @@
         "mode": "announce",
         "channel": "feishu",
         "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
         "bestEffort": true
       },
       "state": {
-        "consecutiveErrors": 1,
-        "nextRunAtMs": 1774405800000,
-        "lastRunAtMs": 1774319400020,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 180029,
-        "lastDeliveryStatus": "unknown",
-        "lastError": "cron: job execution timed out",
-        "lastErrorReason": "timeout"
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1774837800000,
+        "lastRunAtMs": 1774578600006,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 171528,
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
       }
     },
     {
@@ -512,7 +558,7 @@
       "description": "盘后由交易员/量化/行业/首席研究员更新观察池与次日准备",
       "enabled": true,
       "createdAtMs": 1773491345498,
-      "updatedAtMs": 1774341180043,
+      "updatedAtMs": 1774655606083,
       "schedule": {
         "kind": "cron",
         "expr": "30 16 * * 1-5",
@@ -525,25 +571,29 @@
         "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_background_cycle.py --cycle post_close\n3. 读取 cycle md/json 输出\n4. 用中文简短汇报：盘后整理结论、次日观察重点、值班角色、周期总览文件路径",
         "model": "minimax-m2.7",
         "thinking": "low",
-        "timeoutSeconds": 180,
+        "timeoutSeconds": 600,
         "lightContext": true
       },
       "delivery": {
         "mode": "announce",
         "channel": "feishu",
         "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
         "bestEffort": true
       },
       "state": {
-        "consecutiveErrors": 2,
-        "nextRunAtMs": 1774427400000,
-        "lastRunAtMs": 1774341000020,
+        "consecutiveErrors": 1,
+        "nextRunAtMs": 1774859400000,
+        "lastRunAtMs": 1774600200007,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 180023,
+        "lastDurationMs": 180021,
         "lastDeliveryStatus": "unknown",
-        "lastErrorReason": "timeout",
-        "lastError": "cron: job execution timed out"
+        "lastError": "cron: job execution timed out",
+        "lastErrorReason": "timeout"
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
       }
     },
     {
@@ -552,7 +602,7 @@
       "description": "夜间由宏观/行业/量化/大师分身/首席研究员做深度研究与次日准备",
       "enabled": true,
       "createdAtMs": 1773491345498,
-      "updatedAtMs": 1774357380032,
+      "updatedAtMs": 1774655603284,
       "schedule": {
         "kind": "cron",
         "expr": "0 21 * * *",
@@ -572,18 +622,21 @@
         "mode": "announce",
         "channel": "feishu",
         "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
         "bestEffort": true
       },
       "state": {
-        "consecutiveErrors": 1,
-        "nextRunAtMs": 1774443600000,
-        "lastRunAtMs": 1774357200012,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 180020,
-        "lastDeliveryStatus": "unknown",
-        "lastError": "cron: job execution timed out",
-        "lastErrorReason": "timeout"
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1774702800000,
+        "lastRunAtMs": 1774616400008,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 154580,
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
       }
     },
     {
@@ -592,7 +645,7 @@
       "description": "交易日轮询关键变化，必要时建议触发临时会商",
       "enabled": true,
       "createdAtMs": 1773491585713,
-      "updatedAtMs": 1774403123927,
+      "updatedAtMs": 1774655603680,
       "schedule": {
         "kind": "cron",
         "expr": "45 9-11,13-14 * * 1-5",
@@ -612,17 +665,21 @@
         "mode": "announce",
         "channel": "feishu",
         "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
         "bestEffort": true
       },
       "state": {
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1774406700000,
-        "lastRunAtMs": 1774403100013,
+        "nextRunAtMs": 1774835100000,
+        "lastRunAtMs": 1774593900005,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 23914,
+        "lastDurationMs": 58433,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered"
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
       }
     },
     {
@@ -631,7 +688,7 @@
       "description": "交易时段巡检双源行情与账户同步健康度，异常时主动告警",
       "enabled": true,
       "createdAtMs": 1773496760753,
-      "updatedAtMs": 1774402520487,
+      "updatedAtMs": 1774655604078,
       "schedule": {
         "kind": "cron",
         "expr": "35 9,10,13,14 * * 1-5",
@@ -651,17 +708,21 @@
         "mode": "announce",
         "channel": "feishu",
         "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
         "bestEffort": true
       },
       "state": {
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1774406100000,
-        "lastRunAtMs": 1774402500018,
+        "nextRunAtMs": 1774834500000,
+        "lastRunAtMs": 1774593300007,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 20469,
+        "lastDurationMs": 17318,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered"
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
       }
     },
     {
@@ -670,7 +731,7 @@
       "name": "23点记忆夜跑：读当天日志→提炼→写规则候选→清理低价值内容",
       "enabled": true,
       "createdAtMs": 1773761965380,
-      "updatedAtMs": 1774364674185,
+      "updatedAtMs": 1774623811809,
       "schedule": {
         "kind": "cron",
         "expr": "0 23 * * *",
@@ -690,13 +751,13 @@
         "to": "feishu:user:ou_47c21eede907b0c4f9fd4d34519d84ae"
       },
       "state": {
-        "nextRunAtMs": 1774450800000,
-        "lastRunAtMs": 1774364400013,
+        "nextRunAtMs": 1774710000000,
+        "lastRunAtMs": 1774623600008,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 274172,
+        "lastDurationMs": 211801,
         "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 2,
+        "consecutiveErrors": 5,
         "lastDelivered": false,
         "lastDeliveryError": "⚠️ ✉️ Message failed",
         "lastError": "⚠️ ✉️ Message failed"
@@ -707,7 +768,7 @@
       "name": "每日自动更新检查",
       "enabled": true,
       "createdAtMs": 1773926602174,
-      "updatedAtMs": 1774378961345,
+      "updatedAtMs": 1774655604474,
       "schedule": {
         "kind": "cron",
         "expr": "0 3 * * *",
@@ -725,17 +786,21 @@
         "mode": "announce",
         "channel": "feishu",
         "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774465200000,
-        "lastRunAtMs": 1774378800016,
+        "nextRunAtMs": 1774724400000,
+        "lastRunAtMs": 1774638000009,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 161329,
+        "lastDurationMs": 150103,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
       }
     },
     {
@@ -743,7 +808,7 @@
       "name": "主动任务续跑检查",
       "enabled": true,
       "createdAtMs": 1773933405352,
-      "updatedAtMs": 1774404004877,
+      "updatedAtMs": 1774677726233,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 * * * *",
@@ -763,17 +828,60 @@
         "mode": "announce",
         "channel": "feishu",
         "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774405800000,
-        "lastRunAtMs": 1774404000016,
+        "nextRunAtMs": 1774679400000,
+        "lastRunAtMs": 1774677720059,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 4861,
-        "lastDeliveryStatus": "not-delivered",
+        "lastDurationMs": 6174,
+        "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": false
+        "lastDelivered": true,
+        "runningAtMs": 1774679400003
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
+      }
+    },
+    {
+      "id": "c4c7a000-53b0-46fa-bc77-b564cbaa5704",
+      "name": "每日03:20 OpenClaw归档备份",
+      "description": "使用 openclaw-backup skill 将 ~/.openclaw 归档到 ~/openclaw-backups，保留最近7份",
+      "enabled": true,
+      "createdAtMs": 1774483795295,
+      "updatedAtMs": 1774655605273,
+      "schedule": {
+        "kind": "cron",
+        "expr": "20 3 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行 bash /Users/ling/.openclaw/backup-archive.sh；默认写入 /Volumes/A/openclaw-backups；如果成功，返回备份文件路径、大小和当前保留份数；如果失败，只返回错误摘要。",
+        "model": "minimax-m2.7",
+        "thinking": "low",
+        "timeoutSeconds": 1800,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1774725600000,
+        "lastRunAtMs": 1774639200008,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 300010,
+        "lastErrorReason": "timeout",
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 2,
+        "lastError": "cron: job execution timed out"
       }
     }
   ]
