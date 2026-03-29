@@ -19,7 +19,8 @@
             "cacheWrite": 0
           },
           "contextWindow": 200000,
-          "maxTokens": 8192
+          "maxTokens": 8192,
+          "api": "anthropic-messages"
         },
         {
           "id": "MiniMax-M2.5",
@@ -35,7 +36,8 @@
             "cacheWrite": 0
           },
           "contextWindow": 200000,
-          "maxTokens": 8192
+          "maxTokens": 8192,
+          "api": "anthropic-messages"
         },
         {
           "id": "MiniMax-M2.5-highspeed",
@@ -51,7 +53,8 @@
             "cacheWrite": 0
           },
           "contextWindow": 200000,
-          "maxTokens": 8192
+          "maxTokens": 8192,
+          "api": "anthropic-messages"
         },
         {
           "id": "MiniMax-M2.5-Lightning",
@@ -67,7 +70,8 @@
             "cacheWrite": 0
           },
           "contextWindow": 200000,
-          "maxTokens": 8192
+          "maxTokens": 8192,
+          "api": "anthropic-messages"
         },
         {
           "id": "MiniMax-VL-01",
@@ -80,27 +84,92 @@
           "cost": {
             "input": 0.3,
             "output": 1.2,
-            "cacheRead": 0.03,
-            "cacheWrite": 0.12
+            "cacheRead": 0.06,
+            "cacheWrite": 0.375
           },
-          "contextWindow": 200000,
-          "maxTokens": 8192
+          "contextWindow": 204800,
+          "maxTokens": 131072
+        },
+        {
+          "id": "MiniMax-M2",
+          "name": "MiniMax M2",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0.3,
+            "output": 1.2,
+            "cacheRead": 0.06,
+            "cacheWrite": 0.375
+          },
+          "contextWindow": 204800,
+          "maxTokens": 131072
+        },
+        {
+          "id": "MiniMax-M2.1",
+          "name": "MiniMax M2.1",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0.3,
+            "output": 1.2,
+            "cacheRead": 0.06,
+            "cacheWrite": 0.375
+          },
+          "contextWindow": 204800,
+          "maxTokens": 131072
+        },
+        {
+          "id": "MiniMax-M2.1-highspeed",
+          "name": "MiniMax M2.1 Highspeed",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0.3,
+            "output": 1.2,
+            "cacheRead": 0.06,
+            "cacheWrite": 0.375
+          },
+          "contextWindow": 204800,
+          "maxTokens": 131072
+        },
+        {
+          "id": "MiniMax-M2.7-highspeed",
+          "name": "MiniMax M2.7 Highspeed",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0.3,
+            "output": 1.2,
+            "cacheRead": 0.06,
+            "cacheWrite": 0.375
+          },
+          "contextWindow": 204800,
+          "maxTokens": 131072
         }
       ],
       "apiKey": "secretref-managed"
     },
     "codex": {
-      "baseUrl": "https://gmncodex.com",
+      "baseUrl": "https://gmncode.cn",
       "apiKey": "secretref-managed",
       "api": "openai-completions",
       "models": [
         {
-          "id": "gpt-5.3-codex",
-          "name": "GPT-5.3 Codex",
+          "id": "gpt-5.4",
+          "name": "gpt-5.4",
+          "contextWindow": 131072,
+          "maxTokens": 8192,
           "reasoning": false,
           "input": [
-            "text",
-            "image"
+            "text"
           ],
           "cost": {
             "input": 0,
@@ -108,30 +177,12 @@
             "cacheRead": 0,
             "cacheWrite": 0
           },
-          "contextWindow": 200000,
-          "maxTokens": 64000
-        },
-        {
-          "id": "gpt-5.2-codex",
-          "name": "GPT-5.2 Codex",
-          "reasoning": false,
-          "input": [
-            "text",
-            "image"
-          ],
-          "cost": {
-            "input": 0,
-            "output": 0,
-            "cacheRead": 0,
-            "cacheWrite": 0
-          },
-          "contextWindow": 200000,
-          "maxTokens": 64000
+          "api": "openai-completions"
         }
       ]
     },
     "gmn": {
-      "baseUrl": "https://gmncodex.com/v1",
+      "baseUrl": "https://gmncode.cn",
       "apiKey": "secretref-managed",
       "api": "openai-responses",
       "headers": {
@@ -159,7 +210,7 @@
         {
           "id": "gpt-5.2-codex",
           "name": "gpt-5.2-codex",
-          "api": "openai-completions",
+          "api": "openai-responses",
           "reasoning": false,
           "input": [
             "text"
@@ -176,7 +227,7 @@
         {
           "id": "gpt-5.4",
           "name": "gpt-5.4",
-          "api": "openai-completions",
+          "api": "openai-responses",
           "reasoning": true,
           "input": [
             "text"
@@ -197,8 +248,8 @@
       "api": "ollama",
       "models": [
         {
-          "id": "my-qwen:latest",
-          "name": "my-qwen:latest",
+          "id": "carstenuhlig/omnicoder-9b:latest",
+          "name": "carstenuhlig/omnicoder-9b:latest",
           "reasoning": false,
           "input": [
             "text"
@@ -213,9 +264,9 @@
           "maxTokens": 8192
         },
         {
-          "id": "gemma3:4b",
-          "name": "gemma3:4b",
-          "reasoning": false,
+          "id": "deepseek-r1:7b",
+          "name": "deepseek-r1:7b",
+          "reasoning": true,
           "input": [
             "text"
           ],
@@ -226,6 +277,22 @@
             "cacheWrite": 0
           },
           "contextWindow": 131072,
+          "maxTokens": 8192
+        },
+        {
+          "id": "my-qwen:latest",
+          "name": "my-qwen:latest",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 262144,
           "maxTokens": 8192
         },
         {
@@ -260,7 +327,14 @@
             "text"
           ],
           "contextWindow": 262144,
-          "maxTokens": 4096
+          "maxTokens": 4096,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "api": "ollama"
         },
         {
           "id": "gemma3:4b",
@@ -270,7 +344,14 @@
             "text"
           ],
           "contextWindow": 4096,
-          "maxTokens": 2048
+          "maxTokens": 2048,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "api": "ollama"
         },
         {
           "id": "deepseek-r1:7b",
@@ -280,7 +361,14 @@
             "text"
           ],
           "contextWindow": 32768,
-          "maxTokens": 4096
+          "maxTokens": 4096,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "api": "ollama"
         },
         {
           "id": "carstenuhlig/omnicoder-9b:latest",
@@ -290,14 +378,21 @@
             "text"
           ],
           "contextWindow": 32768,
-          "maxTokens": 4096
+          "maxTokens": 4096,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "api": "ollama"
         }
       ]
     },
     "omlx": {
       "baseUrl": "http://127.0.0.1:8000/v1",
       "apiKey": "0923",
-      "api": "openai-completions",
+      "api": "openai-responses",
       "models": [
         {
           "id": "Qwen2.5-0.5B-Instruct-4bit",
@@ -307,7 +402,14 @@
             "text"
           ],
           "contextWindow": 131072,
-          "maxTokens": 8192
+          "maxTokens": 8192,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "api": "openai-responses"
         },
         {
           "id": "Qwen2.5-1.5B-Instruct-4bit",
@@ -317,7 +419,14 @@
             "text"
           ],
           "contextWindow": 131072,
-          "maxTokens": 8192
+          "maxTokens": 8192,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "api": "openai-responses"
         }
       ]
     }

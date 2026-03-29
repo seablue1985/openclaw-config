@@ -26,20 +26,16 @@
   "usageStats": {
     "minimax-portal:default": {
       "errorCount": 0,
-      "lastUsed": 1774404004807
+      "lastUsed": 1774814405323
     },
     "ollama-local:default": {
       "errorCount": 0,
       "lastUsed": 1773466261798
     },
     "gmn:default": {
-      "errorCount": 1,
-      "lastUsed": 1773969345194,
-      "lastFailureAt": 1774253668512,
-      "failureCounts": {
-        "auth": 1
-      },
-      "cooldownUntil": 1774253728512
+      "errorCount": 0,
+      "lastUsed": 1774741176824,
+      "lastFailureAt": 1774253668512
     }
   }
 }

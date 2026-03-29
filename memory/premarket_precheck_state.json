@@ -1,0 +1,52 @@
+{
+  "last_run_date": "2026-03-26",
+  "last_status": {
+    "status": "FULL_HALT",
+    "status_reason": "precheck_process_failed",
+    "date": "2026-03-26",
+    "time": "18:28",
+    "tickets": "/Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system/research/reports/stock_signal_tickets_live_20260326.csv",
+    "ticket_meta": {
+      "autogen": false
+    },
+    "holdings": "/Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system/research/reports/ths_app_holdings_20260326.csv",
+    "passed": null,
+    "strict_precheck": null,
+    "hard_stop": null,
+    "halt_reason": null,
+    "execution_truth": {
+      "state": "blocked",
+      "state_reason": "precheck_process_failed",
+      "trading_status": "FULL_HALT",
+      "trading_status_reason": "precheck_process_failed",
+      "trading_status_label_cn": "全部停止",
+      "mode": "",
+      "risk_off": false,
+      "hard_stop": false,
+      "halt_new_buy": false,
+      "gate_reasons": [],
+      "market_gate_reasons": [],
+      "style_gate_reasons": [],
+      "manual_gate_reasons": [],
+      "other_gate_reasons": [],
+      "market_risk_state": "normal",
+      "style_risk_state": "normal",
+      "primary_gate_dimension": "none",
+      "pipeline_ok": false,
+      "precheck_passed": false,
+      "advice_only": false,
+      "buy_authorized": false,
+      "trading_ready": false,
+      "severity": "RED",
+      "source": "auto_run_premarket_precheck"
+    },
+    "result": {
+      "cmd": "python3 scripts/run_live_execution_v1.py --trading-mode live --allow-advice-only --config config/live_stock_alpha_v3.json --available-cash 1000000.0 --account-nav 1000000.0 --tickets /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system/research/reports/stock_signal_tickets_live_20260326.csv --holdings /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system/research/reports/ths_app_holdings_20260326.csv",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system/scripts/run_live_execution_v1.py\", line 2775, in <module>\n    main()\n    ~~~~^^\n  File \"/Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system/scripts/run_live_execution_v1.py\", line 2597, in main\n    data_path_state = resolve_data_path_state(config)\n  File \"/Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system/scripts/run_live_execution_v1.py\", line 204, in resolve_data_path_state\n    raise FileNotFoundError(\n    ...<4 lines>...\n    )\nFileNotFoundError: 启动前健康检查失败，关键路径不可用：\n- a_stock_history_csv:/Users/ling/.openclaw/data/a_stock_history.csv\n修复建议：配置 data_paths 或设置 LIVE_INDEX_DATA_ROOT/LIVE_A_STOCK_CSV，如外接盘不可用请先准备本地 fallback snapshot。\n",
+      "parsed": {}
+    },
+    "report_file": "/Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system/research/reports/auto_premarket_precheck_20260326.json"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastTouchedVersion": "2026.3.13",
-    "lastTouchedAt": "2026-03-24T15:47:54.591Z"
+    "lastTouchedVersion": "2026.3.23-2",
+    "lastTouchedAt": "2026-03-28T23:33:57.404Z"
   },
   "env": {},
   "wizard": {
@@ -218,59 +218,13 @@
           "provider": "model_api_keys_file",
           "id": "/providers/codex/apiKey"
         },
-        "api": "openai-responses",
+        "api": "openai-completions",
         "models": [
           {
             "id": "gpt-5.4",
-            "name": "GPT-5.4",
-            "reasoning": true,
-            "input": [
-              "text"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 200000,
+            "name": "gpt-5.4",
+            "contextWindow": 131072,
             "maxTokens": 8192
-          },
-          {
-            "id": "gpt-5.3-codex",
-            "name": "GPT-5.3 Codex",
-            "api": "openai-responses",
-            "reasoning": false,
-            "input": [
-              "text",
-              "image"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 200000,
-            "maxTokens": 64000
-          },
-          {
-            "id": "gpt-5.2-codex",
-            "name": "GPT-5.2 Codex",
-            "api": "openai-responses",
-            "reasoning": false,
-            "input": [
-              "text",
-              "image"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 200000,
-            "maxTokens": 64000
           }
         ]
       },
@@ -345,7 +299,7 @@
   "agents": {
     "defaults": {
       "model": {
-        "primary": "codex/gpt-5.4",
+        "primary": "gmn/gpt-5.3-codex",
         "fallbacks": [
           "minimax-portal/MiniMax-M2.7"
         ]
@@ -411,10 +365,11 @@
       "memorySearch": {
         "enabled": true,
         "sources": [
-          "memory"
+          "memory",
+          "sessions"
         ],
         "experimental": {
-          "sessionMemory": false
+          "sessionMemory": true
         },
         "provider": "ollama",
         "remote": {
@@ -448,7 +403,7 @@
         "mode": "safeguard"
       },
       "thinkingDefault": "high",
-      "timeoutSeconds": 900,
+      "timeoutSeconds": 180,
       "heartbeat": {
         "model": "minimax-portal/MiniMax-M2.7",
         "session": "heartbeat",
@@ -466,7 +421,7 @@
         "id": "main",
         "name": "主脑 (GPT-5.4)",
         "model": {
-          "primary": "codex/gpt-5.4",
+          "primary": "gmn/gpt-5.3-codex",
           "fallbacks": [
             "codex/gpt-5.3-codex",
             "minimax-portal/MiniMax-M2.7"
@@ -514,7 +469,7 @@
         "workspace": "/Users/ling/.openclaw/workspace-quant",
         "agentDir": "/Users/ling/.openclaw/agents/quant-advisor/agent",
         "model": {
-          "primary": "codex/gpt-5.4",
+          "primary": "gmn/gpt-5.3-codex",
           "fallbacks": [
             "codex/gpt-5.3-codex",
             "minimax-portal/MiniMax-M2.7"
@@ -588,7 +543,7 @@
       }
     },
     {
-      "agentId": "main",
+      "agentId": "xiaoguanjia",
       "match": {
         "channel": "feishu",
         "accountId": "feishu-assistant"
@@ -609,6 +564,9 @@
     }
   ],
   "messages": {
+    "queue": {
+      "mode": "followup"
+    },
     "ackReactionScope": "group-mentions"
   },
   "commands": {
@@ -618,12 +576,12 @@
     "ownerDisplay": "raw"
   },
   "session": {
-    "dmScope": "main",
+    "dmScope": "per-channel-peer",
     "maintenance": {
       "mode": "enforce",
-      "pruneAfter": "7d",
-      "maxEntries": 120,
-      "resetArchiveRetention": "7d"
+      "pruneAfter": "30d",
+      "maxEntries": 1000,
+      "resetArchiveRetention": "30d"
     }
   },
   "hooks": {
@@ -719,13 +677,15 @@
     "allow": [
       "active-task-guard",
       "memory-core",
-      "minimax-portal-auth",
       "simple-task-router",
-      "openclaw-lark"
+      "openclaw-lark",
+      "minimax",
+      "feishu",
+      "exa",
+      "tavily"
     ],
     "load": {
       "paths": [
-        "/Users/ling/.local/share/fnm/node-versions/v22.22.0/installation/lib/node_modules/openclaw/extensions/acpx",
         "/Users/ling/.openclaw/extensions/active-task-guard",
         "/Users/ling/.openclaw/extensions/simple-task-router"
       ]
@@ -746,11 +706,8 @@
       "memory-core": {
         "enabled": true
       },
-      "minimax-portal-auth": {
-        "enabled": true
-      },
       "feishu": {
-        "enabled": false
+        "enabled": true
       },
       "simple-task-router": {
         "enabled": false
@@ -765,7 +722,26 @@
         "enabled": true
       },
       "openclaw-lark": {
+        "enabled": false
+      },
+      "minimax": {
         "enabled": true
+      },
+      "exa": {
+        "enabled": true,
+        "config": {
+          "webSearch": {
+            "apiKey": "bfc9720e-a8ae-474d-93d5-6704862e85fe"
+          }
+        }
+      },
+      "tavily": {
+        "enabled": true,
+        "config": {
+          "webSearch": {
+            "apiKey": "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"
+          }
+        }
       }
     },
     "installs": {

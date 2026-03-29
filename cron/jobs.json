@@ -48,7 +48,7 @@
       "name": "23:00 Codex记忆夜跑",
       "enabled": true,
       "createdAtMs": 1772683570660,
-      "updatedAtMs": 1774655598094,
+      "updatedAtMs": 1774797010445,
       "schedule": {
         "kind": "cron",
         "expr": "10 23 * * *",
@@ -72,13 +72,13 @@
         "bestEffort": true
       },
       "state": {
-        "lastRunAtMs": 1774624200007,
+        "lastRunAtMs": 1774797000009,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 16395,
+        "lastDurationMs": 10436,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1774710600000,
+        "nextRunAtMs": 1774883400000,
         "lastDelivered": false
       },
       "failureAlert": {
@@ -91,7 +91,7 @@
       "description": "每天早上9点同步小红书点赞/收藏到当前打开的 Obsidian vault",
       "enabled": true,
       "createdAtMs": 1773113389264,
-      "updatedAtMs": 1774659719910,
+      "updatedAtMs": 1774746001650,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * *"
@@ -114,14 +114,14 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774746000000,
+        "nextRunAtMs": 1774832400000,
         "consecutiveErrors": 0,
-        "lastRunAtMs": 1774659600010,
+        "lastRunAtMs": 1774746000005,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 119900,
-        "lastDeliveryStatus": "delivered",
-        "lastDelivered": true
+        "lastDurationMs": 1645,
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
       },
       "failureAlert": {
         "accountId": "coding-agent"
@@ -132,7 +132,7 @@
       "name": "每日09:30盘前强检",
       "enabled": true,
       "createdAtMs": 1773145175561,
-      "updatedAtMs": 1774661652839,
+      "updatedAtMs": 1774747812379,
       "schedule": {
         "kind": "cron",
         "expr": "30 9 * * *",
@@ -154,11 +154,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774747800000,
-        "lastRunAtMs": 1774661400007,
+        "nextRunAtMs": 1774834200000,
+        "lastRunAtMs": 1774747800008,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 252832,
+        "lastDurationMs": 12371,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -172,7 +172,7 @@
       "name": "每日15:30盘后审计",
       "enabled": true,
       "createdAtMs": 1773145190834,
-      "updatedAtMs": 1774655599284,
+      "updatedAtMs": 1774769401958,
       "schedule": {
         "kind": "cron",
         "expr": "30 15 * * *",
@@ -194,11 +194,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774683000000,
-        "lastRunAtMs": 1774596600008,
+        "nextRunAtMs": 1774855800000,
+        "lastRunAtMs": 1774769400009,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 11747,
+        "lastDurationMs": 1949,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -213,7 +213,7 @@
       "description": "每天09:00发送实时量化回测状态摘要",
       "enabled": true,
       "createdAtMs": 1773215340583,
-      "updatedAtMs": 1774659741391,
+      "updatedAtMs": 1774746002403,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * *",
@@ -237,14 +237,14 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774746000000,
-        "lastRunAtMs": 1774659719910,
+        "nextRunAtMs": 1774832400000,
+        "lastRunAtMs": 1774746001650,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 21481,
-        "lastDeliveryStatus": "delivered",
+        "lastDurationMs": 753,
+        "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": true
+        "lastDelivered": false
       },
       "failureAlert": {
         "accountId": "coding-agent"
@@ -256,7 +256,7 @@
       "description": "每天08:50生成全球股市早间要闻，含大盘体温/板块映射/看涨看跌",
       "enabled": true,
       "createdAtMs": 1773373210801,
-      "updatedAtMs": 1774659741091,
+      "updatedAtMs": 1774745640027,
       "schedule": {
         "kind": "cron",
         "expr": "50 8 * * *",
@@ -281,14 +281,15 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774745400000,
-        "lastRunAtMs": 1774659000008,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 154554,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
+        "nextRunAtMs": 1774831800000,
+        "lastRunAtMs": 1774745400008,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 240019,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "lastError": "cron: job execution timed out",
+        "lastErrorReason": "timeout"
       },
       "failureAlert": {
         "accountId": "coding-agent"
@@ -429,7 +430,7 @@
       "description": "生成真实输入版夜间研究会与交易建议卡，并推送到当前飞书DM",
       "enabled": true,
       "createdAtMs": 1773487592124,
-      "updatedAtMs": 1774655601687,
+      "updatedAtMs": 1774787572046,
       "schedule": {
         "kind": "cron",
         "expr": "30 20 * * *",
@@ -454,11 +455,11 @@
       },
       "state": {
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1774701000000,
-        "lastRunAtMs": 1774614600009,
+        "nextRunAtMs": 1774873800000,
+        "lastRunAtMs": 1774787400008,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 209824,
+        "lastDurationMs": 172038,
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
       },
@@ -602,7 +603,7 @@
       "description": "夜间由宏观/行业/量化/大师分身/首席研究员做深度研究与次日准备",
       "enabled": true,
       "createdAtMs": 1773491345498,
-      "updatedAtMs": 1774655603284,
+      "updatedAtMs": 1774789380028,
       "schedule": {
         "kind": "cron",
         "expr": "0 21 * * *",
@@ -626,14 +627,15 @@
         "bestEffort": true
       },
       "state": {
-        "consecutiveErrors": 0,
-        "nextRunAtMs": 1774702800000,
-        "lastRunAtMs": 1774616400008,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 154580,
-        "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
+        "consecutiveErrors": 2,
+        "nextRunAtMs": 1774875600000,
+        "lastRunAtMs": 1774789200007,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 180021,
+        "lastDeliveryStatus": "unknown",
+        "lastErrorReason": "timeout",
+        "lastError": "cron: job execution timed out"
       },
       "failureAlert": {
         "accountId": "coding-agent"
@@ -731,7 +733,7 @@
       "name": "23点记忆夜跑：读当天日志→提炼→写规则候选→清理低价值内容",
       "enabled": true,
       "createdAtMs": 1773761965380,
-      "updatedAtMs": 1774623811809,
+      "updatedAtMs": 1774796725887,
       "schedule": {
         "kind": "cron",
         "expr": "0 23 * * *",
@@ -751,13 +753,13 @@
         "to": "feishu:user:ou_47c21eede907b0c4f9fd4d34519d84ae"
       },
       "state": {
-        "nextRunAtMs": 1774710000000,
-        "lastRunAtMs": 1774623600008,
+        "nextRunAtMs": 1774882800000,
+        "lastRunAtMs": 1774796400008,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 211801,
+        "lastDurationMs": 325879,
         "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 5,
+        "consecutiveErrors": 7,
         "lastDelivered": false,
         "lastDeliveryError": "⚠️ ✉️ Message failed",
         "lastError": "⚠️ ✉️ Message failed"
@@ -768,7 +770,7 @@
       "name": "每日自动更新检查",
       "enabled": true,
       "createdAtMs": 1773926602174,
-      "updatedAtMs": 1774655604474,
+      "updatedAtMs": 1774810836607,
       "schedule": {
         "kind": "cron",
         "expr": "0 3 * * *",
@@ -790,14 +792,14 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774724400000,
-        "lastRunAtMs": 1774638000009,
+        "nextRunAtMs": 1774897200000,
+        "lastRunAtMs": 1774810800009,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 150103,
-        "lastDeliveryStatus": "not-delivered",
+        "lastDurationMs": 36598,
+        "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": false
+        "lastDelivered": true
       },
       "failureAlert": {
         "accountId": "coding-agent"
@@ -808,7 +810,7 @@
       "name": "主动任务续跑检查",
       "enabled": true,
       "createdAtMs": 1773933405352,
-      "updatedAtMs": 1774677726233,
+      "updatedAtMs": 1774814405919,
       "schedule": {
         "kind": "cron",
         "expr": "*/30 * * * *",
@@ -832,15 +834,14 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774679400000,
-        "lastRunAtMs": 1774677720059,
+        "nextRunAtMs": 1774816200000,
+        "lastRunAtMs": 1774814400008,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 6174,
+        "lastDurationMs": 5911,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": true,
-        "runningAtMs": 1774679400003
+        "lastDelivered": true
       },
       "failureAlert": {
         "accountId": "coding-agent"
@@ -852,7 +853,7 @@
       "description": "使用 openclaw-backup skill 将 ~/.openclaw 归档到 ~/openclaw-backups，保留最近7份",
       "enabled": true,
       "createdAtMs": 1774483795295,
-      "updatedAtMs": 1774655605273,
+      "updatedAtMs": 1774812796347,
       "schedule": {
         "kind": "cron",
         "expr": "20 3 * * *",
@@ -873,15 +874,14 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1774725600000,
-        "lastRunAtMs": 1774639200008,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 300010,
-        "lastErrorReason": "timeout",
-        "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 2,
-        "lastError": "cron: job execution timed out"
+        "nextRunAtMs": 1774898400000,
+        "lastRunAtMs": 1774812000009,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 796338,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
       }
     }
   ]
