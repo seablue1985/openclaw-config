@@ -42,28 +42,48 @@ SKIP_KEYWORDS = ["chore(deps)", "ci", "build:", "style:", "lint:"]
 
 
 def load_config() -> list[dict]:
-    """加载仓库配置"""
+    """加载仓库配置：合并显式配置与自动发现结果，避免新仓库被漏监控"""
+    configured = []
     if CONFIG_FILE.exists():
-        return json.loads(CONFIG_FILE.read_text(encoding="utf-8"))
-    # 默认配置：如果有 upstream remote 的 git 仓库
-    default_repos = discover_git_repos()
-    return [{"path": str(r)} for r in default_repos]
+        configured = json.loads(CONFIG_FILE.read_text(encoding="utf-8"))
+
+    merged: dict[str, dict] = {}
+    for item in configured:
+        repo_path = item.get("path") or item.get("repo_path")
+        if not repo_path:
+            continue
+        merged[str(Path(repo_path).expanduser().resolve())] = dict(item)
+
+    auto_discovered = discover_git_repos()
+    for repo in auto_discovered:
+        key = str(repo.resolve())
+        merged.setdefault(key, {"path": key})
+
+    if merged:
+        return sorted(merged.values(), key=lambda x: (x.get("path") or x.get("repo_path") or ""))
+
+    return []
 
 
 def discover_git_repos() -> list[Path]:
-    """自动发现 workspace 下有 upstream 的 git 仓库"""
+    """自动发现 workspace 下可监控的 git 仓库（有 origin 或 upstream 即纳入）"""
     workspace = Path.home() / ".openclaw" / "workspace"
     found = []
+    seen = set()
     for git_dir in workspace.rglob(".git"):
         repo_dir = git_dir.parent
         try:
-            # 检查是否有 upstream remote
-            r = run_git(repo_dir, ["remote", "get-url", "upstream"])
-            upstream = r.strip() if r else ""
-            r2 = run_git(repo_dir, ["remote", "get-url", "origin"])
-            origin = r2.strip() if r2 else ""
-            if upstream or "ZhuLinsen" in origin or "seablue1985" in origin:
-                found.append(repo_dir)
+            has_remote = False
+            for remote in ("upstream", "origin"):
+                ok, _ = try_git(repo_dir, ["remote", "get-url", remote])
+                if ok:
+                    has_remote = True
+                    break
+            if has_remote:
+                resolved = str(repo_dir.resolve())
+                if resolved not in seen:
+                    seen.add(resolved)
+                    found.append(repo_dir)
         except Exception:
             pass
     return found
