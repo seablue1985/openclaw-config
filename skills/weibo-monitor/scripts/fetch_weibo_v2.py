@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from __future__ import annotations
 """
 Weibo Monitor V2 - 监测 + 内容分析 + 评论情绪汇总
 功能：
@@ -13,7 +14,6 @@ import re
 import sys
 from datetime import datetime
 from pathlib import Path
-from __future__ import annotations
 from typing import Any, Optional
 
 import requests
@@ -202,6 +202,25 @@ def build_summary(comments: list[dict[str, Any]]) -> str:
     return "\n".join(lines)
 
 
+def extract_meaningful_text(text: str) -> str:
+    """去掉话题/提及/链接等壳子，提取真正有信息量的正文"""
+    cleaned = re.sub(r"https?://\S+", " ", text)
+    cleaned = re.sub(r"#([^#]+)#", " ", cleaned)
+    cleaned = re.sub(r"@[^\s:：]+", " ", cleaned)
+    cleaned = re.sub(r"\[[^\]]+\]", " ", cleaned)
+    cleaned = re.sub(r"\s+", " ", cleaned)
+    return cleaned.strip(" 　\n\t-—:：;；,，.。!！?？()（）[]【】/\\|+").strip()
+
+
+def is_low_signal_post(text: str, comment_total: int) -> bool:
+    """过滤低信息量微博：正文几乎只剩标签/符号，且没有评论互动。"""
+    if comment_total > 0:
+        return False
+    meaningful = extract_meaningful_text(text)
+    compact = re.sub(r"\s+", "", meaningful)
+    return len(compact) <= 8
+
+
 def send_feishu(msg: str) -> dict[str, Any]:
     """发送飞书消息"""
     payload = {"msg_type": "text", "content": {"text": msg}}
@@ -303,16 +322,15 @@ def main() -> None:
         post_text = clean_text(post.get("text_raw", post.get("text", "")))
         post_url = f"https://weibo.com/{uid}/{post_id}"
 
-        if is_stock_related(post_text) < 1:
-            print(f"  [{name}] 跳过非股票相关内容")
-            continue
-
         print(f"\n分析 [{name}]: {post_text[:50]}...")
 
         comments = fetch_comments(post_id, cookie, max_pages=5)
         print(f"  获取到 {len(comments)} 条评论")
 
         sentiment, pos, neg, total = analyze_sentiment(comments)
+        if is_low_signal_post(post_text, total):
+            print("  跳过低信息量微博：正文过短/仅标签，且暂无评论")
+            continue
         comment_summary = build_summary(comments)
 
         short_text = post_text[:200] + ("..." if len(post_text) > 200 else "")
