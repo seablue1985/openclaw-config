@@ -14,7 +14,6 @@ import sys
 from datetime import datetime, date
 from pathlib import Path
 from typing import Optional
-from typing import Optional
 
 # ── 路径配置 ──────────────────────────────────────────────
 SKILL_DIR = Path(__file__).resolve().parents[1]
@@ -39,6 +38,12 @@ COMMIT_PRIORITY_KEYWORDS = {
 
 # 低优先级关键字（自动跳过）
 SKIP_KEYWORDS = ["chore(deps)", "ci", "build:", "style:", "lint:"]
+
+# 这些仓库属于 daily_stock_analysis 的派生/镜像仓库：继续扫描可接受，但默认不在日报中播报
+SUPPRESSED_REPO_NAMES = {
+    "daily_stock_analysis_upgrade_preview",
+    "daily_stock_analysis_upstream",
+}
 
 
 def load_config() -> list[dict]:
@@ -206,6 +211,50 @@ def has_local_changes(status: dict) -> bool:
         status.get("commits_ahead", 0) > 0
         or status.get("working_tree_dirty", False)
     )
+
+
+def is_report_suppressed(status: dict) -> bool:
+    if status.get("report") is False:
+        return True
+    return status.get("name") in SUPPRESSED_REPO_NAMES
+
+
+def visible_results(results: list[dict]) -> list[dict]:
+    return [r for r in results if not is_report_suppressed(r)]
+
+
+def assess_update_value(status: dict) -> tuple[str, str]:
+    """判断上游更新是否值得跟进"""
+    behind = status.get("commits_behind", 0)
+    ahead = status.get("commits_ahead", 0)
+    s = status.get("status", "")
+    commits = status.get("new_commits") or []
+    priorities = [c.get("priority", "") for c in commits]
+
+    if behind <= 0:
+        return "无需判断", "当前不存在上游待更新"
+    if ahead > 0 or s == "diverged":
+        return "先评估再合并", "本地与上游已分叉，先看兼容性和本地定制是否会被覆盖"
+    if status.get("breaking_changes"):
+        return "值得更新（高）", "上游包含 Breaking / 安全/重大接口变化，建议优先评估升级"
+
+    has_fix = any("Bug修复" in p for p in priorities)
+    has_feat = any("新功能" in p for p in priorities)
+    has_perf = any("性能" in p or "重构" in p for p in priorities)
+    only_low_signal = priorities and all(
+        ("文档" in p) or ("维护" in p) or ("测试" in p) or ("其他" in p)
+        for p in priorities
+    )
+
+    if has_fix or has_feat or has_perf:
+        if behind >= 5:
+            return "值得更新", f"上游含功能/修复类变更，且已落后 {behind} 个 commits"
+        return "可择机更新", "上游已有实质改动，但当前落后量不大，可结合使用频率安排"
+    if only_low_signal and behind <= 3:
+        return "暂不值得更新", "当前以上游文档/维护类提交为主，短期收益有限"
+    if behind >= 10:
+        return "值得更新", f"已明显落后 {behind} 个 commits，继续拖延会增加后续合并成本"
+    return "可按需更新", "有上游变化，但当前未见明显高价值修复/功能，可按需处理"
 
 
 def is_synced_clean(status: dict) -> bool:
@@ -393,14 +442,16 @@ def build_report(all_results: list[dict]) -> str:
     today = date.today().strftime("%Y-%m-%d")
     lines = [f"# GitHub 仓库更新报告 — {today}", ""]
 
-    recommend_updates = [r for r in all_results if should_update(r)[0]]
-    local_changes = [r for r in all_results if has_local_changes(r)]
-    synced_clean = [r for r in all_results if is_synced_clean(r)]
-    skipped = [r for r in all_results if r.get("status") == "no_upstream"]
-    errored = [r for r in all_results if r.get("error")]
+    report_results = visible_results(all_results)
+    suppressed = [r for r in all_results if is_report_suppressed(r)]
+    recommend_updates = [r for r in report_results if should_update(r)[0]]
+    local_changes = [r for r in report_results if has_local_changes(r)]
+    synced_clean = [r for r in report_results if is_synced_clean(r)]
+    skipped = [r for r in report_results if r.get("status") == "no_upstream"]
+    errored = [r for r in report_results if r.get("error")]
 
     lines.append(
-        f"**检查仓库数：{len(all_results)}** | 上游待更新：{len(recommend_updates)} | 本地有变化：{len(local_changes)} | 已同步：{len(synced_clean)}"
+        f"**检查仓库数：{len(report_results)}** | 上游待更新：{len(recommend_updates)} | 本地有变化：{len(local_changes)} | 已同步：{len(synced_clean)}"
     )
     lines.append("")
 
@@ -414,7 +465,9 @@ def build_report(all_results: list[dict]) -> str:
             lines.append(f"- 上游版本：{r.get('upstream_tag', '?')}")
             lines.append(f"- 相对上游：behind {r['commits_behind']} | ahead {r['commits_ahead']}")
             lines.append(f"- 工作区：{format_worktree_brief(r)}")
+            value_label, value_reason = assess_update_value(r)
             lines.append(f"- **建议：{reason}**")
+            lines.append(f"- **更新判断：{value_label}** — {value_reason}")
             if r.get("fetch_error"):
                 lines.append(f"- ⚠️ fetch 失败：{r['fetch_error']}")
             if r.get("breaking_changes"):
@@ -458,6 +511,12 @@ def build_report(all_results: list[dict]) -> str:
             lines.append(f"- {r['name']}：无 upstream/origin 主分支")
         lines.append("")
 
+    if suppressed:
+        lines.append(f"## 🙈 已按规则隐藏播报（{len(suppressed)}）\n")
+        for r in suppressed:
+            lines.append(f"- {r['name']}：派生/镜像仓库，默认不单独播报")
+        lines.append("")
+
     if errored:
         lines.append(f"## ❌ 异常（{len(errored)}）\n")
         for r in errored:
@@ -471,16 +530,18 @@ def build_report(all_results: list[dict]) -> str:
 
 def build_summary(results: list[dict]) -> str:
     """生成飞书摘要"""
-    recommend = [r for r in results if should_update(r)[0]]
-    local_changes = [r for r in results if has_local_changes(r)]
-    synced_clean = [r for r in results if is_synced_clean(r)]
-    breaking = [r for r in results if r.get("breaking_changes")]
+    report_results = visible_results(results)
+    recommend = [r for r in report_results if should_update(r)[0]]
+    local_changes = [r for r in report_results if has_local_changes(r)]
+    synced_clean = [r for r in report_results if is_synced_clean(r)]
+    breaking = [r for r in recommend if r.get("breaking_changes")]
 
     if recommend:
         top = sorted(recommend, key=lambda x: should_update(x)[2], reverse=True)[0]
+        value_label, _ = assess_update_value(top)
         msg = (
             f"🔔 GitHub 仓库检查 | 上游待更新 {len(recommend)} | 本地有变化 {len(local_changes)} | 已同步 {len(synced_clean)}"
-            f"\n最高优先：{top['name']}（behind {top['commits_behind']} / ahead {top['commits_ahead']}）"
+            f"\n最高优先：{top['name']}（behind {top['commits_behind']} / ahead {top['commits_ahead']}，{value_label}）"
         )
         if breaking:
             msg += f"\n⚠️ 含 Breaking Changes：{'、'.join(r['name'] for r in breaking)}"
