@@ -1,24 +1,98 @@
 [
-  {"path": "/Users/ling/.openclaw/workspace/apps/codexpool", "enabled": false, "reason": "user-excluded-not-useful"},
-  {"path": "/Users/ling/.openclaw/workspace/SideLinker-Home"},
-  {"path": "/Users/ling/.openclaw/workspace/skills/xiaohongshu"},
-  {"path": "/Users/ling/.openclaw/workspace/other_projects/Qbot"},
-  {"path": "/Users/ling/.openclaw/workspace/quant_projects/qlib"},
-  {"path": "/Users/ling/.openclaw/workspace/vendor/camoufox-cli"},
-  {"path": "/Users/ling/.openclaw/workspace/other_projects/RD-Agent"},
-  {"path": "/Users/ling/.openclaw/workspace/other_projects/TrendRadar"},
-  {"path": "/Users/ling/.openclaw/workspace/skills/union-search-skill"},
-  {"path": "/Users/ling/.openclaw/workspace/skills/xiaohongshu-skills"},
-  {"path": "/Users/ling/.openclaw/workspace/quant_projects/quant_system"},
-  {"path": "/Users/ling/.openclaw/workspace/quant_projects/ai-hedge-fund"},
-  {"path": "/Users/ling/.openclaw/workspace/openclaw_projects/Agent-Reach"},
-  {"path": "/Users/ling/.openclaw/workspace/openclaw_projects/SwarmMemory"},
-  {"path": "/Users/ling/.openclaw/workspace/other_projects/tooljoy-cn-lite"},
-  {"path": "/Users/ling/.openclaw/workspace/openclaw_projects/Wyckoff-Analysis"},
-  {"path": "/Users/ling/.openclaw/workspace/quant_projects/daily_stock_analysis"},
-  {"path": "/Users/ling/.openclaw/workspace/other_projects/openclaw-control-center"},
-  {"path": "/Users/ling/.openclaw/workspace/openclaw_projects/openclaw-pet-shufanli"},
-  {"path": "/Users/ling/.openclaw/workspace/other_projects/A_Share_investment_Agent"},
-  {"path": "/Users/ling/.openclaw/workspace/quant_projects/daily_stock_analysis_upstream", "enabled": false, "reason": "derived-from-daily_stock_analysis"},
-  {"path": "/Users/ling/.openclaw/workspace/quant_projects/daily_stock_analysis_upgrade_preview", "enabled": false, "reason": "derived-from-daily_stock_analysis"}
+  {
+    "path": "/Users/ling/.openclaw/workspace/apps/codexpool",
+    "enabled": false,
+    "reason": "user-excluded-not-useful"
+  },
+  {
+    "path": "/Users/ling/.openclaw/workspace/SideLinker-Home",
+    "enabled": false,
+    "reason": "user-removed"
+  },
+  {
+    "path": "/Users/ling/.openclaw/workspace/skills/xiaohongshu",
+    "enabled": false,
+    "reason": "user-stop-monitor"
+  },
+  {
+    "path": "/Users/ling/.openclaw/workspace/other_projects/Qbot"
+  },
+  {
+    "path": "/Users/ling/.openclaw/workspace/quant_projects/qlib",
+    "enabled": false,
+    "reason": "user-stop-monitor"
+  },
+  {
+    "path": "/Users/ling/.openclaw/workspace/vendor/camoufox-cli",
+    "enabled": false,
+    "reason": "user-removed"
+  },
+  {
+    "path": "/Users/ling/.openclaw/workspace/other_projects/RD-Agent"
+  },
+  {
+    "path": "/Users/ling/.openclaw/workspace/other_projects/TrendRadar"
+  },
+  {
+    "path": "/Users/ling/.openclaw/workspace/skills/union-search-skill",
+    "enabled": false,
+    "reason": "user-stop-monitor"
+  },
+  {
+    "path": "/Users/ling/.openclaw/workspace/skills/xiaohongshu-skills",
+    "enabled": false,
+    "reason": "user-stop-monitor"
+  },
+  {
+    "path": "/Users/ling/.openclaw/workspace/quant_projects/quant_system"
+  },
+  {
+    "path": "/Users/ling/.openclaw/workspace/quant_projects/ai-hedge-fund"
+  },
+  {
+    "path": "/Users/ling/.openclaw/workspace/openclaw_projects/Agent-Reach",
+    "enabled": false,
+    "reason": "user-stop-monitor"
+  },
+  {
+    "path": "/Users/ling/.openclaw/workspace/openclaw_projects/SwarmMemory",
+    "enabled": false,
+    "reason": "user-removed"
+  },
+  {
+    "path": "/Users/ling/.openclaw/workspace/other_projects/tooljoy-cn-lite",
+    "enabled": false,
+    "reason": "user-stop-monitor"
+  },
+  {
+    "path": "/Users/ling/.openclaw/workspace/openclaw_projects/Wyckoff-Analysis",
+    "enabled": false,
+    "reason": "user-removed"
+  },
+  {
+    "path": "/Users/ling/.openclaw/workspace/quant_projects/daily_stock_analysis"
+  },
+  {
+    "path": "/Users/ling/.openclaw/workspace/other_projects/openclaw-control-center",
+    "enabled": false,
+    "reason": "user-stop-monitor"
+  },
+  {
+    "path": "/Users/ling/.openclaw/workspace/openclaw_projects/openclaw-pet-shufanli",
+    "enabled": false,
+    "reason": "user-removed"
+  },
+  {
+    "path": "/Users/ling/.openclaw/workspace/other_projects/A_Share_investment_Agent"
+  },
+  {
+    "path": "/Users/ling/.openclaw/workspace/quant_projects/daily_stock_analysis_upstream",
+    "enabled": false,
+    "reason": "derived-from-daily_stock_analysis"
+  },
+  {
+    "path": "/Users/ling/.openclaw/workspace/quant_projects/daily_stock_analysis_upgrade_preview",
+    "enabled": false,
+    "reason": "derived-from-daily_stock_analysis"
+  }
 ]
