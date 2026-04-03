@@ -87,6 +87,25 @@ def is_stock_related(text):
     text_lower = text.lower()
     return sum(1 for kw in keywords if kw in text) >= 2
 
+
+def has_meaningful_content(text):
+    """判断微博是否有实质内容（非纯标签/链接/空白）
+    
+    过滤掉以下类型：
+    - 纯标签微博（#话题# 连续出现但无语义文字）
+    - 仅包含链接/图片描述
+    - 太短（<10个非标签字符）
+    """
+    if not text or len(text.strip()) == 0:
+        return False
+    # 去除标签（#...#）后检查剩余字符
+    text_no_tags = re.sub(r'#[^#]+#', '', text).strip()
+    # 去除URL
+    text_no_tags = re.sub(r'https?://\S+', '', text_no_tags).strip()
+    # 去除空白字符后的长度
+    meaningful_chars = len(re.sub(r'\s', '', text_no_tags))
+    return meaningful_chars >= 10
+
 def send_feishu(webhook, message):
     """发送飞书消息"""
     payload = {
@@ -170,12 +189,15 @@ def main():
             created_at = post.get("created_at", "")
             post_url = f"https://weibo.com/{uid}/{post.get('idstr', '')}"
             
-            if is_stock_related(text):
-                stock_posts.append((text, created_at, post_url))
+            # 跳过无实质内容的微博（纯标签/链接/过短）
+            if not has_meaningful_content(text):
+                print(f"[过滤] 无实质内容: {text[:50]!r}")
+                continue
+            stock_posts.append((text, created_at, post_url))
         
         # 发送通知
         if stock_posts:
-            msg = f"📢 【{username}】新发微博（股票相关 {len(stock_posts)} 条）\n\n"
+            msg = f"📢 【{username}】新发微博（{len(stock_posts)} 条）\n\n"
             for i, (text, created_at, url) in enumerate(stock_posts[:5], 1):
                 msg += f"{i}. {text[:100]}"
                 if len(text) > 100:
@@ -185,7 +207,7 @@ def main():
             if len(stock_posts) > 5:
                 msg += f"...还有 {len(stock_posts) - 5} 条\n"
         else:
-            msg = f"📢 【{username}】新发微博 {len(new_posts)} 条\n无明显股票相关内容"
+            msg = f"📢 【{username}】新发微博 {len(new_posts)} 条"
         
         send_feishu(webhook, msg)
         

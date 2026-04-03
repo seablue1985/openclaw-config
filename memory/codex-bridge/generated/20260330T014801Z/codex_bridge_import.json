@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-30T01:48:02Z",
+  "source": "codex-bridge",
+  "count": 1,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "2a5979ef-23d1-5ae1-b78f-ca48aa686df6",
+      "text": "“当前仍未自动收口的主要是 openclaw_execution_board.md 里的 ORG-008/009，属于周节奏覆盖和会议运行问题，不是脚本修复问题。”这个问题怎么解决呢？",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.72,
+      "timestamp": 1774834776795,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019d28e2-de17-7e12-8061-fe29e6224985\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/26/rollout-2026-03-26T14-44-09-019d28e2-de17-7e12-8061-fe29e6224985.jsonl\",\"line_no\":3123,\"bridge_version\":1}"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-28T12:46:28Z",
+  "source": "codex-bridge",
+  "count": 1,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "e5f3fded-edfa-57cf-aaa2-5204a1f7d20e",
+      "text": "已按你的拍板一次性回填完 4 个文件，并提交：\ncommit: e90def0\nmessage: docs: apply post-meeting org ops decisions\n1. 哪些字段已正式落表\ntarget_operating_model.md\n已正式落表：\nportfolio_owner = portfolio_owner（按角色占位执行；实名待后续补录）\ndata_owner = data_owner（按角色占位执行；实名待后续补录）\nplatform_owner = platform_owner（按角色占位执行；实名待后续补录）\nstrategy_registry.csv\n已正式落表：\ncandidate 策略：\nsmallcap_chip_v4_1_alpha_guard → capital_alloc=0\nsmallcap_chip_v4_2_alpha_recover → capital_alloc=0\nrd_agent_top2_gray_v1 → capital_alloc=0\nincubating 策略：\nsmallcap_chip_v4_2b_fundamental_guard → capital_alloc=0\narchived 策略：\nsmallcap_chip_v4 → capital_alloc=0\nbreadth 实验盘：\nbreadth_strict_oos → status=frozen, capital_alloc=0, risk_budget=experimental_probe_frozen\nbreadth_aggressive → status=frozen, capital_alloc=0, risk_budget=experimental_probe_frozen\nvalidation/paper 盘：\nexit_dual / exit_tight / alpha55 → capital_alloc=0\nlegacy paper sleeves：\ndefensive / balanced / aggressive 保持现有 risk_budget\n并已把“本轮会议决议：legacy paper sleeves 暂维持当前 risk_budget”写进 notes\nweekly_portfolio_risk_20260330_minutes.md\n已正式落表：\nowner 结论\nbreadth 两个实验盘冻结勾选\n本周不新增任何 probe/live capital_alloc\nlegacy paper sleeves 暂维持当前 risk_budget\nSEV1_closure_owner = execution_owner\nSEV1_cosign_owner = platform_owner\nSEV1_SLA = T+1 收口方案，T+3 证据闭环\nSEV1_closure_standard = 运行态转绿 + 证据齐全 + 任务板签收完成\nresearch/org-ops/ 作为唯一组织入口 已写入通过项\nopenclaw_execution_board.md\n已推进并落表：\nORG-001 / ORG-002 / ORG-003 → DONE\nORG-007 → DONE\nORG-012 → DONE\nORG-013 → DONE\nORG-014 → DONE\nORG-015 → DONE\nORG-016 → DONE\nORG-017 → DONE\nORG-004 → IN_PROGRESS\n2. 哪些策略状态被更新\n明确更新的策略：\n状态更新\nbreadth_strict_oos\nsignal_stale_hold → frozen\nbreadth_aggressive\nsignal_stale_hold → frozen\n资本配置更新\nsmallcap_chip_v4 → capital_alloc=0\nsmallcap_chip_v4_1_alpha_guard → capital_alloc=0\nsmallcap_chip_v4_2_alpha_recover → capital_alloc=0\nsmallcap_chip_v4_2b_fundamental_guard → capital_alloc=0\nrd_agent_top2_gray_v1 → capital_alloc=0\nexit_dual → capital_alloc=0\nexit_tight → capital_alloc=0\nalpha55 → capital_alloc=0\n风险预算更新\nbreadth_strict_oos → experimental_probe_frozen\nbreadth_aggressive → experimental_probe_frozen\n备注更新\n所有上述策略都已把本轮会议结论写入 notes\n3. 哪些任务状态被推进\n已完成 DONE\nORG-001 owner 指定：组合 owner\nORG-002 owner 指定：数据 owner\nORG-003 owner 指定：平台 owner\nORG-007 breadth 两个实验盘冻结决议\nORG-012 org-ops 作为组织入口\nORG-013 owner confirmation 启用清单完成\nORG-014 首次组合风险会 bootstrap + minutes 落地\nORG-015 org-ops 被宣布为唯一入口\nORG-016 strategy registry 首轮签收完成\nORG-017 open SEV1 closure 拍板完成\n仍在推进 IN_PROGRESS\nORG-004 open SEV1 真正收口与证据闭环\n仍未完成 OPEN\nORG-005 event_watch_refresh 红灯修复\nORG-006 stale profiles 更新\nORG-008 角色产物归档覆盖补齐\nORG-010 KPI 周更启用\nORG-011 T+1 attribution 强制化\n4. 还剩哪几个必须人工再次拍板\n目前只剩下这几类确实不能自动定的：\nA. 实名信息\n虽然 owner 已经按角色落表，但实名还没给：\nportfolio_owner 的实名\ndata_owner 的实名\nplatform_owner 的实名\nB. 现有材料里没有的历史字段\nstrategy_registry.csv 里还保留了 2 组带原因的 TODO-NEEDS-CONFIRMATION：\nsmallcap_chip_v4\nmax_drawdown_limit\nlast_review_date\n原因：现有材料里没有显式给出 archived 历史最大回撤与最后复核日期\nsmallcap_chip_v4_2b_fundamental_guard\nmax_drawdown_limit\nlast_review_date\n原因：缺 full backtest / walk-forward 主证据，实验主证据为空\nC. 会议记录人\nweekly_portfolio_risk_20260330_minutes.md\n记录人：TODO-NEEDS-CONFIRMATION（会议记录责任人未单独指定）\n如果你要，我下一步不再建新文档，直接做执行推进：\n先去推 ORG-004 / ORG-005 / ORG-006\n或者我直接开始把 SEV1 closure plan 和 event_watch_refresh 修复链 真正往下做",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.75,
+      "timestamp": 1774701918033,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019d28e2-de17-7e12-8061-fe29e6224985\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/26/rollout-2026-03-26T14-44-09-019d28e2-de17-7e12-8061-fe29e6224985.jsonl\",\"line_no\":2477,\"bridge_version\":1}"
+    }
+  ]
+}

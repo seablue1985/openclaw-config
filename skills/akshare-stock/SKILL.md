@@ -14,14 +14,21 @@ pip install akshare
 
 ## 支持的功能
 
-### 1. 实时行情查询
+### 1. 实时行情查询（优先快接口）
 
 ```python
 import akshare as ak
 
-# 个股实时行情
-stock_zh_a_spot_em()
-stock_zh_a_spot_em(symbol="北证A股")
+# 单票实时行情（推荐，通常 <1s）
+quote_df = ak.stock_bid_ask_em(symbol="301333")
+quote = {row["item"]: row["value"] for _, row in quote_df.iterrows()}
+print("最新价:", quote.get("最新"))
+print("涨跌幅:", quote.get("涨幅"))
+print("昨收:", quote.get("昨收"))
+
+# 需要按名称模糊匹配股票代码时，再用全市场快照（约 8~15s）
+all_df = ak.stock_zh_a_spot()
+all_df[all_df["名称"].str.contains("诺思格", na=False)]
 ```
 
 ### 2. 历史K线数据
@@ -152,3 +159,5 @@ bs.logout()
 2. 接口可能因目标网站变动而失效
 3. 建议添加异常处理和重试机制
 4. **当前环境网络问题可能导致测试失败，请在本地环境测试**
+5. **单票查询禁止默认使用 `stock_zh_a_spot_em()`，该接口会抓取全市场，常见耗时 60~90 秒**
+6. 飞书对话优先返回结论：若查询超过 15 秒，先给阶段性结论，再继续深挖

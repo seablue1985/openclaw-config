@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-25T03:08:10Z",
+  "source": "codex-bridge",
+  "count": 1,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "4fc573c9-4936-5d49-84e3-8711af825a32",
+      "text": "我觉得现在openclaw的记忆系统对于连续执行的任务经常忘记执行的问题，你检查一下记忆系统是否存在bug？",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.68,
+      "timestamp": 1774407944372,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019d15e6-c19e-7520-9a77-b22b3711e5ef\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/22/rollout-2026-03-22T22-15-37-019d15e6-c19e-7520-9a77-b22b3711e5ef.jsonl\",\"line_no\":5386,\"bridge_version\":1}"
+    }
+  ]
+}

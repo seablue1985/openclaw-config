@@ -1,0 +1,318 @@
+{
+  "checked_at": "2026-04-03T21:01:33.071564",
+  "results": [
+    {
+      "error": "Not a git repository",
+      "path": "/Users/ling/.openclaw/workspace/other_projects/A_Share_investment_Agent",
+      "tier": "main"
+    },
+    {
+      "error": "Not a git repository",
+      "path": "/Users/ling/.openclaw/workspace/other_projects/Qbot",
+      "tier": "main"
+    },
+    {
+      "error": "Not a git repository",
+      "path": "/Users/ling/.openclaw/workspace/other_projects/RD-Agent",
+      "tier": "main"
+    },
+    {
+      "path": "/Users/ling/.openclaw/workspace/other_projects/TrendRadar",
+      "name": "TrendRadar",
+      "local_tag": "5c5535e",
+      "upstream_tag": "110bf72",
+      "commits_behind": 0,
+      "commits_ahead": 2,
+      "status": "local_commits_dirty",
+      "new_commits": [],
+      "local_commits": [
+        {
+          "message": "fix: send trendradar reports twice daily without repeats",
+          "short": "5c5535e",
+          "priority": "🟡 Bug修复",
+          "breaking": false
+        },
+        {
+          "message": "fix: deduplicate financial morning report headlines",
+          "short": "74154d1",
+          "priority": "⚪ 维护",
+          "breaking": false
+        }
+      ],
+      "new_tags": [],
+      "breaking_changes": false,
+      "working_tree_dirty": true,
+      "staged_count": 1,
+      "modified_count": 1,
+      "untracked_count": 18,
+      "fetch_error": "fatal: unable to access 'https://github.com/seablue1985/TrendRadar.git/': Failed to connect to github.com port 443 after 75018 ms: Couldn't connect to server",
+      "upstream_remote": "origin",
+      "local_sha": "5c5535e",
+      "current_branch": "master",
+      "upstream_branch": "origin/master",
+      "upstream_sha": "110bf72",
+      "tier": "main"
+    },
+    {
+      "path": "/Volumes/A/openclaw-cold/2026-03-28/.openclaw/workspace/quant_projects/ai-hedge-fund",
+      "name": "ai-hedge-fund",
+      "local_tag": "06602cb",
+      "upstream_tag": "b6dca8c",
+      "commits_behind": 14,
+      "commits_ahead": 0,
+      "status": "far_behind",
+      "new_commits": [
+        {
+          "message": "Merge pull request #536 from josepe98/fix/handle-missing-api-data",
+          "short": "b6dca8c",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
+        {
+          "message": "fix: log API failures and handle missing data in Ben Graham agent",
+          "short": "488f7f4",
+          "priority": "🟡 Bug修复",
+          "breaking": false
+        },
+        {
+          "message": "Add nassim taleb agent",
+          "short": "1317ba4",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
+        {
+          "message": "Add new models",
+          "short": "637f67b",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
+        {
+          "message": "Merge pull request #549 from tsensei/fix/optional-author-company-news",
+          "short": "359cce7",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
+        {
+          "message": "fix: make CompanyNews.author optional to handle missing API data",
+          "short": "7ad2454",
+          "priority": "🟡 Bug修复",
+          "breaking": false
+        },
+        {
+          "message": "Merge pull request #530 from mango766/fix/bare-except-api-parsing",
+          "short": "c7775d7",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
+        {
+          "message": "Merge pull request #531 from mango766/fix/get-model-missing-providers",
+          "short": "1152ab8",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
+        {
+          "message": "fix: add missing provider support and remove duplicate import in models.py",
+          "short": "771114f",
+          "priority": "🟡 Bug修复",
+          "breaking": false
+        },
+        {
+          "message": "fix: replace bare except clauses with Exception in api.py",
+          "short": "e32baad",
+          "priority": "🟡 Bug修复",
+          "breaking": false
+        },
+        {
+          "message": "Merge pull request #499 from stablegenius49/pr-factory/issue-418-short-margin-available-cash",
+          "short": "9be9ecf",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
+        {
+          "message": "Merge pull request #502 from Bortlesboat/fix/sortino-downside-deviation",
+          "short": "e6a2a87",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
+        {
+          "message": "fix: use target downside deviation in Sortino ratio",
+          "short": "b64ca2d",
+          "priority": "🟡 Bug修复",
+          "breaking": false
+        },
+        {
+          "message": "Fix short position cash check to use available cash (margin-aware)",
+          "short": "6616baa",
+          "priority": "⚪ 其他",
+          "breaking": false
+        }
+      ],
+      "local_commits": [],
+      "new_tags": [],
+      "breaking_changes": false,
+      "working_tree_dirty": true,
+      "staged_count": 0,
+      "modified_count": 0,
+      "untracked_count": 1,
+      "fetch_error": null,
+      "upstream_remote": "origin",
+      "local_sha": "06602cb",
+      "current_branch": "main",
+      "upstream_branch": "origin/main",
+      "upstream_sha": "b6dca8c",
+      "tier": "main"
+    },
+    {
+      "path": "/Volumes/A/openclaw-cold/2026-03-28/.openclaw/workspace/quant_projects/daily_stock_analysis",
+      "name": "daily_stock_analysis",
+      "local_tag": "v3.12.0-16-g7ebf0fd",
+      "upstream_tag": "v3.12.0-7-g17776b4",
+      "commits_behind": 4,
+      "commits_ahead": 13,
+      "status": "diverged",
+      "new_commits": [
+        {
+          "message": "fix(issue-968): [bug]-bot-ask-命令技能加载失败时异常被静默吞掉，故障无日志可查 (#972)",
+          "short": "17776b4",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
+        {
+          "message": "feat: [Bug] 公司公告和主力资金流搜索经常无法纳入分析 (#976) (#977)",
+          "short": "709604f",
+          "priority": "🟢 新功能",
+          "breaking": false
+        },
+        {
+          "message": "fix: 部署完以后 webUI UI异常变大 布局异常 (#944) (#965)",
+          "short": "5ba37c4",
+          "priority": "🟡 Bug修复",
+          "breaking": false
+        },
+        {
+          "message": "fix: pin get_market_now in realtime indicator tests to avoid CST/UTC date shift (#986)",
+          "short": "dffa29c",
+          "priority": "🟡 Bug修复",
+          "breaking": false
+        }
+      ],
+      "local_commits": [
+        {
+          "message": "Merge upstream/main",
+          "short": "7ebf0fd",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
+        {
+          "message": "merge: update daily_stock_analysis with upstream/main",
+          "short": "af89112",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
+        {
+          "message": "feat: preserve local ths market bridge",
+          "short": "b3d9ec2",
+          "priority": "🟢 新功能",
+          "breaking": false
+        },
+        {
+          "message": "Merge upstream v3.9.0 (93 commits) + preserve local customizations",
+          "short": "84d2e18",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
+        {
+          "message": "Merge remote-tracking branch 'upstream/main'",
+          "short": "739e1b7",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
+        {
+          "message": "fix: disable deepseek-chat thinking extra_body to avoid empty content",
+          "short": "349e92a",
+          "priority": "🟡 Bug修复",
+          "breaking": false
+        },
+        {
+          "message": "feat: 添加国九小市值策略优化版回测",
+          "short": "b41b543",
+          "priority": "🟢 新功能",
+          "breaking": false
+        },
+        {
+          "message": "feat: 添加小市值动量+筹码峰策略及优化版",
+          "short": "c3e9730",
+          "priority": "🟢 新功能",
+          "breaking": false
+        },
+        {
+          "message": "feat: 添加国证2000弱转强策略回测",
+          "short": "4ffe2ff",
+          "priority": "🟢 新功能",
+          "breaking": false
+        },
+        {
+          "message": "config: 移除敏感.env，添加.gitignore",
+          "short": "80aad2a",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
+        {
+          "message": "config: 添加MINIMAX API Key",
+          "short": "f8542c1",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
+        {
+          "message": "config: 添加环境配置",
+          "short": "fc8a14e",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
+        {
+          "message": "feat: 添加小市值量化策略回测系统",
+          "short": "79f3ae3",
+          "priority": "🟢 新功能",
+          "breaking": false
+        }
+      ],
+      "new_tags": [],
+      "breaking_changes": false,
+      "working_tree_dirty": true,
+      "staged_count": 0,
+      "modified_count": 0,
+      "untracked_count": 33,
+      "fetch_error": null,
+      "upstream_remote": "upstream",
+      "local_sha": "7ebf0fd",
+      "current_branch": "main",
+      "upstream_branch": "upstream/main",
+      "upstream_sha": "17776b4",
+      "tier": "main"
+    },
+    {
+      "path": "/Volumes/A/openclaw-cold/2026-03-28/.openclaw/workspace/quant_projects/quant_system",
+      "name": "quant_system",
+      "local_tag": "447c490",
+      "upstream_tag": "447c490",
+      "commits_behind": 0,
+      "commits_ahead": 0,
+      "status": "working_tree_dirty",
+      "new_commits": [],
+      "local_commits": [],
+      "new_tags": [],
+      "breaking_changes": false,
+      "working_tree_dirty": true,
+      "staged_count": 0,
+      "modified_count": 0,
+      "untracked_count": 9,
+      "fetch_error": "fatal: could not read Username for 'https://github.com': Device not configured",
+      "upstream_remote": "origin",
+      "local_sha": "447c490",
+      "current_branch": "main",
+      "upstream_branch": "origin/main",
+      "upstream_sha": "447c490",
+      "tier": "main"
+    }
+  ]
+}

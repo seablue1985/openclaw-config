@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-25T16:06:01Z",
+  "source": "codex-bridge",
+  "count": 2,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "3a141642-6229-5b0a-9a50-d050aeea992d",
+      "text": "我希望我以后给飞叔发消息是如果上一条还在长攻击点，那么应该优先跑完上一条。传工具链，然后再回复我。",
+      "vector": [],
+      "category": "preference",
+      "scope": "agent:main",
+      "importance": 0.8,
+      "timestamp": 1774454660620,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019d1630-603c-7f70-a643-e47cba325298\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/22/rollout-2026-03-22T23-36-02-019d1630-603c-7f70-a643-e47cba325298.jsonl\",\"line_no\":1798,\"bridge_version\":1}"
+    },
+    {
+      "id": "4f911f00-c0c0-54a6-9a6a-d1ba4d644680",
+      "text": "我希望我以后给飞叔发消息是如果上一条还在长工具链，那么应该优先跑完上一条。再回复我最新的",
+      "vector": [],
+      "category": "preference",
+      "scope": "agent:main",
+      "importance": 0.8,
+      "timestamp": 1774454720242,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019d1630-603c-7f70-a643-e47cba325298\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/22/rollout-2026-03-22T23-36-02-019d1630-603c-7f70-a643-e47cba325298.jsonl\",\"line_no\":1808,\"bridge_version\":1}"
+    }
+  ]
+}

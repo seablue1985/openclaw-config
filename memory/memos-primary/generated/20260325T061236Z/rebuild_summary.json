@@ -1,0 +1,13 @@
+{
+  "rebuild_performed": true,
+  "restored_backup": false,
+  "scope_files": {
+    "agent:main": "/Users/ling/.openclaw/memory/memos-primary/generated/20260325T061236Z/rebuild_payloads/agent_main.json",
+    "global": "/Users/ling/.openclaw/memory/memos-primary/generated/20260325T061236Z/rebuild_payloads/global.json"
+  },
+  "verified_counts": {
+    "agent:main": 0,
+    "global": 0
+  },
+  "total_after_rebuild": 0
+}

@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-30T03:40:01Z",
+  "source": "codex-bridge",
+  "count": 1,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "6d9751dd-f1f0-5fd5-ae61-b2d94d3d605f",
+      "text": "embedding 模型是用于openclaw的记忆系统的，检查一下现有的记忆系统用上了没有？",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.68,
+      "timestamp": 1774841859537,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019d28e2-de17-7e12-8061-fe29e6224985\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/26/rollout-2026-03-26T14-44-09-019d28e2-de17-7e12-8061-fe29e6224985.jsonl\",\"line_no\":3796,\"bridge_version\":1}"
+    }
+  ]
+}

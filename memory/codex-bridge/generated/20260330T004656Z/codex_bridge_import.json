@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-30T00:46:59Z",
+  "source": "codex-bridge",
+  "count": 1,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "e876d0be-374f-5fc3-a748-4ef2a3b4e1d2",
+      "text": "鉴于openclaw的最近的不稳定，我现在只要你帮我完成剩余的修复工作",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.68,
+      "timestamp": 1774831522470,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019d28e2-de17-7e12-8061-fe29e6224985\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/26/rollout-2026-03-26T14-44-09-019d28e2-de17-7e12-8061-fe29e6224985.jsonl\",\"line_no\":2499,\"bridge_version\":1}"
+    }
+  ]
+}

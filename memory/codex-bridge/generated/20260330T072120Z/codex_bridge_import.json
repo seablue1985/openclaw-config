@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-30T07:21:22Z",
+  "source": "codex-bridge",
+  "count": 1,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "de038d09-c572-50bd-b406-599faef9228c",
+      "text": "我在飞书群聊@了ccoding agent，得不到回复",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.68,
+      "timestamp": 1774855172957,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019d1630-603c-7f70-a643-e47cba325298\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/22/rollout-2026-03-22T23-36-02-019d1630-603c-7f70-a643-e47cba325298.jsonl\",\"line_no\":4723,\"bridge_version\":1}"
+    }
+  ]
+}

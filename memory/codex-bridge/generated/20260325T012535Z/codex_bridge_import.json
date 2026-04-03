@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-25T01:25:37Z",
+  "source": "codex-bridge",
+  "count": 1,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "809c416b-6bc2-57d5-b1b3-1377f2f1a2fc",
+      "text": "我今天跟飞书机器人coding agent在openclaw网页端的消息没有同步到飞书，帮我检查下原因",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.68,
+      "timestamp": 1774401555577,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019d15e6-c19e-7520-9a77-b22b3711e5ef\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/22/rollout-2026-03-22T22-15-37-019d15e6-c19e-7520-9a77-b22b3711e5ef.jsonl\",\"line_no\":4369,\"bridge_version\":1}"
+    }
+  ]
+}

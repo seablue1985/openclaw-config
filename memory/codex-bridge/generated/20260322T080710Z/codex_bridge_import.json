@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-22T08:07:14Z",
+  "source": "codex-bridge",
+  "count": 1,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "7c323e5c-14a2-52bc-b0bb-46b8029bc0fc",
+      "text": "我已经把关键修正落地到磁盘了，回家后继续时，最重要的现状是：\n  cron_close_review_v1.sh 现在会先同步成交、再尝试对账、最后复盘。\n  sync_ths_app_data.py 已支持 --date，并按指定交易日过滤成交。\n  今天 2026-03-20 的实跑结果显示：同花顺本地源里有持仓，但 trades_rows=0，所以 live_close_review_v1_20260320.json 现在正确显示 NO_DATA / review_required，不再假装正常。\n\n  还没做完的下一步我已经定位好了：\n  reconcile_live_execution_v1.py 还需要补一条规则：当同日同步摘要已明确 trades_rows=0 时，也要生成“空成交对账报告”，而不是直接跳过。这样当天即使 0 成交，也会有完整对账产物。这是你上次说的",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.75,
+      "timestamp": 1774070959912,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019d0edc-acdf-7293-9cf2-c784382e1519\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/21/rollout-2026-03-21T13-27-16-019d0edc-acdf-7293-9cf2-c784382e1519.jsonl\",\"line_no\":79,\"bridge_version\":1}"
+    }
+  ]
+}

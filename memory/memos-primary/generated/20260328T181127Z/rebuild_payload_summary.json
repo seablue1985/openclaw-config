@@ -1,0 +1,8 @@
+{
+  "mirrored_memory_count": 34,
+  "scope_count": 2,
+  "scope_files": {
+    "agent:main": "/Users/ling/.openclaw/memory/memos-primary/generated/20260328T181127Z/rebuild_payloads/agent_main.json",
+    "global": "/Users/ling/.openclaw/memory/memos-primary/generated/20260328T181127Z/rebuild_payloads/global.json"
+  }
+}

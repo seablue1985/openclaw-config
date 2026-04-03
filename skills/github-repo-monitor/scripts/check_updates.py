@@ -3,7 +3,8 @@
 GitHub 仓库更新检查脚本
 - 检查所有配置的仓库是否有上游更新
 - 区分「上游待更新 / 本地已有更新 / 工作区改动 / 完全同步」
-- 分析 CHANGELOG / Release Notes 判断是否建议更新
+- 按 tier（main / extended）分层报告：飞书摘要只报 main 层
+- 分析 commit message 判断是否值得更新
 - 有重要更新时推送飞书通知
 - 记录状态到 JSON 文件
 """
@@ -39,33 +40,69 @@ COMMIT_PRIORITY_KEYWORDS = {
 # 低优先级关键字（自动跳过）
 SKIP_KEYWORDS = ["chore(deps)", "ci", "build:", "style:", "lint:"]
 
-# 这些仓库属于 daily_stock_analysis 的派生/镜像仓库：继续扫描可接受，但默认不在日报中播报
-SUPPRESSED_REPO_NAMES = {
-    "daily_stock_analysis_upgrade_preview",
-    "daily_stock_analysis_upstream",
-}
+# ── Tier 自动分类规则 ────────────────────────────────────
+# main：量化核心仓、业务直接相关仓
+# extended：skill/vendor/工具仓/外部引入仓
+TIER_MAIN_PREFIXES = (
+    "/quant_projects/",
+    "/openclaw_projects/",
+    "/apps/",
+    "/other_projects/A_Share_investment_Agent",
+    "/other_projects/Qbot",
+    "/other_projects/TrendRadar",
+    "/other_projects/RD-Agent",
+)
+
+
+def auto_tier(path: str) -> str:
+    """根据路径自动推断仓库 tier"""
+    for prefix in TIER_MAIN_PREFIXES:
+        if path.endswith(prefix) or prefix in path:
+            return "main"
+    return "extended"
 
 
 def load_config() -> list[dict]:
-    """加载仓库配置：合并显式配置与自动发现结果，避免新仓库被漏监控"""
+    """加载仓库配置，支持 `enabled: false` 排除和 `tier` 字段。
+
+    - `enabled: false`：完全跳过，不会被自动发现重新加回
+    - `tier`：可选，不填则按路径自动推断（main / extended）
+    """
     configured = []
     if CONFIG_FILE.exists():
         configured = json.loads(CONFIG_FILE.read_text(encoding="utf-8"))
 
     merged: dict[str, dict] = {}
+    disabled_paths: set[str] = set()
     for item in configured:
         repo_path = item.get("path") or item.get("repo_path")
         if not repo_path:
             continue
-        merged[str(Path(repo_path).expanduser().resolve())] = dict(item)
+        resolved = str(Path(repo_path).expanduser().resolve())
+        if item.get("enabled", True) is False:
+            disabled_paths.add(resolved)
+            continue
+        normalized = dict(item)
+        normalized["path"] = resolved
+        tier = item.get("tier") or auto_tier(resolved)
+        normalized["tier"] = tier
+        merged[resolved] = normalized
 
     auto_discovered = discover_git_repos()
     for repo in auto_discovered:
         key = str(repo.resolve())
-        merged.setdefault(key, {"path": key})
+        if key in disabled_paths:
+            continue
+        merged.setdefault(key, {
+            "path": key,
+            "tier": auto_tier(key),
+        })
 
     if merged:
-        return sorted(merged.values(), key=lambda x: (x.get("path") or x.get("repo_path") or ""))
+        return sorted(merged.values(), key=lambda x: (
+            x.get("tier", "extended"),
+            x.get("path") or x.get("repo_path") or "",
+        ))
 
     return []
 
@@ -213,50 +250,6 @@ def has_local_changes(status: dict) -> bool:
     )
 
 
-def is_report_suppressed(status: dict) -> bool:
-    if status.get("report") is False:
-        return True
-    return status.get("name") in SUPPRESSED_REPO_NAMES
-
-
-def visible_results(results: list[dict]) -> list[dict]:
-    return [r for r in results if not is_report_suppressed(r)]
-
-
-def assess_update_value(status: dict) -> tuple[str, str]:
-    """判断上游更新是否值得跟进"""
-    behind = status.get("commits_behind", 0)
-    ahead = status.get("commits_ahead", 0)
-    s = status.get("status", "")
-    commits = status.get("new_commits") or []
-    priorities = [c.get("priority", "") for c in commits]
-
-    if behind <= 0:
-        return "无需判断", "当前不存在上游待更新"
-    if ahead > 0 or s == "diverged":
-        return "先评估再合并", "本地与上游已分叉，先看兼容性和本地定制是否会被覆盖"
-    if status.get("breaking_changes"):
-        return "值得更新（高）", "上游包含 Breaking / 安全/重大接口变化，建议优先评估升级"
-
-    has_fix = any("Bug修复" in p for p in priorities)
-    has_feat = any("新功能" in p for p in priorities)
-    has_perf = any("性能" in p or "重构" in p for p in priorities)
-    only_low_signal = priorities and all(
-        ("文档" in p) or ("维护" in p) or ("测试" in p) or ("其他" in p)
-        for p in priorities
-    )
-
-    if has_fix or has_feat or has_perf:
-        if behind >= 5:
-            return "值得更新", f"上游含功能/修复类变更，且已落后 {behind} 个 commits"
-        return "可择机更新", "上游已有实质改动，但当前落后量不大，可结合使用频率安排"
-    if only_low_signal and behind <= 3:
-        return "暂不值得更新", "当前以上游文档/维护类提交为主，短期收益有限"
-    if behind >= 10:
-        return "值得更新", f"已明显落后 {behind} 个 commits，继续拖延会增加后续合并成本"
-    return "可按需更新", "有上游变化，但当前未见明显高价值修复/功能，可按需处理"
-
-
 def is_synced_clean(status: dict) -> bool:
     return bool(
         status.get("status") == "synced"
@@ -293,7 +286,6 @@ def get_repo_status(repo_path: str) -> dict:
     }
 
     try:
-        # 获取当前 HEAD / branch
         try:
             result["local_sha"] = run_git(repo, ["rev-parse", "--short", "HEAD"])
         except Exception:
@@ -305,7 +297,6 @@ def get_repo_status(repo_path: str) -> dict:
 
         result.update(parse_worktree_status(repo))
 
-        # 获取上游分支（优先 upstream，fallback 到 origin），并先 fetch 刷新引用
         remote_name, upstream_branch, fetch_error = resolve_upstream_branch(repo)
         if not upstream_branch:
             result["status"] = "no_upstream"
@@ -320,19 +311,16 @@ def get_repo_status(repo_path: str) -> dict:
         except Exception:
             pass
 
-        # 获取当前 tag（最近的一个）
         try:
             result["local_tag"] = run_git(repo, ["describe", "--tags", "--always"])
         except Exception:
             pass
 
-        # 获取 upstream 最新 tag
         try:
             result["upstream_tag"] = run_git(repo, ["describe", "--tags", "--always", upstream_branch])
         except Exception:
             pass
 
-        # 计算 ahead / behind
         try:
             behind = run_git(repo, ["rev-list", "--count", f"HEAD..{upstream_branch}"])
             ahead = run_git(repo, ["rev-list", "--count", f"{upstream_branch}..HEAD"])
@@ -341,16 +329,13 @@ def get_repo_status(repo_path: str) -> dict:
         except Exception:
             pass
 
-        # 获取上游新增 commits
         if result["commits_behind"] > 0:
             result["new_commits"] = collect_commits(repo, f"HEAD..{upstream_branch}")
             result["breaking_changes"] = any(c["breaking"] for c in result["new_commits"])
 
-        # 获取本地新增 commits
         if result["commits_ahead"] > 0:
             result["local_commits"] = collect_commits(repo, f"{upstream_branch}..HEAD")
 
-        # 状态判断
         if result["commits_behind"] > 0 and result["commits_ahead"] > 0:
             result["status"] = "diverged"
         elif result["commits_behind"] > 0:
@@ -382,7 +367,6 @@ def classify_commit(message: str) -> str:
     msg_lower = message.lower()
     for kw, label in COMMIT_PRIORITY_KEYWORDS.items():
         if kw in msg_lower:
-            # 跳过低优先级
             for skip in SKIP_KEYWORDS:
                 if skip in msg_lower:
                     return "⚪ 维护"
@@ -392,8 +376,8 @@ def classify_commit(message: str) -> str:
 
 def should_update(status: dict) -> tuple[bool, str, int]:
     """
-    判断是否建议更新
-    返回：(建议更新, 理由, 优先级 1-5)
+    判断是否值得从上游更新。
+    返回：(是否纳入上游更新关注, 更新判断, 优先级 1-5)
     """
     s = status.get("status", "")
     commits = status.get("commits_behind", 0)
@@ -401,27 +385,27 @@ def should_update(status: dict) -> tuple[bool, str, int]:
     ahead = status.get("commits_ahead", 0)
 
     if s == "no_upstream":
-        return False, "无 upstream/origin 主分支，跳过", 0
+        return False, "不作更新判断：无 upstream/origin 主分支", 0
     if s == "synced":
-        return False, "与上游同步，工作区干净", 0
+        return False, "无需更新：与上游同步，工作区干净", 0
     if s == "working_tree_dirty":
-        return False, "上游无差异，但工作区有未提交改动", 0
+        return False, "无需拉取上游：当前仅本地工作区有未提交改动", 0
     if s == "local_commits":
-        return False, f"本地领先上游 {ahead} 个 commits", 0
+        return False, f"无需拉取上游：本地领先上游 {ahead} 个 commits", 0
     if s == "local_commits_dirty":
-        return False, f"本地领先上游 {ahead} 个 commits，且工作区有改动", 0
+        return False, f"无需拉取上游：本地领先上游 {ahead} 个 commits，且工作区有改动", 0
 
     if s == "diverged":
-        return True, f"与上游已分叉（behind {commits} / ahead {ahead}），建议先评估再合并", 5
+        return True, f"值得关注但不建议直接更新：与上游已分叉（behind {commits} / ahead {ahead}），应先评估再合并", 5
     if breaking:
-        return True, f"包含 Breaking Changes，强烈建议更新（{commits} commits）", 5
+        return True, f"值得更新：包含 Breaking Changes，需优先评估并安排更新（{commits} commits）", 5
     if commits >= 10:
-        return True, f"落后 {commits} 个 commits，建议一次性合并", 4
+        return True, f"值得更新：落后 {commits} 个 commits，建议一次性合并", 4
     if commits >= 5:
-        return True, f"落后 {commits} 个 commits，可择机更新", 3
+        return True, f"建议更新：落后 {commits} 个 commits，可择机更新", 3
     if commits >= 1:
-        return True, f"落后 {commits} 个 commits，可按需更新", 2
-    return False, f"落后 {commits} 个 commits，影响不大", 1
+        return True, f"按需更新：落后 {commits} 个 commits，先看变更内容再决定", 2
+    return False, f"暂不更新：落后 {commits} 个 commits，影响不大", 1
 
 
 def format_worktree_brief(status: dict) -> str:
@@ -438,89 +422,79 @@ def format_worktree_brief(status: dict) -> str:
 
 
 def build_report(all_results: list[dict]) -> str:
-    """生成更新报告"""
+    """生成完整更新报告（含 main 层 + extended 层两段）"""
     today = date.today().strftime("%Y-%m-%d")
     lines = [f"# GitHub 仓库更新报告 — {today}", ""]
 
-    report_results = visible_results(all_results)
-    suppressed = [r for r in all_results if is_report_suppressed(r)]
-    recommend_updates = [r for r in report_results if should_update(r)[0]]
-    local_changes = [r for r in report_results if has_local_changes(r)]
-    synced_clean = [r for r in report_results if is_synced_clean(r)]
-    skipped = [r for r in report_results if r.get("status") == "no_upstream"]
-    errored = [r for r in report_results if r.get("error")]
+    main_results = [r for r in all_results if r.get("tier", "extended") == "main"]
+    ext_results = [r for r in all_results if r.get("tier", "extended") == "extended"]
 
-    lines.append(
-        f"**检查仓库数：{len(report_results)}** | 上游待更新：{len(recommend_updates)} | 本地有变化：{len(local_changes)} | 已同步：{len(synced_clean)}"
-    )
-    lines.append("")
+    for tier_name, tier_results in [("主仓", main_results), ("扩展仓", ext_results)]:
+        if not tier_results:
+            continue
+        tier_label = "🔵" if tier_name == "主仓" else "⚪"
+        recommend = [r for r in tier_results if should_update(r)[0]]
+        local = [r for r in tier_results if has_local_changes(r)]
+        synced = [r for r in tier_results if is_synced_clean(r)]
+        skipped = [r for r in tier_results if r.get("status") == "no_upstream"]
+        errored = [r for r in tier_results if r.get("error")]
 
-    if recommend_updates:
-        lines.append("## 🔔 需要关注的上游更新\n")
-        for r in sorted(recommend_updates, key=lambda x: should_update(x)[2], reverse=True):
-            _, reason, priority = should_update(r)
-            stars = "⭐" * priority
-            lines.append(f"### {r['name']} {stars}（{r.get('upstream_tag', '?')}）")
-            lines.append(f"- 当前版本：{r.get('local_tag', '?')}")
-            lines.append(f"- 上游版本：{r.get('upstream_tag', '?')}")
-            lines.append(f"- 相对上游：behind {r['commits_behind']} | ahead {r['commits_ahead']}")
-            lines.append(f"- 工作区：{format_worktree_brief(r)}")
-            value_label, value_reason = assess_update_value(r)
-            lines.append(f"- **建议：{reason}**")
-            lines.append(f"- **更新判断：{value_label}** — {value_reason}")
-            if r.get("fetch_error"):
-                lines.append(f"- ⚠️ fetch 失败：{r['fetch_error']}")
-            if r.get("breaking_changes"):
-                lines.append("- ⚠️ **包含 Breaking Changes**")
-            if r.get("new_commits"):
+        header = f"## {tier_label} {tier_name}（{len(tier_results)}仓）\n"
+        if tier_name == "主仓":
+            lines.append(f"**检查仓库数：{len(tier_results)}** | 上游待更新：{len(recommend)} | 本地有变化：{len(local)} | 已同步：{len(synced)}")
+        else:
+            lines.append(header)
+            lines.append(f"检查仓库数：{len(tier_results)} | 上游待更新：{len(recommend)} | 本地有变化：{len(local)} | 已同步：{len(synced)}")
+        lines.append("")
+
+        if recommend:
+            lines.append(f"### 🔔 {tier_name}上游待更新\n")
+            for r in sorted(recommend, key=lambda x: should_update(x)[2], reverse=True):
+                _, reason, priority = should_update(r)
+                stars = "⭐" * priority
+                lines.append(f"#### {r['name']} {stars}")
+                lines.append(f"- 当前版本：{r.get('local_tag', '?')} | 上游版本：{r.get('upstream_tag', '?')}")
+                lines.append(f"- behind {r['commits_behind']} | ahead {r['commits_ahead']} | 工作区：{format_worktree_brief(r)}")
+                lines.append(f"- **更新判断：{reason}**")
+                if r.get("fetch_error"):
+                    lines.append(f"- ⚠️ fetch 失败：{r['fetch_error']}")
+                if r.get("breaking_changes"):
+                    lines.append("- ⚠️ **包含 Breaking Changes**")
+                if r.get("new_commits"):
+                    lines.append("")
+                    lines.append("**上游主要变更：**")
+                    for c in r["new_commits"][:5]:
+                        lines.append(f"- {c['priority']} `{c['short']}` {c['message']}")
                 lines.append("")
-                lines.append("**上游主要变更：**")
-                for c in r["new_commits"][:5]:
-                    lines.append(f"- {c['priority']} `{c['short']}` {c['message']}")
-            if r.get("local_commits"):
+
+        if local:
+            lines.append(f"### 🛠️ {tier_name}本地有变化\n")
+            for r in sorted(local, key=lambda x: (x.get("commits_ahead", 0), x.get("working_tree_dirty", False)), reverse=True):
+                lines.append(f"#### {r['name']}")
+                lines.append(f"- behind {r['commits_behind']} | ahead {r['commits_ahead']} | 工作区：{format_worktree_brief(r)}")
+                if r.get("local_commits"):
+                    lines.append("- 本地未推送提交：")
+                    for c in r["local_commits"][:5]:
+                        lines.append(f"  - {c['priority']} `{c['short']}` {c['message']}")
                 lines.append("")
-                lines.append("**本地未推送 / 未合并提交：**")
-                for c in r["local_commits"][:3]:
-                    lines.append(f"- {c['priority']} `{c['short']}` {c['message']}")
-            lines.append("")
-    else:
-        lines.append("## ✅ 当前没有发现需要从上游拉取的更新\n")
 
-    if local_changes:
-        lines.append("## 🛠️ 检测到本地变化\n")
-        for r in sorted(local_changes, key=lambda x: (x.get("commits_ahead", 0), x.get("working_tree_dirty", False)), reverse=True):
-            lines.append(f"### {r['name']}")
-            lines.append(f"- 相对上游：behind {r['commits_behind']} | ahead {r['commits_ahead']}")
-            lines.append(f"- 工作区：{format_worktree_brief(r)}")
-            if r.get("local_commits"):
-                lines.append("- 本地新增提交：")
-                for c in r["local_commits"][:5]:
-                    lines.append(f"  - {c['priority']} `{c['short']}` {c['message']}")
-            if r.get("fetch_error"):
-                lines.append(f"- ⚠️ fetch 失败：{r['fetch_error']}")
+        if synced:
+            lines.append(f"### ✅ {tier_name}已同步（{len(synced)}）")
+            lines.append("、".join(r["name"] for r in synced))
             lines.append("")
 
-    if synced_clean:
-        lines.append(f"## ✅ 与上游同步且工作区干净（{len(synced_clean)}）\n")
-        lines.append("、".join(r["name"] for r in synced_clean))
-        lines.append("")
+        if skipped:
+            lines.append(f"### ⚪ {tier_name}无远端（{len(skipped)}）")
+            for r in skipped:
+                lines.append(f"- {r['name']}")
+            lines.append("")
 
-    if skipped:
-        lines.append(f"## ⚪ 未纳入对比（{len(skipped)}）\n")
-        for r in skipped:
-            lines.append(f"- {r['name']}：无 upstream/origin 主分支")
-        lines.append("")
+        if errored:
+            lines.append(f"### ❌ {tier_name}异常（{len(errored)}）")
+            for r in errored:
+                lines.append(f"- {r.get('name', r.get('path', '?'))}：{r.get('error')}")
+            lines.append("")
 
-    if suppressed:
-        lines.append(f"## 🙈 已按规则隐藏播报（{len(suppressed)}）\n")
-        for r in suppressed:
-            lines.append(f"- {r['name']}：派生/镜像仓库，默认不单独播报")
-        lines.append("")
-
-    if errored:
-        lines.append(f"## ❌ 异常（{len(errored)}）\n")
-        for r in errored:
-            lines.append(f"- {r.get('name', r.get('path', '?'))}：{r.get('error')} ")
         lines.append("")
 
     lines.append("---")
@@ -529,34 +503,54 @@ def build_report(all_results: list[dict]) -> str:
 
 
 def build_summary(results: list[dict]) -> str:
-    """生成飞书摘要"""
-    report_results = visible_results(results)
-    recommend = [r for r in report_results if should_update(r)[0]]
-    local_changes = [r for r in report_results if has_local_changes(r)]
-    synced_clean = [r for r in report_results if is_synced_clean(r)]
-    breaking = [r for r in recommend if r.get("breaking_changes")]
+    """生成飞书摘要，只报 main 层；extended 层仅在有 main 层更新时才附加一行"""
+    main_results = [r for r in results if r.get("tier", "extended") == "main"]
+    ext_results = [r for r in results if r.get("tier", "extended") == "extended"]
 
-    if recommend:
-        top = sorted(recommend, key=lambda x: should_update(x)[2], reverse=True)[0]
-        value_label, _ = assess_update_value(top)
+    # --- main 层 ---
+    main_recommend = [r for r in main_results if should_update(r)[0]]
+    main_local = [r for r in main_results if has_local_changes(r)]
+    main_synced = [r for r in main_results if is_synced_clean(r)]
+    main_breaking = [r for r in main_results if r.get("breaking_changes")]
+
+    ext_recommend = [r for r in ext_results if should_update(r)[0]]
+
+    if main_recommend:
+        top = sorted(main_recommend, key=lambda x: should_update(x)[2], reverse=True)[0]
+        _, top_reason, _ = should_update(top)
         msg = (
-            f"🔔 GitHub 仓库检查 | 上游待更新 {len(recommend)} | 本地有变化 {len(local_changes)} | 已同步 {len(synced_clean)}"
-            f"\n最高优先：{top['name']}（behind {top['commits_behind']} / ahead {top['commits_ahead']}，{value_label}）"
+            f"🔔 GitHub 仓库检查 | 主仓待更新 {len(main_recommend)} | 本地变化 {len(main_local)} | 已同步 {len(main_synced)}"
+            f"\n最高优先：{top['name']}（behind {top['commits_behind']} / ahead {top['commits_ahead']}）"
+            f"\n判断：{top_reason}"
         )
-        if breaking:
-            msg += f"\n⚠️ 含 Breaking Changes：{'、'.join(r['name'] for r in breaking)}"
+        if main_breaking:
+            msg += f"\n⚠️ 含 Breaking Changes：{'、'.join(r['name'] for r in main_breaking)}"
+        if ext_recommend:
+            ext_names = "、".join(r["name"] for r in ext_recommend[:3])
+            msg += f"\n（扩展仓另有 {len(ext_recommend)} 个待更新：{ext_names}）"
         return msg
 
-    if local_changes:
-        changed_names = "、".join(r["name"] for r in local_changes[:4])
-        if len(local_changes) > 4:
+    if main_local:
+        changed_names = "、".join(r["name"] for r in main_local[:4])
+        if len(main_local) > 4:
             changed_names += " 等"
-        return (
-            f"🛠️ GitHub 仓库检查 | 上游无需更新 | 本地有变化 {len(local_changes)} | 已同步 {len(synced_clean)}"
+        msg = (
+            f"🛠️ GitHub 仓库检查 | 主仓上游无需更新 | 本地有变化 {len(main_local)} | 已同步 {len(main_synced)}"
             f"\n本地变化：{changed_names}"
         )
+        if ext_recommend:
+            msg += f"\n（扩展仓另有 {len(ext_recommend)} 个待更新）"
+        return msg
 
-    return f"✅ GitHub 仓库检查 | {len(synced_clean)} 个与上游同步 | 无需拉取更新"
+    # main 全部干净
+    if ext_recommend:
+        ext_names = "、".join(r["name"] for r in ext_recommend[:3])
+        return (
+            f"✅ GitHub 主仓全部同步 | 扩展仓另有 {len(ext_recommend)} 个待更新"
+            f"\n扩展仓待更新：{ext_names}"
+        )
+
+    return f"✅ GitHub 仓库检查 | 主仓 {len(main_synced)} 个同步 | 扩展仓 {len(ext_results)} 个同步 | 无需拉取更新"
 
 
 def save_report(report: str, results: list[dict]):
@@ -570,7 +564,6 @@ def save_report(report: str, results: list[dict]):
     f1.write_text(report, encoding="utf-8")
     f2.write_text(report, encoding="utf-8")
 
-    # 保存 JSON
     state = {
         "checked_at": datetime.now().isoformat(),
         "results": results,
@@ -603,6 +596,14 @@ def main():
     repos = load_config()
     print(f"监控仓库数：{len(repos)}")
 
+    # 统计 tier 分布
+    tier_counts = {}
+    for cfg in repos:
+        tier = cfg.get("tier", "extended")
+        tier_counts[tier] = tier_counts.get(tier, 0) + 1
+    for tier, cnt in sorted(tier_counts.items()):
+        print(f"  tier={tier}: {cnt}仓")
+
     results = []
     for repo_cfg in repos:
         path = repo_cfg.get("path") or repo_cfg.get("repo_path")
@@ -610,6 +611,7 @@ def main():
             continue
         print(f"  检查: {path}...", end=" ", flush=True)
         status = get_repo_status(path)
+        status["tier"] = repo_cfg.get("tier", "extended")
         results.append(status)
         behind = status.get("commits_behind", "?")
         ahead = status.get("commits_ahead", "?")
@@ -617,14 +619,14 @@ def main():
         upstream = status.get("upstream_tag", "?")
         worktree = format_worktree_brief(status)
         print(
-            f"本地={local} 上游={upstream} behind={behind} ahead={ahead} 工作区={worktree} [{status.get('status', '?')}]"
+            f"本地={local} 上游={upstream} behind={behind} ahead={ahead} "
+            f"工作区={worktree} [{status.get('status','?')}] [{status.get('tier')}]"
         )
 
     report = build_report(results)
     report_path = save_report(report, results)
     summary = build_summary(results)
 
-    # 保存状态
     STATE_FILE.write_text(
         json.dumps(
             {
@@ -637,7 +639,6 @@ def main():
         encoding="utf-8",
     )
 
-    # 飞书推送
     ok = send_feishu(summary)
     print(f"飞书推送: {'成功' if ok else '失败'}")
     print(f"\n报告路径: {report_path}")

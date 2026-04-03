@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-30T12:52:43Z",
+  "source": "codex-bridge",
+  "count": 1,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "363deaff-8b1b-53d3-8e0a-52ee0da14fe0",
+      "text": "我之前设置的每天在交易时段的四个时点的定时任务有没有发送成功",
+      "vector": [],
+      "category": "decision",
+      "scope": "agent:main",
+      "importance": 0.84,
+      "timestamp": 1774874898369,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019d1630-603c-7f70-a643-e47cba325298\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/22/rollout-2026-03-22T23-36-02-019d1630-603c-7f70-a643-e47cba325298.jsonl\",\"line_no\":4844,\"bridge_version\":1}"
+    }
+  ]
+}

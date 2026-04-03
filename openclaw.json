@@ -1,12 +1,12 @@
 {
   "meta": {
-    "lastTouchedVersion": "2026.3.23-2",
-    "lastTouchedAt": "2026-03-28T23:33:57.404Z"
+    "lastTouchedVersion": "2026.3.28",
+    "lastTouchedAt": "2026-04-03T02:16:25.712Z"
   },
   "env": {},
   "wizard": {
-    "lastRunAt": "2026-03-13T02:20:05.051Z",
-    "lastRunVersion": "2026.3.11",
+    "lastRunAt": "2026-03-30T13:04:40.875Z",
+    "lastRunVersion": "2026.3.28",
     "lastRunCommand": "doctor",
     "lastRunMode": "local"
   },
@@ -62,23 +62,28 @@
     "mode": "merge",
     "providers": {
       "ollama-local": {
-        "baseUrl": "http://127.0.0.1:11434",
+        "baseUrl": "http://127.0.0.1:11434/v1",
         "apiKey": "ollama-local",
-        "api": "ollama",
+        "api": "openai-completions",
         "models": [
           {
             "id": "my-qwen",
             "name": "本地Qwen3.5-9B",
+            "api": "openai-completions",
             "reasoning": true,
             "input": [
               "text"
             ],
             "contextWindow": 262144,
-            "maxTokens": 4096
+            "maxTokens": 4096,
+            "compat": {
+              "supportsTools": false
+            }
           },
           {
             "id": "gemma3:4b",
             "name": "本地Gemma3-4B",
+            "api": "openai-completions",
             "reasoning": false,
             "input": [
               "text"
@@ -89,6 +94,7 @@
           {
             "id": "deepseek-r1:7b",
             "name": "本地DeepSeek-R1-7B",
+            "api": "openai-completions",
             "reasoning": true,
             "input": [
               "text"
@@ -99,6 +105,7 @@
           {
             "id": "carstenuhlig/omnicoder-9b:latest",
             "name": "本地OmniCoder-9B",
+            "api": "openai-completions",
             "reasoning": false,
             "input": [
               "text"
@@ -116,6 +123,7 @@
           {
             "id": "Qwen2.5-0.5B-Instruct-4bit",
             "name": "oMLX Qwen2.5-0.5B-4bit",
+            "api": "openai-responses",
             "reasoning": false,
             "input": [
               "text"
@@ -126,6 +134,7 @@
           {
             "id": "Qwen2.5-1.5B-Instruct-4bit",
             "name": "oMLX Qwen2.5-1.5B-4bit",
+            "api": "openai-responses",
             "reasoning": false,
             "input": [
               "text"
@@ -148,6 +157,7 @@
           {
             "id": "MiniMax-M2.7",
             "name": "MiniMax M2.7",
+            "api": "anthropic-messages",
             "reasoning": true,
             "input": [
               "text"
@@ -164,6 +174,7 @@
           {
             "id": "MiniMax-M2.5",
             "name": "MiniMax M2.5",
+            "api": "anthropic-messages",
             "reasoning": false,
             "input": [
               "text"
@@ -180,6 +191,7 @@
           {
             "id": "MiniMax-M2.5-highspeed",
             "name": "MiniMax M2.5 Highspeed",
+            "api": "anthropic-messages",
             "reasoning": true,
             "input": [
               "text"
@@ -196,6 +208,7 @@
           {
             "id": "MiniMax-M2.5-Lightning",
             "name": "MiniMax M2.5 Lightning",
+            "api": "anthropic-messages",
             "reasoning": true,
             "input": [
               "text"
@@ -223,6 +236,7 @@
           {
             "id": "gpt-5.4",
             "name": "gpt-5.4",
+            "api": "openai-completions",
             "contextWindow": 131072,
             "maxTokens": 8192
           }
@@ -293,14 +307,27 @@
             "maxTokens": 8192
           }
         ]
+      },
+      "custom-proxy": {
+        "baseUrl": "https://api.minimaxi.com/anthropic",
+        "apiKey": "sk-cp-TypyXejs2B15_iA2InVLaRhZBTL_wxRXO5ut0AXIl6elvqblH6fWp3j8VaUulYChdYV6fEHnXtMyNwRhaeHBmxI_dFoOwRlmtPdSZt6pwrMvqKU92zBfir8",
+        "api": "anthropic-messages",
+        "models": [
+          {
+            "id": "MiniMax-M2.7",
+            "name": "MiniMax M2.7"
+          }
+        ]
       }
     }
   },
   "agents": {
     "defaults": {
       "model": {
-        "primary": "gmn/gpt-5.3-codex",
+        "primary": "gmn/gpt-5.4",
         "fallbacks": [
+          "gmn/gpt-5.3-codex",
+          "codex/gpt-5.4",
           "minimax-portal/MiniMax-M2.7"
         ]
       },
@@ -403,15 +430,15 @@
         "mode": "safeguard"
       },
       "thinkingDefault": "high",
-      "timeoutSeconds": 180,
+      "timeoutSeconds": 600,
       "heartbeat": {
-        "model": "minimax-portal/MiniMax-M2.7",
+        "model": "gmn/gpt-5.4",
         "session": "heartbeat",
         "target": "none",
         "directPolicy": "block",
         "suppressToolErrorWarnings": true
       },
-      "maxConcurrent": 4,
+      "maxConcurrent": 6,
       "subagents": {
         "maxConcurrent": 8
       }
@@ -421,25 +448,25 @@
         "id": "main",
         "name": "主脑 (GPT-5.4)",
         "model": {
-          "primary": "gmn/gpt-5.3-codex",
+          "primary": "minimax-portal/MiniMax-M2.7",
           "fallbacks": [
-            "codex/gpt-5.3-codex",
-            "minimax-portal/MiniMax-M2.7"
+            "gmn/gpt-5.4",
+            "minimax-portal/MiniMax-M2.5"
           ]
         }
       },
       {
         "id": "backup",
         "name": "本地Qwen（仅手动纯文本）",
-        "model": "ollama-local/my-qwen"
+        "model": "gmn/gpt-5.4"
       },
       {
         "id": "downloader",
         "name": "下载助手 (GPT-5.4)",
         "model": {
-          "primary": "codex/gpt-5.4",
+          "primary": "gmn/gpt-5.4",
           "fallbacks": [
-            "codex/gpt-5.3-codex",
+            "codex/gpt-5.4",
             "minimax-portal/MiniMax-M2.7"
           ]
         }
@@ -447,7 +474,7 @@
       {
         "id": "simple",
         "name": "本地Gemma3（仅手动纯文本）",
-        "model": "ollama-local/gemma3:4b",
+        "model": "gmn/gpt-5.4",
         "sandbox": {
           "mode": "all"
         }
@@ -456,9 +483,9 @@
         "id": "tester",
         "name": "质检员 (GPT-5.4)",
         "model": {
-          "primary": "codex/gpt-5.4",
+          "primary": "gmn/gpt-5.4",
           "fallbacks": [
-            "codex/gpt-5.3-codex",
+            "codex/gpt-5.4",
             "minimax-portal/MiniMax-M2.7"
           ]
         }
@@ -469,24 +496,31 @@
         "workspace": "/Users/ling/.openclaw/workspace-quant",
         "agentDir": "/Users/ling/.openclaw/agents/quant-advisor/agent",
         "model": {
-          "primary": "gmn/gpt-5.3-codex",
+          "primary": "minimax-portal/MiniMax-M2.7",
           "fallbacks": [
-            "codex/gpt-5.3-codex",
-            "minimax-portal/MiniMax-M2.7"
+            "minimax-portal/MiniMax-M2.5",
+            "minimax-portal/MiniMax-M2.5-highspeed"
           ]
         }
       },
       {
         "id": "coder-lite",
         "name": "Coder Lite (OmniCoder 9B)",
-        "model": "ollama-local/carstenuhlig/omnicoder-9b:latest",
+        "model": "gmn/gpt-5.4",
         "sandbox": {
           "mode": "all"
         }
       },
       {
         "id": "coding-agent",
-        "name": "Coding Agent (GPT-5.4)"
+        "name": "Coding Agent (MiniMax-M2.7)",
+        "model": {
+          "primary": "minimax-portal/MiniMax-M2.7",
+          "fallbacks": [
+            "minimax-portal/MiniMax-M2.5",
+            "minimax-portal/MiniMax-M2.5-highspeed"
+          ]
+        }
       }
     ]
   },
@@ -500,48 +534,6 @@
     }
   },
   "bindings": [
-    {
-      "agentId": "main",
-      "match": {
-        "channel": "feishu",
-        "accountId": "main"
-      }
-    },
-    {
-      "agentId": "backup",
-      "match": {
-        "channel": "feishu",
-        "accountId": "main"
-      }
-    },
-    {
-      "agentId": "downloader",
-      "match": {
-        "channel": "feishu",
-        "accountId": "main"
-      }
-    },
-    {
-      "agentId": "simple",
-      "match": {
-        "channel": "feishu",
-        "accountId": "main"
-      }
-    },
-    {
-      "agentId": "tester",
-      "match": {
-        "channel": "feishu",
-        "accountId": "main"
-      }
-    },
-    {
-      "agentId": "xiaoguanjia",
-      "match": {
-        "channel": "feishu",
-        "accountId": "main"
-      }
-    },
     {
       "agentId": "xiaoguanjia",
       "match": {
@@ -560,6 +552,13 @@
       "agentId": "main",
       "match": {
         "channel": "webchat"
+      }
+    },
+    {
+      "agentId": "main",
+      "match": {
+        "channel": "feishu",
+        "accountId": "main"
       }
     }
   ],
@@ -606,15 +605,16 @@
   "channels": {
     "feishu": {
       "defaultAccount": "main",
-      "appId": "cli_a928c429d9785cc6",
-      "appSecret": "8DdEUA04tEjcp0CX7Z4L0gaxRbtutjon",
-      "tools": {
-        "doc": false,
-        "perm": false
-      },
       "accounts": {
         "main": {
-          "streaming": false
+          "appId": "cli_a928c429d9785cc6",
+          "appSecret": "8DdEUA04tEjcp0CX7Z4L0gaxRbtutjon",
+          "name": "main",
+          "dmPolicy": "open",
+          "allowFrom": [
+            "*"
+          ],
+          "streaming": true
         },
         "feishu-assistant": {
           "appId": "cli_a9256a7ae9b91cb6",
@@ -633,10 +633,21 @@
           "allowFrom": [
             "*"
           ]
+        },
+        "default": {
+          "webhookPath": "/feishu/events",
+          "dmPolicy": "pairing",
+          "groupPolicy": "open"
         }
       },
-      "streaming": true,
-      "threadSession": true
+      "domain": "feishu",
+      "connectionMode": "websocket",
+      "reactionNotifications": "own",
+      "typingIndicator": true,
+      "resolveSenderNames": true,
+      "webhookPath": "/feishu/events",
+      "dmPolicy": "pairing",
+      "groupPolicy": "open"
     }
   },
   "gateway": {
@@ -646,7 +657,8 @@
     "controlUi": {
       "allowedOrigins": [
         "http://127.0.0.1:18789",
-        "http://localhost:18789"
+        "http://localhost:18789",
+        "http://192.168.31.62:18789"
       ]
     },
     "auth": {
@@ -675,7 +687,6 @@
   },
   "plugins": {
     "allow": [
-      "active-task-guard",
       "memory-core",
       "simple-task-router",
       "openclaw-lark",
@@ -686,7 +697,6 @@
     ],
     "load": {
       "paths": [
-        "/Users/ling/.openclaw/extensions/active-task-guard",
         "/Users/ling/.openclaw/extensions/simple-task-router"
       ]
     },
@@ -694,23 +704,30 @@
       "memory": "memory-core"
     },
     "entries": {
-      "active-task-guard": {
+      "memory-core": {
+        "enabled": true,
+        "config": {}
+      },
+      "feishu": {
+        "enabled": true,
+        "config": {}
+      },
+      "simple-task-router": {
         "enabled": true,
         "config": {
           "enabledAgents": [
-            "main",
-            "xiaoguanjia"
-          ]
+            "main"
+          ],
+          "allowedTriggers": [
+            "cli"
+          ],
+          "simpleProvider": "ollama-local",
+          "simpleModel": "my-qwen",
+          "maxPromptChars": 220,
+          "maxLineCount": 6,
+          "minSimpleScore": 3,
+          "debug": true
         }
-      },
-      "memory-core": {
-        "enabled": true
-      },
-      "feishu": {
-        "enabled": true
-      },
-      "simple-task-router": {
-        "enabled": false
       },
       "minimem-memory": {
         "enabled": false
@@ -725,7 +742,8 @@
         "enabled": false
       },
       "minimax": {
-        "enabled": true
+        "enabled": true,
+        "config": {}
       },
       "exa": {
         "enabled": true,

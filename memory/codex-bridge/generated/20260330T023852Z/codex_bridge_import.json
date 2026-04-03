@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-30T02:38:53Z",
+  "source": "codex-bridge",
+  "count": 1,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "ce04dcb2-e240-57d7-b78f-ed607b7ca0e5",
+      "text": "Request timed out before a response was generated. Please try again, or increase agents.defaults.timeoutSeconds in your config. 是不是给openclaw回复的等待时间太短了？",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.72,
+      "timestamp": 1774837752861,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019d1630-603c-7f70-a643-e47cba325298\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/22/rollout-2026-03-22T23-36-02-019d1630-603c-7f70-a643-e47cba325298.jsonl\",\"line_no\":3379,\"bridge_version\":1}"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-31T01:26:00Z",
+  "source": "codex-bridge",
+  "count": 1,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "16f28b6b-c1d4-5979-8a9b-8e31ad64e0e7",
+      "text": "我现在在飞书群里at某一个机器人，得不到回复，帮我检查下",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.68,
+      "timestamp": 1774920276063,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019d1630-603c-7f70-a643-e47cba325298\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/22/rollout-2026-03-22T23-36-02-019d1630-603c-7f70-a643-e47cba325298.jsonl\",\"line_no\":4861,\"bridge_version\":1}"
+    }
+  ]
+}

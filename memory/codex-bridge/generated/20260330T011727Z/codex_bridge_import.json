@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-30T01:17:29Z",
+  "source": "codex-bridge",
+  "count": 2,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "88dcd46c-aafb-56bd-8135-234de3e98bde",
+      "text": "再修复一下，刚刚openclaw网页端更新，又连不上了",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.68,
+      "timestamp": 1774833234821,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019d1630-603c-7f70-a643-e47cba325298\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/22/rollout-2026-03-22T23-36-02-019d1630-603c-7f70-a643-e47cba325298.jsonl\",\"line_no\":2547,\"bridge_version\":1}"
+    },
+    {
+      "id": "8527cfbc-d5bd-5c28-8489-de1c914d2a5f",
+      "text": "现在的问题是我问了问题，openclaw不答复",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.68,
+      "timestamp": 1774833427098,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019d1630-603c-7f70-a643-e47cba325298\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/22/rollout-2026-03-22T23-36-02-019d1630-603c-7f70-a643-e47cba325298.jsonl\",\"line_no\":2614,\"bridge_version\":1}"
+    }
+  ]
+}

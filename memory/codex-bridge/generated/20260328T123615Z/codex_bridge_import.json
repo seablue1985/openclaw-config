@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-28T12:36:17Z",
+  "source": "codex-bridge",
+  "count": 1,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "53d4d500-a3ff-56f8-8876-e63df203d1ec",
+      "text": "已切到启用阶段并落地，已提交：\ncommit: caa38e8\nmessage: docs: add org ops enablement bootstrap materials\n本次新增/更新\n新增：research/org-ops/owner_confirmation_todo.md\n新增：research/org-ops/meeting_notes/weekly_portfolio_risk_bootstrap_20260330.md\n更新：research/org-ops/openclaw_execution_board.md\n哪些事项必须你亲自拍板\n1) 三个 owner\n这三个我不能替你定：\nportfolio_owner\ndata_owner\nplatform_owner\n2) 首轮资本与预算拍板\n这些需要你在首次组合风险会上拍：\nsmallcap_chip_v4_1_alpha_guard 的 capital_alloc\nsmallcap_chip_v4_2_alpha_recover 的 capital_alloc\nsmallcap_chip_v4_2b_fundamental_guard 的 capital_alloc\nrd_agent_top2_gray_v1 的 capital_alloc\nbreadth_strict_oos 的去留 + capital_alloc\nbreadth_aggressive 的去留 + capital_alloc\nexit_dual / exit_tight / alpha55 是否继续保留验证盘预算\ndefensive / balanced / aggressive 是否维持当前 risk_budget\n3) open SEV1 的正式 closure 拍板\n必须拍：\n是否确认 execution_owner 为主 closure owner\n是否要求 platform_owner 共签\nclosure SLA\nclosure 标准\n哪些事项我已经预填完成\n1) owner 确认清单\nresearch/org-ops/owner_confirmation_todo.md\n我已经列清：\n必须人工指定的 3 个 owner\n所有 TODO-NEEDS-CONFIRMATION 字段及所在文件\n清零顺序\n拍板后要回写哪些文件\n2) 首次组合风险会 bootstrap 材料\nresearch/org-ops/meeting_notes/weekly_portfolio_risk_bootstrap_20260330.md\n我已经预填了你要求的 4 项：\nbreadth_strict_oos 去留建议\n预填建议：冻结\nbreadth_aggressive 去留建议\n预填建议：冻结\nopen SEV1 closure owner 建议\n预填建议：execution_owner 主责，platform_owner 共签\n需要拍板的 capital_alloc / risk_budget 项\n已逐项列出 candidate / experimental / validation / legacy paper\n3) 执行板启用阶段任务\nresearch/org-ops/openclaw_execution_board.md\n我已经加了启用阶段任务：\nORG-013 owner 指定\nORG-014 首次周会召开\nORG-015 org-ops 定为唯一入口\nORG-016 strategy registry 首轮签收\nORG-017 open SEV1 closure 拍板\n首次周会的最小议程\n建议你第一次会只开这 5 项，别扩：\n指定 3 个 owner\nportfolio_owner\ndata_owner\nplatform_owner\n拍 breadth 两个实验盘去留\nbreadth_strict_oos\nbreadth_aggressive\n拍 open SEV1 closure 方案\nowner\n共签人\nSLA\nclosure 标准\n拍首轮资本/预算原则\n本周是否一律不新增 probe/live capital_alloc\nlegacy paper sleeves 是否维持现有 risk_budget\n宣布 org-ops 为唯一入口\n会后只回写：\ntarget_operating_model.md\nstrategy_registry.csv\nopenclaw_execution_board.md\nweekly_portfolio_risk_20260330_minutes.md\n如果你要，我下一步不再扩文档，直接进入会后落表阶段：\n我可以在你拍完 owner 名字后，直接替你把：\ntarget_operating_model.md\nstrategy_registry.csv\nweekly_portfolio_risk_20260330_minutes.md\nopenclaw_execution_board.md\n四个文件一次性回填完。",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.75,
+      "timestamp": 1774700781282,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019d28e2-de17-7e12-8061-fe29e6224985\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/26/rollout-2026-03-26T14-44-09-019d28e2-de17-7e12-8061-fe29e6224985.jsonl\",\"line_no\":2467,\"bridge_version\":1}"
+    }
+  ]
+}

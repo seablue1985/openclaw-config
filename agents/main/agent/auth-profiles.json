@@ -21,21 +21,23 @@
   },
   "lastGood": {
     "minimax-portal": "minimax-portal:default",
-    "gmn": "gmn:default"
+    "gmn": "gmn:default",
+    "ollama-local": "ollama-local:default"
   },
   "usageStats": {
     "minimax-portal:default": {
       "errorCount": 0,
-      "lastUsed": 1774814405323
+      "lastUsed": 1775245638319,
+      "lastFailureAt": 1774913986991
     },
     "ollama-local:default": {
       "errorCount": 0,
-      "lastUsed": 1773466261798
+      "lastUsed": 1774840826424
     },
     "gmn:default": {
       "errorCount": 0,
-      "lastUsed": 1774741176824,
-      "lastFailureAt": 1774253668512
+      "lastUsed": 1775180558501,
+      "lastFailureAt": 1774962260317
     }
   }
 }

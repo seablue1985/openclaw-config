@@ -43,11 +43,38 @@ def _df_to_records(df):
     return [{k: _safe_value(v) for k, v in row.items()} for row in records]
 
 
+def get_realtime_quote_fast(symbol):
+    """单票实时行情（快接口）"""
+    df = ak.stock_bid_ask_em(symbol=str(symbol))
+    values = {str(row["item"]): _safe_value(row["value"]) for _, row in df.iterrows()}
+    return {
+        "代码": str(symbol),
+        "最新价": values.get("最新"),
+        "涨跌幅": values.get("涨幅"),
+        "涨跌额": values.get("涨跌"),
+        "今开": values.get("今开"),
+        "昨收": values.get("昨收"),
+        "最高": values.get("最高"),
+        "最低": values.get("最低"),
+        "成交量": values.get("总手"),
+        "成交额": values.get("金额"),
+        "原始": values,
+    }
+
+
 def get_realtime_quotes(symbols=None):
     """实时行情"""
-    df = ak.stock_zh_a_spot_em()
     if symbols:
-        df = df[df['代码'].isin(symbols)]
+        symbols = [str(s).strip() for s in symbols if str(s).strip()]
+        if len(symbols) == 1:
+            return [get_realtime_quote_fast(symbols[0])]
+        # 多票批量时使用全市场快照（比 _em 更快）
+        df = ak.stock_zh_a_spot()
+        df["代码"] = df["代码"].astype(str)
+        df = df[df["代码"].isin(symbols)]
+        return _df_to_records(df)
+    # 无目标时仅返回全市场快照（谨慎使用）
+    df = ak.stock_zh_a_spot()
     return _df_to_records(df)
 
 
@@ -87,7 +114,7 @@ def get_fund_flow(stock):
 
 def search_stock(keyword):
     """搜索股票"""
-    df = ak.stock_zh_a_spot_em()
+    df = ak.stock_zh_a_spot()
     # 模糊匹配代码或名称
     result = df[df['代码'].astype(str).str.contains(keyword) | df['名称'].astype(str).str.contains(keyword)]
     return _df_to_records(result.head(10))
@@ -106,8 +133,14 @@ def main():
     
     try:
         if args.action == 'quote':
-            data = get_realtime_quotes()
-            print(json.dumps(data[:5], ensure_ascii=False, indent=2))
+            symbols = None
+            if args.symbol:
+                symbols = [s.strip() for s in args.symbol.split(",") if s.strip()]
+            data = get_realtime_quotes(symbols=symbols)
+            if symbols:
+                print(json.dumps(data, ensure_ascii=False, indent=2))
+            else:
+                print(json.dumps(data[:5], ensure_ascii=False, indent=2))
             
         elif args.action == 'kline':
             if not args.symbol:

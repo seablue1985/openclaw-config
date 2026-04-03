@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-25T15:25:22Z",
+  "source": "codex-bridge",
+  "count": 2,
+  "scope": "agent:main",
+  "memories": [
+    {
+      "id": "307064c5-7567-525a-8700-3fb7444f24f9",
+      "text": "我更新了openclaw control ui后打不开这个网页了，帮我解决",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.68,
+      "timestamp": 1774452069517,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019d1630-603c-7f70-a643-e47cba325298\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/22/rollout-2026-03-22T23-36-02-019d1630-603c-7f70-a643-e47cba325298.jsonl\",\"line_no\":1056,\"bridge_version\":1}"
+    },
+    {
+      "id": "44ccfca9-c9f6-53b1-a091-20432f0b0963",
+      "text": "在终端输入openclaw gateway restart命令后，提示：Config warnings:\\n- plugins.entries.minimax-portal-auth: plugin not found: minimax-portal-auth (stale config entry ignored; remove it from plugins config)\n- plugins.allow: plugin not found: minimax-portal-auth (stale config entry ignored; remove it from plugins config)",
+      "vector": [],
+      "category": "fact",
+      "scope": "agent:main",
+      "importance": 0.75,
+      "timestamp": 1774452222325,
+      "metadata": "{\"source\":\"codex-bridge\",\"session_id\":\"019d1630-603c-7f70-a643-e47cba325298\",\"role\":\"user\",\"phase\":\"\",\"source_file\":\"sessions/2026/03/22/rollout-2026-03-22T23-36-02-019d1630-603c-7f70-a643-e47cba325298.jsonl\",\"line_no\":1124,\"bridge_version\":1}"
+    }
+  ]
+}

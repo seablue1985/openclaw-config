@@ -26,6 +26,8 @@ STOCK_WATCHER_SUMMARY = (
     Path.home() / ".openclaw" / "skills" / "stock-watcher" / "scripts" / "summarize_performance.py"
 )
 AUTODISCOVER_PATTERNS: list[tuple[str, str]] = [
+    ("ths_web_selected_holdings_latest.json", "ths_web_selected_holdings"),
+    ("ths_web_selected_holdings_*.json", "ths_web_selected_holdings"),
     ("ths_web_holding_count_fix_*.json", "ths_web_holding_count_fix"),
     ("ths_app_holdings_*.csv", "ths_app_holdings"),
 ]
@@ -315,13 +317,6 @@ def load_input_file(path: Path) -> InputBundle:
                 source_label=path.name,
             )
         if isinstance(payload, dict):
-            if isinstance(payload.get("codes"), list):
-                return build_bundle_from_code_list(
-                    [json_safe(item) for item in payload.get("codes") or []],
-                    source_kind="json_codes_field",
-                    source_file=str(path),
-                    source_label=path.name,
-                )
             for key in ["holdings", "positions", "rows", "data", "items"]:
                 value = payload.get(key)
                 if isinstance(value, list) and value:
@@ -338,6 +333,13 @@ def load_input_file(path: Path) -> InputBundle:
                         source_file=str(path),
                         source_label=path.name,
                     )
+            if isinstance(payload.get("codes"), list):
+                return build_bundle_from_code_list(
+                    [json_safe(item) for item in payload.get("codes") or []],
+                    source_kind="json_codes_field",
+                    source_file=str(path),
+                    source_label=path.name,
+                )
         raise FusionReportError(
             "input_json_unsupported",
             "JSON 输入格式不支持",
