@@ -316,6 +316,35 @@
           "name": "MiniMax M2.7"
         }
       ]
+    },
+    "OpenAI": {
+      "baseUrl": "https://gmncode.cn",
+      "apiKey": "sk-e529fe673ca03ba271c0bff5cae0dbcd06b57943f4bdb12ada983aa22eaba8b6",
+      "api": "openai-responses",
+      "authHeader": true,
+      "requires_openai_auth": true,
+      "models": [
+        {
+          "id": "gpt-5.4",
+          "name": "gpt-5.4",
+          "api": "openai-responses",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 1000000,
+          "maxTokens": 8192,
+          "model_reasoning_effort": "xhigh",
+          "disable_response_storage": true,
+          "network_access": "enabled"
+        }
+      ]
     }
   }
 }

@@ -16,7 +16,7 @@
     "gmn:default": {
       "type": "api_key",
       "provider": "gmn",
-      "key": "sk-e529fe673ca03ba271c0bff5cae0dbcd06b57943f4bdb12ada983aa22eaba8b6"
+      "key": ""
     }
   },
   "lastGood": {
@@ -27,7 +27,7 @@
   "usageStats": {
     "minimax-portal:default": {
       "errorCount": 0,
-      "lastUsed": 1775245638319,
+      "lastUsed": 1775323019525,
       "lastFailureAt": 1774913986991
     },
     "ollama-local:default": {
