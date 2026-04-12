@@ -1,416 +1,33 @@
 {
-  "meta": {
-    "lastTouchedVersion": "2026.3.28",
-    "lastTouchedAt": "2026-04-03T02:16:25.712Z"
-  },
-  "env": {},
-  "wizard": {
-    "lastRunAt": "2026-03-30T13:04:40.875Z",
-    "lastRunVersion": "2026.3.28",
-    "lastRunCommand": "doctor",
-    "lastRunMode": "local"
-  },
-  "secrets": {
-    "providers": {
-      "feishu_app_secret_file": {
-        "source": "file",
-        "path": "/Users/ling/.openclaw/secrets/feishu_app_secret",
-        "mode": "singleValue"
-      },
-      "model_api_keys_file": {
-        "source": "file",
-        "path": "/Users/ling/.openclaw/secrets/model_api_keys.json",
-        "mode": "json"
-      }
-    }
-  },
-  "auth": {
-    "profiles": {
-      "minimax-portal:default": {
-        "provider": "minimax-portal",
-        "mode": "oauth"
-      },
-      "ollama-local:default": {
-        "provider": "ollama-local",
-        "mode": "api_key"
-      },
-      "gmn:default": {
-        "provider": "gmn",
-        "mode": "api_key"
-      },
-      "codex:default": {
-        "provider": "codex",
-        "mode": "api_key"
-      }
-    },
-    "order": {
-      "gmn": [
-        "gmn:default"
-      ],
-      "minimax-portal": [
-        "minimax-portal:default"
-      ],
-      "ollama-local": [
-        "ollama-local:default"
-      ],
-      "codex": [
-        "codex:default"
-      ]
-    }
-  },
-  "models": {
-    "mode": "merge",
-    "providers": {
-      "ollama-local": {
-        "baseUrl": "http://127.0.0.1:11434/v1",
-        "apiKey": "ollama-local",
-        "api": "openai-completions",
-        "models": [
-          {
-            "id": "my-qwen",
-            "name": "本地Qwen3.5-9B",
-            "api": "openai-completions",
-            "reasoning": true,
-            "input": [
-              "text"
-            ],
-            "contextWindow": 262144,
-            "maxTokens": 4096,
-            "compat": {
-              "supportsTools": false
-            }
-          },
-          {
-            "id": "gemma3:4b",
-            "name": "本地Gemma3-4B",
-            "api": "openai-completions",
-            "reasoning": false,
-            "input": [
-              "text"
-            ],
-            "contextWindow": 4096,
-            "maxTokens": 2048
-          },
-          {
-            "id": "deepseek-r1:7b",
-            "name": "本地DeepSeek-R1-7B",
-            "api": "openai-completions",
-            "reasoning": true,
-            "input": [
-              "text"
-            ],
-            "contextWindow": 32768,
-            "maxTokens": 4096
-          },
-          {
-            "id": "carstenuhlig/omnicoder-9b:latest",
-            "name": "本地OmniCoder-9B",
-            "api": "openai-completions",
-            "reasoning": false,
-            "input": [
-              "text"
-            ],
-            "contextWindow": 32768,
-            "maxTokens": 4096
-          }
-        ]
-      },
-      "omlx": {
-        "baseUrl": "http://127.0.0.1:8000/v1",
-        "apiKey": "0923",
-        "api": "openai-responses",
-        "models": [
-          {
-            "id": "Qwen2.5-0.5B-Instruct-4bit",
-            "name": "oMLX Qwen2.5-0.5B-4bit",
-            "api": "openai-responses",
-            "reasoning": false,
-            "input": [
-              "text"
-            ],
-            "contextWindow": 131072,
-            "maxTokens": 8192
-          },
-          {
-            "id": "Qwen2.5-1.5B-Instruct-4bit",
-            "name": "oMLX Qwen2.5-1.5B-4bit",
-            "api": "openai-responses",
-            "reasoning": false,
-            "input": [
-              "text"
-            ],
-            "contextWindow": 131072,
-            "maxTokens": 8192
-          }
-        ]
-      },
-      "minimax-portal": {
-        "baseUrl": "https://api.minimaxi.com/anthropic",
-        "apiKey": {
-          "source": "file",
-          "provider": "model_api_keys_file",
-          "id": "/providers/minimax-portal/apiKey"
-        },
-        "api": "anthropic-messages",
-        "authHeader": true,
-        "models": [
-          {
-            "id": "MiniMax-M2.7",
-            "name": "MiniMax M2.7",
-            "api": "anthropic-messages",
-            "reasoning": true,
-            "input": [
-              "text"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 200000,
-            "maxTokens": 8192
-          },
-          {
-            "id": "MiniMax-M2.5",
-            "name": "MiniMax M2.5",
-            "api": "anthropic-messages",
-            "reasoning": false,
-            "input": [
-              "text"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 200000,
-            "maxTokens": 8192
-          },
-          {
-            "id": "MiniMax-M2.5-highspeed",
-            "name": "MiniMax M2.5 Highspeed",
-            "api": "anthropic-messages",
-            "reasoning": true,
-            "input": [
-              "text"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 200000,
-            "maxTokens": 8192
-          },
-          {
-            "id": "MiniMax-M2.5-Lightning",
-            "name": "MiniMax M2.5 Lightning",
-            "api": "anthropic-messages",
-            "reasoning": true,
-            "input": [
-              "text"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 200000,
-            "maxTokens": 8192
-          }
-        ]
-      },
-      "codex": {
-        "baseUrl": "https://gmncode.cn",
-        "apiKey": {
-          "source": "file",
-          "provider": "model_api_keys_file",
-          "id": "/providers/codex/apiKey"
-        },
-        "api": "openai-completions",
-        "models": [
-          {
-            "id": "gpt-5.4",
-            "name": "gpt-5.4",
-            "api": "openai-completions",
-            "contextWindow": 131072,
-            "maxTokens": 8192
-          }
-        ]
-      },
-      "gmn": {
-        "baseUrl": "https://gmncode.cn",
-        "apiKey": {
-          "source": "file",
-          "provider": "model_api_keys_file",
-          "id": "/providers/gmn/apiKey"
-        },
-        "api": "openai-responses",
-        "headers": {
-          "User-Agent": "codex-rs/1.0.7"
-        },
-        "authHeader": true,
-        "models": [
-          {
-            "id": "gpt-5.3-codex",
-            "name": "gpt-5.3-codex",
-            "api": "openai-responses",
-            "reasoning": true,
-            "input": [
-              "text"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 200000,
-            "maxTokens": 8192
-          },
-          {
-            "id": "gpt-5.2-codex",
-            "name": "gpt-5.2-codex",
-            "api": "openai-responses",
-            "reasoning": false,
-            "input": [
-              "text"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 200000,
-            "maxTokens": 8192
-          },
-          {
-            "id": "gpt-5.4",
-            "name": "gpt-5.4",
-            "api": "openai-responses",
-            "reasoning": true,
-            "input": [
-              "text"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 200000,
-            "maxTokens": 8192
-          }
-        ]
-      },
-      "custom-proxy": {
-        "baseUrl": "https://api.minimaxi.com/anthropic",
-        "apiKey": "sk-cp-TypyXejs2B15_iA2InVLaRhZBTL_wxRXO5ut0AXIl6elvqblH6fWp3j8VaUulYChdYV6fEHnXtMyNwRhaeHBmxI_dFoOwRlmtPdSZt6pwrMvqKU92zBfir8",
-        "api": "anthropic-messages",
-        "models": [
-          {
-            "id": "MiniMax-M2.7",
-            "name": "MiniMax M2.7"
-          }
-        ]
-      }
-    }
-  },
   "agents": {
     "defaults": {
-      "model": {
-        "primary": "gmn/gpt-5.4",
-        "fallbacks": [
-          "gmn/gpt-5.3-codex",
-          "codex/gpt-5.4",
-          "minimax-portal/MiniMax-M2.7"
-        ]
+      "compaction": {
+        "mode": "safeguard"
       },
-      "models": {
-        "minimax-portal/MiniMax-M2.1": {
-          "alias": "minimax-m2.1"
-        },
-        "minimax-portal/MiniMax-M2.7": {
-          "alias": "minimax-m2.7"
-        },
-        "minimax-portal/MiniMax-M2.5": {
-          "alias": "minimax-m2.5"
-        },
-        "minimax-portal/MiniMax-M2.5-highspeed": {
-          "alias": "minimax-m2.5-highspeed"
-        },
-        "minimax-portal/MiniMax-M2.5-Lightning": {
-          "alias": "minimax-m2.5-lightning"
-        },
-        "gmn/gpt-5.3-codex": {
-          "alias": "legacy-gpt-5.3-codex"
-        },
-        "gmn/gpt-5.2-codex": {
-          "alias": "legacy-gpt-5.2"
-        },
-        "codex/gpt-5.2-codex": {
-          "alias": "gpt-5.2-codex"
-        },
-        "gmn/gpt-5.4": {
-          "alias": "legacy-gpt-5.4"
-        },
-        "ollama-local/my-qwen": {
-          "alias": "qwen-local"
-        },
-        "ollama-local/gemma3:4b": {
-          "alias": "gemma3-local"
-        },
-        "codex/gpt-5.3-codex": {
-          "alias": "gpt-5.3-codex"
-        },
-        "anthropic/gpt-5.4": {},
-        "ollama-local/deepseek-r1:7b": {
-          "alias": "deepseek-local"
-        },
-        "ollama-local/carstenuhlig/omnicoder-9b:latest": {
-          "alias": "omnicoder-local"
-        },
-        "omlx/Qwen2.5-0.5B-Instruct-4bit": {
-          "alias": "omlx-qwen-small"
-        },
-        "omlx/Qwen2.5-1.5B-Instruct-4bit": {
-          "alias": "omlx-qwen-1.5b"
-        },
-        "codex/gpt-5.4": {
-          "alias": "gpt-5.4"
-        },
-        "gpt-5.4": {
-          "alias": "gpt-5.4"
-        }
+      "heartbeat": {
+        "directPolicy": "block",
+        "model": "minimax-portal/MiniMax-M2.7",
+        "session": "heartbeat",
+        "suppressToolErrorWarnings": true,
+        "target": "none"
       },
-      "workspace": "/Users/ling/.openclaw/workspace",
+      "maxConcurrent": 4,
       "memorySearch": {
+        "cache": {
+          "enabled": true,
+          "maxEntries": 2000
+        },
         "enabled": true,
-        "sources": [
-          "memory",
-          "sessions"
-        ],
         "experimental": {
           "sessionMemory": true
         },
-        "provider": "ollama",
-        "remote": {
-          "baseUrl": "http://127.0.0.1:11434/v1",
-          "apiKey": "ollama-local"
-        },
         "fallback": "none",
         "model": "bge-m3:latest",
+        "provider": "local",
         "query": {
-          "maxResults": 8,
-          "minScore": 0.3,
           "hybrid": {
-            "enabled": true,
             "candidateMultiplier": 5,
+            "enabled": true,
             "mmr": {
               "enabled": true,
               "lambda": 0.75
@@ -419,133 +36,234 @@
               "enabled": true,
               "halfLifeDays": 21
             }
-          }
+          },
+          "maxResults": 8,
+          "minScore": 0.3
         },
-        "cache": {
-          "enabled": true,
-          "maxEntries": 2000
+        "remote": {
+          "apiKey": "ollama-local",
+          "baseUrl": "http://127.0.0.1:11434/v1"
+        },
+        "sources": [
+          "memory",
+          "sessions"
+        ]
+      },
+      "model": {
+        "fallbacks": [
+          "minimax-portal/MiniMax-M2.7"
+        ],
+        "primary": "ollama/qwen3.5"
+      },
+      "models": {
+        "anthropic/gpt-5.4": {},
+        "codex/gpt-5.2-codex": {
+          "alias": "gpt-5.2-codex"
+        },
+        "codex/gpt-5.3-codex": {
+          "alias": "gpt-5.3-codex"
+        },
+        "codex/gpt-5.4": {
+          "alias": "gpt-5.4"
+        },
+        "gmn/gpt-5.2-codex": {
+          "alias": "legacy-gpt-5.2"
+        },
+        "gmn/gpt-5.3-codex": {
+          "alias": "legacy-gpt-5.3-codex"
+        },
+        "gmn/gpt-5.4": {
+          "alias": "legacy-gpt-5.4"
+        },
+        "gpt-5.4": {
+          "alias": "gpt-5.4"
+        },
+        "minimax-portal/MiniMax-M2.7": {
+          "alias": "minimax-m2.7"
+        },
+        "ollama-local/carstenuhlig/omnicoder-9b:latest": {
+          "alias": "omnicoder-local"
+        },
+        "ollama-local/deepseek-r1:7b": {
+          "alias": "deepseek-local"
+        },
+        "ollama-local/gemma3:4b": {
+          "alias": "gemma3-local"
+        },
+        "ollama-local/my-qwen": {
+          "alias": "qwen-local"
         }
       },
-      "compaction": {
-        "mode": "safeguard"
-      },
-      "thinkingDefault": "high",
-      "timeoutSeconds": 600,
-      "heartbeat": {
-        "model": "gmn/gpt-5.4",
-        "session": "heartbeat",
-        "target": "none",
-        "directPolicy": "block",
-        "suppressToolErrorWarnings": true
-      },
-      "maxConcurrent": 6,
       "subagents": {
         "maxConcurrent": 8
-      }
+      },
+      "thinkingDefault": "high",
+      "timeoutSeconds": 900,
+      "workspace": "/Users/ling/.openclaw/workspace"
     },
     "list": [
       {
         "id": "main",
-        "name": "主脑 (GPT-5.4)",
         "model": {
-          "primary": "minimax-portal/MiniMax-M2.7",
           "fallbacks": [
-            "gmn/gpt-5.4",
-            "minimax-portal/MiniMax-M2.5"
-          ]
-        }
+            "codex/gpt-5.3-codex",
+            "minimax-portal/MiniMax-M2.7"
+          ],
+          "primary": "codex/gpt-5.4"
+        },
+        "name": "\u4e3b\u8111 (GPT-5.4)"
       },
       {
         "id": "backup",
-        "name": "本地Qwen（仅手动纯文本）",
-        "model": "gmn/gpt-5.4"
+        "model": "ollama-local/my-qwen",
+        "name": "\u672c\u5730Qwen\uff08\u4ec5\u624b\u52a8\u7eaf\u6587\u672c\uff09"
       },
       {
         "id": "downloader",
-        "name": "下载助手 (GPT-5.4)",
         "model": {
-          "primary": "gmn/gpt-5.4",
           "fallbacks": [
-            "codex/gpt-5.4",
+            "codex/gpt-5.3-codex",
             "minimax-portal/MiniMax-M2.7"
-          ]
-        }
+          ],
+          "primary": "codex/gpt-5.4"
+        },
+        "name": "\u4e0b\u8f7d\u52a9\u624b (GPT-5.4)"
       },
       {
         "id": "simple",
-        "name": "本地Gemma3（仅手动纯文本）",
-        "model": "gmn/gpt-5.4",
+        "model": "ollama-local/gemma3:4b",
+        "name": "\u672c\u5730Gemma3\uff08\u4ec5\u624b\u52a8\u7eaf\u6587\u672c\uff09",
         "sandbox": {
           "mode": "all"
         }
       },
       {
         "id": "tester",
-        "name": "质检员 (GPT-5.4)",
         "model": {
-          "primary": "gmn/gpt-5.4",
           "fallbacks": [
-            "codex/gpt-5.4",
+            "codex/gpt-5.3-codex",
             "minimax-portal/MiniMax-M2.7"
-          ]
-        }
+          ],
+          "primary": "codex/gpt-5.4"
+        },
+        "name": "\u8d28\u68c0\u5458 (GPT-5.4)"
       },
       {
-        "id": "xiaoguanjia",
-        "name": "小管家",
-        "workspace": "/Users/ling/.openclaw/workspace-quant",
         "agentDir": "/Users/ling/.openclaw/agents/quant-advisor/agent",
+        "id": "xiaoguanjia",
         "model": {
-          "primary": "minimax-portal/MiniMax-M2.7",
           "fallbacks": [
-            "minimax-portal/MiniMax-M2.5",
-            "minimax-portal/MiniMax-M2.5-highspeed"
-          ]
-        }
+            "codex/gpt-5.3-codex",
+            "minimax-portal/MiniMax-M2.7"
+          ],
+          "primary": "codex/gpt-5.4"
+        },
+        "name": "\u5c0f\u7ba1\u5bb6",
+        "workspace": "/Users/ling/.openclaw/workspace-quant"
       },
       {
         "id": "coder-lite",
+        "model": "ollama-local/carstenuhlig/omnicoder-9b:latest",
         "name": "Coder Lite (OmniCoder 9B)",
-        "model": "gmn/gpt-5.4",
         "sandbox": {
           "mode": "all"
         }
       },
       {
         "id": "coding-agent",
-        "name": "Coding Agent (MiniMax-M2.7)",
-        "model": {
-          "primary": "minimax-portal/MiniMax-M2.7",
-          "fallbacks": [
-            "minimax-portal/MiniMax-M2.5",
-            "minimax-portal/MiniMax-M2.5-highspeed"
-          ]
-        }
+        "name": "Coding Agent (GPT-5.4)"
       }
     ]
   },
-  "tools": {
-    "deny": [
-      "group:web",
-      "browser"
-    ],
-    "exec": {
-      "notifyOnExit": false
+  "auth": {
+    "order": {
+      "codex": [
+        "codex:default"
+      ],
+      "gmn": [
+        "gmn:default"
+      ],
+      "minimax-portal": [
+        "minimax-portal:default"
+      ],
+      "ollama-local": [
+        "ollama-local:default"
+      ]
+    },
+    "profiles": {
+      "codex:default": {
+        "mode": "api_key",
+        "provider": "codex"
+      },
+      "gmn:default": {
+        "mode": "api_key",
+        "provider": "gmn"
+      },
+      "minimax-portal:default": {
+        "mode": "oauth",
+        "provider": "minimax-portal"
+      },
+      "ollama-local:default": {
+        "mode": "api_key",
+        "provider": "ollama-local"
+      }
     }
   },
   "bindings": [
     {
+      "agentId": "main",
+      "match": {
+        "accountId": "main",
+        "channel": "feishu"
+      }
+    },
+    {
+      "agentId": "backup",
+      "match": {
+        "accountId": "main",
+        "channel": "feishu"
+      }
+    },
+    {
+      "agentId": "downloader",
+      "match": {
+        "accountId": "main",
+        "channel": "feishu"
+      }
+    },
+    {
+      "agentId": "simple",
+      "match": {
+        "accountId": "main",
+        "channel": "feishu"
+      }
+    },
+    {
+      "agentId": "tester",
+      "match": {
+        "accountId": "main",
+        "channel": "feishu"
+      }
+    },
+    {
       "agentId": "xiaoguanjia",
       "match": {
-        "channel": "feishu",
-        "accountId": "feishu-assistant"
+        "accountId": "main",
+        "channel": "feishu"
+      }
+    },
+    {
+      "agentId": "xiaoguanjia",
+      "match": {
+        "accountId": "feishu-assistant",
+        "channel": "feishu"
       }
     },
     {
       "agentId": "coding-agent",
       "match": {
-        "channel": "feishu",
-        "accountId": "coding-agent"
+        "accountId": "coding-agent",
+        "channel": "feishu"
       }
     },
     {
@@ -553,35 +271,42 @@
       "match": {
         "channel": "webchat"
       }
-    },
-    {
-      "agentId": "main",
-      "match": {
-        "channel": "feishu",
-        "accountId": "main"
-      }
     }
   ],
-  "messages": {
-    "queue": {
-      "mode": "followup"
-    },
-    "ackReactionScope": "group-mentions"
+  "channels": {
+    "feishu": {
+      "enabled": false
+    }
   },
   "commands": {
     "native": "auto",
     "nativeSkills": "auto",
-    "restart": true,
-    "ownerDisplay": "raw"
+    "ownerDisplay": "raw",
+    "restart": true
   },
-  "session": {
-    "dmScope": "per-channel-peer",
-    "maintenance": {
-      "mode": "enforce",
-      "pruneAfter": "30d",
-      "maxEntries": 1000,
-      "resetArchiveRetention": "30d"
-    }
+  "env": {},
+  "gateway": {
+    "auth": {
+      "mode": "token",
+      "token": "jlpxBVkQ17z9FTY2LHKuOAjZB6S8-xNt9PLQJrK5n6A"
+    },
+    "bind": "lan",
+    "controlUi": {
+      "allowedOrigins": [
+        "http://127.0.0.1:18789",
+        "http://localhost:18789"
+      ]
+    },
+    "mode": "local",
+    "port": 18789,
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "trustedProxies": [
+      "127.0.0.1",
+      "::1"
+    ]
   },
   "hooks": {
     "internal": {
@@ -602,76 +327,464 @@
       }
     }
   },
-  "channels": {
-    "feishu": {
-      "defaultAccount": "main",
-      "accounts": {
-        "main": {
-          "appId": "cli_a928c429d9785cc6",
-          "appSecret": "8DdEUA04tEjcp0CX7Z4L0gaxRbtutjon",
-          "name": "main",
-          "dmPolicy": "open",
-          "allowFrom": [
-            "*"
-          ],
-          "streaming": true
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "meta": {
+    "lastTouchedAt": "2026-04-12T01:47:05.560Z",
+    "lastTouchedVersion": "2026.4.10"
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "codex": {
+        "api": "openai-responses",
+        "apiKey": {
+          "id": "/providers/codex/apiKey",
+          "provider": "model_api_keys_file",
+          "source": "file"
         },
-        "feishu-assistant": {
-          "appId": "cli_a9256a7ae9b91cb6",
-          "appSecret": "q0rgZTON2C2xR3tR5bqNwdeURqm50MQV",
-          "name": "周到",
-          "dmPolicy": "open",
-          "allowFrom": [
-            "*"
-          ]
-        },
-        "coding-agent": {
-          "appId": "cli_a934da0dde385cba",
-          "appSecret": "3ohW4ALIPfswBDwcnIo9RcvNSlKgQf1e",
-          "name": "coding agent",
-          "dmPolicy": "open",
-          "allowFrom": [
-            "*"
-          ]
-        },
-        "default": {
-          "webhookPath": "/feishu/events",
-          "dmPolicy": "pairing",
-          "groupPolicy": "open"
-        }
+        "baseUrl": "https://gmncode.cn",
+        "models": [
+          {
+            "contextWindow": 200000,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0
+            },
+            "id": "gpt-5.4",
+            "input": [
+              "text"
+            ],
+            "maxTokens": 8192,
+            "name": "GPT-5.4",
+            "reasoning": true
+          },
+          {
+            "api": "openai-responses",
+            "contextWindow": 200000,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0
+            },
+            "id": "gpt-5.3-codex",
+            "input": [
+              "text",
+              "image"
+            ],
+            "maxTokens": 64000,
+            "name": "GPT-5.3 Codex",
+            "reasoning": false
+          },
+          {
+            "api": "openai-responses",
+            "contextWindow": 200000,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0
+            },
+            "id": "gpt-5.2-codex",
+            "input": [
+              "text",
+              "image"
+            ],
+            "maxTokens": 64000,
+            "name": "GPT-5.2 Codex",
+            "reasoning": false
+          }
+        ]
       },
-      "domain": "feishu",
-      "connectionMode": "websocket",
-      "reactionNotifications": "own",
-      "typingIndicator": true,
-      "resolveSenderNames": true,
-      "webhookPath": "/feishu/events",
-      "dmPolicy": "pairing",
-      "groupPolicy": "open"
+      "deepseek": {
+        "api": "openai-completions",
+        "apiKey": "sk-890afedb74bd4cf2aecf96bc8824db9b",
+        "baseUrl": "https://api.deepseek.com",
+        "models": [
+          {
+            "contextWindow": 131072,
+            "id": "deepseek-chat",
+            "input": [
+              "text"
+            ],
+            "maxTokens": 8192,
+            "name": "DeepSeek Chat",
+            "reasoning": false
+          }
+        ]
+      },
+      "gmn": {
+        "api": "openai-responses",
+        "apiKey": {
+          "id": "/providers/gmn/apiKey",
+          "provider": "model_api_keys_file",
+          "source": "file"
+        },
+        "authHeader": true,
+        "baseUrl": "https://gmncode.cn",
+        "headers": {
+          "User-Agent": "codex-rs/1.0.7"
+        },
+        "models": [
+          {
+            "api": "openai-responses",
+            "contextWindow": 200000,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0
+            },
+            "id": "gpt-5.3-codex",
+            "input": [
+              "text"
+            ],
+            "maxTokens": 8192,
+            "name": "gpt-5.3-codex",
+            "reasoning": true
+          },
+          {
+            "api": "openai-responses",
+            "contextWindow": 200000,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0
+            },
+            "id": "gpt-5.2-codex",
+            "input": [
+              "text"
+            ],
+            "maxTokens": 8192,
+            "name": "gpt-5.2-codex",
+            "reasoning": false
+          },
+          {
+            "api": "openai-responses",
+            "contextWindow": 200000,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0
+            },
+            "id": "gpt-5.4",
+            "input": [
+              "text"
+            ],
+            "maxTokens": 8192,
+            "name": "gpt-5.4",
+            "reasoning": true
+          }
+        ]
+      },
+      "minimax-portal": {
+        "api": "anthropic-messages",
+        "apiKey": {
+          "id": "/providers/minimax-portal/apiKey",
+          "provider": "model_api_keys_file",
+          "source": "file"
+        },
+        "authHeader": true,
+        "baseUrl": "https://api.minimaxi.com/anthropic",
+        "models": [
+          {
+            "contextWindow": 200000,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0
+            },
+            "id": "MiniMax-M2.7",
+            "input": [
+              "text"
+            ],
+            "maxTokens": 8192,
+            "name": "MiniMax M2.7",
+            "reasoning": true
+          },
+          {
+            "contextWindow": 200000,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0
+            },
+            "id": "MiniMax-M2.5",
+            "input": [
+              "text"
+            ],
+            "maxTokens": 8192,
+            "name": "MiniMax M2.5",
+            "reasoning": false
+          },
+          {
+            "contextWindow": 200000,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0
+            },
+            "id": "MiniMax-M2.5-highspeed",
+            "input": [
+              "text"
+            ],
+            "maxTokens": 8192,
+            "name": "MiniMax M2.5 Highspeed",
+            "reasoning": true
+          },
+          {
+            "contextWindow": 200000,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0
+            },
+            "id": "MiniMax-M2.5-Lightning",
+            "input": [
+              "text"
+            ],
+            "maxTokens": 8192,
+            "name": "MiniMax M2.5 Lightning",
+            "reasoning": true
+          }
+        ]
+      },
+      "ollama": {
+        "api": "ollama",
+        "apiKey": "ollama-local",
+        "baseUrl": "http://127.0.0.1:11434",
+        "models": [
+          {
+            "contextWindow": 262144,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0
+            },
+            "id": "qwen3.5",
+            "input": [
+              "text",
+              "image"
+            ],
+            "name": "qwen3.5",
+            "reasoning": true
+          }
+        ]
+      },
+      "ollama-local": {
+        "api": "ollama",
+        "apiKey": "ollama-local",
+        "baseUrl": "http://127.0.0.1:11434",
+        "models": [
+          {
+            "contextWindow": 262144,
+            "id": "my-qwen",
+            "input": [
+              "text"
+            ],
+            "maxTokens": 4096,
+            "name": "\u672c\u5730Qwen3.5-9B",
+            "reasoning": true
+          },
+          {
+            "contextWindow": 32768,
+            "id": "deepseek-r1:7b",
+            "input": [
+              "text"
+            ],
+            "maxTokens": 4096,
+            "name": "\u672c\u5730DeepSeek-R1-7B",
+            "reasoning": true
+          },
+          {
+            "contextWindow": 32768,
+            "id": "carstenuhlig/omnicoder-9b:latest",
+            "input": [
+              "text"
+            ],
+            "maxTokens": 4096,
+            "name": "\u672c\u5730OmniCoder-9B",
+            "reasoning": false
+          }
+        ]
+      },
+      "omlx": {
+        "api": "openai-responses",
+        "apiKey": "0923",
+        "baseUrl": "http://127.0.0.1:8000/v1",
+        "models": [
+          {
+            "contextWindow": 131072,
+            "id": "Qwen2.5-0.5B-Instruct-4bit",
+            "input": [
+              "text"
+            ],
+            "maxTokens": 8192,
+            "name": "oMLX Qwen2.5-0.5B-4bit",
+            "reasoning": false
+          },
+          {
+            "contextWindow": 131072,
+            "id": "Qwen2.5-1.5B-Instruct-4bit",
+            "input": [
+              "text"
+            ],
+            "maxTokens": 8192,
+            "name": "oMLX Qwen2.5-1.5B-4bit",
+            "reasoning": false
+          }
+        ]
+      }
     }
   },
-  "gateway": {
-    "port": 18789,
-    "mode": "local",
-    "bind": "lan",
-    "controlUi": {
-      "allowedOrigins": [
-        "http://127.0.0.1:18789",
-        "http://localhost:18789",
-        "http://192.168.31.62:18789"
+  "plugins": {
+    "allow": [
+      "active-task-guard",
+      "memory-core",
+      "simple-task-router",
+      "openclaw-lark",
+      "openclaw-web-search",
+      "minimax",
+      "ollama",
+      "anthropic",
+      "codex",
+      "openai",
+      "acpx",
+      "feishu"
+    ],
+    "entries": {
+      "acpx": {
+        "enabled": true
+      },
+      "active-task-guard": {
+        "config": {
+          "enabledAgents": [
+            "main",
+            "xiaoguanjia"
+          ]
+        },
+        "enabled": true
+      },
+      "feishu": {
+        "enabled": false
+      },
+      "memory-core": {
+        "enabled": true
+      },
+      "memory-lancedb": {
+        "enabled": false
+      },
+      "minimem-memory": {
+        "enabled": false
+      },
+      "openclaw-lark": {
+        "enabled": true
+      },
+      "openclaw-web-search": {
+        "enabled": true
+      },
+      "simple-task-router": {
+        "enabled": false
+      },
+      "minimax": {
+        "enabled": true
+      },
+      "ollama": {
+        "enabled": true
+      },
+      "anthropic": {
+        "enabled": true
+      },
+      "codex": {
+        "enabled": true
+      },
+      "openai": {
+        "enabled": true
+      }
+    },
+    "installs": {
+      "acpx": {
+        "installPath": "/Users/ling/.local/share/fnm/node-versions/v22.22.0/installation/lib/node_modules/openclaw/extensions/acpx",
+        "installedAt": "2026-03-14T01:21:07.629Z",
+        "source": "path",
+        "sourcePath": "/Users/ling/.local/share/fnm/node-versions/v22.22.0/installation/lib/node_modules/openclaw/extensions/acpx",
+        "spec": "@openclaw/acpx"
+      },
+      "memory-lancedb-pro": {
+        "installPath": "/Users/ling/node_modules/memory-lancedb-pro",
+        "installedAt": "2026-03-11T06:14:11.907Z",
+        "source": "path",
+        "sourcePath": "/Users/ling/node_modules/memory-lancedb-pro",
+        "version": "1.1.0-beta.6"
+      },
+      "minimem-memory": {
+        "installPath": "/Users/ling/.openclaw/extensions/minimem-memory",
+        "installedAt": "2026-03-11T05:32:01.087Z",
+        "source": "path",
+        "sourcePath": "/tmp/openclaw-minimem-fixed-CoPcKF/package",
+        "version": "0.1.3"
+      },
+      "openclaw-lark": {
+        "installPath": "/Users/ling/.openclaw/extensions/openclaw-lark",
+        "installedAt": "2026-04-12T01:45:43.860Z",
+        "integrity": "sha512-oiS7hHwJpoOQCHjgAT2xPTO9zmmUKEje2kgsYC+Q8ZMu0gn/sI+FE2NYnQ3dVcgqw7z+2rdajgcTP6kkisFxNw==",
+        "resolvedAt": "2026-04-12T01:45:06.564Z",
+        "resolvedName": "@larksuite/openclaw-lark",
+        "resolvedSpec": "@larksuite/openclaw-lark@2026.4.7",
+        "resolvedVersion": "2026.4.7",
+        "shasum": "ba6461e8b3f8ca7facba9e58afc93e7b23426bfa",
+        "source": "npm",
+        "spec": "@larksuite/openclaw-lark@latest",
+        "version": "2026.4.7"
+      },
+      "openclaw-web-search": {
+        "installPath": "/Users/ling/.openclaw/extensions/openclaw-web-search",
+        "source": "npm",
+        "spec": "@ollama/openclaw-web-search"
+      }
+    },
+    "load": {
+      "paths": [
+        "/Users/ling/.openclaw/extensions/active-task-guard",
+        "/Users/ling/.openclaw/extensions/simple-task-router"
       ]
     },
-    "auth": {
-      "mode": "token",
-      "token": "jlpxBVkQ17z9FTY2LHKuOAjZB6S8-xNt9PLQJrK5n6A"
-    },
-    "trustedProxies": [
-      "127.0.0.1",
-      "::1"
-    ],
-    "tailscale": {
-      "mode": "off",
-      "resetOnExit": false
+    "slots": {
+      "memory": "memory-core"
+    }
+  },
+  "secrets": {
+    "providers": {
+      "feishu_app_secret_file": {
+        "mode": "singleValue",
+        "path": "/Users/ling/.openclaw/secrets/feishu_app_secret",
+        "source": "file"
+      },
+      "model_api_keys_file": {
+        "mode": "json",
+        "path": "/Users/ling/.openclaw/secrets/model_api_keys.json",
+        "source": "file"
+      }
+    }
+  },
+  "session": {
+    "dmScope": "main",
+    "maintenance": {
+      "maxEntries": 1000,
+      "mode": "enforce",
+      "pruneAfter": "30d",
+      "resetArchiveRetention": "30d"
     }
   },
   "skills": {
@@ -679,124 +792,37 @@
       "memos": {
         "enabled": true,
         "env": {
-          "MEMOS_URL": "http://127.0.0.1:5230",
-          "MEMOS_TOKEN": "env:MEMOS_TOKEN"
+          "MEMOS_TOKEN": "env:MEMOS_TOKEN",
+          "MEMOS_URL": "http://127.0.0.1:5230"
         }
       }
     }
   },
-  "plugins": {
-    "allow": [
-      "memory-core",
-      "simple-task-router",
-      "openclaw-lark",
-      "minimax",
-      "feishu",
-      "exa",
-      "tavily"
+  "tools": {
+    "alsoAllow": [
+      "ollama_web_search",
+      "ollama_web_fetch"
     ],
-    "load": {
-      "paths": [
-        "/Users/ling/.openclaw/extensions/simple-task-router"
-      ]
+    "deny": [
+      "group:web",
+      "browser"
+    ],
+    "exec": {
+      "notifyOnExit": false
     },
-    "slots": {
-      "memory": "memory-core"
-    },
-    "entries": {
-      "memory-core": {
-        "enabled": true,
-        "config": {}
-      },
-      "feishu": {
-        "enabled": true,
-        "config": {}
-      },
-      "simple-task-router": {
-        "enabled": true,
-        "config": {
-          "enabledAgents": [
-            "main"
-          ],
-          "allowedTriggers": [
-            "cli"
-          ],
-          "simpleProvider": "ollama-local",
-          "simpleModel": "my-qwen",
-          "maxPromptChars": 220,
-          "maxLineCount": 6,
-          "minSimpleScore": 3,
-          "debug": true
-        }
-      },
-      "minimem-memory": {
+    "web": {
+      "fetch": {
         "enabled": false
       },
-      "memory-lancedb": {
+      "search": {
         "enabled": false
-      },
-      "acpx": {
-        "enabled": true
-      },
-      "openclaw-lark": {
-        "enabled": false
-      },
-      "minimax": {
-        "enabled": true,
-        "config": {}
-      },
-      "exa": {
-        "enabled": true,
-        "config": {
-          "webSearch": {
-            "apiKey": "bfc9720e-a8ae-474d-93d5-6704862e85fe"
-          }
-        }
-      },
-      "tavily": {
-        "enabled": true,
-        "config": {
-          "webSearch": {
-            "apiKey": "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"
-          }
-        }
-      }
-    },
-    "installs": {
-      "minimem-memory": {
-        "source": "path",
-        "sourcePath": "/tmp/openclaw-minimem-fixed-CoPcKF/package",
-        "installPath": "/Users/ling/.openclaw/extensions/minimem-memory",
-        "version": "0.1.3",
-        "installedAt": "2026-03-11T05:32:01.087Z"
-      },
-      "memory-lancedb-pro": {
-        "source": "path",
-        "sourcePath": "/Users/ling/node_modules/memory-lancedb-pro",
-        "installPath": "/Users/ling/node_modules/memory-lancedb-pro",
-        "version": "1.1.0-beta.6",
-        "installedAt": "2026-03-11T06:14:11.907Z"
-      },
-      "acpx": {
-        "source": "path",
-        "spec": "@openclaw/acpx",
-        "sourcePath": "/Users/ling/.local/share/fnm/node-versions/v22.22.0/installation/lib/node_modules/openclaw/extensions/acpx",
-        "installPath": "/Users/ling/.local/share/fnm/node-versions/v22.22.0/installation/lib/node_modules/openclaw/extensions/acpx",
-        "installedAt": "2026-03-14T01:21:07.629Z"
-      },
-      "openclaw-lark": {
-        "source": "npm",
-        "spec": "@larksuite/openclaw-lark@2026.3.17",
-        "installPath": "/Users/ling/.openclaw/extensions/openclaw-lark",
-        "version": "2026.3.17",
-        "resolvedName": "@larksuite/openclaw-lark",
-        "resolvedVersion": "2026.3.17",
-        "resolvedSpec": "@larksuite/openclaw-lark@2026.3.17",
-        "integrity": "sha512-7GxqBu7jIe0jmApQXt/9hpvorV04Vpqkcr9LvAOMZJzbhmI0+XZKVJgvzw0Ypxz+UfWJ9tlcSw7WpkBcyqvo8g==",
-        "shasum": "407d4616186cf776c21cf49aa533b80c2ef23530",
-        "resolvedAt": "2026-03-21T10:00:28.162Z",
-        "installedAt": "2026-03-21T10:00:39.551Z"
       }
     }
+  },
+  "wizard": {
+    "lastRunAt": "2026-04-11T06:56:23.523Z",
+    "lastRunCommand": "doctor",
+    "lastRunMode": "local",
+    "lastRunVersion": "2026.2.26"
   }
 }

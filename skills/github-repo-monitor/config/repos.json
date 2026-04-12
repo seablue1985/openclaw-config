@@ -15,7 +15,9 @@
     "reason": "user-stop-monitor"
   },
   {
-    "path": "/Users/ling/.openclaw/workspace/other_projects/Qbot"
+    "path": "/Users/ling/.openclaw/workspace/other_projects/Qbot",
+    "enabled": false,
+    "reason": "path-not-found"
   },
   {
     "path": "/Users/ling/.openclaw/workspace/quant_projects/qlib",
@@ -28,7 +30,8 @@
     "reason": "user-removed"
   },
   {
-    "path": "/Users/ling/.openclaw/workspace/other_projects/RD-Agent"
+    "path": "/Users/ling/.openclaw/workspace/other_projects/RD-Agent",
+    "enabled": true
   },
   {
     "path": "/Users/ling/.openclaw/workspace/other_projects/TrendRadar"
@@ -83,7 +86,9 @@
     "reason": "user-removed"
   },
   {
-    "path": "/Users/ling/.openclaw/workspace/other_projects/A_Share_investment_Agent"
+    "path": "/Users/ling/.openclaw/workspace/other_projects/A_Share_investment_Agent",
+    "enabled": false,
+    "reason": "path-not-found"
   },
   {
     "path": "/Users/ling/.openclaw/workspace/quant_projects/daily_stock_analysis_upstream",
