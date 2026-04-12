@@ -1385,6 +1385,48 @@
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
       }
+    },
+    {
+      "id": "skill-evolver-daily-2100",
+      "name": "21:00 Skill 自进化每日回顾",
+      "enabled": true,
+      "createdAtMs": 1744444800000,
+      "updatedAtMs": 1744444800000,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 21 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "你是一个 Skill 自进化引擎。请运行每日回顾：\n1. 执行 bash /Users/ling/.openclaw/skills/skill-evolver/scripts/daily_review.sh\n2. 读取输出，若发现候选沉淀机会（≥5步工具调用的可复用流程），请创建 Skill 并记录到 memory/skill_evolution_log.md\n3. 创建 Skill 时必须通过质量检查清单\n4. 如果有新增 Skill 或重要发现，发飞书 DM 汇报（收件人 ou_968a615509dc191f04220e18cda67080，accountId main）\n5. 如果当日无新增，静默退出不要发消息",
+        "thinking": "high",
+        "timeoutSeconds": 600,
+        "lightContext": true,
+        "model": "minimax-m2.7"
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "user:ou_968a615509dc191f04220e18cda67080",
+        "accountId": "main",
+        "bestEffort": true
+      },
+      "state": {
+        "lastRunAtMs": 0,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 0,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1775998800000,
+        "lastDelivered": false
+      },
+      "failureAlert": {
+        "accountId": "main"
+      }
     }
   ]
 }
