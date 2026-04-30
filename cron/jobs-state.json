@@ -1,0 +1,489 @@
+{
+  "version": 1,
+  "jobs": {
+    "3c85911f-26c5-4a2e-9734-fb85f51cf9b8": {
+      "updatedAtMs": 1777561840256,
+      "state": {
+        "lastRunAtMs": 1777561800013,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 40243,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1777648200000
+      }
+    },
+    "xhs-obsidian-sync-0900": {
+      "updatedAtMs": 1777566612490,
+      "state": {
+        "nextRunAtMs": 1777773600000,
+        "consecutiveErrors": 1,
+        "lastRunAtMs": 1777168800016,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 361,
+        "lastDeliveryStatus": "unknown",
+        "lastError": "Error: Unable to resolve bundled plugin public surface speech-core/runtime-api.js"
+      }
+    },
+    "1d3c0b2a-355f-4335-bca1-3c6b78dfae51": {
+      "updatedAtMs": 1775012498645,
+      "state": {
+        "lastRunAtMs": 1775011918277,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 208,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 6,
+        "lastError": "LiveSessionModelSwitchError: Live session model switch requested: minimax-portal/MiniMax-M2.7"
+      }
+    },
+    "fe8deda2-476c-4aa2-bc6f-21ff95ed5b47": {
+      "updatedAtMs": 1775012497703,
+      "state": {
+        "lastRunAtMs": 1775011918487,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 156,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 4,
+        "lastError": "LiveSessionModelSwitchError: Live session model switch requested: minimax-portal/MiniMax-M2.7"
+      }
+    },
+    "71b19e21-52a4-446a-bc53-72399efd63f1": {
+      "updatedAtMs": 1777566554596,
+      "state": {
+        "nextRunAtMs": 1777596600000,
+        "lastRunAtMs": 1777511169457,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 114850,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false,
+        "consecutiveSkipped": 0
+      }
+    },
+    "investment-research-org-morning-0855": {
+      "updatedAtMs": 1775011629886,
+      "state": {
+        "consecutiveErrors": 0,
+        "lastRunAtMs": 1774999814839,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 69981,
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
+      }
+    },
+    "investment-research-org-midday-1135": {
+      "updatedAtMs": 1774955402607,
+      "state": {
+        "consecutiveErrors": 0,
+        "lastRunAtMs": 1774932963264,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 35724,
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
+      }
+    },
+    "investment-research-org-close-1515": {
+      "updatedAtMs": 1777566611497,
+      "state": {
+        "consecutiveErrors": 1,
+        "lastRunAtMs": 1777533300019,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 300016,
+        "lastDeliveryStatus": "not-requested",
+        "nextRunAtMs": 1777619700000,
+        "lastError": "cron: job execution timed out",
+        "lastErrorReason": "timeout"
+      }
+    },
+    "investment-research-org-night-2030": {
+      "updatedAtMs": 1774955402616,
+      "state": {
+        "consecutiveErrors": 0,
+        "lastRunAtMs": 1774873800008,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 156083,
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
+      }
+    },
+    "investment-research-background-preopen-0840": {
+      "updatedAtMs": 1777566554575,
+      "state": {
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1777596000000,
+        "lastRunAtMs": 1777511068655,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 100802,
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false,
+        "consecutiveSkipped": 0
+      }
+    },
+    "investment-research-background-intraday-1030": {
+      "updatedAtMs": 1777566554660,
+      "state": {
+        "consecutiveErrors": 1,
+        "nextRunAtMs": 1777602600000,
+        "lastRunAtMs": 1777516200015,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 180017,
+        "lastDeliveryStatus": "unknown",
+        "lastError": "cron: job execution timed out",
+        "lastErrorReason": "timeout"
+      }
+    },
+    "investment-research-background-postclose-1630": {
+      "updatedAtMs": 1777566612510,
+      "state": {
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1777624200000,
+        "lastRunAtMs": 1777537800014,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 243476,
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
+      }
+    },
+    "investment-research-background-overnight-2100": {
+      "updatedAtMs": 1777566612532,
+      "state": {
+        "consecutiveErrors": 4,
+        "nextRunAtMs": 1777640400000,
+        "lastRunAtMs": 1777554004452,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 180013,
+        "lastDeliveryStatus": "unknown",
+        "lastErrorReason": "timeout",
+        "lastError": "cron: job execution timed out"
+      }
+    },
+    "investment-research-event-watch-0945": {
+      "updatedAtMs": 1776942224231,
+      "state": {
+        "consecutiveErrors": 0,
+        "lastRunAtMs": 1776926700004,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 113067,
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
+      }
+    },
+    "investment-research-data-source-health-0935": {
+      "updatedAtMs": 1777566554639,
+      "state": {
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1777599300000,
+        "lastRunAtMs": 1777530900015,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 123923,
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
+      }
+    },
+    "3abaaed2-b403-4284-81a2-553c957fa78d": {
+      "updatedAtMs": 1777566612552,
+      "state": {
+        "nextRunAtMs": 1777647600000,
+        "lastRunAtMs": 1777561200024,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 234333,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    "55a9fce0-aec0-4dbc-b7cc-c7066c77d995": {
+      "updatedAtMs": 1777566554096,
+      "state": {
+        "nextRunAtMs": 1777575600000,
+        "lastRunAtMs": 1777489200014,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 288834,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    "197ea670-bb08-4c10-ab7b-97884ca0b641": {
+      "updatedAtMs": 1774825260023,
+      "state": {
+        "lastRunAtMs": 1774825200008,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 60015,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 5,
+        "lastErrorReason": "timeout",
+        "lastError": "cron: job execution timed out"
+      }
+    },
+    "c4c7a000-53b0-46fa-bc77-b564cbaa5704": {
+      "updatedAtMs": 1777491290745,
+      "state": {
+        "nextRunAtMs": 1777576800000,
+        "lastRunAtMs": 1777490400015,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 890730,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0
+      }
+    },
+    "71585983-eab9-4557-924c-277a29a73768": {
+      "updatedAtMs": 1777572196924,
+      "state": {
+        "nextRunAtMs": 1777658400000,
+        "lastRunAtMs": 1777572000086,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 196838,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0
+      }
+    },
+    "4fe135b5-7edc-4978-a296-b11aae2afaa5": {
+      "updatedAtMs": 1777565831081,
+      "state": {
+        "nextRunAtMs": 1777598700000,
+        "lastRunAtMs": 1777512300012,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 85111,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    "37f5b789-3e15-46b0-8d11-27ec6c40badb": {
+      "updatedAtMs": 1775049000024,
+      "state": {
+        "lastRunAtMs": 1775048700010,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 300014,
+        "lastError": "cron: job execution timed out",
+        "lastErrorReason": "timeout",
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1
+      }
+    },
+    "3c6409f4-cf97-4949-9e28-324ab6ee7b15": {
+      "updatedAtMs": 1775056200021,
+      "state": {
+        "lastRunAtMs": 1775055900010,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 300011,
+        "lastError": "cron: job execution timed out",
+        "lastErrorReason": "timeout",
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1
+      }
+    },
+    "ffd77541-44ce-46e3-82f4-2c43a3a2f144": {
+      "updatedAtMs": 1776562782229,
+      "state": {
+        "lastRunAtMs": 1776560400010,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 43970,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    "9bfeec2c-c32e-4ffa-8469-f65b759bf7a7": {
+      "updatedAtMs": 1777566554617,
+      "state": {
+        "nextRunAtMs": 1777599000000,
+        "lastRunAtMs": 1777512600015,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 296836,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    "26a3205a-f6a7-420a-b3db-fd15242d3471": {
+      "updatedAtMs": 1775171401782,
+      "state": {
+        "lastRunAtMs": 1775170800012,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 601770,
+        "lastError": "LiveSessionModelSwitchError: Live session model switch requested: gmn/gpt-5.4",
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1
+      }
+    },
+    "4f6ef6ba-a464-4efa-bf3b-b56e6da0b2e9": {
+      "updatedAtMs": 1777566612162,
+      "state": {
+        "nextRunAtMs": 1777622400000,
+        "lastRunAtMs": 1777536000010,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 56883,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    "511b0e2a-cdb3-4fb7-bfad-2722afaf8455": {
+      "updatedAtMs": 1777566637371,
+      "state": {
+        "nextRunAtMs": 1777598400000,
+        "lastRunAtMs": 1777512000022,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 75057,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    "a7b9828d-8e45-4e4e-b69e-be8d13e768b9": {
+      "updatedAtMs": 1777566612202,
+      "state": {
+        "nextRunAtMs": 1777687200000,
+        "lastRunAtMs": 1777082400006,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 30391,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    "c2d3327d-c5cb-4eda-a06a-ed6309288abb": {
+      "updatedAtMs": 1777566637421,
+      "state": {
+        "nextRunAtMs": 1777708800000,
+        "lastRunAtMs": 1777104000008,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 180039,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "lastError": "cron: job execution timed out",
+        "lastErrorReason": "timeout"
+      }
+    },
+    "582d40ba-055c-48a0-9058-74acdf488466": {
+      "updatedAtMs": 1776942302243,
+      "state": {
+        "lastRunAtMs": 1776929459762,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 42492,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
+      }
+    },
+    "dashboard-portal-1630": {
+      "updatedAtMs": 1777566570016,
+      "state": {
+        "nextRunAtMs": 1777624200000,
+        "lastRunAtMs": 1777538043490,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 43381,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
+      }
+    },
+    "5aebcd77-1d4c-4fe1-b29a-6ffb1d3095b7": {
+      "updatedAtMs": 1777519832172,
+      "state": {
+        "nextRunAtMs": 1777606200000,
+        "lastRunAtMs": 1777519804893,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 27279,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    "skill-evolver-daily-2100": {
+      "updatedAtMs": 1777554226329,
+      "state": {
+        "lastRunAtMs": 1777554184465,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 41864,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1777640400000
+      }
+    },
+    "ml-prediction-daily-1700": {
+      "updatedAtMs": 1777540594427,
+      "state": {
+        "lastRunAtMs": 1777539600013,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 994414,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1777626000000
+      }
+    },
+    "openclaw-daily-backup-0300": {
+      "updatedAtMs": 1777489695694,
+      "state": {
+        "nextRunAtMs": 1777575600000,
+        "lastRunAtMs": 1777489488848,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 206846,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0
+      }
+    },
+    "957abcff-2152-4ce9-80dd-f3af9fb22b47": {
+      "updatedAtMs": 1777534409930,
+      "state": {
+        "nextRunAtMs": 1777597200000,
+        "lastRunAtMs": 1777534200017,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 209913,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0,
+        "consecutiveSkipped": 0
+      }
+    },
+    "6426c336-a82d-46c4-b9a1-92170db348e9": {
+      "updatedAtMs": 1777568431607,
+      "state": {
+        "nextRunAtMs": 1777654800000,
+        "lastRunAtMs": 1777568400008,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 31599,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0
+      }
+    }
+  }
+}

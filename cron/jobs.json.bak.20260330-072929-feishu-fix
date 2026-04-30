@@ -1,0 +1,889 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "8fa1bf23-98ad-4bf3-b0a7-20c52675cc7c",
+      "name": "健身提醒",
+      "description": "工作日上午11:30健身提醒",
+      "enabled": true,
+      "createdAtMs": 1772510751813,
+      "updatedAtMs": 1774656064913,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 11 * * 1-5"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "发送当天健身计划:\n周一：胸\n周二：背+三头\n周三：肩+有氧\n周四：臀+有氧\n周五：二头+三头+有氧\n周末：休息",
+        "model": "minimax-portal/MiniMax-M2.7",
+        "thinking": "low",
+        "timeoutSeconds": 300,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1774841400000,
+        "lastRunAtMs": 1774656022893,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 42020,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
+      }
+    },
+    {
+      "id": "3c85911f-26c5-4a2e-9734-fb85f51cf9b8",
+      "name": "23:00 Codex记忆夜跑",
+      "enabled": true,
+      "createdAtMs": 1772683570660,
+      "updatedAtMs": 1774797010445,
+      "schedule": {
+        "kind": "cron",
+        "expr": "10 23 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "运行 bash /Users/ling/.openclaw/workspace/scripts/run_codex_memory_nightly.sh；读取 /Users/ling/.openclaw/workspace/memory/codex_bridge_latest.json；整理桥接导入数、Codex聊天备份数、Memos镜像创建数、LanceDB重建后计数；不要发送消息；若失败仅返回错误摘要。",
+        "thinking": "low",
+        "timeoutSeconds": 900,
+        "lightContext": true,
+        "model": "minimax-m2.7"
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
+        "bestEffort": true
+      },
+      "state": {
+        "lastRunAtMs": 1774797000009,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 10436,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1774883400000,
+        "lastDelivered": false
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
+      }
+    },
+    {
+      "id": "xhs-obsidian-sync-0900",
+      "name": "9点同步小红书收藏到Obsidian",
+      "description": "每天早上9点同步小红书点赞/收藏到当前打开的 Obsidian vault",
+      "enabled": true,
+      "createdAtMs": 1773113389264,
+      "updatedAtMs": 1774746001650,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行以下任务：\\n1. 进入 ~/.openclaw/workspace/skills/xiaohongshu-skills\\n2. 运行 uv run python scripts/sync_favorites_to_obsidian.py\\n3. 不手动指定 --vault，自动识别当前打开的 Obsidian vault\\n4. 如果同步成功且有新增，简短汇报新增数量与目标 vault\\n5. 如果无新增内容，可静默结束\\n6. 如果失败，返回错误摘要与需要的用户动作（例如登录小红书）",
+        "model": "codex/gpt-5.3-codex",
+        "thinking": "low",
+        "timeoutSeconds": 600,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1774832400000,
+        "consecutiveErrors": 0,
+        "lastRunAtMs": 1774746000005,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 1645,
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
+      }
+    },
+    {
+      "id": "1d3c0b2a-355f-4335-bca1-3c6b78dfae51",
+      "name": "每日09:30盘前强检",
+      "enabled": true,
+      "createdAtMs": 1773145175561,
+      "updatedAtMs": 1774747812379,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 9 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行盘前强检: cd /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system && python3 scripts/auto_run_premarket_precheck.py --available-cash 1000000 --account-nav 930000",
+        "timeoutSeconds": 300,
+        "model": "minimax-m2.7"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1774834200000,
+        "lastRunAtMs": 1774747800008,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 12371,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
+      }
+    },
+    {
+      "id": "9c120016-bb26-4799-9b40-4580caefaa29",
+      "name": "每日15:30盘后审计",
+      "enabled": true,
+      "createdAtMs": 1773145190834,
+      "updatedAtMs": 1774769401958,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 15 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行盘后审计: cd /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system && python3 scripts/run_daily_strategy_audit.py",
+        "timeoutSeconds": 240,
+        "model": "codex/gpt-5.3-codex"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1774855800000,
+        "lastRunAtMs": 1774769400009,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 1949,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
+      }
+    },
+    {
+      "id": "fe8deda2-476c-4aa2-bc6f-21ff95ed5b47",
+      "name": "09:00量化回测队列检查提醒",
+      "description": "每天09:00发送实时量化回测状态摘要",
+      "enabled": true,
+      "createdAtMs": 1773215340583,
+      "updatedAtMs": 1774746002403,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system\n2. 运行 python3 scripts/report_backtest_queue_status.py\n3. 直接输出脚本结果，不要引用旧会话缓存，不要补充过期回测结论\n4. 如果脚本失败，只返回错误摘要与失败命令",
+        "model": "codex/gpt-5.3-codex",
+        "thinking": "low",
+        "timeoutSeconds": 120,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1774832400000,
+        "lastRunAtMs": 1774746001650,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 753,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
+      }
+    },
+    {
+      "id": "71b19e21-52a4-446a-bc53-72399efd63f1",
+      "name": "08:50全球股市早间要闻",
+      "description": "每天08:50生成全球股市早间要闻，含大盘体温/板块映射/看涨看跌",
+      "enabled": true,
+      "createdAtMs": 1773373210801,
+      "updatedAtMs": 1774745640027,
+      "schedule": {
+        "kind": "cron",
+        "expr": "50 8 * * *",
+        "tz": "Asia/Shanghai",
+        "staggerMs": 0
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace/skills/news-market\n2. 运行 python3 scripts/generate_morning_news_free.py --output /Users/ling/.openclaw/workspace/research/reports/global_market_morning_free_latest.md --json-output /Users/ling/.openclaw/workspace/research/reports/global_market_morning_free_latest.json\n3. 读取上述 md/json 输出\n4. 用中文简短汇报：一句话总览、隔夜市场要点、大盘体温、A股开盘前结论、2-3条关键新闻与输出文件路径\n5. 本任务使用免费链路：Yahoo Search 主搜 + DuckDuckGo 兜底 + yfinance/akshare 数据\n6. 非交易时段不要给可执行买价，只给方向、优先级和触发条件",
+        "model": "minimax-m2.7",
+        "thinking": "low",
+        "timeoutSeconds": 240,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "chat:oc_8a819be3a90d35b8d0a2d5c1f4642b22",
+        "accountId": "coding-agent",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1774831800000,
+        "lastRunAtMs": 1774745400008,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 240019,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "lastError": "cron: job execution timed out",
+        "lastErrorReason": "timeout"
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
+      }
+    },
+    {
+      "id": "investment-research-org-morning-0855",
+      "name": "08:55来福投研会-盘前会",
+      "description": "生成真实输入版盘前会与交易建议卡，并推送到当前飞书DM",
+      "enabled": true,
+      "createdAtMs": 1773487592124,
+      "updatedAtMs": 1774655600479,
+      "schedule": {
+        "kind": "cron",
+        "expr": "55 8 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行以下任务：1. 进入 /Users/ling/.openclaw/workspace；2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type morning；3. 把摘要写入 research/reports，不发送消息；4. 若失败，只返回错误摘要。",
+        "model": "minimax-m2.7",
+        "thinking": "low",
+        "timeoutSeconds": 300,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
+        "bestEffort": true
+      },
+      "state": {
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1774832100000,
+        "lastRunAtMs": 1774572900007,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 68540,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered"
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
+      }
+    },
+    {
+      "id": "investment-research-org-midday-1135",
+      "name": "11:35来福投研会-午盘巡检",
+      "description": "生成真实输入版午盘巡检会与交易建议卡，并推送到当前飞书DM",
+      "enabled": true,
+      "createdAtMs": 1773487592124,
+      "updatedAtMs": 1774655600885,
+      "schedule": {
+        "kind": "cron",
+        "expr": "35 11 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行以下任务：1. 进入 /Users/ling/.openclaw/workspace；2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type midday；3. 把摘要写入 research/reports，不发送消息；4. 若失败，只返回错误摘要。",
+        "model": "minimax-m2.7",
+        "thinking": "low",
+        "timeoutSeconds": 300,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
+        "bestEffort": true
+      },
+      "state": {
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1774841700000,
+        "lastRunAtMs": 1774582500005,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 59416,
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
+      }
+    },
+    {
+      "id": "investment-research-org-close-1515",
+      "name": "15:15来福投研会-收盘复盘",
+      "description": "生成真实输入版收盘复盘会与交易建议卡，并推送到当前飞书DM",
+      "enabled": true,
+      "createdAtMs": 1773487592124,
+      "updatedAtMs": 1774655601285,
+      "schedule": {
+        "kind": "cron",
+        "expr": "15 15 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行以下任务：1. 进入 /Users/ling/.openclaw/workspace；2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type close；3. 把摘要写入 research/reports，不发送消息；4. 若失败，只返回错误摘要。",
+        "model": "minimax-m2.7",
+        "thinking": "low",
+        "timeoutSeconds": 300,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
+        "bestEffort": true
+      },
+      "state": {
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1774854900000,
+        "lastRunAtMs": 1774595700012,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 31260,
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
+      }
+    },
+    {
+      "id": "investment-research-org-night-2030",
+      "name": "20:30来福投研会-夜间研究会",
+      "description": "生成真实输入版夜间研究会与交易建议卡，并推送到当前飞书DM",
+      "enabled": true,
+      "createdAtMs": 1773487592124,
+      "updatedAtMs": 1774787572046,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 20 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行以下任务：1. 进入 /Users/ling/.openclaw/workspace；2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type night；3. 把摘要写入 research/reports，不发送消息；4. 若失败，只返回错误摘要。",
+        "model": "minimax-m2.7",
+        "thinking": "low",
+        "timeoutSeconds": 300,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
+        "bestEffort": true
+      },
+      "state": {
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1774873800000,
+        "lastRunAtMs": 1774787400008,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 172038,
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
+      }
+    },
+    {
+      "id": "investment-research-background-preopen-0840",
+      "name": "08:40来福投研会-盘前值班",
+      "description": "盘前由宏观/量化/风控/交易员/首席研究员完成非会议值班",
+      "enabled": true,
+      "createdAtMs": 1773491345498,
+      "updatedAtMs": 1774655602084,
+      "schedule": {
+        "kind": "cron",
+        "expr": "40 8 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_background_cycle.py --cycle pre_open\n3. 读取 cycle md/json 输出\n4. 用中文简短汇报：当前风险状态、优先候选、值班角色、周期总览文件路径\n5. 非交易时段不要给可执行买价，只给方向、优先级和触发条件",
+        "model": "minimax-m2.7",
+        "thinking": "low",
+        "timeoutSeconds": 180,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
+        "bestEffort": true
+      },
+      "state": {
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1774831200000,
+        "lastRunAtMs": 1774572000007,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 52835,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered"
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
+      }
+    },
+    {
+      "id": "investment-research-background-intraday-1030",
+      "name": "10:30来福投研会-盘中值班",
+      "description": "盘中由风控/交易员/行业/首席研究员做风险与异动巡检",
+      "enabled": true,
+      "createdAtMs": 1773491345498,
+      "updatedAtMs": 1774655602482,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 10 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_background_cycle.py --cycle intraday\n3. 读取 cycle md/json 输出\n4. 用中文简短汇报：风险灯号、观察池、是否需要临时会商、周期总览文件路径\n5. 若有阻断点，明确写出",
+        "model": "minimax-m2.7",
+        "thinking": "low",
+        "timeoutSeconds": 180,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
+        "bestEffort": true
+      },
+      "state": {
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1774837800000,
+        "lastRunAtMs": 1774578600006,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 171528,
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
+      }
+    },
+    {
+      "id": "investment-research-background-postclose-1630",
+      "name": "16:30来福投研会-盘后值班",
+      "description": "盘后由交易员/量化/行业/首席研究员更新观察池与次日准备",
+      "enabled": true,
+      "createdAtMs": 1773491345498,
+      "updatedAtMs": 1774655606083,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 16 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_background_cycle.py --cycle post_close\n3. 读取 cycle md/json 输出\n4. 用中文简短汇报：盘后整理结论、次日观察重点、值班角色、周期总览文件路径",
+        "model": "minimax-m2.7",
+        "thinking": "low",
+        "timeoutSeconds": 600,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
+        "bestEffort": true
+      },
+      "state": {
+        "consecutiveErrors": 1,
+        "nextRunAtMs": 1774859400000,
+        "lastRunAtMs": 1774600200007,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 180021,
+        "lastDeliveryStatus": "unknown",
+        "lastError": "cron: job execution timed out",
+        "lastErrorReason": "timeout"
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
+      }
+    },
+    {
+      "id": "investment-research-background-overnight-2100",
+      "name": "21:00来福投研会-夜间值班",
+      "description": "夜间由宏观/行业/量化/大师分身/首席研究员做深度研究与次日准备",
+      "enabled": true,
+      "createdAtMs": 1773491345498,
+      "updatedAtMs": 1774789380028,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 21 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_background_cycle.py --cycle overnight\n3. 读取 cycle md/json 输出\n4. 用中文简短汇报：夜间研究重点、分身角色观点、待决策事项、周期总览文件路径\n5. 非交易时段不要给可执行买价",
+        "model": "minimax-m2.7",
+        "thinking": "low",
+        "timeoutSeconds": 180,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
+        "bestEffort": true
+      },
+      "state": {
+        "consecutiveErrors": 2,
+        "nextRunAtMs": 1774875600000,
+        "lastRunAtMs": 1774789200007,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 180021,
+        "lastDeliveryStatus": "unknown",
+        "lastErrorReason": "timeout",
+        "lastError": "cron: job execution timed out"
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
+      }
+    },
+    {
+      "id": "investment-research-event-watch-0945",
+      "name": "09:45来福投研会-临时会商监控",
+      "description": "交易日轮询关键变化，必要时建议触发临时会商",
+      "enabled": true,
+      "createdAtMs": 1773491585713,
+      "updatedAtMs": 1774655603680,
+      "schedule": {
+        "kind": "cron",
+        "expr": "45 9-11,13-14 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_event_watch.py\n3. 若 event watch 为 triggered，则继续运行 python3 scripts/generate_investment_research_temporary_meeting_broadcast.py\n4. 读取 event watch md/json；若已生成 temporary meeting broadcast，则优先读取该广播\n5. 如果 status=no_trigger，则回复 NO_REPLY\n6. 如果 status=triggered，则用中文简短汇报：触发项、是否建议临时会商、建议参与角色、temporary meeting broadcast 路径、event watch 路径\n7. 不要输出可执行买价",
+        "model": "minimax-m2.7",
+        "thinking": "low",
+        "timeoutSeconds": 120,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
+        "bestEffort": true
+      },
+      "state": {
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1774835100000,
+        "lastRunAtMs": 1774593900005,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 58433,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered"
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
+      }
+    },
+    {
+      "id": "investment-research-data-source-health-0935",
+      "name": "09:35来福投研会-数据源健康巡检",
+      "description": "交易时段巡检双源行情与账户同步健康度，异常时主动告警",
+      "enabled": true,
+      "createdAtMs": 1773496760753,
+      "updatedAtMs": 1774655604078,
+      "schedule": {
+        "kind": "cron",
+        "expr": "35 9,10,13,14 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_data_source_health_probe.py --scope intraday\n3. 运行 python3 scripts/generate_investment_research_data_source_health_broadcast.py --scope intraday\n4. 读取 health probe json 和 health broadcast md\n5. 如果状态是 healthy 或 offhours_guarded，则回复 NO_REPLY\n6. 如果状态是 watch_guarded 或 degraded，则用中文简短汇报：状态、采样标的、最大价差分歧、触发项、broadcast 路径、probe 路径\n7. 若状态为 degraded，明确写出建议立即临时会商",
+        "model": "minimax-m2.7",
+        "thinking": "low",
+        "timeoutSeconds": 180,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
+        "bestEffort": true
+      },
+      "state": {
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1774834500000,
+        "lastRunAtMs": 1774593300007,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 17318,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered"
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
+      }
+    },
+    {
+      "id": "3abaaed2-b403-4284-81a2-553c957fa78d",
+      "agentId": "main",
+      "name": "23点记忆夜跑：读当天日志→提炼→写规则候选→清理低价值内容",
+      "enabled": true,
+      "createdAtMs": 1773761965380,
+      "updatedAtMs": 1774796725887,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 23 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "在 /Users/ling/.openclaw/workspace 内执行每天23点的记忆夜跑。要求：1）运行 python3 scripts/nightly_memory_distill.py；2）确认产出 memory/nightly_distill/YYYY-MM-DD.md、memory/nightly_rules/YYYY-MM-DD.md、memory/nightly_memory_job_state.json；3）使用 message 工具发送到当前 Feishu 对话，内容包含状态、今日日志、产出文件、规则候选数、清理条数；4）若失败，明确写出阻断原因并同样发送。",
+        "timeoutSeconds": 600,
+        "model": "minimax-portal/MiniMax-M2.7"
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last",
+        "to": "feishu:user:ou_47c21eede907b0c4f9fd4d34519d84ae"
+      },
+      "state": {
+        "nextRunAtMs": 1774882800000,
+        "lastRunAtMs": 1774796400008,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 325879,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 7,
+        "lastDelivered": false,
+        "lastDeliveryError": "⚠️ ✉️ Message failed",
+        "lastError": "⚠️ ✉️ Message failed"
+      }
+    },
+    {
+      "id": "55a9fce0-aec0-4dbc-b7cc-c7066c77d995",
+      "name": "每日自动更新检查",
+      "enabled": true,
+      "createdAtMs": 1773926602174,
+      "updatedAtMs": 1774810836607,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 3 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行以下更新检查并推送摘要：1) clawhub update --all 2) npm update -g clawdbot@latest --dry-run 查看有无新版本（不要实际更新 OpenClaw 本体，只检查）。报告检查结果。",
+        "timeoutSeconds": 300,
+        "model": "minimax-portal/MiniMax-M2.7"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1774897200000,
+        "lastRunAtMs": 1774810800009,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 36598,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
+      }
+    },
+    {
+      "id": "197ea670-bb08-4c10-ab7b-97884ca0b641",
+      "name": "主动任务续跑检查",
+      "enabled": true,
+      "createdAtMs": 1773933405352,
+      "updatedAtMs": 1774825260023,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/30 * * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "python3 /Users/ling/.openclaw/workspace/scripts/run_active_task_continuer.py --cooldown-min 25\n\n无输出时表示无需续跑（ACTIVE_TASK done 或 cooldown 中）；有 active 任务时才发信号。",
+        "timeoutSeconds": 60,
+        "model": "minimax-portal/MiniMax-M2.7",
+        "thinking": "low",
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae",
+        "accountId": "coding-agent",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1774828860023,
+        "lastRunAtMs": 1774825200008,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 60015,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 5,
+        "lastErrorReason": "timeout",
+        "lastError": "cron: job execution timed out"
+      },
+      "failureAlert": {
+        "accountId": "coding-agent"
+      }
+    },
+    {
+      "id": "c4c7a000-53b0-46fa-bc77-b564cbaa5704",
+      "name": "每日03:20 OpenClaw归档备份",
+      "description": "使用 openclaw-backup skill 将 ~/.openclaw 归档到 ~/openclaw-backups，保留最近7份",
+      "enabled": true,
+      "createdAtMs": 1774483795295,
+      "updatedAtMs": 1774812796347,
+      "schedule": {
+        "kind": "cron",
+        "expr": "20 3 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行 bash /Users/ling/.openclaw/backup-archive.sh；默认写入 /Volumes/A/openclaw-backups；如果成功，返回备份文件路径、大小和当前保留份数；如果失败，只返回错误摘要。",
+        "model": "minimax-m2.7",
+        "thinking": "low",
+        "timeoutSeconds": 1800,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1774898400000,
+        "lastRunAtMs": 1774812000009,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 796338,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
+      }
+    }
+  ]
+}

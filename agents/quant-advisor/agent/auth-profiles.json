@@ -18,25 +18,5 @@
       "provider": "gmn",
       "key": "sk-e529fe673ca03ba271c0bff5cae0dbcd06b57943f4bdb12ada983aa22eaba8b6"
     }
-  },
-  "lastGood": {
-    "minimax-portal": "minimax-portal:default",
-    "gmn": "gmn:default",
-    "ollama-local": "ollama-local:default"
-  },
-  "usageStats": {
-    "minimax-portal:default": {
-      "errorCount": 0,
-      "lastUsed": 1775312202578
-    },
-    "ollama-local:default": {
-      "errorCount": 0,
-      "lastUsed": 1773820362871
-    },
-    "gmn:default": {
-      "errorCount": 0,
-      "lastUsed": 1775177291240,
-      "lastFailureAt": 1773763017659
-    }
   }
 }
