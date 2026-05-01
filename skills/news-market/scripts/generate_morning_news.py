@@ -73,34 +73,90 @@ def get_板块数据():
 
 
 def get_全球市场数据():
-    """获取全球主要市场数据"""
+    """获取全球主要市场数据（按收盘价相对前收盘计算涨跌幅）"""
     markets = {
         "上证指数": "000001.SS",
         "深证成指": "399001.SZ",
         "创业板指": "399006.SZ",
-        "恒生指数": "^HSI",  # 改为HSI指数
+        "恒生指数": "^HSI",
         "道琼斯": "^DJI",
         "标普500": "^GSPC",
         "纳斯达克": "^IXIC",
     }
-    
+
     result = {}
     for name, ticker in markets.items():
         try:
-            if ticker.endswith(".HK"):
-                data = yf.Ticker(ticker).history(period="1d")
+            data = yf.Ticker(ticker).history(period="5d", auto_adjust=False)
+            if len(data) >= 2:
+                price = float(data['Close'].iloc[-1])
+                prev_close = float(data['Close'].iloc[-2])
+                change = (price - prev_close) / prev_close * 100 if prev_close else 0
+                result[name] = {
+                    "价格": round(price, 2),
+                    "前收": round(prev_close, 2),
+                    "涨跌幅": round(change, 2),
+                }
+            elif len(data) == 1:
+                price = float(data['Close'].iloc[-1])
+                result[name] = {"价格": round(price, 2), "前收": "-", "涨跌幅": "-"}
             else:
-                data = yf.Ticker(ticker).history(period="1d")
-            
-            if len(data) > 0:
-                price = data['Close'].iloc[-1]
-                prev = data['Open'].iloc[-1]
-                change = (price - prev) / prev * 100
-                result[name] = {"价格": round(price, 2), "涨跌幅": round(change, 2)}
+                result[name] = {"价格": "-", "前收": "-", "涨跌幅": "-", "error": "无数据"}
         except Exception as e:
-            result[name] = {"价格": "-", "涨跌幅": "-", "error": str(e)}
-    
+            result[name] = {"价格": "-", "前收": "-", "涨跌幅": "-", "error": str(e)}
+
     return result
+
+
+def analyze_global_market(global_data):
+    """基于指数表现给出保守、证据驱动的全球市场判断"""
+    us_names = ["道琼斯", "标普500", "纳斯达克"]
+    hk_names = ["恒生指数"]
+
+    us_changes = [global_data.get(name, {}).get("涨跌幅") for name in us_names]
+    us_changes = [x for x in us_changes if isinstance(x, (int, float))]
+    hk_changes = [global_data.get(name, {}).get("涨跌幅") for name in hk_names]
+    hk_changes = [x for x in hk_changes if isinstance(x, (int, float))]
+
+    evidence = []
+    if us_changes:
+        us_avg = sum(us_changes) / len(us_changes)
+        us_up = sum(1 for x in us_changes if x > 0)
+        evidence.append(f"美股三大指数 {us_up}/3 收涨，平均涨幅 {us_avg:+.2f}%")
+    else:
+        us_avg = None
+        us_up = 0
+
+    if hk_changes:
+        evidence.append(f"恒生指数 {hk_changes[0]:+.2f}%")
+
+    if us_avg is None:
+        summary = "海外市场数据不足，暂不下方向性结论"
+        tone = "中性"
+    elif us_up == 3 and us_avg >= 0.80:
+        summary = "隔夜海外市场明显走强，风险偏好修复较为清晰"
+        tone = "偏强"
+    elif us_up == 3 and us_avg >= 0.20:
+        summary = "隔夜海外市场小幅修复，但力度一般，宜表述为偏稳或弱修复"
+        tone = "偏稳"
+    elif us_up >= 2 and us_avg > -0.20:
+        summary = "隔夜海外市场分化震荡，未形成明确 risk-on / risk-off 信号"
+        tone = "中性"
+    elif us_avg <= -0.50:
+        summary = "隔夜海外市场整体偏弱，风险偏好回落"
+        tone = "偏弱"
+    else:
+        summary = "隔夜海外市场略偏弱，但暂无单边走弱共识"
+        tone = "偏弱"
+
+    caveat = "仅依据主要指数涨跌判断；若需推导风格偏好，还应结合黄金、美元、美债收益率及成长/防御板块相对强弱。"
+
+    return {
+        "结论": summary,
+        "口径": tone,
+        "依据": evidence,
+        "提示": caveat,
+    }
 
 
 def get_新闻摘要():
@@ -131,10 +187,17 @@ def generate_report():
     
     # 全球市场数据
     global_data = get_全球市场数据()
+    global_view = analyze_global_market(global_data)
     for name, data in global_data.items():
         change = data.get('涨跌幅', '-')
         emoji = "🟢" if isinstance(change, (int, float)) and change > 0 else "🔴" if isinstance(change, (int, float)) and change < 0 else "⚪"
         report += f"| {name} | {emoji} {change}% |\n"
+
+    report += "\n### 🌍 隔夜市场判断\n"
+    report += f"- **结论**: {global_view['结论']}\n"
+    for item in global_view["依据"]:
+        report += f"- **依据**: {item}\n"
+    report += f"- **说明**: {global_view['提示']}\n"
     
     report += """
 ---
@@ -177,13 +240,14 @@ def generate_report():
     # 综合判断
     a股_judge = a股_data.get('判断', '中性')
     if a股_judge == "看涨":
-        recommendation = "✅ 建议适度参与，关注热门板块"
+        recommendation = "✅ A股情绪端偏正，但仍需结合量能与主线持续性，不宜只凭隔夜指数追高"
     elif a股_judge == "看跌":
-        recommendation = "⚠️ 建议控制仓位，谨慎操作"
+        recommendation = "⚠️ 建议先控仓位，优先看情绪与量能是否修复"
     else:
-        recommendation = "➡️ 建议保持中性观望"
+        recommendation = "➡️ 建议保持中性观望，等待更明确的量价与风格信号"
     
-    report += f"""- **大盘判断**: {a股_judge}
+    report += f"""- **隔夜海外口径**: {global_view['口径']}
+- **A股判断**: {a股_judge}
 - **操作建议**: {recommendation}
 
 ---

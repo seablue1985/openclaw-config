@@ -21,7 +21,10 @@ SKILL_DIR = Path(__file__).resolve().parents[1]
 CONFIG_FILE = SKILL_DIR / "config" / "repos.json"
 STATE_FILE = SKILL_DIR / "state" / "last_check.json"
 STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
-FEISHU_WEBHOOK = "https://open.feishu.cn/open-apis/bot/v2/hook/f54d31a7-226d-4fac-aeaf-44b84c5c85b7"
+# ── 飞书私聊配置 ─────────────────────────────────────────
+FEISHU_APP_ID = "cli_a934da0dde385cba"      # coding-agent app（张玲的 open_id 所属应用）
+FEISHU_APP_SECRET = "3ohW4ALIPfswBDwcnIo9RcvNSlKgQf1e"
+FEISHU_USER_ID = "ou_47c21eede907b0c4f9fd4d34519d84ae"  # 张玲
 
 # ── 判断规则：commit message 关键词 → 优先级 ───────────────
 COMMIT_PRIORITY_KEYWORDS = {
@@ -575,19 +578,58 @@ def save_report(report: str, results: list[dict]):
     return str(f1)
 
 
-def send_feishu(summary: str) -> bool:
-    """推送飞书摘要"""
+def _get_tenant_access_token() -> Optional[str]:
+    """获取飞书 tenant access token"""
     try:
-        import requests
-        resp = requests.post(
-            FEISHU_WEBHOOK,
-            json={"msg_type": "text", "content": {"text": summary}},
-            timeout=10,
+        import urllib.request, json as jsonlib
+        data = jsonlib.dumps({
+            "app_id": FEISHU_APP_ID,
+            "app_secret": FEISHU_APP_SECRET,
+        }).encode()
+        req = urllib.request.Request(
+            "https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal",
+            data=data,
+            headers={"Content-Type": "application/json"},
         )
-        return resp.status_code == 200
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            result = jsonlib.loads(resp.read())
+            if result.get("code") == 0:
+                return result.get("tenant_access_token")
+        print(f"[飞书token失败] code={result.get('code')}", file=sys.stderr)
     except Exception as e:
-        print(f"[飞书推送失败] {e}", file=sys.stderr)
+        print(f"[飞书token异常] {e}", file=sys.stderr)
+    return None
+
+
+def send_feishu(summary: str) -> bool:
+    """推送飞书摘要到用户私聊"""
+    token = _get_tenant_access_token()
+    if not token:
         return False
+    try:
+        import urllib.request, json as jsonlib
+        payload = {
+            "receive_id": FEISHU_USER_ID,
+            "msg_type": "text",
+            "content": jsonlib.dumps({"text": summary}),
+        }
+        req = urllib.request.Request(
+            "https://open.feishu.cn/open-apis/im/v1/messages?receive_id_type=open_id",
+            data=jsonlib.dumps(payload).encode(),
+            headers={
+                "Content-Type": "application/json",
+                "Authorization": f"Bearer {token}",
+            },
+            method="POST",
+        )
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            result = jsonlib.loads(resp.read())
+            if result.get("code") == 0:
+                return True
+            print(f"[飞书私聊推送失败] code={result.get('code')}, msg={result.get('msg')}", file=sys.stderr)
+    except Exception as e:
+        print(f"[飞书推送异常] {e}", file=sys.stderr)
+    return False
 
 
 def main():

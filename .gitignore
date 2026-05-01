@@ -12,3 +12,11 @@ Thumbs.db
 # Temp
 *.tmp
 *.bak
+
+# Large runtime state (databases, generated content)
+memory/*.sqlite
+memory/codex-bridge/generated/
+memory/codex-bridge/raw_sessions/sessions/
+memory/memos-primary/backups/
+memory/memos-primary/generated/
+openclaw.json.bak.*

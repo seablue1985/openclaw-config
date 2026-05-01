@@ -7,10 +7,12 @@
       "role": "operator",
       "scopes": [
         "operator.admin",
+        "operator.approvals",
+        "operator.pairing",
         "operator.read",
         "operator.write"
       ],
-      "updatedAtMs": 1775218712064
+      "updatedAtMs": 1777601793412
     }
   }
 }

@@ -1,6 +1,30 @@
 {
-  "checked_at": "2026-04-12T09:00:11.762173",
+  "checked_at": "2026-05-01T09:00:13.290209",
   "results": [
+    {
+      "path": "/Users/ling/.openclaw/workspace/coding-agent/file-organizer",
+      "name": "file-organizer",
+      "local_tag": "v1.1.0",
+      "upstream_tag": "v1.1.0",
+      "commits_behind": 0,
+      "commits_ahead": 0,
+      "status": "synced",
+      "new_commits": [],
+      "local_commits": [],
+      "new_tags": [],
+      "breaking_changes": false,
+      "working_tree_dirty": false,
+      "staged_count": 0,
+      "modified_count": 0,
+      "untracked_count": 0,
+      "fetch_error": null,
+      "upstream_remote": "origin",
+      "local_sha": "15ff163",
+      "current_branch": "main",
+      "upstream_branch": "origin/main",
+      "upstream_sha": "15ff163",
+      "tier": "extended"
+    },
     {
       "path": "/Users/ling/.openclaw/workspace/other_projects/RD-Agent",
       "name": "RD-Agent",
@@ -156,22 +180,29 @@
     {
       "path": "/Users/ling/.openclaw/workspace/other_projects/TrendRadar",
       "name": "TrendRadar",
-      "local_tag": "5c5535e",
+      "local_tag": "c8577a8",
       "upstream_tag": "5c5535e",
       "commits_behind": 0,
-      "commits_ahead": 0,
-      "status": "working_tree_dirty",
+      "commits_ahead": 1,
+      "status": "local_commits_dirty",
       "new_commits": [],
-      "local_commits": [],
+      "local_commits": [
+        {
+          "message": "Hide internal count lines from Feishu report",
+          "short": "c8577a8",
+          "priority": "⚪ 其他",
+          "breaking": false
+        }
+      ],
       "new_tags": [],
       "breaking_changes": false,
       "working_tree_dirty": true,
       "staged_count": 1,
       "modified_count": 2,
-      "untracked_count": 27,
+      "untracked_count": 46,
       "fetch_error": null,
       "upstream_remote": "origin",
-      "local_sha": "5c5535e",
+      "local_sha": "c8577a8",
       "current_branch": "master",
       "upstream_branch": "origin/master",
       "upstream_sha": "5c5535e",
@@ -180,40 +211,22 @@
     {
       "path": "/Volumes/A/openclaw-cold/2026-03-28/.openclaw/workspace/quant_projects/ai-hedge-fund",
       "name": "ai-hedge-fund",
-      "local_tag": "419c10f",
-      "upstream_tag": "c45b50f",
-      "commits_behind": 5,
+      "local_tag": "876801b",
+      "upstream_tag": "58c4589",
+      "commits_behind": 2,
       "commits_ahead": 0,
-      "status": "major_update",
+      "status": "minor_update",
       "new_commits": [
         {
-          "message": "Merge pull request #556 from GeorgeCCK/senti-error",
-          "short": "c45b50f",
+          "message": "Merge pull request #602 from octo-patch/fix/issue-601-deepseek-json-extraction",
+          "short": "58c4589",
           "priority": "⚪ 其他",
           "breaking": false
         },
         {
-          "message": "Fix news sentiment handling when news is missing",
-          "short": "84c2f9e",
-          "priority": "⚪ 其他",
-          "breaking": false
-        },
-        {
-          "message": "Merge pull request #567 from muratclk/test/add-cache-unit-tests",
-          "short": "8748105",
-          "priority": "⚪ 其他",
-          "breaking": false
-        },
-        {
-          "message": "test: add unit tests for Cache class in src/data/cache.py",
-          "short": "73a7ca1",
-          "priority": "🧪 测试",
-          "breaking": false
-        },
-        {
-          "message": "Update README",
-          "short": "03c87a7",
-          "priority": "⚪ 其他",
+          "message": "fix: make extract_json_from_response robust for DeepSeek V4 output (fixes #601)",
+          "short": "0210109",
+          "priority": "🟡 Bug修复",
           "breaking": false
         }
       ],
@@ -226,65 +239,149 @@
       "untracked_count": 1,
       "fetch_error": null,
       "upstream_remote": "origin",
-      "local_sha": "419c10f",
+      "local_sha": "876801b",
       "current_branch": "main",
       "upstream_branch": "origin/main",
-      "upstream_sha": "c45b50f",
+      "upstream_sha": "58c4589",
       "tier": "main"
     },
     {
       "path": "/Volumes/A/openclaw-cold/2026-03-28/.openclaw/workspace/quant_projects/daily_stock_analysis",
       "name": "daily_stock_analysis",
-      "local_tag": "v3.12.0-36-g36cb1f4",
-      "upstream_tag": "v3.12.0-28-g3dceb1e",
-      "commits_behind": 7,
-      "commits_ahead": 15,
+      "local_tag": "v3.13.0-19-g4254672",
+      "upstream_tag": "v3.14.2",
+      "commits_behind": 28,
+      "commits_ahead": 16,
       "status": "diverged",
       "new_commits": [
         {
-          "message": "Fix: multi-agent AGENT_MAX_STEPS not respecting user override & skill agent graceful degradation (#1031)",
-          "short": "3dceb1e",
-          "priority": "🟡 Bug修复",
+          "message": "chore: release v3.14.2",
+          "short": "020fbf8",
+          "priority": "🔧 维护",
           "breaking": false
         },
         {
-          "message": "fix: inject REPORT_LANGUAGE into workflow and add current_price to status API (#1013, #983) (#1028)",
-          "short": "0493358",
-          "priority": "🟡 Bug修复",
-          "breaking": false
-        },
-        {
-          "message": "fix: 让大盘复盘链路在 `REPORT_LANGUAGE=en` 时输出英文 Markdown… (#1029) (#1030)",
-          "short": "69cd608",
-          "priority": "🟡 Bug修复",
-          "breaking": false
-        },
-        {
-          "message": "feat: 让后端优先复用现有 stocks.index.json 解析股票名称映射，在缺失时保持现有回退链路… (#1027) (#1033)",
-          "short": "edab25d",
+          "message": "feat: add read-only setup status endpoint (#1162)",
+          "short": "dfc4f92",
           "priority": "🟢 新功能",
           "breaking": false
         },
         {
-          "message": "feat(workflow): make analysis job timeout configurable via vars (#1014)",
-          "short": "5dbed69",
+          "message": "fix: trigger fallback models when LLM returns invalid JSON（LLM 返回非法 JSON 时继续尝试 fallback 模型）  (#1158)",
+          "short": "f9e04cc",
+          "priority": "🟡 Bug修复",
+          "breaking": false
+        },
+        {
+          "message": "feat: support multi-strategy chat selection (#1161)",
+          "short": "8385c14",
+          "priority": "🟢 新功能",
+          "breaking": false
+        },
+        {
+          "message": "fix(security): block path traversal in SPA fallback route (#1160)",
+          "short": "c7f01cf",
+          "priority": "🔴 安全",
+          "breaking": true
+        },
+        {
+          "message": "fix: quiet LiteLLM debug logs (#1156) (#1159)",
+          "short": "96cc739",
+          "priority": "🟡 Bug修复",
+          "breaking": false
+        },
+        {
+          "message": "fix: sanitize conflicting trend signals before analysis prompt (#1145) (#1147)",
+          "short": "2b0f827",
+          "priority": "🟡 Bug修复",
+          "breaking": false
+        },
+        {
+          "message": "Fix agent fallback, portfolio pricing, and task queue tests (#1144)",
+          "short": "375eca0",
           "priority": "⚪ 其他",
           "breaking": false
         },
         {
-          "message": "Feat/tushare增加港股查询支持 (#994)",
-          "short": "bfa7b8c",
+          "message": "feat: Add Hong Kong market support (#1068)",
+          "short": "07b4fe5",
+          "priority": "🟢 新功能",
+          "breaking": false
+        },
+        {
+          "message": "fix: 最小化修复问股链路在 macOS 本地环境下的失败反馈：优先保留后端真实错误原因并补足… (#1138) (#1139)",
+          "short": "260fe06",
+          "priority": "🟡 Bug修复",
+          "breaking": false
+        },
+        {
+          "message": "Revert \"refactor(issue-1141): [feature]-代码库知识图谱是否有助于新贡献者理解项目 (#1142)\" (#1143)",
+          "short": "b4065c4",
           "priority": "⚪ 其他",
           "breaking": false
         },
         {
-          "message": "集成Anspire search (#982)",
-          "short": "abde35b",
+          "message": "refactor(issue-1141): [feature]-代码库知识图谱是否有助于新贡献者理解项目？ (#1142)",
+          "short": "c04defb",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
+        {
+          "message": "docs: add related projects to readmes (#1135)",
+          "short": "66c273e",
+          "priority": "📝 文档",
+          "breaking": false
+        },
+        {
+          "message": "feat: add optional Anspire API support for github action",
+          "short": "c5ac36e",
+          "priority": "🟢 新功能",
+          "breaking": false
+        },
+        {
+          "message": "test: align market recap prompt assertion",
+          "short": "e5b5a64",
+          "priority": "🧪 测试",
+          "breaking": false
+        },
+        {
+          "message": "release: prepare v3.14.0",
+          "short": "c3d07ce",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
+        {
+          "message": "[fix] Support Kimi K2.6 fixed temperature (#1113)",
+          "short": "4574c52",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
+        {
+          "message": "fix: detect stale static bundles in build pipeline and at runtime (#1064) (#1121)",
+          "short": "0924dce",
+          "priority": "🟡 Bug修复",
+          "breaking": false
+        },
+        {
+          "message": "[fix][feat] #1108 #1109: 同步 DeepSeek V4 渠道配置 (#1110)",
+          "short": "9a08ba4",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
+        {
+          "message": "ci: ignore vendored node modules in lint config (#1122)",
+          "short": "43352ca",
           "priority": "⚪ 其他",
           "breaking": false
         }
       ],
       "local_commits": [
+        {
+          "message": "merge: update daily_stock_analysis with upstream v3.13.0",
+          "short": "4254672",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
         {
           "message": "Merge upstream main: review fixes + LiteLLM streaming + /v1/models support",
           "short": "36cb1f4",
@@ -377,28 +474,118 @@
         }
       ],
       "new_tags": [],
-      "breaking_changes": false,
+      "breaking_changes": true,
       "working_tree_dirty": true,
-      "staged_count": 0,
-      "modified_count": 0,
-      "untracked_count": 33,
+      "staged_count": 1,
+      "modified_count": 1,
+      "untracked_count": 35,
       "fetch_error": null,
       "upstream_remote": "upstream",
-      "local_sha": "36cb1f4",
+      "local_sha": "4254672",
       "current_branch": "main",
       "upstream_branch": "upstream/main",
-      "upstream_sha": "3dceb1e",
+      "upstream_sha": "020fbf8",
       "tier": "main"
     },
     {
       "path": "/Volumes/A/openclaw-cold/2026-03-28/.openclaw/workspace/quant_projects/quant_system",
       "name": "quant_system",
       "local_tag": "447c490",
-      "upstream_tag": "v3.12.0-36-g36cb1f4",
-      "commits_behind": 537,
+      "upstream_tag": "v3.12.0-51-g4254672",
+      "commits_behind": 552,
       "commits_ahead": 1,
       "status": "diverged",
       "new_commits": [
+        {
+          "message": "merge: update daily_stock_analysis with upstream v3.13.0",
+          "short": "4254672",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
+        {
+          "message": "fix(ci): avoid secrets in docker publish step conditions",
+          "short": "dbdf30d",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
+        {
+          "message": "chore(release): consolidate docker publish workflows and fix desktop log encoding",
+          "short": "a585565",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
+        {
+          "message": "docs: update CHANGELOG for v3.13.0 release",
+          "short": "7cf3a88",
+          "priority": "📝 文档",
+          "breaking": false
+        },
+        {
+          "message": "refactor: 补充一份最小化文档说明，明确 Docker 安装场景下应以 Git tag/镜像 tag 判断版本… (#1091) (#1093)",
+          "short": "303a50d",
+          "priority": "🔵 重构",
+          "breaking": false
+        },
+        {
+          "message": "fix: handle efinance index open column fallback (#1051)",
+          "short": "efd2bce",
+          "priority": "🟡 Bug修复",
+          "breaking": false
+        },
+        {
+          "message": "fix: return latest trade date on non-trade days for chip distribution and sector rankings(Fix #1009) (#1067)",
+          "short": "0e8728f",
+          "priority": "🟡 Bug修复",
+          "breaking": false
+        },
+        {
+          "message": "fix: 版本号不对 (#1048)",
+          "short": "5bd2814",
+          "priority": "🟡 Bug修复",
+          "breaking": false
+        },
+        {
+          "message": "Fix: multi-agent AGENT_MAX_STEPS not respecting user override & skill agent graceful degradation (#1031)",
+          "short": "3dceb1e",
+          "priority": "🟡 Bug修复",
+          "breaking": false
+        },
+        {
+          "message": "fix: inject REPORT_LANGUAGE into workflow and add current_price to status API (#1013, #983) (#1028)",
+          "short": "0493358",
+          "priority": "🟡 Bug修复",
+          "breaking": false
+        },
+        {
+          "message": "fix: 让大盘复盘链路在 `REPORT_LANGUAGE=en` 时输出英文 Markdown… (#1029) (#1030)",
+          "short": "69cd608",
+          "priority": "🟡 Bug修复",
+          "breaking": false
+        },
+        {
+          "message": "feat: 让后端优先复用现有 stocks.index.json 解析股票名称映射，在缺失时保持现有回退链路… (#1027) (#1033)",
+          "short": "edab25d",
+          "priority": "🟢 新功能",
+          "breaking": false
+        },
+        {
+          "message": "feat(workflow): make analysis job timeout configurable via vars (#1014)",
+          "short": "5dbed69",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
+        {
+          "message": "Feat/tushare增加港股查询支持 (#994)",
+          "short": "bfa7b8c",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
+        {
+          "message": "集成Anspire search (#982)",
+          "short": "abde35b",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
         {
           "message": "Merge upstream main: review fixes + LiteLLM streaming + /v1/models support",
           "short": "36cb1f4",
@@ -428,96 +615,6 @@
           "short": "6eab96f",
           "priority": "🟡 Bug修复",
           "breaking": false
-        },
-        {
-          "message": "feat: 支持/v1/models路径获取所有支持模型 (#830) (#919)",
-          "short": "706879f",
-          "priority": "🟢 新功能",
-          "breaking": false
-        },
-        {
-          "message": "feat: 让普通股票分析链路在尽量不破坏现有接口契约的前提下支持 LiteLLM 流式输出… (#865) (#924)",
-          "short": "e8862d5",
-          "priority": "🟢 新功能",
-          "breaking": false
-        },
-        {
-          "message": "fix: 缺失值判断逻辑不应静默吞掉非预期异常 (#996) (#997)",
-          "short": "44d3b65",
-          "priority": "🟡 Bug修复",
-          "breaking": false
-        },
-        {
-          "message": "fix: 修复 SQLite 写入链路逐行更新导致的锁竞争与性能问题 (#878) (#927)",
-          "short": "84c9994",
-          "priority": "🟡 Bug修复",
-          "breaking": false
-        },
-        {
-          "message": "fix: 在技能加载链路的所有静默 except 块中补充 logger.warning(… (#970) (#974)",
-          "short": "518391e",
-          "priority": "🟡 Bug修复",
-          "breaking": false
-        },
-        {
-          "message": "fix: akshare港股增强 (#940) (#964)",
-          "short": "314de7f",
-          "priority": "🟡 Bug修复",
-          "breaking": false
-        },
-        {
-          "message": "refactor: 优化飞书配置和文档 (#832) (#920)",
-          "short": "672ed9b",
-          "priority": "🔵 重构",
-          "breaking": false
-        },
-        {
-          "message": "refactor: 在中英文 FAQ 中补充 Ollama 连接失败（OllamaException /… (#854) (#963)",
-          "short": "00c11fa",
-          "priority": "🔵 重构",
-          "breaking": false
-        },
-        {
-          "message": "fix: 在 api/v1/endpoints/analysis.py 的 SSE 生成器 except… (#967) (#971)",
-          "short": "5d23998",
-          "priority": "🟡 Bug修复",
-          "breaking": false
-        },
-        {
-          "message": "fix: 在 agent_chat_stream 的 finally 清理块中区分… (#969) (#973)",
-          "short": "4c68c7e",
-          "priority": "🟡 Bug修复",
-          "breaking": false
-        },
-        {
-          "message": "Merge remote-tracking branch 'upstream/main'",
-          "short": "67d7eb3",
-          "priority": "⚪ 其他",
-          "breaking": false
-        },
-        {
-          "message": "fix(issue-968): [bug]-bot-ask-命令技能加载失败时异常被静默吞掉，故障无日志可查 (#972)",
-          "short": "17776b4",
-          "priority": "⚪ 其他",
-          "breaking": false
-        },
-        {
-          "message": "feat: [Bug] 公司公告和主力资金流搜索经常无法纳入分析 (#976) (#977)",
-          "short": "709604f",
-          "priority": "🟢 新功能",
-          "breaking": false
-        },
-        {
-          "message": "fix: 部署完以后 webUI UI异常变大 布局异常 (#944) (#965)",
-          "short": "5ba37c4",
-          "priority": "🟡 Bug修复",
-          "breaking": false
-        },
-        {
-          "message": "fix: pin get_market_now in realtime indicator tests to avoid CST/UTC date shift (#986)",
-          "short": "dffa29c",
-          "priority": "🟡 Bug修复",
-          "breaking": false
         }
       ],
       "local_commits": [
@@ -539,7 +636,7 @@
       "local_sha": "447c490",
       "current_branch": "main",
       "upstream_branch": "origin/main",
-      "upstream_sha": "36cb1f4",
+      "upstream_sha": "4254672",
       "tier": "main"
     }
   ]

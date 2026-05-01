@@ -204,16 +204,17 @@
       }
     },
     "55a9fce0-aec0-4dbc-b7cc-c7066c77d995": {
-      "updatedAtMs": 1777575857614,
+      "updatedAtMs": 1777662300073,
       "state": {
-        "nextRunAtMs": 1777662000000,
-        "lastRunAtMs": 1777575600014,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 257600,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
+        "nextRunAtMs": 1777748400000,
+        "lastRunAtMs": 1777662000012,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 300061,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "lastError": "cron: job execution timed out",
+        "lastErrorReason": "timeout"
       }
     },
     "197ea670-bb08-4c10-ab7b-97884ca0b641": {
@@ -230,27 +231,28 @@
       }
     },
     "c4c7a000-53b0-46fa-bc77-b564cbaa5704": {
-      "updatedAtMs": 1777577920975,
+      "updatedAtMs": 1777664330647,
       "state": {
-        "nextRunAtMs": 1777663200000,
-        "lastRunAtMs": 1777576800015,
+        "nextRunAtMs": 1777749600000,
+        "lastRunAtMs": 1777663200014,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 1120960,
+        "lastDurationMs": 1130633,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
       }
     },
     "71585983-eab9-4557-924c-277a29a73768": {
-      "updatedAtMs": 1777572196924,
+      "updatedAtMs": 1777658650621,
       "state": {
-        "nextRunAtMs": 1777658400000,
-        "lastRunAtMs": 1777572000086,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 196838,
+        "nextRunAtMs": 1777744800000,
+        "lastRunAtMs": 1777658400012,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 250609,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0
+        "consecutiveErrors": 1,
+        "lastError": "⚠️ Agent couldn't generate a response. Note: some tool actions may have already been executed — please verify before retrying."
       }
     },
     "4fe135b5-7edc-4978-a296-b11aae2afaa5": {
@@ -445,13 +447,13 @@
       }
     },
     "openclaw-daily-backup-0300": {
-      "updatedAtMs": 1777576071910,
+      "updatedAtMs": 1777662354409,
       "state": {
-        "nextRunAtMs": 1777662000000,
-        "lastRunAtMs": 1777575857614,
+        "nextRunAtMs": 1777748400000,
+        "lastRunAtMs": 1777662300073,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 214296,
+        "lastDurationMs": 54336,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
       }
@@ -470,15 +472,17 @@
       }
     },
     "6426c336-a82d-46c4-b9a1-92170db348e9": {
-      "updatedAtMs": 1777568431607,
+      "updatedAtMs": 1777654960254,
       "state": {
-        "nextRunAtMs": 1777654800000,
-        "lastRunAtMs": 1777568400008,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 31599,
+        "nextRunAtMs": 1777741200000,
+        "lastRunAtMs": 1777654800012,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 160242,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0
+        "consecutiveErrors": 1,
+        "lastError": "FallbackSummaryError: All models failed (2): minimax-portal/MiniMax-M2.7: LLM request timed out. (timeout) | codex/gpt-5.4: 403 Your request was blocked. (auth)",
+        "lastErrorReason": "auth"
       }
     }
   }
