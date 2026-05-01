@@ -150,7 +150,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace/skills/news-market\n2. 运行 python3 scripts/generate_morning_news_free.py --output /Users/ling/.openclaw/workspace/research/reports/global_market_morning_free_latest.md --json-output /Users/ling/.openclaw/workspace/research/reports/global_market_morning_free_latest.json\n3. 读取上述 md/json 输出\n4. 用中文简短汇报：一句话总览、隔夜市场要点、大盘体温、A股开盘前结论、2-3条关键新闻与输出文件路径\n5. 本任务使用免费链路：Yahoo Search 主搜 + DuckDuckGo 兜底 + yfinance/akshare 数据\n6. 非交易时段不要给可执行买价，只给方向、优先级和触发条件",
+        "message": "🔍 首先检查今天是否为A股交易日：运行 python3 /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system/scripts/is_trading_day.py --json。如果 is_trading_day 为 false，直接回复 NO_REPLY 并停止，不执行任何后续步骤。\\n\\n仅当 is_trading_day 为 true 时，才继续执行：\\n执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace/skills/news-market\n2. 运行 python3 scripts/generate_morning_news_free.py --output /Users/ling/.openclaw/workspace/research/reports/global_market_morning_free_latest.md --json-output /Users/ling/.openclaw/workspace/research/reports/global_market_morning_free_latest.json\n3. 读取上述 md/json 输出\n4. 用中文简短汇报：一句话总览、隔夜市场要点、大盘体温、A股开盘前结论、2-3条关键新闻与输出文件路径\n5. 本任务使用免费链路：Yahoo Search 主搜 + DuckDuckGo 兜底 + yfinance/akshare 数据\n6. 非交易时段不要给可执行买价，只给方向、优先级和触发条件",
         "model": "minimax-portal/MiniMax-M2.7",
         "thinking": "low",
         "timeoutSeconds": 900,
@@ -254,7 +254,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行以下任务：1. 进入 /Users/ling/.openclaw/workspace；2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type close；3. 把摘要写入 research/reports，不发送消息；4. 若失败，只返回错误摘要。",
+        "message": "🔍 首先检查今天是否为A股交易日：运行 python3 /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system/scripts/is_trading_day.py --json。如果 is_trading_day 为 false，直接回复 NO_REPLY 并停止，不执行任何后续步骤。\\n\\n仅当 is_trading_day 为 true 时，才继续执行：\\n执行以下任务：1. 进入 /Users/ling/.openclaw/workspace；2. 运行 python3 scripts/run_investment_research_org_publish_bundle.py --meeting-type close；3. 把摘要写入 research/reports，不发送消息；4. 若失败，只返回错误摘要。",
         "model": "minimax-portal/MiniMax-M2.7",
         "thinking": "low",
         "timeoutSeconds": 300,
@@ -323,7 +323,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_background_cycle.py --cycle pre_open\n3. 读取 cycle md/json 输出\n4. 用中文简短汇报：当前风险状态、优先候选、值班角色、周期总览文件路径\n5. 非交易时段不要给可执行买价，只给方向、优先级和触发条件",
+        "message": "🔍 首先检查今天是否为A股交易日：运行 python3 /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system/scripts/is_trading_day.py --json。如果 is_trading_day 为 false，直接回复 NO_REPLY 并停止，不执行任何后续步骤。\\n\\n仅当 is_trading_day 为 true 时，才继续执行：\\n执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_background_cycle.py --cycle pre_open\n3. 读取 cycle md/json 输出\n4. 用中文简短汇报：当前风险状态、优先候选、值班角色、周期总览文件路径\n5. 非交易时段不要给可执行买价，只给方向、优先级和触发条件",
         "model": "minimax-portal/MiniMax-M2.7",
         "thinking": "low",
         "timeoutSeconds": 600,
@@ -358,7 +358,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_background_cycle.py --cycle intraday\n3. 读取 cycle md/json 输出\n4. 用中文简短汇报：风险灯号、观察池、是否需要临时会商、周期总览文件路径\n5. 若有阻断点，明确写出",
+        "message": "🔍 首先检查今天是否为A股交易日：运行 python3 /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system/scripts/is_trading_day.py --json。如果 is_trading_day 为 false，直接回复 NO_REPLY 并停止，不执行任何后续步骤。\\n\\n仅当 is_trading_day 为 true 时，才继续执行：\\n执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_background_cycle.py --cycle intraday\n3. 读取 cycle md/json 输出\n4. 用中文简短汇报：风险灯号、观察池、是否需要临时会商、周期总览文件路径\n5. 若有阻断点，明确写出",
         "model": "minimax-portal/MiniMax-M2.7",
         "thinking": "low",
         "timeoutSeconds": 180,
@@ -393,7 +393,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_background_cycle.py --cycle post_close\n3. 读取 cycle md/json 输出\n4. 用中文简短汇报：盘后整理结论、次日观察重点、值班角色、周期总览文件路径",
+        "message": "🔍 首先检查今天是否为A股交易日：运行 python3 /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system/scripts/is_trading_day.py --json。如果 is_trading_day 为 false，直接回复 NO_REPLY 并停止，不执行任何后续步骤。\\n\\n仅当 is_trading_day 为 true 时，才继续执行：\\n执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_background_cycle.py --cycle post_close\n3. 读取 cycle md/json 输出\n4. 用中文简短汇报：盘后整理结论、次日观察重点、值班角色、周期总览文件路径",
         "model": "minimax-portal/MiniMax-M2.7",
         "thinking": "low",
         "timeoutSeconds": 600,
@@ -427,7 +427,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_background_cycle.py --cycle overnight\n3. 读取 cycle md/json 输出\n4. 用中文简短汇报：夜间研究重点、分身角色观点、待决策事项、周期总览文件路径\n5. 非交易时段不要给可执行买价",
+        "message": "🔍 首先检查今天是否为A股交易日：运行 python3 /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system/scripts/is_trading_day.py --json。如果 is_trading_day 为 false，直接回复 NO_REPLY 并停止，不执行任何后续步骤。\\n\\n仅当 is_trading_day 为 true 时，才继续执行：\\n执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_background_cycle.py --cycle overnight\n3. 读取 cycle md/json 输出\n4. 用中文简短汇报：夜间研究重点、分身角色观点、待决策事项、周期总览文件路径\n5. 非交易时段不要给可执行买价",
         "model": "minimax-portal/MiniMax-M2.7",
         "thinking": "low",
         "timeoutSeconds": 180,
@@ -496,7 +496,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行以下任务：\n1. 进入 /Users/ling/.openclaw/workspace\n2. 运行 python3 scripts/run_investment_research_data_source_health_probe.py --scope intraday\n3. 运行 python3 scripts/generate_investment_research_data_source_health_broadcast.py --scope intraday\n4. 读取 health probe json 和 health broadcast md\n5. 如果状态是 healthy 或 offhours_guarded，则回复 NO_REPLY\n6. 如果状态是 watch_guarded 或 degraded，则用中文简短汇报：状态、采样标的、最大价差分歧、触发项、broadcast 路径、probe 路径\n7. 若状态为 degraded，明确写出建议立即临时会商",
+        "message": "🔍 首先检查今天是否为A股交易日：运行 python3 /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system/scripts/is_trading_day.py --json。如果 is_trading_day 为 false，直接回复 NO_REPLY 并停止，不执行任何后续步骤。\\n\\n仅当 is_trading_day 为 true 时，才继续执行：\\n1. 进入 /Users/ling/.openclaw/workspace\\n2. 运行 python3 scripts/run_investment_research_data_source_health_probe.py --scope intraday\\n3. 运行 python3 scripts/generate_investment_research_data_source_health_broadcast.py --scope intraday\\n4. 读取 health probe json 和 health broadcast md\\n5. 如果状态是 healthy 或 offhours_guarded，则回复 NO_REPLY\\n6. 如果状态是 watch_guarded 或 degraded，则用中文简短汇报\\n7. 若状态为 degraded，明确写出建议立即临时会商",
         "model": "minimax-portal/MiniMax-M2.7",
         "thinking": "low",
         "timeoutSeconds": 180,
@@ -681,7 +681,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行以下任务：1. 进入 /Users/ling/.openclaw/workspace-coding-agent；2. 运行 python3 scripts/run_web_source_fusion_daily.py --output-dir /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system/research/reports --push-feishu --notify-on-failure；3. 若成功，只返回 SUCCESS、web_source_fusion_daily_latest.json 路径、a-share-fusion-report_latest_message.txt 路径；4. 若失败，只返回 FAILED_CLOSED、runner json 路径与原因。",
+        "message": "🔍 首先检查今天是否为A股交易日：运行 python3 /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system/scripts/is_trading_day.py --json。如果 is_trading_day 为 false，直接回复 NO_REPLY 并停止，不执行任何后续步骤。\\n\\n仅当 is_trading_day 为 true 时，才继续执行：\\n执行以下任务：1. 进入 /Users/ling/.openclaw/workspace-coding-agent；2. 运行 python3 scripts/run_web_source_fusion_daily.py --output-dir /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system/research/reports --push-feishu --notify-on-failure；3. 若成功，只返回 SUCCESS、web_source_fusion_daily_latest.json 路径、a-share-fusion-report_latest_message.txt 路径；4. 若失败，只返回 FAILED_CLOSED、runner json 路径与原因。",
         "model": "minimax-portal/MiniMax-M2.7",
         "thinking": "low",
         "timeoutSeconds": 900,
@@ -886,7 +886,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "请执行每日A股 Overlay 定时任务：\n\nbash ~/.openclaw/workspace/quant_projects/personal-a-share-research-system/scripts/run_daily_overlays.sh\n\n执行完成后，读取生成的综合研判文件：\nresearch/reports/ai_overlay/daily_digest_latest.md\n\n然后用飞书发送给我一条消息（channel=feishu，target=user:ou_47c21eede907b0c4f9fd4d34519d84ae），内容包括：\n1. 今日市场状态\n2. 候选池总数和Top3候选（名称+倾向+1条核心理由）\n3. 持仓关注情况（reduce/exit的最多5只：名称+浮亏+主要风险）\n4. 结尾加一行免责\n\n发送格式用文字，不要用卡片格式，直接发文字消息即可。\n\n如果任何步骤报错，仍然发一条消息告知状态。",
+        "message": "🔍 首先检查今天是否为A股交易日：运行 python3 /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system/scripts/is_trading_day.py --json。如果 is_trading_day 为 false，直接回复 NO_REPLY 并停止，不执行任何后续步骤。\\n\\n仅当 is_trading_day 为 true 时，才继续执行：\\n请执行每日A股 Overlay 定时任务：\n\nbash ~/.openclaw/workspace/quant_projects/personal-a-share-research-system/scripts/run_daily_overlays.sh\n\n执行完成后，读取生成的综合研判文件：\nresearch/reports/ai_overlay/daily_digest_latest.md\n\n然后用飞书发送给我一条消息（channel=feishu，target=user:ou_47c21eede907b0c4f9fd4d34519d84ae），内容包括：\n1. 今日市场状态\n2. 候选池总数和Top3候选（名称+倾向+1条核心理由）\n3. 持仓关注情况（reduce/exit的最多5只：名称+浮亏+主要风险）\n4. 结尾加一行免责\n\n发送格式用文字，不要用卡片格式，直接发文字消息即可。\n\n如果任何步骤报错，仍然发一条消息告知状态。",
         "model": "minimax-portal/MiniMax-M2.7",
         "timeoutSeconds": 600
       },
@@ -991,7 +991,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行：cd /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system && python3 scripts/generate_dashboard_portal.py\n\n完成后报告：已生成 dashboard_portal_latest.html",
+        "message": "🔍 首先检查今天是否为A股交易日：运行 python3 /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system/scripts/is_trading_day.py --json。如果 is_trading_day 为 false，直接回复 NO_REPLY 并停止，不执行任何后续步骤。\\n\\n仅当 is_trading_day 为 true 时，才继续执行：\\n执行：cd /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system && python3 scripts/generate_dashboard_portal.py\n\n完成后报告：已生成 dashboard_portal_latest.html",
         "model": "minimax-portal/MiniMax-M2.7",
         "thinking": "low",
         "timeoutSeconds": 300,
@@ -1084,7 +1084,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "请执行业 ML 预测每日更新任务：\n\n1. 运行 /usr/bin/python3 /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system/scripts/generate_extended_predictions.py\n2. 这个脚本预计需要 10-20 分钟，请耐心等待完成\n3. 运行完成后检查输出确认成功\n4. 验证 predictions 文件最新日期：python3 -c \"import pandas as pd; df=pd.read_csv('/Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system/data/ml_dataset_full/ml_predictions_live_latest.csv',usecols=['date']); print(df['date'].max())\"\n5. 如果失败，返回错误摘要",
+        "message": "🔍 首先检查今天是否为A股交易日：运行 python3 /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system/scripts/is_trading_day.py --json。如果 is_trading_day 为 false，直接回复 NO_REPLY 并停止，不执行任何后续步骤。\\n\\n仅当 is_trading_day 为 true 时，才继续执行：\\n请执行业 ML 预测每日更新任务：\n\n1. 运行 /usr/bin/python3 /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system/scripts/generate_extended_predictions.py\n2. 这个脚本预计需要 10-20 分钟，请耐心等待完成\n3. 运行完成后检查输出确认成功\n4. 验证 predictions 文件最新日期：python3 -c \"import pandas as pd; df=pd.read_csv('/Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system/data/ml_dataset_full/ml_predictions_live_latest.csv',usecols=['date']); print(df['date'].max())\"\n5. 如果失败，返回错误摘要",
         "thinking": "low",
         "timeoutSeconds": 1800,
         "lightContext": true,
@@ -1140,7 +1140,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行aggressive盘中实时止损检查: cd /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system && python3 scripts/intraday_aggressive_exit_check.py",
+        "message": "🔍 首先检查今天是否为A股交易日：运行 python3 /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system/scripts/is_trading_day.py --json。如果 is_trading_day 为 false，直接回复 NO_REPLY 并停止，不执行任何后续步骤。\\n\\n仅当 is_trading_day 为 true 时，才继续执行：\\n执行aggressive盘中实时止损检查: cd /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system && python3 scripts/intraday_aggressive_exit_check.py",
         "model": "minimax-m2.7",
         "timeoutSeconds": 600
       },

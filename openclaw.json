@@ -23,7 +23,7 @@
         },
         "fallback": "none",
         "model": "bge-m3:latest",
-        "provider": "local",
+        "provider": "openai",
         "query": {
           "hybrid": {
             "candidateMultiplier": 5,
@@ -40,10 +40,6 @@
           "maxResults": 8,
           "minScore": 0.3
         },
-        "remote": {
-          "apiKey": "ollama-local",
-          "baseUrl": "http://127.0.0.1:11434/v1"
-        },
         "sources": [
           "memory",
           "sessions"
@@ -53,7 +49,7 @@
         "fallbacks": [
           "minimax-portal/MiniMax-M2.7"
         ],
-        "primary": "ollama/qwen3.5"
+        "primary": "deepseek/deepseek-v4-pro"
       },
       "models": {
         "anthropic/gpt-5.4": {},
@@ -87,11 +83,26 @@
         "ollama-local/deepseek-r1:7b": {
           "alias": "deepseek-local"
         },
-        "ollama-local/gemma3:4b": {
-          "alias": "gemma3-local"
+        "omlx/OmniCoder-9B-Instruct-4bit": {
+          "alias": "omlx-omnicoder"
         },
         "ollama-local/my-qwen": {
           "alias": "qwen-local"
+        },
+        "beecode/gpt-5.4": {
+          "alias": "gpt-5.4-beecode"
+        },
+        "beecode/gpt-5.3-codex": {
+          "alias": "beecode-gpt-5.3-codex"
+        },
+        "beecode/gpt-5.2-codex": {
+          "alias": "beecode-gpt-5.2-codex"
+        },
+        "deepseek/deepseek-v4-flash": {
+          "alias": "deepseek-flash"
+        },
+        "deepseek/deepseek-v4-pro": {
+          "alias": "deepseek-pro"
         }
       },
       "subagents": {
@@ -104,80 +115,103 @@
     "list": [
       {
         "id": "main",
+        "name": "主脑 (GPT-5.4)",
         "model": {
+          "primary": "deepseek/deepseek-v4-flash",
           "fallbacks": [
-            "codex/gpt-5.3-codex",
+            "deepseek/deepseek-v4-pro",
             "minimax-portal/MiniMax-M2.7"
-          ],
-          "primary": "codex/gpt-5.4"
-        },
-        "name": "\u4e3b\u8111 (GPT-5.4)"
+          ]
+        }
       },
       {
         "id": "backup",
-        "model": "ollama-local/my-qwen",
-        "name": "\u672c\u5730Qwen\uff08\u4ec5\u624b\u52a8\u7eaf\u6587\u672c\uff09"
+        "name": "本地Qwen（仅手动纯文本）",
+        "model": {
+          "primary": "minimax-portal/MiniMax-M2.7",
+          "fallbacks": [
+            "codex/gpt-5.3-codex"
+          ]
+        }
       },
       {
         "id": "downloader",
+        "name": "下载助手 (GPT-5.4)",
         "model": {
+          "primary": "codex/gpt-5.4",
           "fallbacks": [
             "codex/gpt-5.3-codex",
             "minimax-portal/MiniMax-M2.7"
-          ],
-          "primary": "codex/gpt-5.4"
-        },
-        "name": "\u4e0b\u8f7d\u52a9\u624b (GPT-5.4)"
+          ]
+        }
       },
       {
         "id": "simple",
-        "model": "ollama-local/gemma3:4b",
-        "name": "\u672c\u5730Gemma3\uff08\u4ec5\u624b\u52a8\u7eaf\u6587\u672c\uff09",
+        "name": "本地Qwen（仅手动纯文本）",
+        "model": {
+          "primary": "minimax-portal/MiniMax-M2.7",
+          "fallbacks": [
+            "codex/gpt-5.3-codex"
+          ]
+        },
         "sandbox": {
           "mode": "all"
         }
       },
       {
         "id": "tester",
+        "name": "质检员 (GPT-5.4)",
         "model": {
+          "primary": "codex/gpt-5.4",
           "fallbacks": [
             "codex/gpt-5.3-codex",
             "minimax-portal/MiniMax-M2.7"
-          ],
-          "primary": "codex/gpt-5.4"
-        },
-        "name": "\u8d28\u68c0\u5458 (GPT-5.4)"
+          ]
+        }
       },
       {
-        "agentDir": "/Users/ling/.openclaw/agents/quant-advisor/agent",
         "id": "xiaoguanjia",
+        "name": "小管家",
+        "workspace": "/Users/ling/.openclaw/workspace-quant",
+        "agentDir": "/Users/ling/.openclaw/agents/quant-advisor/agent",
         "model": {
+          "primary": "minimax-portal/MiniMax-M2.7",
           "fallbacks": [
-            "codex/gpt-5.3-codex",
-            "minimax-portal/MiniMax-M2.7"
-          ],
-          "primary": "codex/gpt-5.4"
-        },
-        "name": "\u5c0f\u7ba1\u5bb6",
-        "workspace": "/Users/ling/.openclaw/workspace-quant"
+            "codex/gpt-5.4"
+          ]
+        }
       },
       {
         "id": "coder-lite",
-        "model": "ollama-local/carstenuhlig/omnicoder-9b:latest",
         "name": "Coder Lite (OmniCoder 9B)",
+        "model": {
+          "primary": "codex/gpt-5.4",
+          "fallbacks": [
+            "minimax-portal/MiniMax-M2.7"
+          ]
+        },
         "sandbox": {
           "mode": "all"
         }
       },
       {
         "id": "coding-agent",
-        "name": "Coding Agent (GPT-5.4)"
+        "name": "Coding Agent (GPT-5.4)",
+        "model": {
+          "primary": "deepseek/deepseek-v4-pro",
+          "fallbacks": [
+            "beecode/gpt-5.4",
+            "deepseek/deepseek-v4-flash",
+            "minimax-portal/MiniMax-M2.7"
+          ]
+        }
       }
     ]
   },
   "auth": {
     "order": {
       "codex": [
+        "intelalloc:default",
         "codex:default"
       ],
       "gmn": [
@@ -267,7 +301,7 @@
       }
     },
     {
-      "agentId": "main",
+      "agentId": "coding-agent",
       "match": {
         "channel": "webchat"
       }
@@ -275,7 +309,52 @@
   ],
   "channels": {
     "feishu": {
-      "enabled": false
+      "defaultAccount": "main",
+      "accounts": {
+        "main": {
+          "appId": "cli_a928c429d9785cc6",
+          "appSecret": "8DdEUA04tEjcp0CX7Z4L0gaxRbtutjon",
+          "name": "main",
+          "dmPolicy": "open",
+          "allowFrom": [
+            "*"
+          ],
+          "streaming": true
+        },
+        "feishu-assistant": {
+          "appId": "cli_a9256a7ae9b91cb6",
+          "appSecret": "q0rgZTON2C2xR3tR5bqNwdeURqm50MQV",
+          "name": "周到",
+          "dmPolicy": "open",
+          "allowFrom": [
+            "*"
+          ]
+        },
+        "coding-agent": {
+          "appId": "cli_a934da0dde385cba",
+          "appSecret": "3ohW4ALIPfswBDwcnIo9RcvNSlKgQf1e",
+          "name": "coding agent",
+          "dmPolicy": "open",
+          "allowFrom": [
+            "*"
+          ],
+          "streaming": true
+        },
+        "default": {
+          "webhookPath": "/feishu/events",
+          "dmPolicy": "pairing",
+          "groupPolicy": "open"
+        }
+      },
+      "domain": "feishu",
+      "connectionMode": "websocket",
+      "reactionNotifications": "own",
+      "typingIndicator": true,
+      "resolveSenderNames": true,
+      "webhookPath": "/feishu/events",
+      "dmPolicy": "pairing",
+      "groupPolicy": "open",
+      "enabled": true
     }
   },
   "commands": {
@@ -331,7 +410,7 @@
     "ackReactionScope": "group-mentions"
   },
   "meta": {
-    "lastTouchedAt": "2026-04-12T01:47:05.560Z",
+    "lastTouchedAt": "2026-04-25T09:52:41.681Z",
     "lastTouchedVersion": "2026.4.10"
   },
   "models": {
@@ -407,12 +486,22 @@
         "models": [
           {
             "contextWindow": 131072,
-            "id": "deepseek-chat",
+            "id": "deepseek-v4-flash",
             "input": [
               "text"
             ],
             "maxTokens": 8192,
-            "name": "DeepSeek Chat",
+            "name": "DeepSeek V4 Flash",
+            "reasoning": false
+          },
+          {
+            "contextWindow": 131072,
+            "id": "deepseek-v4-pro",
+            "input": [
+              "text"
+            ],
+            "maxTokens": 8192,
+            "name": "DeepSeek V4 Pro",
             "reasoning": false
           }
         ]
@@ -594,7 +683,7 @@
               "text"
             ],
             "maxTokens": 4096,
-            "name": "\u672c\u5730Qwen3.5-9B",
+            "name": "本地Qwen3.5-9B",
             "reasoning": true
           },
           {
@@ -604,7 +693,17 @@
               "text"
             ],
             "maxTokens": 4096,
-            "name": "\u672c\u5730DeepSeek-R1-7B",
+            "name": "本地DeepSeek-R1-7B",
+            "reasoning": true
+          },
+          {
+            "contextWindow": 32768,
+            "id": "deepseek-r1:14b",
+            "input": [
+              "text"
+            ],
+            "maxTokens": 4096,
+            "name": "本地DeepSeek-R1-14B",
             "reasoning": true
           },
           {
@@ -614,7 +713,7 @@
               "text"
             ],
             "maxTokens": 4096,
-            "name": "\u672c\u5730OmniCoder-9B",
+            "name": "本地OmniCoder-9B",
             "reasoning": false
           }
         ]
@@ -626,142 +725,45 @@
         "models": [
           {
             "contextWindow": 131072,
-            "id": "Qwen2.5-0.5B-Instruct-4bit",
+            "id": "OmniCoder-9B-Instruct-4bit",
             "input": [
               "text"
             ],
             "maxTokens": 8192,
-            "name": "oMLX Qwen2.5-0.5B-4bit",
-            "reasoning": false
-          },
+            "name": "oMLX OmniCoder-9B-Instruct-4bit",
+            "reasoning": true
+          }
+        ]
+      },
+      "beecode": {
+        "api": "openai-responses",
+        "apiKey": {
+          "id": "/providers/beecode/apiKey",
+          "provider": "model_api_keys_file",
+          "source": "file"
+        },
+        "authHeader": true,
+        "baseUrl": "https://beecode.cc",
+        "models": [
           {
-            "contextWindow": 131072,
-            "id": "Qwen2.5-1.5B-Instruct-4bit",
+            "api": "openai-responses",
+            "contextWindow": 1000000,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0
+            },
+            "id": "gpt-5.4",
             "input": [
               "text"
             ],
             "maxTokens": 8192,
-            "name": "oMLX Qwen2.5-1.5B-4bit",
-            "reasoning": false
+            "name": "GPT-5.4",
+            "reasoning": true
           }
         ]
       }
-    }
-  },
-  "plugins": {
-    "allow": [
-      "active-task-guard",
-      "memory-core",
-      "simple-task-router",
-      "openclaw-lark",
-      "openclaw-web-search",
-      "minimax",
-      "ollama",
-      "anthropic",
-      "codex",
-      "openai",
-      "acpx",
-      "feishu"
-    ],
-    "entries": {
-      "acpx": {
-        "enabled": true
-      },
-      "active-task-guard": {
-        "config": {
-          "enabledAgents": [
-            "main",
-            "xiaoguanjia"
-          ]
-        },
-        "enabled": true
-      },
-      "feishu": {
-        "enabled": false
-      },
-      "memory-core": {
-        "enabled": true
-      },
-      "memory-lancedb": {
-        "enabled": false
-      },
-      "minimem-memory": {
-        "enabled": false
-      },
-      "openclaw-lark": {
-        "enabled": true
-      },
-      "openclaw-web-search": {
-        "enabled": true
-      },
-      "simple-task-router": {
-        "enabled": false
-      },
-      "minimax": {
-        "enabled": true
-      },
-      "ollama": {
-        "enabled": true
-      },
-      "anthropic": {
-        "enabled": true
-      },
-      "codex": {
-        "enabled": true
-      },
-      "openai": {
-        "enabled": true
-      }
-    },
-    "installs": {
-      "acpx": {
-        "installPath": "/Users/ling/.local/share/fnm/node-versions/v22.22.0/installation/lib/node_modules/openclaw/extensions/acpx",
-        "installedAt": "2026-03-14T01:21:07.629Z",
-        "source": "path",
-        "sourcePath": "/Users/ling/.local/share/fnm/node-versions/v22.22.0/installation/lib/node_modules/openclaw/extensions/acpx",
-        "spec": "@openclaw/acpx"
-      },
-      "memory-lancedb-pro": {
-        "installPath": "/Users/ling/node_modules/memory-lancedb-pro",
-        "installedAt": "2026-03-11T06:14:11.907Z",
-        "source": "path",
-        "sourcePath": "/Users/ling/node_modules/memory-lancedb-pro",
-        "version": "1.1.0-beta.6"
-      },
-      "minimem-memory": {
-        "installPath": "/Users/ling/.openclaw/extensions/minimem-memory",
-        "installedAt": "2026-03-11T05:32:01.087Z",
-        "source": "path",
-        "sourcePath": "/tmp/openclaw-minimem-fixed-CoPcKF/package",
-        "version": "0.1.3"
-      },
-      "openclaw-lark": {
-        "installPath": "/Users/ling/.openclaw/extensions/openclaw-lark",
-        "installedAt": "2026-04-12T01:45:43.860Z",
-        "integrity": "sha512-oiS7hHwJpoOQCHjgAT2xPTO9zmmUKEje2kgsYC+Q8ZMu0gn/sI+FE2NYnQ3dVcgqw7z+2rdajgcTP6kkisFxNw==",
-        "resolvedAt": "2026-04-12T01:45:06.564Z",
-        "resolvedName": "@larksuite/openclaw-lark",
-        "resolvedSpec": "@larksuite/openclaw-lark@2026.4.7",
-        "resolvedVersion": "2026.4.7",
-        "shasum": "ba6461e8b3f8ca7facba9e58afc93e7b23426bfa",
-        "source": "npm",
-        "spec": "@larksuite/openclaw-lark@latest",
-        "version": "2026.4.7"
-      },
-      "openclaw-web-search": {
-        "installPath": "/Users/ling/.openclaw/extensions/openclaw-web-search",
-        "source": "npm",
-        "spec": "@ollama/openclaw-web-search"
-      }
-    },
-    "load": {
-      "paths": [
-        "/Users/ling/.openclaw/extensions/active-task-guard",
-        "/Users/ling/.openclaw/extensions/simple-task-router"
-      ]
-    },
-    "slots": {
-      "memory": "memory-core"
     }
   },
   "secrets": {
@@ -824,5 +826,84 @@
     "lastRunCommand": "doctor",
     "lastRunMode": "local",
     "lastRunVersion": "2026.2.26"
+  },
+  "plugins": {
+    "allow": [
+      "active-task-guard",
+      "memory-core",
+      "simple-task-router",
+      "openclaw-lark",
+      "openclaw-web-search",
+      "minimax",
+      "ollama",
+      "anthropic",
+      "codex",
+      "openai",
+      "acpx",
+      "feishu",
+      "deepseek"
+    ],
+    "entries": {
+      "acpx": {
+        "enabled": true
+      },
+      "active-task-guard": {
+        "config": {
+          "enabledAgents": [
+            "main",
+            "xiaoguanjia"
+          ]
+        },
+        "enabled": true
+      },
+      "feishu": {
+        "enabled": false
+      },
+      "memory-core": {
+        "enabled": true
+      },
+      "memory-lancedb": {
+        "enabled": false
+      },
+      "minimem-memory": {
+        "enabled": false
+      },
+      "openclaw-lark": {
+        "enabled": true
+      },
+      "openclaw-web-search": {
+        "enabled": true
+      },
+      "simple-task-router": {
+        "enabled": false
+      },
+      "minimax": {
+        "enabled": true
+      },
+      "ollama": {
+        "enabled": true
+      },
+      "anthropic": {
+        "enabled": true
+      },
+      "codex": {
+        "enabled": true
+      },
+      "openai": {
+        "enabled": true
+      },
+      "deepseek": {
+        "enabled": true
+      }
+    },
+    "load": {
+      "paths": [
+        "/Users/ling/.openclaw/extensions/active-task-guard",
+        "/Users/ling/.openclaw/extensions/simple-task-router"
+      ]
+    },
+    "slots": {
+      "memory": "memory-core"
+    }
   }
 }
