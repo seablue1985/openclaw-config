@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-05-01T09:00:13.290209",
+  "checked_at": "2026-05-02T09:02:56.690053",
   "results": [
     {
       "path": "/Users/ling/.openclaw/workspace/coding-agent/file-organizer",
@@ -199,8 +199,8 @@
       "working_tree_dirty": true,
       "staged_count": 1,
       "modified_count": 2,
-      "untracked_count": 46,
-      "fetch_error": null,
+      "untracked_count": 47,
+      "fetch_error": "fatal: unable to access 'https://github.com/seablue1985/TrendRadar.git/': Empty reply from server",
       "upstream_remote": "origin",
       "local_sha": "c8577a8",
       "current_branch": "master",
@@ -237,7 +237,7 @@
       "staged_count": 0,
       "modified_count": 0,
       "untracked_count": 1,
-      "fetch_error": null,
+      "fetch_error": "fatal: unable to access 'https://github.com/virattt/ai-hedge-fund.git/': Failed to connect to github.com port 443 after 75016 ms: Couldn't connect to server",
       "upstream_remote": "origin",
       "local_sha": "876801b",
       "current_branch": "main",
@@ -249,11 +249,17 @@
       "path": "/Volumes/A/openclaw-cold/2026-03-28/.openclaw/workspace/quant_projects/daily_stock_analysis",
       "name": "daily_stock_analysis",
       "local_tag": "v3.13.0-19-g4254672",
-      "upstream_tag": "v3.14.2",
-      "commits_behind": 28,
+      "upstream_tag": "v3.14.2-1-g7711e9b",
+      "commits_behind": 29,
       "commits_ahead": 16,
       "status": "diverged",
       "new_commits": [
+        {
+          "message": "fix: 修复 task_queue、持仓估值与 LLM 诊断 (#1124) (#1146)",
+          "short": "7711e9b",
+          "priority": "🟡 Bug修复",
+          "breaking": false
+        },
         {
           "message": "chore: release v3.14.2",
           "short": "020fbf8",
@@ -367,12 +373,6 @@
           "short": "9a08ba4",
           "priority": "⚪ 其他",
           "breaking": false
-        },
-        {
-          "message": "ci: ignore vendored node modules in lint config (#1122)",
-          "short": "43352ca",
-          "priority": "⚪ 其他",
-          "breaking": false
         }
       ],
       "local_commits": [
@@ -484,7 +484,7 @@
       "local_sha": "4254672",
       "current_branch": "main",
       "upstream_branch": "upstream/main",
-      "upstream_sha": "020fbf8",
+      "upstream_sha": "7711e9b",
       "tier": "main"
     },
     {

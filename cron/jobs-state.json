@@ -307,13 +307,13 @@
       }
     },
     "9bfeec2c-c32e-4ffa-8469-f65b759bf7a7": {
-      "updatedAtMs": 1777599377329,
+      "updatedAtMs": 1777685669987,
       "state": {
-        "nextRunAtMs": 1777685400000,
-        "lastRunAtMs": 1777599000005,
+        "nextRunAtMs": 1777771800000,
+        "lastRunAtMs": 1777685400012,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 377324,
+        "lastDurationMs": 269975,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -358,13 +358,13 @@
       }
     },
     "a7b9828d-8e45-4e4e-b69e-be8d13e768b9": {
-      "updatedAtMs": 1777566612202,
+      "updatedAtMs": 1777687251144,
       "state": {
-        "nextRunAtMs": 1777687200000,
-        "lastRunAtMs": 1777082400006,
+        "nextRunAtMs": 1778292000000,
+        "lastRunAtMs": 1777687200021,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 30391,
+        "lastDurationMs": 51123,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true

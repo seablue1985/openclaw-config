@@ -9034,7 +9034,7 @@
   },
   "agent:main:heartbeat": {
     "sessionId": "298fd445-86e4-4eef-bc93-1e6983046c36",
-    "updatedAt": 1777674537070,
+    "updatedAt": 1777688935782,
     "sessionStartedAt": 1777660073486,
     "systemSent": true,
     "abortedLastRun": false,
@@ -10125,10 +10125,10 @@
       "version": 0
     },
     "status": "running",
-    "startedAt": 1777674537050,
+    "startedAt": 1777688935761,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1777670935717,
+      "generatedAt": 1777685337352,
       "sessionId": "298fd445-86e4-4eef-bc93-1e6983046c36",
       "sessionKey": "agent:main:heartbeat",
       "provider": "deepseek",
@@ -10838,12 +10838,12 @@
         ]
       }
     },
-    "inputTokens": 27120,
-    "outputTokens": 78,
+    "inputTokens": 44644,
+    "outputTokens": 140,
     "cacheRead": 15488,
     "cacheWrite": 0,
     "estimatedCostUsd": 0,
-    "totalTokens": 42608,
+    "totalTokens": 60132,
     "totalTokensFresh": true,
     "providerOverride": "deepseek",
     "modelOverride": "deepseek-v4-pro",
