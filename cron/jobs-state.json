@@ -2,15 +2,15 @@
   "version": 1,
   "jobs": {
     "3c85911f-26c5-4a2e-9734-fb85f51cf9b8": {
-      "updatedAtMs": 1777648262688,
+      "updatedAtMs": 1777734641557,
       "state": {
-        "lastRunAtMs": 1777648200012,
+        "lastRunAtMs": 1777734600013,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 62676,
+        "lastDurationMs": 41544,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1777734600000
+        "nextRunAtMs": 1777821000000
       }
     },
     "xhs-obsidian-sync-0900": {
@@ -191,30 +191,29 @@
       }
     },
     "3abaaed2-b403-4284-81a2-553c957fa78d": {
-      "updatedAtMs": 1777647792861,
+      "updatedAtMs": 1777734060230,
       "state": {
-        "nextRunAtMs": 1777734000000,
-        "lastRunAtMs": 1777647600011,
+        "nextRunAtMs": 1777820400000,
+        "lastRunAtMs": 1777734000019,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 192850,
+        "lastDurationMs": 60211,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
       }
     },
     "55a9fce0-aec0-4dbc-b7cc-c7066c77d995": {
-      "updatedAtMs": 1777662300073,
+      "updatedAtMs": 1777748519573,
       "state": {
-        "nextRunAtMs": 1777748400000,
-        "lastRunAtMs": 1777662000012,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 300061,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1,
-        "lastError": "cron: job execution timed out",
-        "lastErrorReason": "timeout"
+        "nextRunAtMs": 1777834800000,
+        "lastRunAtMs": 1777748400020,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 119553,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       }
     },
     "197ea670-bb08-4c10-ab7b-97884ca0b641": {
@@ -239,20 +238,20 @@
         "lastStatus": "ok",
         "lastDurationMs": 1130633,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0
+        "consecutiveErrors": 0,
+        "runningAtMs": 1777749600008
       }
     },
     "71585983-eab9-4557-924c-277a29a73768": {
-      "updatedAtMs": 1777658650621,
+      "updatedAtMs": 1777745028028,
       "state": {
-        "nextRunAtMs": 1777744800000,
-        "lastRunAtMs": 1777658400012,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 250609,
+        "nextRunAtMs": 1777831200000,
+        "lastRunAtMs": 1777744800020,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 228008,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 1,
-        "lastError": "⚠️ Agent couldn't generate a response. Note: some tool actions may have already been executed — please verify before retrying."
+        "consecutiveErrors": 0
       }
     },
     "4fe135b5-7edc-4978-a296-b11aae2afaa5": {
@@ -371,17 +370,17 @@
       }
     },
     "c2d3327d-c5cb-4eda-a06a-ed6309288abb": {
-      "updatedAtMs": 1777566637421,
+      "updatedAtMs": 1777708980031,
       "state": {
-        "nextRunAtMs": 1777708800000,
-        "lastRunAtMs": 1777104000008,
+        "nextRunAtMs": 1778313600000,
+        "lastRunAtMs": 1777708800013,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 180039,
+        "lastDurationMs": 180018,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1,
-        "lastError": "cron: job execution timed out",
-        "lastErrorReason": "timeout"
+        "consecutiveErrors": 2,
+        "lastErrorReason": "timeout",
+        "lastError": "cron: job execution timed out"
       }
     },
     "582d40ba-055c-48a0-9058-74acdf488466": {
@@ -423,15 +422,15 @@
       }
     },
     "skill-evolver-daily-2100": {
-      "updatedAtMs": 1777640614123,
+      "updatedAtMs": 1777726969319,
       "state": {
-        "lastRunAtMs": 1777640577891,
+        "lastRunAtMs": 1777726800016,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 36232,
+        "lastDurationMs": 169303,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1777726800000
+        "nextRunAtMs": 1777813200000
       }
     },
     "ml-prediction-daily-1700": {
@@ -447,15 +446,17 @@
       }
     },
     "openclaw-daily-backup-0300": {
-      "updatedAtMs": 1777662354409,
+      "updatedAtMs": 1777748819575,
       "state": {
-        "nextRunAtMs": 1777748400000,
-        "lastRunAtMs": 1777662300073,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 54336,
+        "nextRunAtMs": 1777834800000,
+        "lastRunAtMs": 1777748519573,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 300002,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0
+        "consecutiveErrors": 1,
+        "lastError": "cron: job execution timed out",
+        "lastErrorReason": "timeout"
       }
     },
     "957abcff-2152-4ce9-80dd-f3af9fb22b47": {
@@ -472,17 +473,21 @@
       }
     },
     "6426c336-a82d-46c4-b9a1-92170db348e9": {
-      "updatedAtMs": 1777654960254,
+      "updatedAtMs": 1777741243662,
       "state": {
-        "nextRunAtMs": 1777741200000,
-        "lastRunAtMs": 1777654800012,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 160242,
+        "nextRunAtMs": 1777827600000,
+        "lastRunAtMs": 1777741200016,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 43646,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 1,
-        "lastError": "FallbackSummaryError: All models failed (2): minimax-portal/MiniMax-M2.7: LLM request timed out. (timeout) | codex/gpt-5.4: 403 Your request was blocked. (auth)",
-        "lastErrorReason": "auth"
+        "consecutiveErrors": 0
+      }
+    },
+    "89df6117-f91a-4cfd-95d7-ba3017104858": {
+      "updatedAtMs": 1777733068828,
+      "state": {
+        "nextRunAtMs": 1777879800000
       }
     }
   }

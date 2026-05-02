@@ -1176,6 +1176,32 @@
         "mode": "none"
       },
       "state": {}
+    },
+    {
+      "id": "89df6117-f91a-4cfd-95d7-ba3017104858",
+      "name": "15:30混合策略模拟盘更新",
+      "description": "盘后自动更新模拟盘净值、调仓",
+      "enabled": true,
+      "createdAtMs": 1777733068828,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 15 * * 1-5",
+        "staggerMs": 0
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "🔍 首先检查今天是否为A股交易日：运行 python3 /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system/scripts/is_trading_day.py --json。如果 is_trading_day 为 false，直接回复 NO_REPLY 并停止。\\n\\n仅当 is_trading_day 为 true 时，执行以下步骤：\\n\\n1. cd /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system\\n2. 运行 python3 simulation/paper_trading.py update\\n   （每日自动检测三道防线 + 月末/Regime升级自动调仓）\\n3. 如果 update 输出了风险警报(risk_alert)或调仓(rebalance)，只发送以下信息给用户：\\n   - 风险警报内容（止损/回撤/Regime突变）\\n   - 调仓后的持仓变化\\n   - 净值变化\\n4. 如果是普通更新（无警报无调仓），回复 NO_REPLY",
+        "thinking": "low",
+        "timeoutSeconds": 300,
+        "model": "minimax-portal/MiniMax-M2.7"
+      },
+      "delivery": {
+        "channel": "feishu",
+        "to": "user:ou_47c21eede907b0c4f9fd4d34519d84ae"
+      },
+      "state": {}
     }
   ]
 }
