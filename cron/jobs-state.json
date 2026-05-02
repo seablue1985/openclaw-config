@@ -230,16 +230,15 @@
       }
     },
     "c4c7a000-53b0-46fa-bc77-b564cbaa5704": {
-      "updatedAtMs": 1777664330647,
+      "updatedAtMs": 1777751179717,
       "state": {
-        "nextRunAtMs": 1777749600000,
-        "lastRunAtMs": 1777663200014,
+        "nextRunAtMs": 1777836000000,
+        "lastRunAtMs": 1777749600020,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 1130633,
+        "lastDurationMs": 1579697,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0,
-        "runningAtMs": 1777749600008
+        "consecutiveErrors": 0
       }
     },
     "71585983-eab9-4557-924c-277a29a73768": {
