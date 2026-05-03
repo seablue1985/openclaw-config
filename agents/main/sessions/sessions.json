@@ -7352,13 +7352,13 @@
   },
   "agent:main:heartbeat": {
     "sessionId": "a9e25186-4d48-4d1e-9b53-0d05e5c002bc",
-    "updatedAt": 1777784296916,
+    "updatedAt": 1777789697094,
     "sessionStartedAt": 1777746473497,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
     "sessionFile": "/Users/ling/.openclaw/agents/main/sessions/a9e25186-4d48-4d1e-9b53-0d05e5c002bc.jsonl",
-    "compactionCount": 0,
+    "compactionCount": 1,
     "skillsSnapshot": {
       "prompt": "⚠️ Skills catalog using compact format (descriptions omitted). Run `openclaw skills check` to audit.\n\n\nThe following skills provide specialized instructions for specific tasks.\nUse the read tool to load a skill's file when the task matches its name.\nWhen a skill file references a relative path, resolve it against the skill directory (parent of SKILL.md / dirname of the path) and use that absolute path in tool commands.\n\n<available_skills>\n  <skill>\n    <name>1password</name>\n    <location>~/Library/pnpm/global/5/.pnpm/openclaw@2026.4.25/node_modules/openclaw/skills/1password/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>a-share-fusion-report</name>\n    <location>~/.openclaw/workspace/skills/a-share-fusion-report/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>acp-router</name>\n    <location>~/Library/pnpm/global/5/.pnpm/openclaw@2026.4.25/node_modules/openclaw/dist/extensions/acpx/skills/acp-router/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>agent-reach</name>\n    <location>~/.openclaw/skills/agent-reach/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>akshare-stock</name>\n    <location>~/.openclaw/skills/akshare-stock/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>auto-backup-openclaw-user-data</name>\n    <location>~/.openclaw/skills/auto-backup-openclaw-user-data/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>auto-updater</name>\n    <location>~/.openclaw/workspace/skills/auto-updater/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>camoufox-cli</name>\n    <location>~/.openclaw/workspace/skills/camoufox-cli/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>capability-evolver</name>\n    <location>~/.openclaw/skills/capability-evolver/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>claude-websearch</name>\n    <location>~/.openclaw/workspace/skills/claudecode-websearch/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>clawhub</name>\n    <location>~/Library/pnpm/global/5/.pnpm/openclaw@2026.4.25/node_modules/openclaw/skills/clawhub/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>coding-agent</name>\n    <location>~/Library/pnpm/global/5/.pnpm/openclaw@2026.4.25/node_modules/openclaw/skills/coding-agent/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>context-memory-optimizer</name>\n    <location>~/.openclaw/workspace/skills/context-memory-optimizer/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>daily-market-watch</name>\n    <location>~/.openclaw/skills/daily-market-watch/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>ddg-search</name>\n    <location>~/.openclaw/workspace/skills/ddg-web-search/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>deep-research-pro</name>\n    <location>~/.openclaw/skills/deep-research-pro-1.0.2/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>feishu-bitable</name>\n    <location>~/.openclaw/extensions/openclaw-lark/skills/feishu-bitable/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>feishu-calendar</name>\n    <location>~/.openclaw/extensions/openclaw-lark/skills/feishu-calendar/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>feishu-channel-rules</name>\n    <location>~/.openclaw/extensions/openclaw-lark/skills/feishu-channel-rules/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>feishu-create-doc</name>\n    <location>~/.openclaw/extensions/openclaw-lark/skills/feishu-create-doc/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>feishu-fetch-doc</name>\n    <location>~/.openclaw/extensions/openclaw-lark/skills/feishu-fetch-doc/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>feishu-im-read</name>\n    <location>~/.openclaw/extensions/openclaw-lark/skills/feishu-im-read/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>feishu-task</name>\n    <location>~/.openclaw/extensions/openclaw-lark/skills/feishu-task/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>feishu-troubleshoot</name>\n    <location>~/.openclaw/extensions/openclaw-lark/skills/feishu-troubleshoot/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>feishu-update-doc</name>\n    <location>~/.openclaw/extensions/openclaw-lark/skills/feishu-update-doc/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>firecrawl</name>\n    <location>~/.agents/skills/firecrawl/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>gh-issues</name>\n    <location>~/Library/pnpm/global/5/.pnpm/openclaw@2026.4.25/node_modules/openclaw/skills/gh-issues/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>github</name>\n    <location>~/Library/pnpm/global/5/.pnpm/openclaw@2026.4.25/node_modules/openclaw/skills/github/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>healthcheck</name>\n    <location>~/Library/pnpm/global/5/.pnpm/openclaw@2026.4.25/node_modules/openclaw/skills/healthcheck/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>markdown-mirror-search</name>\n    <location>~/.openclaw/workspace/skills/markdown-mirror-search/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>mcporter</name>\n    <location>~/Library/pnpm/global/5/.pnpm/openclaw@2026.4.25/node_modules/openclaw/skills/mcporter/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>MiniMax Image Generation</name>\n    <location>~/.openclaw/skills/minimax-image-generation/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>model-usage</name>\n    <location>~/Library/pnpm/global/5/.pnpm/openclaw@2026.4.25/node_modules/openclaw/skills/model-usage/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>multi-search-engine</name>\n    <location>~/.openclaw/workspace/skills/multi-search-engine/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>news-market</name>\n    <location>~/.openclaw/workspace/skills/news-market/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>node-connect</name>\n    <location>~/Library/pnpm/global/5/.pnpm/openclaw@2026.4.25/node_modules/openclaw/skills/node-connect/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>openclaw-backup</name>\n    <location>~/.openclaw/workspace/skills/openclaw-backup/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>openclaw-spirits</name>\n    <location>~/.openclaw/workspace/skills/openclaw-spirits/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>openclaw-workspace</name>\n    <location>~/.openclaw/skills/openclaw-workspace/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>pua</name>\n    <location>~/.openclaw/workspace/skills/pua/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>self-improvement</name>\n    <location>~/.openclaw/workspace/skills/self-improving-agent/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>shadowrocket-node-sync</name>\n    <location>~/.openclaw/skills/shadowrocket-node-sync/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>skill-creator</name>\n    <location>~/Library/pnpm/global/5/.pnpm/openclaw@2026.4.25/node_modules/openclaw/skills/skill-creator/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>skill-evolver</name>\n    <location>~/.openclaw/skills/skill-evolver/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>skill-vetter</name>\n    <location>~/.openclaw/workspace/skills/skill-vetter/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>slack</name>\n    <location>~/.openclaw/skills/slack-1.0.0/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>stock-daily-report</name>\n    <location>~/.openclaw/workspace/skills/stock-daily-report/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>stock-market-pro</name>\n    <location>~/.openclaw/skills/stock-market-pro-1.2.12/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>stock-watcher</name>\n    <location>~/.openclaw/skills/stock-watcher/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>taskflow</name>\n    <location>~/Library/pnpm/global/5/.pnpm/openclaw@2026.4.25/node_modules/openclaw/skills/taskflow/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>taskflow-inbox-triage</name>\n    <location>~/Library/pnpm/global/5/.pnpm/openclaw@2026.4.25/node_modules/openclaw/skills/taskflow-inbox-triage/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>things-mac</name>\n    <location>~/Library/pnpm/global/5/.pnpm/openclaw@2026.4.25/node_modules/openclaw/skills/things-mac/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>ths-local-holdings</name>\n    <location>~/.openclaw/skills/ths-local-holdings/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>union-search-skill</name>\n    <location>~/.openclaw/workspace/skills/union-search-skill/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>weather</name>\n    <location>~/Library/pnpm/global/5/.pnpm/openclaw@2026.4.25/node_modules/openclaw/skills/weather/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>web-pilot</name>\n    <location>~/.openclaw/skills/web-pilot/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>xiaohongshu</name>\n    <location>~/.openclaw/workspace/skills/xiaohongshu/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>xiaohongshu-search-summarizer</name>\n    <location>~/.openclaw/workspace/skills/xiaohongshu-search-summarizer/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>xiaohongshu-skills</name>\n    <location>~/.openclaw/workspace/skills/xiaohongshu-skills/SKILL.md</location>\n  </skill>\n</available_skills>",
       "skills": [
@@ -8443,14 +8443,14 @@
       "version": 0
     },
     "status": "running",
-    "startedAt": 1777784296906,
+    "startedAt": 1777789697084,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1777782536383,
+      "generatedAt": 1777787896882,
       "sessionId": "a9e25186-4d48-4d1e-9b53-0d05e5c002bc",
       "sessionKey": "agent:main:heartbeat",
       "provider": "deepseek",
-      "model": "deepseek-v4-pro",
+      "model": "deepseek-v4-flash",
       "workspaceDir": "/Users/ling/.openclaw/workspace",
       "bootstrapMaxChars": 12000,
       "bootstrapTotalMaxChars": 60000,
@@ -8466,9 +8466,9 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 44826,
+        "chars": 44828,
         "projectContextChars": 19330,
-        "nonProjectContextChars": 25496
+        "nonProjectContextChars": 25498
       },
       "injectedWorkspaceFiles": [
         {
@@ -9156,16 +9156,18 @@
         ]
       }
     },
-    "inputTokens": 78227,
-    "outputTokens": 1955,
-    "cacheRead": 94976,
+    "inputTokens": 103456,
+    "outputTokens": 3907,
+    "cacheRead": 0,
     "cacheWrite": 0,
-    "estimatedCostUsd": 0.23989438000000002,
-    "totalTokens": 95077,
-    "totalTokensFresh": true,
-    "authProfileOverride": "deepseek:default",
+    "estimatedCostUsd": 0.058173640000000006,
+    "totalTokensFresh": false,
+    "modelProvider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "contextTokens": 131072,
+    "authProfileOverride": "minimax-portal:default",
     "authProfileOverrideSource": "auto",
-    "authProfileOverrideCompactionCount": 0
+    "authProfileOverrideCompactionCount": 1
   },
   "agent:main:cron:openclaw-daily-backup-0300": {
     "sessionId": "31ec5d5f-260e-438c-85b6-29a07cfa6fac",

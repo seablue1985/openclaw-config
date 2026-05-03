@@ -51,7 +51,7 @@
       }
     },
     "71b19e21-52a4-446a-bc53-72399efd63f1": {
-      "updatedAtMs": 1777601728820,
+      "updatedAtMs": 1777785803195,
       "state": {
         "nextRunAtMs": 1777855800000,
         "lastRunAtMs": 1777596600014,
@@ -89,7 +89,7 @@
       }
     },
     "investment-research-org-close-1515": {
-      "updatedAtMs": 1777619741004,
+      "updatedAtMs": 1777785817901,
       "state": {
         "consecutiveErrors": 0,
         "lastRunAtMs": 1777619700018,
@@ -113,7 +113,7 @@
       }
     },
     "investment-research-background-preopen-0840": {
-      "updatedAtMs": 1777601722791,
+      "updatedAtMs": 1777785800633,
       "state": {
         "consecutiveErrors": 0,
         "nextRunAtMs": 1777855200000,
@@ -127,7 +127,7 @@
       }
     },
     "investment-research-background-intraday-1030": {
-      "updatedAtMs": 1777602634512,
+      "updatedAtMs": 1777785815620,
       "state": {
         "consecutiveErrors": 0,
         "nextRunAtMs": 1777861800000,
@@ -140,7 +140,7 @@
       }
     },
     "investment-research-background-postclose-1630": {
-      "updatedAtMs": 1777624367219,
+      "updatedAtMs": 1777785827091,
       "state": {
         "consecutiveErrors": 0,
         "nextRunAtMs": 1777883400000,
@@ -153,7 +153,7 @@
       }
     },
     "investment-research-background-overnight-2100": {
-      "updatedAtMs": 1777640577891,
+      "updatedAtMs": 1777785831726,
       "state": {
         "consecutiveErrors": 0,
         "nextRunAtMs": 1777899600000,
@@ -178,7 +178,7 @@
       }
     },
     "investment-research-data-source-health-0935": {
-      "updatedAtMs": 1777617340822,
+      "updatedAtMs": 1777785813311,
       "state": {
         "consecutiveErrors": 0,
         "nextRunAtMs": 1777858500000,
@@ -254,7 +254,7 @@
       }
     },
     "4fe135b5-7edc-4978-a296-b11aae2afaa5": {
-      "updatedAtMs": 1777601740966,
+      "updatedAtMs": 1777785811023,
       "state": {
         "nextRunAtMs": 1777857900000,
         "lastRunAtMs": 1777598700014,
@@ -305,7 +305,7 @@
       }
     },
     "9bfeec2c-c32e-4ffa-8469-f65b759bf7a7": {
-      "updatedAtMs": 1777783212193,
+      "updatedAtMs": 1777784646020,
       "state": {
         "nextRunAtMs": 1777858200000,
         "lastRunAtMs": 1777771800012,
@@ -330,7 +330,7 @@
       }
     },
     "4f6ef6ba-a464-4efa-bf3b-b56e6da0b2e9": {
-      "updatedAtMs": 1777622456815,
+      "updatedAtMs": 1777785822531,
       "state": {
         "nextRunAtMs": 1777881600000,
         "lastRunAtMs": 1777622400012,
@@ -343,7 +343,7 @@
       }
     },
     "511b0e2a-cdb3-4fb7-bfad-2722afaf8455": {
-      "updatedAtMs": 1777601734875,
+      "updatedAtMs": 1777785808659,
       "state": {
         "nextRunAtMs": 1777857600000,
         "lastRunAtMs": 1777598400010,
@@ -395,7 +395,7 @@
       }
     },
     "dashboard-portal-1630": {
-      "updatedAtMs": 1777624404262,
+      "updatedAtMs": 1777785824804,
       "state": {
         "nextRunAtMs": 1777883400000,
         "lastRunAtMs": 1777624367219,
@@ -433,7 +433,7 @@
       }
     },
     "ml-prediction-daily-1700": {
-      "updatedAtMs": 1777626177329,
+      "updatedAtMs": 1777785829400,
       "state": {
         "lastRunAtMs": 1777626000011,
         "lastRunStatus": "ok",
@@ -459,7 +459,7 @@
       }
     },
     "957abcff-2152-4ce9-80dd-f3af9fb22b47": {
-      "updatedAtMs": 1777620705860,
+      "updatedAtMs": 1777785805872,
       "state": {
         "nextRunAtMs": 1777856400000,
         "lastRunAtMs": 1777620600013,
@@ -484,7 +484,7 @@
       }
     },
     "89df6117-f91a-4cfd-95d7-ba3017104858": {
-      "updatedAtMs": 1777733068828,
+      "updatedAtMs": 1777785820254,
       "state": {
         "nextRunAtMs": 1777879800000
       }
