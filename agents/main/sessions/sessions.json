@@ -1,5 +1,5 @@
 {
-  "7657eeb7-77b7-4f6a-a8e0-a6f8a90535d7": {
+  "agent:main:7657eeb7-77b7-4f6a-a8e0-a6f8a90535d7": {
     "sessionId": "7657eeb7-77b7-4f6a-a8e0-a6f8a90535d7",
     "updatedAt": 1777658352399,
     "sessionStartedAt": 1777573673582,
@@ -1818,7 +1818,7 @@
     "endedAt": 1777658337360,
     "runtimeMs": 2721
   },
-  "184e8d95-6e76-4297-ab64-0c081e73ef0e": {
+  "agent:main:184e8d95-6e76-4297-ab64-0c081e73ef0e": {
     "sessionId": "184e8d95-6e76-4297-ab64-0c081e73ef0e",
     "updatedAt": 1777599041989,
     "sessionStartedAt": 1777590193307,
@@ -3661,7 +3661,7 @@
     "model": "MiniMax-M2.7",
     "contextTokens": 200000
   },
-  "ca05082b-b896-45d6-9018-4cce52b79152": {
+  "agent:main:ca05082b-b896-45d6-9018-4cce52b79152": {
     "chatType": "group",
     "channel": "feishu",
     "groupId": "ou_83b02a0239e70fc8a4bf0b79aa8f9db7",
@@ -3684,7 +3684,7 @@
     "lastChannel": "feishu",
     "sessionFile": "/Users/ling/.openclaw/agents/main/sessions/ca05082b-b896-45d6-9018-4cce52b79152.jsonl"
   },
-  "d27c0455-66e5-4d05-9c79-be201f8eec74": {
+  "agent:main:d27c0455-66e5-4d05-9c79-be201f8eec74": {
     "sessionId": "d27c0455-66e5-4d05-9c79-be201f8eec74",
     "updatedAt": 1777637893430,
     "sessionStartedAt": 1777637461508,
@@ -5528,7 +5528,7 @@
     "totalTokens": 89394,
     "totalTokensFresh": true
   },
-  "298fd445-86e4-4eef-bc93-1e6983046c36": {
+  "agent:main:298fd445-86e4-4eef-bc93-1e6983046c36": {
     "sessionId": "298fd445-86e4-4eef-bc93-1e6983046c36",
     "updatedAt": 1777744699859,
     "sessionStartedAt": 1777660073486,
@@ -7352,7 +7352,7 @@
   },
   "agent:main:heartbeat": {
     "sessionId": "a9e25186-4d48-4d1e-9b53-0d05e5c002bc",
-    "updatedAt": 1777768137019,
+    "updatedAt": 1777769906621,
     "sessionStartedAt": 1777746473497,
     "systemSent": true,
     "abortedLastRun": false,
@@ -8443,14 +8443,14 @@
       "version": 0
     },
     "status": "running",
-    "startedAt": 1777768137002,
+    "startedAt": 1777769906605,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1777766296849,
+      "generatedAt": 1777768136890,
       "sessionId": "a9e25186-4d48-4d1e-9b53-0d05e5c002bc",
       "sessionKey": "agent:main:heartbeat",
       "provider": "deepseek",
-      "model": "deepseek-v4-flash",
+      "model": "deepseek-v4-pro",
       "workspaceDir": "/Users/ling/.openclaw/workspace",
       "bootstrapMaxChars": 12000,
       "bootstrapTotalMaxChars": 60000,
@@ -8466,9 +8466,9 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 43853,
+        "chars": 43851,
         "projectContextChars": 18355,
-        "nonProjectContextChars": 25498
+        "nonProjectContextChars": 25496
       },
       "injectedWorkspaceFiles": [
         {
@@ -9156,19 +9156,16 @@
         ]
       }
     },
-    "inputTokens": 50932,
-    "outputTokens": 49,
-    "cacheRead": 15488,
+    "inputTokens": 52780,
+    "outputTokens": 1246,
+    "cacheRead": 68352,
     "cacheWrite": 0,
     "estimatedCostUsd": 0,
-    "totalTokens": 66420,
+    "totalTokens": 68503,
     "totalTokensFresh": true,
-    "modelProvider": "deepseek",
-    "model": "deepseek-v4-flash",
-    "contextTokens": 131072,
-    "providerOverride": "deepseek",
-    "modelOverride": "deepseek-v4-pro",
-    "modelOverrideSource": "auto"
+    "authProfileOverride": "deepseek:default",
+    "authProfileOverrideSource": "auto",
+    "authProfileOverrideCompactionCount": 0
   },
   "agent:main:cron:openclaw-daily-backup-0300": {
     "sessionId": "31ec5d5f-260e-438c-85b6-29a07cfa6fac",
