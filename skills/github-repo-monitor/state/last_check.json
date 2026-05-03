@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-05-02T09:02:56.690053",
+  "checked_at": "2026-05-03T09:00:14.449548",
   "results": [
     {
       "path": "/Users/ling/.openclaw/workspace/coding-agent/file-organizer",
@@ -199,8 +199,8 @@
       "working_tree_dirty": true,
       "staged_count": 1,
       "modified_count": 2,
-      "untracked_count": 47,
-      "fetch_error": "fatal: unable to access 'https://github.com/seablue1985/TrendRadar.git/': Empty reply from server",
+      "untracked_count": 48,
+      "fetch_error": null,
       "upstream_remote": "origin",
       "local_sha": "c8577a8",
       "current_branch": "master",
@@ -237,7 +237,7 @@
       "staged_count": 0,
       "modified_count": 0,
       "untracked_count": 1,
-      "fetch_error": "fatal: unable to access 'https://github.com/virattt/ai-hedge-fund.git/': Failed to connect to github.com port 443 after 75016 ms: Couldn't connect to server",
+      "fetch_error": null,
       "upstream_remote": "origin",
       "local_sha": "876801b",
       "current_branch": "main",
@@ -249,11 +249,41 @@
       "path": "/Volumes/A/openclaw-cold/2026-03-28/.openclaw/workspace/quant_projects/daily_stock_analysis",
       "name": "daily_stock_analysis",
       "local_tag": "v3.13.0-19-g4254672",
-      "upstream_tag": "v3.14.2-1-g7711e9b",
-      "commits_behind": 29,
+      "upstream_tag": "v3.14.2-6-g650a1c3",
+      "commits_behind": 34,
       "commits_ahead": 16,
       "status": "diverged",
       "new_commits": [
+        {
+          "message": "feat: add price change event alerts (#1178)",
+          "short": "650a1c3",
+          "priority": "🟢 新功能",
+          "breaking": false
+        },
+        {
+          "message": "feat: add market light summary to reviews (#1177)",
+          "short": "2572eab",
+          "priority": "🟢 新功能",
+          "breaking": false
+        },
+        {
+          "message": "feat: add LLM provider setup templates and presets (#1175)",
+          "short": "205795a",
+          "priority": "🟢 新功能",
+          "breaking": false
+        },
+        {
+          "message": "feat: improve bot status configuration summary (#1174)",
+          "short": "267d5fd",
+          "priority": "🟢 新功能",
+          "breaking": false
+        },
+        {
+          "message": "feat: support custom webhook body templates (#1173)",
+          "short": "8ca0771",
+          "priority": "🟢 新功能",
+          "breaking": false
+        },
         {
           "message": "fix: 修复 task_queue、持仓估值与 LLM 诊断 (#1124) (#1146)",
           "short": "7711e9b",
@@ -342,36 +372,6 @@
           "message": "feat: add optional Anspire API support for github action",
           "short": "c5ac36e",
           "priority": "🟢 新功能",
-          "breaking": false
-        },
-        {
-          "message": "test: align market recap prompt assertion",
-          "short": "e5b5a64",
-          "priority": "🧪 测试",
-          "breaking": false
-        },
-        {
-          "message": "release: prepare v3.14.0",
-          "short": "c3d07ce",
-          "priority": "⚪ 其他",
-          "breaking": false
-        },
-        {
-          "message": "[fix] Support Kimi K2.6 fixed temperature (#1113)",
-          "short": "4574c52",
-          "priority": "⚪ 其他",
-          "breaking": false
-        },
-        {
-          "message": "fix: detect stale static bundles in build pipeline and at runtime (#1064) (#1121)",
-          "short": "0924dce",
-          "priority": "🟡 Bug修复",
-          "breaking": false
-        },
-        {
-          "message": "[fix][feat] #1108 #1109: 同步 DeepSeek V4 渠道配置 (#1110)",
-          "short": "9a08ba4",
-          "priority": "⚪ 其他",
           "breaking": false
         }
       ],
@@ -484,7 +484,7 @@
       "local_sha": "4254672",
       "current_branch": "main",
       "upstream_branch": "upstream/main",
-      "upstream_sha": "7711e9b",
+      "upstream_sha": "650a1c3",
       "tier": "main"
     },
     {

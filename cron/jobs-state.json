@@ -14,16 +14,16 @@
       }
     },
     "xhs-obsidian-sync-0900": {
-      "updatedAtMs": 1777566612490,
+      "updatedAtMs": 1777773782499,
       "state": {
-        "nextRunAtMs": 1777773600000,
-        "consecutiveErrors": 1,
-        "lastRunAtMs": 1777168800016,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 361,
-        "lastDeliveryStatus": "unknown",
-        "lastError": "Error: Unable to resolve bundled plugin public surface speech-core/runtime-api.js"
+        "nextRunAtMs": 1778378400000,
+        "consecutiveErrors": 0,
+        "lastRunAtMs": 1777773600020,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 182479,
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
       }
     },
     "1d3c0b2a-355f-4335-bca1-3c6b78dfae51": {
@@ -305,13 +305,13 @@
       }
     },
     "9bfeec2c-c32e-4ffa-8469-f65b759bf7a7": {
-      "updatedAtMs": 1777685669987,
+      "updatedAtMs": 1777772089235,
       "state": {
-        "nextRunAtMs": 1777771800000,
-        "lastRunAtMs": 1777685400012,
+        "nextRunAtMs": 1777858200000,
+        "lastRunAtMs": 1777771800012,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 269975,
+        "lastDurationMs": 289223,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true

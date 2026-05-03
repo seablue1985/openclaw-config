@@ -7352,7 +7352,7 @@
   },
   "agent:main:heartbeat": {
     "sessionId": "a9e25186-4d48-4d1e-9b53-0d05e5c002bc",
-    "updatedAt": 1777769906621,
+    "updatedAt": 1777777097209,
     "sessionStartedAt": 1777746473497,
     "systemSent": true,
     "abortedLastRun": false,
@@ -8443,10 +8443,10 @@
       "version": 0
     },
     "status": "running",
-    "startedAt": 1777769906605,
+    "startedAt": 1777777097201,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1777768136890,
+      "generatedAt": 1777775339814,
       "sessionId": "a9e25186-4d48-4d1e-9b53-0d05e5c002bc",
       "sessionKey": "agent:main:heartbeat",
       "provider": "deepseek",
@@ -8466,8 +8466,8 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 43851,
-        "projectContextChars": 18355,
+        "chars": 44826,
+        "projectContextChars": 19330,
         "nonProjectContextChars": 25496
       },
       "injectedWorkspaceFiles": [
@@ -8531,8 +8531,8 @@
           "name": "MEMORY.md",
           "path": "/Users/ling/.openclaw/workspace/MEMORY.md",
           "missing": false,
-          "rawChars": 4345,
-          "injectedChars": 4345,
+          "rawChars": 5320,
+          "injectedChars": 5320,
           "truncated": false
         }
       ],
@@ -9156,12 +9156,12 @@
         ]
       }
     },
-    "inputTokens": 52780,
-    "outputTokens": 1246,
-    "cacheRead": 68352,
+    "inputTokens": 62877,
+    "outputTokens": 400,
+    "cacheRead": 13696,
     "cacheWrite": 0,
-    "estimatedCostUsd": 0,
-    "totalTokens": 68503,
+    "estimatedCostUsd": 0.11278389999999999,
+    "totalTokens": 76573,
     "totalTokensFresh": true,
     "authProfileOverride": "deepseek:default",
     "authProfileOverrideSource": "auto",
