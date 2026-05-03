@@ -7352,7 +7352,7 @@
   },
   "agent:main:heartbeat": {
     "sessionId": "a9e25186-4d48-4d1e-9b53-0d05e5c002bc",
-    "updatedAt": 1777789697094,
+    "updatedAt": 1777791522070,
     "sessionStartedAt": 1777746473497,
     "systemSent": true,
     "abortedLastRun": false,
@@ -8442,15 +8442,15 @@
       ],
       "version": 0
     },
-    "status": "running",
-    "startedAt": 1777789697084,
+    "status": "done",
+    "startedAt": 1777791497310,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1777787896882,
+      "generatedAt": 1777789696966,
       "sessionId": "a9e25186-4d48-4d1e-9b53-0d05e5c002bc",
       "sessionKey": "agent:main:heartbeat",
-      "provider": "deepseek",
-      "model": "deepseek-v4-flash",
+      "provider": "minimax-portal",
+      "model": "MiniMax-M2.7",
       "workspaceDir": "/Users/ling/.openclaw/workspace",
       "bootstrapMaxChars": 12000,
       "bootstrapTotalMaxChars": 60000,
@@ -8466,9 +8466,9 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 44828,
+        "chars": 44829,
         "projectContextChars": 19330,
-        "nonProjectContextChars": 25498
+        "nonProjectContextChars": 25499
       },
       "injectedWorkspaceFiles": [
         {
@@ -9156,18 +9156,21 @@
         ]
       }
     },
-    "inputTokens": 103456,
-    "outputTokens": 3907,
-    "cacheRead": 0,
+    "inputTokens": 67022,
+    "outputTokens": 1003,
+    "cacheRead": 66464,
     "cacheWrite": 0,
-    "estimatedCostUsd": 0.058173640000000006,
-    "totalTokensFresh": false,
-    "modelProvider": "deepseek",
-    "model": "deepseek-v4-flash",
-    "contextTokens": 131072,
-    "authProfileOverride": "minimax-portal:default",
-    "authProfileOverrideSource": "auto",
-    "authProfileOverrideCompactionCount": 1
+    "estimatedCostUsd": 0,
+    "totalTokensFresh": true,
+    "modelProvider": "minimax-portal",
+    "model": "MiniMax-M2.7",
+    "contextTokens": 200000,
+    "totalTokens": 66601,
+    "endedAt": 1777791522012,
+    "runtimeMs": 24702,
+    "providerOverride": "deepseek",
+    "modelOverride": "deepseek-v4-pro",
+    "modelOverrideSource": "auto"
   },
   "agent:main:cron:openclaw-daily-backup-0300": {
     "sessionId": "31ec5d5f-260e-438c-85b6-29a07cfa6fac",
