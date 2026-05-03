@@ -7352,7 +7352,7 @@
   },
   "agent:main:heartbeat": {
     "sessionId": "a9e25186-4d48-4d1e-9b53-0d05e5c002bc",
-    "updatedAt": 1777777097209,
+    "updatedAt": 1777784296916,
     "sessionStartedAt": 1777746473497,
     "systemSent": true,
     "abortedLastRun": false,
@@ -8443,10 +8443,10 @@
       "version": 0
     },
     "status": "running",
-    "startedAt": 1777777097201,
+    "startedAt": 1777784296906,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1777775339814,
+      "generatedAt": 1777782536383,
       "sessionId": "a9e25186-4d48-4d1e-9b53-0d05e5c002bc",
       "sessionKey": "agent:main:heartbeat",
       "provider": "deepseek",
@@ -9156,12 +9156,12 @@
         ]
       }
     },
-    "inputTokens": 62877,
-    "outputTokens": 400,
-    "cacheRead": 13696,
+    "inputTokens": 78227,
+    "outputTokens": 1955,
+    "cacheRead": 94976,
     "cacheWrite": 0,
-    "estimatedCostUsd": 0.11278389999999999,
-    "totalTokens": 76573,
+    "estimatedCostUsd": 0.23989438000000002,
+    "totalTokens": 95077,
     "totalTokensFresh": true,
     "authProfileOverride": "deepseek:default",
     "authProfileOverrideSource": "auto",
