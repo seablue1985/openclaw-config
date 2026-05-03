@@ -804,7 +804,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行盘前强检（交易日守卫自动跳过非交易日）: cd /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system && python3 scripts/precheck_trading_day_guard.py --available-cash 1000000 --account-nav 930000",
+        "message": "盘前强检：先同步行业板块数据（绕过 TCC 限制 → 用 exec），再运行盘前强检。\n\n交易日守卫会自动跳过非交易日。非交易日不推送。\n\n执行：\ncd /Users/ling/.openclaw/workspace/quant_projects/personal-a-share-research-system && python3 scripts/sync_sector_board_data.py && python3 scripts/precheck_trading_day_guard.py --available-cash 1000000 --account-nav 930000",
         "model": "minimax-portal/MiniMax-M2.7",
         "timeoutSeconds": 600
       },
