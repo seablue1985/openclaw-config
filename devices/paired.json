@@ -118,7 +118,7 @@
       "operator.pairing"
     ],
     "clientId": "cli",
-    "clientMode": "probe",
+    "clientMode": "cli",
     "createdAtMs": 1772336433777,
     "deviceId": "cc918713add09d94445850193ff4881882e7ec9d64ba32e5376c06b4f4e64b1b",
     "platform": "darwin",

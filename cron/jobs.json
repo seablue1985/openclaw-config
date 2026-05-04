@@ -139,7 +139,7 @@
       "id": "71b19e21-52a4-446a-bc53-72399efd63f1",
       "name": "08:50全球股市早间要闻",
       "description": "每天08:50生成全球股市早间要闻，含大盘体温/板块映射/看涨看跌",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1773373210801,
       "schedule": {
         "kind": "cron",
@@ -243,7 +243,7 @@
       "id": "investment-research-org-close-1515",
       "name": "15:15来福投研会-收盘复盘",
       "description": "生成真实输入版收盘复盘会与交易建议卡，并推送到当前飞书DM",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1773487592124,
       "schedule": {
         "kind": "cron",
@@ -312,7 +312,7 @@
       "id": "investment-research-background-preopen-0840",
       "name": "08:40来福投研会-盘前值班",
       "description": "盘前由宏观/量化/风控/交易员/首席研究员完成非会议值班",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1773491345498,
       "schedule": {
         "kind": "cron",
@@ -347,7 +347,7 @@
       "id": "investment-research-background-intraday-1030",
       "name": "10:30来福投研会-盘中值班",
       "description": "盘中由风控/交易员/行业/首席研究员做风险与异动巡检",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1773491345498,
       "schedule": {
         "kind": "cron",
@@ -382,7 +382,7 @@
       "id": "investment-research-background-postclose-1630",
       "name": "16:30来福投研会-盘后值班",
       "description": "盘后由交易员/量化/行业/首席研究员更新观察池与次日准备",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1773491345498,
       "schedule": {
         "kind": "cron",
@@ -417,7 +417,7 @@
       "id": "investment-research-background-overnight-2100",
       "name": "21:00来福投研会-夜间值班",
       "description": "夜间由宏观/行业/量化/大师分身/首席研究员做深度研究与次日准备",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1773491345498,
       "schedule": {
         "kind": "cron",
@@ -485,7 +485,7 @@
       "id": "investment-research-data-source-health-0935",
       "name": "09:35来福投研会-数据源健康巡检",
       "description": "交易时段巡检双源行情与账户同步健康度，异常时主动告警",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1773496760753,
       "schedule": {
         "kind": "cron",
@@ -669,7 +669,7 @@
       "agentId": "coding-agent",
       "name": "09:25网页账本主源A股实盘日报",
       "description": "显式使用 ths_web_selected_holdings_latest.json 运行 fusion report，并用正式日报模板推送 Feishu",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1774955391376,
       "schedule": {
         "kind": "cron",
@@ -794,7 +794,7 @@
       "agentId": "coding-agent",
       "name": "09:30盘前强检-交易日守卫",
       "description": "replacement for 1d3c0b2a using coding-agent + explicit gmn model",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1775012500542,
       "schedule": {
         "kind": "cron",
@@ -847,7 +847,7 @@
       "id": "4f6ef6ba-a464-4efa-bf3b-b56e6da0b2e9",
       "name": "每日16:00 dual factor conservative shadow",
       "agentId": "coding-agent",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1775210725284,
       "schedule": {
         "kind": "cron",
@@ -874,7 +874,7 @@
       "name": "09:20 A股Overlay日报(minimax)",
       "agentId": "coding-agent",
       "description": "候选池+持仓分析+综合研判，MiniMax模型，每日09:20盘前执行",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1775274789682,
       "schedule": {
         "kind": "cron",
@@ -979,7 +979,7 @@
       "id": "dashboard-portal-1630",
       "name": "16:30 生成量化面板总入口",
       "description": "开盘日下午4:30生成dashboard_portal.html",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1775550000000,
       "schedule": {
         "kind": "cron",
@@ -1072,7 +1072,7 @@
     {
       "id": "ml-prediction-daily-1700",
       "name": "17:00 A股ML预测每日更新",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1744444800000,
       "schedule": {
         "kind": "cron",
@@ -1127,7 +1127,7 @@
       "id": "957abcff-2152-4ce9-80dd-f3af9fb22b47",
       "agentId": "coding-agent",
       "name": "Aggressive盘中止损-v2",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1777451353948,
       "schedule": {
         "kind": "cron",
@@ -1180,7 +1180,7 @@
       "id": "89df6117-f91a-4cfd-95d7-ba3017104858",
       "name": "15:30混合策略模拟盘更新",
       "description": "盘后自动更新模拟盘净值、调仓",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1777733068828,
       "schedule": {
         "kind": "cron",
