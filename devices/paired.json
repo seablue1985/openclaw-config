@@ -118,7 +118,7 @@
       "operator.pairing"
     ],
     "clientId": "cli",
-    "clientMode": "cli",
+    "clientMode": "probe",
     "createdAtMs": 1772336433777,
     "deviceId": "cc918713add09d94445850193ff4881882e7ec9d64ba32e5376c06b4f4e64b1b",
     "platform": "darwin",
@@ -187,7 +187,7 @@
           "operator.write"
         ],
         "createdAtMs": 1776515596217,
-        "lastUsedAtMs": 1777599043213
+        "lastUsedAtMs": 1777993470706
       }
     },
     "createdAtMs": 1776515596216,

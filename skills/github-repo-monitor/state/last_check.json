@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-05-04T09:04:10.471512",
+  "checked_at": "2026-05-05T09:00:14.800124",
   "results": [
     {
       "path": "/Users/ling/.openclaw/workspace/coding-agent/file-organizer",
@@ -169,7 +169,7 @@
       "staged_count": 0,
       "modified_count": 0,
       "untracked_count": 0,
-      "fetch_error": "fatal: unable to access 'https://github.com/seablue1985/RD-Agent.git/': Empty reply from server",
+      "fetch_error": null,
       "upstream_remote": "origin",
       "local_sha": "697ade1",
       "current_branch": "main",
@@ -200,7 +200,7 @@
       "staged_count": 1,
       "modified_count": 2,
       "untracked_count": 49,
-      "fetch_error": "fatal: unable to access 'https://github.com/seablue1985/TrendRadar.git/': Failed to connect to github.com port 443 after 75015 ms: Couldn't connect to server",
+      "fetch_error": null,
       "upstream_remote": "origin",
       "local_sha": "c8577a8",
       "current_branch": "master",
@@ -212,11 +212,41 @@
       "path": "/Volumes/A/openclaw-cold/2026-03-28/.openclaw/workspace/quant_projects/ai-hedge-fund",
       "name": "ai-hedge-fund",
       "local_tag": "876801b",
-      "upstream_tag": "58c4589",
-      "commits_behind": 2,
+      "upstream_tag": "278e495",
+      "commits_behind": 7,
       "commits_ahead": 0,
-      "status": "minor_update",
+      "status": "major_update",
       "new_commits": [
+        {
+          "message": "Update EarningsRecord with latest earnings endpoint response data",
+          "short": "278e495",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
+        {
+          "message": "Clean up v2 files",
+          "short": "faa1043",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
+        {
+          "message": "Merge pull request #615 from huyua9/huyua9/gate-v2-live-fd-smoke-tests",
+          "short": "6100f49",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
+        {
+          "message": "Skip live FD tests without API key",
+          "short": "aebc62f",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
+        {
+          "message": "Update models",
+          "short": "8da8218",
+          "priority": "⚪ 其他",
+          "breaking": false
+        },
         {
           "message": "Merge pull request #602 from octo-patch/fix/issue-601-deepseek-json-extraction",
           "short": "58c4589",
@@ -237,23 +267,35 @@
       "staged_count": 0,
       "modified_count": 0,
       "untracked_count": 1,
-      "fetch_error": "fatal: unable to access 'https://github.com/virattt/ai-hedge-fund.git/': Failed to connect to github.com port 443 after 75002 ms: Couldn't connect to server",
+      "fetch_error": null,
       "upstream_remote": "origin",
       "local_sha": "876801b",
       "current_branch": "main",
       "upstream_branch": "origin/main",
-      "upstream_sha": "58c4589",
+      "upstream_sha": "278e495",
       "tier": "main"
     },
     {
       "path": "/Volumes/A/openclaw-cold/2026-03-28/.openclaw/workspace/quant_projects/daily_stock_analysis",
       "name": "daily_stock_analysis",
       "local_tag": "v3.13.0-19-g4254672",
-      "upstream_tag": "v3.14.2-9-gd0ff7ab",
-      "commits_behind": 37,
+      "upstream_tag": "v3.14.2-11-g695365b",
+      "commits_behind": 39,
       "commits_ahead": 16,
       "status": "diverged",
       "new_commits": [
+        {
+          "message": "feat: add Anspire Open LLM support (#1193)",
+          "short": "695365b",
+          "priority": "🟢 新功能",
+          "breaking": false
+        },
+        {
+          "message": "feat: land Web LLM provider hints on main (#1180) (#1191)",
+          "short": "014fdd5",
+          "priority": "🟢 新功能",
+          "breaking": false
+        },
         {
           "message": "chore: land #1180 P1 LLM Actions mapping (#1190)",
           "short": "d0ff7ab",
@@ -360,18 +402,6 @@
           "message": "feat: Add Hong Kong market support (#1068)",
           "short": "07b4fe5",
           "priority": "🟢 新功能",
-          "breaking": false
-        },
-        {
-          "message": "fix: 最小化修复问股链路在 macOS 本地环境下的失败反馈：优先保留后端真实错误原因并补足… (#1138) (#1139)",
-          "short": "260fe06",
-          "priority": "🟡 Bug修复",
-          "breaking": false
-        },
-        {
-          "message": "Revert \"refactor(issue-1141): [feature]-代码库知识图谱是否有助于新贡献者理解项目 (#1142)\" (#1143)",
-          "short": "b4065c4",
-          "priority": "⚪ 其他",
           "breaking": false
         }
       ],
@@ -484,7 +514,7 @@
       "local_sha": "4254672",
       "current_branch": "main",
       "upstream_branch": "upstream/main",
-      "upstream_sha": "d0ff7ab",
+      "upstream_sha": "695365b",
       "tier": "main"
     },
     {
