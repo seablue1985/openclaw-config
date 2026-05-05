@@ -1,0 +1,14 @@
+# 引用你本地的 GGUF 模型文件
+FROM /Users/ling/.openclaw/models/Qwen3.5-9B-Q4_K_M.gguf
+
+# 设置模型的对话模板
+TEMPLATE """<|im_start|>system
+{{ .System }}<|im_end|>
+<|im_start|>user
+{{ .Prompt }}<|im_end|>
+<|im_start|>assistant
+"""
+
+# 设置模型的停止标识
+PARAMETER stop "<|im_start|>"
+PARAMETER stop "<|im_end|>"

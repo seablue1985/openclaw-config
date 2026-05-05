@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "profiles": {
+    "minimax-portal:default": {
+      "type": "oauth",
+      "provider": "minimax-portal",
+      "access": "sk-cp-TypyXejs2B15_iA2InVLaRhZBTL_wxRXO5ut0AXIl6elvqblH6fWp3j8VaUulYChdYV6fEHnXtMyNwRhaeHBmxI_dFoOwRlmtPdSZt6pwrMvqKU92zBfir8",
+      "refresh": "gHrN2zKrDKzFJ4UPFEb-J4w6R__C8PCgDrIPNME709I=",
+      "expires": 1804251021050
+    },
+    "ollama-local:default": {
+      "type": "api_key",
+      "provider": "ollama-local",
+      "key": "ollama-local"
+    },
+    "gmn:default": {
+      "type": "api_key",
+      "provider": "gmn",
+      "key": "sk-e529fe673ca03ba271c0bff5cae0dbcd06b57943f4bdb12ada983aa22eaba8b6"
+    },
+    "intelalloc:default": {
+      "type": "api_key",
+      "provider": "intelalloc",
+      "key": "sk-b42e34d559570974177c19b15c54e1832fe47edd85a0042d2516a02907258ca9"
+    },
+    "deepseek:default": {
+      "type": "api_key",
+      "provider": "deepseek",
+      "key": "sk-890afedb74bd4cf2aecf96bc8824db9b"
+    }
+  }
+}

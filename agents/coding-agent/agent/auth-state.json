@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "lastGood": {
+    "minimax-portal": "minimax-portal:default",
+    "gmn": "gmn:default",
+    "ollama-local": "ollama-local:default",
+    "deepseek": "deepseek:default",
+    "beecode": "beecode:gpt-5.4"
+  },
+  "usageStats": {
+    "minimax-portal:default": {
+      "errorCount": 0,
+      "lastUsed": 1777993854862,
+      "lastFailureAt": 1777111125536
+    },
+    "ollama-local:default": {
+      "errorCount": 0,
+      "lastUsed": 1774966996151
+    },
+    "deepseek:default": {
+      "errorCount": 0,
+      "lastUsed": 1777878801287,
+      "lastFailureAt": 1777602937575
+    }
+  }
+}

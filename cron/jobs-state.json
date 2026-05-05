@@ -2,15 +2,15 @@
   "version": 1,
   "jobs": {
     "3c85911f-26c5-4a2e-9734-fb85f51cf9b8": {
-      "updatedAtMs": 1777907446195,
+      "updatedAtMs": 1777993855072,
       "state": {
-        "lastRunAtMs": 1777907400020,
+        "lastRunAtMs": 1777993800030,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 46175,
+        "lastDurationMs": 55042,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1777993800000
+        "nextRunAtMs": 1778080200000
       }
     },
     "xhs-obsidian-sync-0900": {
@@ -238,16 +238,15 @@
       }
     },
     "71585983-eab9-4557-924c-277a29a73768": {
-      "updatedAtMs": 1777917812376,
+      "updatedAtMs": 1778004244455,
       "state": {
-        "nextRunAtMs": 1778004000000,
-        "lastRunAtMs": 1777917600010,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 212366,
+        "nextRunAtMs": 1778090400000,
+        "lastRunAtMs": 1778004000013,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 244442,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 1,
-        "lastError": "⚠️ Agent couldn't generate a response. Note: some tool actions may have already been executed — please verify before retrying."
+        "consecutiveErrors": 0
       }
     },
     "4fe135b5-7edc-4978-a296-b11aae2afaa5": {
@@ -460,17 +459,17 @@
       }
     },
     "6426c336-a82d-46c4-b9a1-92170db348e9": {
-      "updatedAtMs": 1777914169458,
+      "updatedAtMs": 1778000575519,
       "state": {
-        "nextRunAtMs": 1778000400000,
-        "lastRunAtMs": 1777914000010,
+        "nextRunAtMs": 1778086800000,
+        "lastRunAtMs": 1778000400011,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 169448,
+        "lastDurationMs": 175508,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 1,
-        "lastError": "FallbackSummaryError: All models failed (2): minimax-portal/MiniMax-M2.7: LLM request timed out. (timeout) | codex/gpt-5.4: 403 Your request was blocked. (auth)",
-        "lastErrorReason": "auth"
+        "consecutiveErrors": 2,
+        "lastErrorReason": "auth",
+        "lastError": "FallbackSummaryError: All models failed (2): minimax-portal/MiniMax-M2.7: LLM request timed out. (timeout) | codex/gpt-5.4: 403 Your request was blocked. (auth)"
       }
     },
     "89df6117-f91a-4cfd-95d7-ba3017104858": {

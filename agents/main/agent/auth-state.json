@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "lastGood": {
+    "minimax-portal": "minimax-portal:default",
+    "gmn": "gmn:default",
+    "ollama-local": "ollama-local:default",
+    "deepseek": "deepseek:default"
+  },
+  "usageStats": {
+    "minimax-portal:default": {
+      "errorCount": 1,
+      "lastUsed": 1778002170046,
+      "lastFailureAt": 1778005698688,
+      "failureCounts": {
+        "format": 1
+      },
+      "cooldownUntil": 1778005728688,
+      "cooldownReason": "format"
+    },
+    "ollama-local:default": {
+      "errorCount": 0,
+      "lastUsed": 1774840826424
+    },
+    "gmn:default": {
+      "errorCount": 0,
+      "lastUsed": 1775180558501,
+      "lastFailureAt": 1774962260317
+    },
+    "deepseek:default": {
+      "errorCount": 0,
+      "lastUsed": 1778004249780,
+      "lastFailureAt": 1777712297249
+    }
+  }
+}

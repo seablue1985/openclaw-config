@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "skills": {
+    "capability-evolver": {
+      "version": "1.27.3",
+      "installedAt": 1772960404652
+    },
+    "stock-watcher": {
+      "version": "1.0.0",
+      "installedAt": 1772962105577
+    },
+    "akshare-stock": {
+      "version": "1.0.1",
+      "installedAt": 1772962108267
+    },
+    "xiaohongshutools": {
+      "version": "0.1.0",
+      "installedAt": 1773047567897
+    },
+    "bitsoul-china-stock-quantization": {
+      "version": "1.0.31",
+      "installedAt": 1774360727261
+    },
+    "minimax-image-generation": {
+      "version": "1.0.0",
+      "installedAt": 1775543820147
+    },
+    "yescan-ocr-universal": {
+      "version": "1.0.8",
+      "installedAt": 1776289669367
+    },
+    "yescan-scan-universal": {
+      "version": "1.0.10",
+      "installedAt": 1776289675124
+    },
+    "yescan-transoffice-universal": {
+      "version": "1.1.14",
+      "installedAt": 1776289680958
+    }
+  }
+}
